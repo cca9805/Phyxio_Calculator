@@ -1,0 +1,86 @@
+[
+  {
+    "id": "e-mcu-1",
+    "title": "Calcular velocidad angular",
+    "prompt": "Un disco gira recorriendo un ángulo de 3π rad en 2 s. ¿Cuál es su velocidad angular ω?",
+    "solution": [
+      "Identificamos los datos: θ = 3π rad (≈ 9.42477796 rad), t = 2 s.",
+      "Usamos la ecuación: ω = θ / t",
+      "Sustituimos: ω = 9.42477796 / 2",
+      "Calculamos: ω = 4.71238898 rad/s"
+    ],
+    "answer": "4.71238898 rad/s"
+  },
+  {
+    "id": "e-mcu-2",
+    "title": "Velocidad tangencial desde radio y ω",
+    "prompt": "Un objeto gira en una circunferencia de radio 0.5 m con velocidad angular ω = 2 rad/s. ¿Cuál es su velocidad tangencial v?",
+    "solution": [
+      "Identificamos los datos: r = 0.5 m, ω = 2 rad/s.",
+      "Usamos la ecuación: v = r · ω",
+      "Sustituimos: v = 0.5 · 2",
+      "Calculamos: v = 1.0 m/s"
+    ],
+    "answer": "1.0 m/s"
+  },
+  {
+    "id": "e-mcu-3",
+    "title": "Calcular periodo a partir de frecuencia",
+    "prompt": "Un sistema realiza 5 revoluciones por segundo (f = 5 Hz). ¿Cuál es su periodo T?",
+    "solution": [
+      "Identificamos los datos: f = 5 Hz.",
+      "Usamos la ecuación: T = 1 / f",
+      "Sustituimos: T = 1 / 5",
+      "Calculamos: T = 0.2 s"
+    ],
+    "answer": "0.2 s"
+  },
+  {
+    "id": "e-mcu-4",
+    "title": "Calcular frecuencia desde periodo",
+    "prompt": "El periodo de un movimiento circular es T = 0.25 s. ¿Cuál es la frecuencia f?",
+    "solution": [
+      "Identificamos los datos: T = 0.25 s.",
+      "Usamos la ecuación: f = 1 / T",
+      "Sustituimos: f = 1 / 0.25",
+      "Calculamos: f = 4 Hz"
+    ],
+    "answer": "4 Hz"
+  },
+  {
+    "id": "e-mcu-5",
+    "title": "Aceleración centrípeta desde v y r",
+    "prompt": "Un coche recorre una curva con velocidad tangencial v = 20 m/s y radio r = 50 m. Calcula la aceleración centrípeta a_c.",
+    "solution": [
+      "Identificamos los datos: v = 20 m/s, r = 50 m.",
+      "Usamos la ecuación: a_c = v² / r",
+      "Sustituimos: a_c = 20² / 50",
+      "Calculamos: a_c = 400 / 50 = 8 m/s²"
+    ],
+    "answer": "8 m/s²"
+  },
+  {
+    "id": "e-mcu-6",
+    "title": "Desplazamiento angular",
+    "prompt": "Una rueda gira con velocidad angular ω = 4 rad/s durante 3 s. ¿Qué ángulo θ describe?",
+    "solution": [
+      "Identificamos los datos: ω = 4 rad/s, t = 3 s.",
+      "Usamos la ecuación: θ = ω · t",
+      "Sustituimos: θ = 4 · 3",
+      "Calculamos: θ = 12 rad"
+    ],
+    "answer": "12 rad"
+  },
+  {
+    "id": "e-mcu-7",
+    "title": "Aceleración angular media",
+    "prompt": "La velocidad angular pasa de 2 rad/s a 6 rad/s en 2 s. ¿Cuál es la aceleración angular media α?",
+    "solution": [
+      "Identificamos los datos: ω₀ = 2 rad/s, ω = 6 rad/s, t = 2 s.",
+      "Usamos la ecuación: α = (ω - ω₀) / t",
+      "Sustituimos: α = (6 - 2) / 2",
+      "Calculamos: α = 4 / 2 = 2 rad/s²"
+    ],
+    "answer": "2 rad/s²"
+  }
+]

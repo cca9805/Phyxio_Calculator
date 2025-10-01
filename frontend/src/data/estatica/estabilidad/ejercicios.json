@@ -1,0 +1,12 @@
+[
+  {
+    "id": "condicion-estabilidad",
+    "title": "Estabilidad de un bloque",
+    "prompt": "Un bloque tiene el centro de gravedad a 0.2 m de altura y una base de 0.5 m de ancho. ¿Es estable si la vertical desde el centro de gravedad cae dentro de la base?",
+    "solution": [
+      "La vertical desde el centro de gravedad cae dentro de la base.",
+      "Por lo tanto, el bloque es estable."
+    ],
+    "answer": "Sí, es estable."
+  }
+]

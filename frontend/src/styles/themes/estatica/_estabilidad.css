@@ -1,0 +1,46 @@
+:root {
+  --estatica-estabilidad-base: var(--jade-500, #10b981);
+  --estatica-estabilidad-accent: var(--jade-300, #6ee7b7);
+  --estatica-estabilidad-bg: var(--jade-50, #f0fdf4);
+}
+
+[data-theme="estabilidad"] {
+  --color-primary: var(--jade-500, #10b981);
+  --color-primary-light: var(--jade-400, #34d399);
+  --color-primary-dark: var(--jade-600, #059669);
+  --color-secondary: var(--jade-300, #6ee7b7);
+  --color-secondary-light: var(--jade-200, #a7f3d0);
+  --color-secondary-dark: var(--jade-700, #047857);
+
+  --sub-button: var(--jade-700, #047857);
+  --sub-button-hover: var(--jade-800, #065f46);
+  --sub-bg: var(--jade-100, #d1fae5);
+  --sub-bg-panel: var(--jade-200, #a7f3d0);
+  --sub-panel: var(--jade-300, #6ee7b7);
+  --sub-border: var(--jade-800, #065f46);
+  --sub-text: color-mix(in hsl, white 5%, var(--jade-900, #064e3b));
+  --sub-text-light: var(--jade-200, #a7f3d0);
+  --tone-900: var(--jade-900, #064e3b);
+
+  .exercise-card,
+  .theory-card,
+  .formulas-card,
+  .calculators-card {
+    background: var(--sub-bg);
+    color: var(--sub-text);
+    border: 1px solid var(--sub-border);
+  }
+
+   .tema-card-btn,
+  .tema-card-btn.estabilidad-btn {
+    background: var(--color-primary);
+    color: white;
+    border: 1px solid var(--color-primary-dark);
+    transition: background 0.2s;
+  }
+  .tema-card-btn.estabilidad-btn:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+  /* ...existing code for text, buttons, etc... */
+}

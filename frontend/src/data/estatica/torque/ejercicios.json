@@ -1,0 +1,22 @@
+[
+  {
+    "id": "torque",
+    "title": "Cálculo de torque",
+    "prompt": "Una fuerza de 15 N se aplica a 0.4 m del eje formando un ángulo de 90°. ¿Cuál es el torque?",
+    "solution": [
+      "τ = F · r · sin(θ)",
+      "τ = 15 · 0.4 · sin(90°) = 15 · 0.4 · 1 = 6 N·m"
+    ],
+    "answer": "6 N·m"
+  },
+  {
+    "id": "equilibrio-rotacional",
+    "title": "Equilibrio rotacional de una barra",
+    "prompt": "Una barra recibe dos torques opuestos de igual magnitud. ¿Está en equilibrio rotacional?",
+    "solution": [
+      "Στ = τ (horario) + (-τ) (antihorario) = 0",
+      "La suma de torques es cero, por lo tanto la barra está en equilibrio rotacional."
+    ],
+    "answer": "Sí, está en equilibrio rotacional."
+  }
+]

@@ -1,0 +1,83 @@
+/* Main CSS File - Importa todos los estilos */
+
+/* 1. Variables y configuraciones globales */
+@import './base/_variables.css';
+@import './base/_reset.css';
+@import './base/_typography.css';
+@import './base/_app-styles.css';
+
+/* 2. Utilidades */
+@import './utils/_animations.css';
+@import './utils/_helpers.css';
+@import './utils/_spacing.css';
+
+/* 3. Layout */
+@import './layout/_grid.css';
+@import './layout/_header.css';
+@import './layout/_footer.css';
+
+/* 4. Componentes */
+@import './components/_buttons.css';
+@import './components/_forms.css';
+@import './components/_cards.css';
+@import './components/_charts.css';
+@import './components/_accordion.css';
+@import './components/_tabs.css';
+@import './components/_alerts.css';
+@import './components/_tooltips.css';
+@import './components/_badges.css';
+@import './components/_calculator.css';
+@import './components/_exercise-card.css';
+@import './components/_simulator.css';
+
+/* 5. Temas */
+/* Tema base */
+@import './themes/_base-theme.css';
+
+/* Temas de interfaz */
+@import './themes/_light.css';
+@import './themes/_dark.css';
+
+/* Temas de física */
+/* Temas de cinemática */
+@import './themes/cinematica/_mru.css';    /* Movimiento Rectilíneo Uniforme */
+@import './themes/cinematica/_mruv.css';   /* Movimiento Rectilíneo Uniformemente Variado */
+@import './themes/cinematica/_mcu.css';    /* Movimiento Circular Uniforme */
+@import './themes/cinematica/_mcua.css';   /* Movimiento Circular Uniformemente Acelerado */
+@import './themes/cinematica/_mr.css';     /* Movimiento Rectilíneo (general) */
+@import './themes/cinematica/_mas.css';    /* Movimiento Armónico Simple */
+@import './themes/cinematica/_mp.css';     /* Movimiento Parabólico */
+
+/* Temas de dinámica */
+@import './themes/dinamica/_equilibrio.css';    /* Equilibrio de fuerzas */
+@import './themes/dinamica/_newton.css';    /* Leyes de Newton */
+@import './themes/dinamica/_trabajoenergia.css'; /* Trabajo y Energía */
+@import './themes/dinamica/_movimpulso.css'; /* Impulso y Momentum */
+@import './themes/dinamica/_rotacion.css';  /* Rotación y Torque */
+@import './themes/dinamica/_gravitacion.css'; /* Gravitación */
+@import './themes/dinamica/_friccion.css';  /* Fricción */
+@import './themes/dinamica/_oscilaciones.css'; /* Oscilaciones y Resortes */
+@import './themes/dinamica/_masaspoleas.css'; /* Sistemas de Masas y Poleas */
+@import './themes/dinamica/_maquinas.css';  /* Máquinas Simples */
+
+/* Temas de estática */
+@import './themes/estatica/_fuerzas.css';         /* Fuerzas y Equilibrio */
+@import './themes/estatica/_torque.css';          /* Torque y Momento de Fuerza */
+@import './themes/estatica/_centro-masa.css';     /* Centro de Masa y Gravedad */
+@import './themes/estatica/_leyes.css';           /* Leyes de los Cuerpos Rígidos */
+@import './themes/estatica/_apoyos.css';          /* Apoyos y Reacciones */
+@import './themes/estatica/_diagramas-cuerpo-libre.css'; /* Diagramas de Cuerpo Libre */
+@import './themes/estatica/_friccion-equilibrio.css';     /* Fricción en Equilibrio */
+@import './themes/estatica/_estructuras.css';      /* Estructuras y Armaduras */
+@import './themes/estatica/_estabilidad.css';      /* Estabilidad y Condiciones de Equilibrio */
+@import './themes/estatica/_aplicaciones.css';     /* Aplicaciones en Ingeniería y Arquitectura */
+
+/* 6. Páginas */
+@import './pages/_home.css';
+@import './pages/_admin.css';
+
+/* 7. Estilos específicos */
+@import './nivel3.css';
+
+/* 8. Estilos de terceros */
+/* Nota: KaTeX se carga a través de node_modules en index.html */

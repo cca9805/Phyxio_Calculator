@@ -1,0 +1,188 @@
+/* Estilos para el componente MRUChart */
+
+.mru-chart-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mru-chart-container:hover {
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-2px);
+}
+
+.mru-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mru-chart-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.mru-chart-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mru-chart-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 1.5rem;
+  background-color: var(--color-bg-light);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.mru-chart-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.mru-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.mru-chip {
+  position: relative;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-bg-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.mru-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.mru-chip.is-unknown {
+  background: linear-gradient(135deg, rgba(26, 115, 232, 0.1), rgba(26, 115, 232, 0.2));
+  border: 1px solid rgba(26, 115, 232, 0.3);
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.1);
+  animation: pulse 2s infinite;
+}
+
+.mru-chip.is-unknown .mru-chip-label {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.mru-chip-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+  margin-bottom: 0.25rem;
+}
+
+.mru-chip-value {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.mru-chip-unit {
+  margin-left: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.unknown-indicator {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: bounce 1s infinite alternate;
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(26, 115, 232, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(26, 115, 232, 0);
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(-5px) scale(1.1);
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .mru-values {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .mru-chart-container {
+    padding: 1rem;
+  }
+  
+  .mru-chart-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mru-values {
+    grid-template-columns: 1fr;
+  }
+  
+  .mru-chip {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .mru-chip-label {
+    font-size: 0.7rem;
+  }
+  
+  .mru-chip-value {
+    font-size: 1rem;
+  }
+}

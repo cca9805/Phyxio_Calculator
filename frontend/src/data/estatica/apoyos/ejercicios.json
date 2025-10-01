@@ -1,0 +1,31 @@
+[
+  {
+    "id": "reaccion-apoyo-simple",
+    "title": "Reacción en apoyo simple",
+    "prompt": "Una viga recibe una fuerza de 50 N sobre un apoyo simple. ¿Cuál es la reacción?",
+    "solution": [
+      "R = F = 50 N"
+    ],
+    "answer": "50 N"
+  },
+  {
+    "id": "reaccion-apoyo-movil",
+    "title": "Reacción en apoyo móvil",
+    "prompt": "Una viga recibe una fuerza de 30 N sobre un apoyo móvil (rodillo). ¿Cuál es la reacción?",
+    "solution": [
+      "R = F = 30 N"
+    ],
+    "answer": "30 N"
+  },
+  {
+    "id": "reaccion-apoyo-fijo",
+    "title": "Reacciones en apoyo fijo",
+    "prompt": "Un apoyo fijo soporta una fuerza horizontal de 10 N, una vertical de 40 N y un momento de 5 N·m. ¿Cuáles son las reacciones?",
+    "solution": [
+      "R_x = 10 N",
+      "R_y = 40 N",
+      "M = 5 N·m"
+    ],
+    "answer": "R_x = 10 N, R_y = 40 N, M = 5 N·m"
+  }
+]

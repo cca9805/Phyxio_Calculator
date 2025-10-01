@@ -1,0 +1,31 @@
+[
+  {
+    "id": "friccion-estatica",
+    "title": "Fricción estática máxima en un bloque",
+    "prompt": "Un bloque de 10 kg está sobre una superficie con coeficiente de fricción estática 0.4. ¿Cuál es la fricción estática máxima?",
+    "solution": [
+      "N = m · g = 10 · 9.8 = 98 N",
+      "F_{fe,max} = μ_e · N = 0.4 · 98 = 39.2 N"
+    ],
+    "answer": "39.2 N"
+  },
+  {
+    "id": "friccion-cinetica",
+    "title": "Fricción cinética en movimiento",
+    "prompt": "Un bloque de 5 kg se desliza sobre una mesa con coeficiente de fricción cinética 0.2. ¿Cuál es la fuerza de fricción cinética?",
+    "solution": [
+      "N = m · g = 5 · 9.8 = 49 N",
+      "F_{fc} = μ_c · N = 0.2 · 49 = 9.8 N"
+    ],
+    "answer": "9.8 N"
+  },
+  {
+    "id": "normal",
+    "title": "Cálculo de la fuerza normal",
+    "prompt": "¿Cuál es la fuerza normal que ejerce el suelo sobre una caja de 12 kg?",
+    "solution": [
+      "N = m · g = 12 · 9.8 = 117.6 N"
+    ],
+    "answer": "117.6 N"
+  }
+]

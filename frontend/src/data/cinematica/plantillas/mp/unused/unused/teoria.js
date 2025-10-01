@@ -1,0 +1,1 @@
+export default `El Movimiento Parabólico (MP) es aquel en el que un cuerpo se mueve bajo la acción de la gravedad siguiendo una trayectoria en forma de parábola. Conceptos clave: descomposición en dos movimientos, ecuaciones de posición y velocidad, x(t) = v₀x t, y(t) = y₀ + v₀y t - ½gt².`;

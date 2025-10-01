@@ -1,0 +1,38 @@
+[
+  {
+    "id": "e-mru-1",
+    "title": "Ej 1: Posición después de un tiempo",
+    "prompt": "Un móvil parte de x0 = 2 m con velocidad v = 3 m/s. ¿Cuál es su posición tras 4 s?",
+    "solution": [
+      "Identificamos los datos: x0 = 2 m, v = 3 m/s, t = 4 s.",
+      "Usamos la ecuación x(t) = x0 + v * t.",
+      "Sustituimos: x(4) = 2 + 3 * 4.",
+      "Calculamos: x(4) = 2 + 12 = 14 m."
+    ],
+    "answer": "x = 14 m"
+  },
+  {
+    "id": "e-mru-2",
+    "title": "Ej 2: Velocidad a partir de desplazamiento",
+    "prompt": "Un objeto recorre 60 m en 6 s partiendo desde x0 = 0. ¿Cuál es su velocidad?",
+    "solution": [
+      "Datos: d = 60 m, t = 6 s.",
+      "Usamos v = d / t.",
+      "Sustituimos: v = 60 / 6.",
+      "Calculamos: v = 10 m/s."
+    ],
+    "answer": "v = 10 m/s"
+  },
+  {
+    "id": "e-mru-3",
+    "title": "Ej 3: Distancia después de un tiempo",
+    "prompt": "Un objeto recorre 60 m/s durante 20 s. ¿Cuál es la distancia recorrida?",
+    "solution": [
+      "Datos: v = 60 m/s, t = 20 s.",
+      "Usamos d = v * t.",
+      "Sustituimos: d = 60 * 20.",
+      "Calculamos: d = 1200 m."
+    ],
+    "answer": "d = 1200 m"
+  }
+]

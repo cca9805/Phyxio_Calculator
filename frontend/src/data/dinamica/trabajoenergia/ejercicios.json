@@ -1,0 +1,65 @@
+[
+  {
+    "id": "trabajo",
+    "title": "Trabajo realizado por una fuerza",
+    "prompt": "Una persona empuja una caja con una fuerza de 20 N a lo largo de 4 m, formando un ángulo de 30° con la dirección del desplazamiento. ¿Cuánto trabajo realiza la fuerza?",
+    "solution": [
+      "Usamos la fórmula: W = F · d · cos(θ)",
+      "F = 20 N, d = 4 m, θ = 30°",
+      "cos(30°) ≈ 0.866",
+      "W = 20 · 4 · 0.866 = 69.28 J"
+    ],
+    "answer": "69.28 J"
+  },
+  {
+    "id": "energia-cinetica",
+    "title": "Cálculo de energía cinética",
+    "prompt": "¿Cuál es la energía cinética de un objeto de 3 kg que se mueve a 5 m/s?",
+    "solution": [
+      "E_k = 0.5 · m · v²",
+      "E_k = 0.5 · 3 · 25 = 37.5 J"
+    ],
+    "answer": "37.5 J"
+  },
+  {
+    "id": "energia-potencial-gravitatoria",
+    "title": "Energía potencial gravitatoria de un libro",
+    "prompt": "Un libro de 2 kg está en una estantería a 1.5 m de altura. ¿Cuál es su energía potencial gravitatoria? (g = 9.8 m/s²)",
+    "solution": [
+      "E_p = m · g · h",
+      "E_p = 2 · 9.8 · 1.5 = 29.4 J"
+    ],
+    "answer": "29.4 J"
+  },
+  {
+    "id": "energia-potencial-elastica",
+    "title": "Energía potencial elástica en un resorte",
+    "prompt": "Un resorte con constante k = 200 N/m se estira 0.1 m. ¿Cuál es la energía potencial elástica almacenada?",
+    "solution": [
+      "E_pe = 0.5 · k · x²",
+      "E_pe = 0.5 · 200 · (0.1)² = 0.5 · 200 · 0.01 = 1 J"
+    ],
+    "answer": "1 J"
+  },
+  {
+    "id": "potencia",
+    "title": "Potencia al levantar una caja",
+    "prompt": "Si se realiza un trabajo de 150 J en 10 segundos al levantar una caja, ¿cuál es la potencia desarrollada?",
+    "solution": [
+      "P = W / t",
+      "P = 150 / 10 = 15 W"
+    ],
+    "answer": "15 W"
+  },
+  {
+    "id": "conservacion-energia",
+    "title": "Conservación de la energía mecánica",
+    "prompt": "Un bloque parte del reposo desde una altura de 2 m y llega al suelo con una energía cinética de 35 J. Si su energía potencial inicial era 40 J, ¿cuánto trabajo realizaron las fuerzas no conservativas?",
+    "solution": [
+      "E_mec, inicial = 40 J",
+      "E_mec, final = 35 J",
+      "W_nc = E_mec, final - E_mec, inicial = 35 - 40 = -5 J"
+    ],
+    "answer": "-5 J (las fuerzas no conservativas realizaron trabajo negativo, por ejemplo, fricción)"
+  }
+]

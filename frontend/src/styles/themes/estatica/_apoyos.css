@@ -1,0 +1,46 @@
+:root {
+  --estatica-apoyos-base: var(--plum-500, #6d28d9);
+  --estatica-apoyos-accent: var(--plum-300, #a78bfa);
+  --estatica-apoyos-bg: var(--plum-50, #f3e8ff);
+}
+
+[data-theme="apoyos"] {
+  --color-primary: var(--plum-500, #6d28d9);
+  --color-primary-light: var(--plum-400, #8b5cf6);
+  --color-primary-dark: var(--plum-600, #5b21b6);
+  --color-secondary: var(--plum-300, #a78bfa);
+  --color-secondary-light: var(--plum-200, #ddd6fe);
+  --color-secondary-dark: var(--plum-700, #4c1d95);
+
+  --sub-button: var(--plum-700, #4c1d95);
+  --sub-button-hover: var(--plum-800, #3c096c);
+  --sub-bg: var(--plum-100, #ede9fe);
+  --sub-bg-panel: var(--plum-200, #ddd6fe);
+  --sub-panel: var(--plum-300, #a78bfa);
+  --sub-border: var(--plum-800, #3c096c);
+  --sub-text: color-mix(in hsl, white 5%, var(--plum-900, #2e1065));
+  --sub-text-light: var(--plum-200, #ddd6fe);
+  --tone-900: var(--plum-900, #2e1065);
+
+  .exercise-card,
+  .theory-card,
+  .formulas-card,
+  .calculators-card {
+    background: var(--sub-bg);
+    color: var(--sub-text);
+    border: 1px solid var(--sub-border);
+  }
+
+   .tema-card-btn,
+  .tema-card-btn.apoyos-btn {
+    background: var(--color-primary);
+    color: white;
+    border: 1px solid var(--color-primary-dark);
+    transition: background 0.2s;
+  }
+  .tema-card-btn.apoyos-btn:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+  /* ...existing code for text, buttons, etc... */
+}

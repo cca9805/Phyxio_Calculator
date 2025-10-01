@@ -1,0 +1,46 @@
+:root {
+  --estatica-diagramas-base: var(--royal-500, #6366f1);
+  --estatica-diagramas-ccent: var(--royal-300, #a5b4fc);
+  --estatica-diagramas-bg: var(--royal-50, #eef2ff);
+}
+
+[data-theme="diagramas"] {
+  --color-primary: var(--royal-500, #6366f1);
+  --color-primary-light: var(--royal-400, #818cf8);
+  --color-primary-dark: var(--royal-600, #4f46e5);
+  --color-secondary: var(--royal-300, #a5b4fc);
+  --color-secondary-light: var(--royal-200, #c7d2fe);
+  --color-secondary-dark: var(--royal-700, #4338ca);
+
+  --sub-button: var(--royal-700, #4338ca);
+  --sub-button-hover: var(--royal-800, #3730a3);
+  --sub-bg: var(--royal-100, #e0e7ff);
+  --sub-bg-panel: var(--royal-200, #c7d2fe);
+  --sub-panel: var(--royal-300, #a5b4fc);
+  --sub-border: var(--royal-800, #3730a3);
+  --sub-text: color-mix(in hsl, white 5%, var(--royal-900, #312e81));
+  --sub-text-light: var(--royal-200, #c7d2fe);
+  --tone-900: var(--royal-900, #312e81);
+
+  .exercise-card,
+  .theory-card,
+  .formulas-card,
+  .calculators-card {
+    background: var(--sub-bg);
+    color: var(--sub-text);
+    border: 1px solid var(--sub-border);
+  }
+
+   .tema-card-btn,
+  .tema-card-btn.diagramas-btn {
+    background: var(--color-primary);
+    color: white;
+    border: 1px solid var(--color-primary-dark);
+    transition: background 0.2s;
+  }
+  .tema-card-btn.diagramas-btn:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+  /* ...existing code for text, buttons, etc... */
+}

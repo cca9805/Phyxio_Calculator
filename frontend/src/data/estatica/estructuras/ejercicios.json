@@ -1,0 +1,22 @@
+[
+  {
+    "id": "equilibrio-estructura",
+    "title": "Equilibrio de una viga",
+    "prompt": "Una viga horizontal recibe una fuerza de 100 N hacia abajo y dos reacciones de 50 N hacia arriba en los extremos. ¿Está en equilibrio?",
+    "solution": [
+      "ΣF = 50 N (arriba) + 50 N (arriba) + (-100 N) (abajo) = 0 N",
+      "La suma de fuerzas es cero, por lo tanto la viga está en equilibrio."
+    ],
+    "answer": "Sí, está en equilibrio."
+  },
+  {
+    "id": "fuerza-nodo-armadura",
+    "title": "Fuerza en un nodo de armadura",
+    "prompt": "En un nodo de armadura llegan tres barras con fuerzas de 10 N, -5 N y -5 N. ¿Está el nodo en equilibrio?",
+    "solution": [
+      "F_{nodo} = 10 N + (-5 N) + (-5 N) = 0 N",
+      "La suma de fuerzas es cero, por lo tanto el nodo está en equilibrio."
+    ],
+    "answer": "Sí, está en equilibrio."
+  }
+]

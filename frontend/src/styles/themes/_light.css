@@ -1,0 +1,151 @@
+/* Tema Claro - Valores por defecto */
+:root {
+  /* Colores de fondo */
+  --color-bg: #ffffff;
+  --color-bg-light: #f8f9fa;
+  --color-bg-dark: #e9ecef;
+  
+  /* Colores de texto */
+  --color-text: #212529;
+  --color-text-light: #6c757d;
+  --color-text-lighter: #adb5bd;
+  
+  /* Colores de borde */
+  --border-color: #dee2e6;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Componentes */
+  --card-bg: #ffffff;
+  --card-shadow: var(--shadow-sm);
+  --card-hover-shadow: var(--shadow-md);
+  
+  /* Navbar & Sidebar */
+  --navbar-height: 80px;
+  --navbar-bg: #ffffff;
+  --navbar-text: #212529;
+  --navbar-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --navbar-logo-gradient: linear-gradient(135deg, #3b82f6 0%, #60a5fa 60%, #f8f9fa 100%);
+  
+  --sidebar-wide-width: 20rem;
+  --sidebar-narrow-width: calc(20rem / 3); /* 1/3 del ancho desplegado */
+  --sidebar-bg-start: #f8f9fa;
+  --sidebar-bg-mid: #e9ecef;
+  --sidebar-bg-end: #dee2e6;
+  --sidebar-text: #495057;
+  --sidebar-hover-bg: rgba(0, 0, 0, 0.05);
+  --sidebar-hover-text: #000000;
+  --sidebar-active-bg: rgba(13, 110, 253, 0.1);
+  --sidebar-active-text: #0d6efd;
+  --sidebar-border: #dee2e6;
+  --sidebar-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --sidebar-card-bg: #ffffff;
+  --sidebar-card-text: #fd7e14;
+  --sidebar-card-border: #ffc078;
+  --sidebar-card-hover-bg: #fff8f1;
+  --sidebar-card-hover-border: #ffa94d;
+  --sidebar-card-active-bg: #fff4e6;
+  --sidebar-card-active-border: #fd7e14;
+  --sidebar-footer-bg: #e9ecef;
+  --sidebar-footer-text: #e8590c;
+  --sidebar-footer-border: #ffc078;
+  --sidebar-toggle-bg: #ffffff;
+  --sidebar-toggle-border: #dee2e6;
+  --sidebar-toggle-hover-bg: #f1f3f5;
+  
+  /* Botones */
+  --btn-primary-bg: #007bff;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #0069d9;
+  --btn-primary-hover-text: #ffffff;
+  --btn-primary-active-bg: #0062cc;
+  --btn-primary-active-text: #ffffff;
+  
+  /* Formularios */
+  --input-bg: #ffffff;
+  --input-border: #ced4da;
+  --input-text: #495057;
+  --input-focus-border: #80bdff;
+  --input-focus-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  --input-disabled-bg: #e9ecef;
+  
+  /* Tablas */
+  --table-bg: #ffffff;
+  --table-border: #dee2e6;
+  --table-striped-bg: rgba(0, 0, 0, 0.02);
+  --table-hover-bg: rgba(0, 0, 0, 0.05);
+  
+  /* Alertas */
+  --alert-success-bg: #d4edda;
+  --alert-success-text: #155724;
+  --alert-success-border: #c3e6cb;
+  
+  --alert-danger-bg: #f8d7da;
+  --alert-danger-text: #721c24;
+  --alert-danger-border: #f5c6cb;
+  
+  --alert-warning-bg: #fff3cd;
+  --alert-warning-text: #856404;
+  --alert-warning-border: #ffeeba;
+  
+  --alert-info-bg: #d1ecf1;
+  --alert-info-text: #0c5460;
+  --alert-info-border: #bee5eb;
+  
+  /* Tooltips */
+  --tooltip-bg: #343a40;
+  --tooltip-text: #ffffff;
+  
+  /* Modales */
+  --modal-bg: #ffffff;
+  --modal-backdrop: rgba(0, 0, 0, 0.5);
+  --modal-header-bg: #f8f9fa;
+  --modal-header-text: #212529;
+  --modal-footer-bg: #f8f9fa;
+  --modal-border: #dee2e6;
+  
+  /* Pestañas */
+  --tab-bg: #f8f9fa;
+  --tab-text: #6c757d;
+  --tab-active-bg: #ffffff;
+  --tab-active-text: #007bff;
+  --tab-border: #dee2e6;
+  
+  /* Desplegables */
+  --dropdown-bg: #ffffff;
+  --dropdown-text: #212529;
+  --dropdown-hover-bg: #f8f9fa;
+  --dropdown-hover-text: #16181b;
+  --dropdown-border: rgba(0, 0, 0, 0.15);
+  --dropdown-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+  
+  /* Barras de progreso */
+  --progress-bg: #e9ecef;
+  --progress-bar-bg: #007bff;
+  --progress-text: #ffffff;
+  
+  /* Badges */
+  --badge-bg: #6c757d;
+  --badge-text: #ffffff;
+  --badge-primary-bg: #007bff;
+  --badge-success-bg: #28a745;
+  --badge-danger-bg: #dc3545;
+  --badge-warning-bg: #ffc107;
+  --badge-info-bg: #17a2b8;
+  
+  /* Sombras de texto */
+  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  
+  /* Transparencias */
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  
+  /* Sombras de caja personalizadas */
+  --custom-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --custom-shadow-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --custom-shadow-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  --custom-shadow-4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  --custom-shadow-5: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}

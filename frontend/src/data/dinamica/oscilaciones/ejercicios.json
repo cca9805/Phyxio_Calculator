@@ -1,0 +1,35 @@
+[
+  {
+    "id": "fuerza-restauradora",
+    "title": "Fuerza restauradora en un resorte",
+    "prompt": "Un resorte tiene k = 50 N/m y se estira 0.1 m. ¿Cuál es la fuerza restauradora?",
+    "solution": [
+      "F = -k x",
+      "F = -50 * 0.1 = -5 N"
+    ],
+    "answer": "-5 N"
+  },
+  {
+    "id": "periodo-resorte",
+    "title": "Periodo de un resorte",
+    "prompt": "¿Cuál es el periodo de un resorte con m = 0.5 kg y k = 50 N/m?",
+    "solution": [
+      "T = 2π sqrt(m / k)",
+      "T = 2π sqrt(0.5 / 50)",
+      "T = 2π sqrt(0.01)",
+      "T = 2π * 0.1 = 0.628 s"
+    ],
+    "answer": "0.628 s"
+  },
+  {
+    "id": "energia-mas",
+    "title": "Energía total en MAS",
+    "prompt": "Un resorte tiene k = 50 N/m y amplitud A = 0.2 m. ¿Cuál es la energía total?",
+    "solution": [
+      "E = 0.5 k A^2",
+      "E = 0.5 * 50 * 0.2^2",
+      "E = 0.5 * 50 * 0.04 = 1 J"
+    ],
+    "answer": "1 J"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "equilibrio-aplicacion",
+    "title": "Equilibrio en una estructura",
+    "prompt": "Un edificio recibe una fuerza de viento de 5000 N y una reacción de los cimientos de -5000 N. ¿Está en equilibrio?",
+    "solution": [
+      "ΣF = 5000 N (viento) + (-5000 N) (cimientos) = 0 N",
+      "La suma de fuerzas es cero, por lo tanto el edificio está en equilibrio."
+    ],
+    "answer": "Sí, está en equilibrio."
+  }
+]

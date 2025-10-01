@@ -1,0 +1,22 @@
+[
+  {
+    "id": "equilibrio-traslacional",
+    "title": "Equilibrio traslacional de una viga",
+    "prompt": "Una viga horizontal recibe una fuerza de 20 N hacia arriba y otra de 20 N hacia abajo. ¿Está en equilibrio traslacional?",
+    "solution": [
+      "ΣF = 20 N (arriba) + (-20 N) (abajo) = 0 N",
+      "La suma de fuerzas es cero, por lo tanto la viga está en equilibrio traslacional."
+    ],
+    "answer": "Sí, está en equilibrio traslacional."
+  },
+  {
+    "id": "equilibrio-rotacional",
+    "title": "Equilibrio rotacional de una viga",
+    "prompt": "Una viga recibe dos torques opuestos de igual magnitud. ¿Está en equilibrio rotacional?",
+    "solution": [
+      "Στ = τ (horario) + (-τ) (antihorario) = 0",
+      "La suma de torques es cero, por lo tanto la viga está en equilibrio rotacional."
+    ],
+    "answer": "Sí, está en equilibrio rotacional."
+  }
+]

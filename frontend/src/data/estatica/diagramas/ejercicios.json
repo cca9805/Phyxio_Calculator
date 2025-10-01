@@ -1,0 +1,14 @@
+[
+  {
+    "id": "equilibrio-dcl",
+    "title": "DCL de una caja en equilibrio",
+    "prompt": "Dibuja el diagrama de cuerpo libre de una caja en reposo sobre una mesa y determina si está en equilibrio.",
+    "solution": [
+      "Fuerza de gravedad hacia abajo: F_g = m·g",
+      "Fuerza normal hacia arriba: N",
+      "ΣF = N - F_g = 0 ⇒ N = F_g",
+      "La caja está en equilibrio porque la suma de fuerzas es cero."
+    ],
+    "answer": "Sí, está en equilibrio."
+  }
+]

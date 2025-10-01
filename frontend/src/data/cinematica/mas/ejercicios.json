@@ -1,0 +1,121 @@
+[
+  {
+    "id": "e-mas-1",
+    "title": "Calcular ω a partir de k y m",
+    "prompt": "Dada una constante elástica k = 100 N/m y una masa m = 4 kg, calcula la frecuencia angular ω.",
+    "solution": [
+      "Usar la fórmula ω = √(k/m).",
+      "Sustituir valores: ω = √(100 / 4).",
+      "Calcular la raíz cuadrada."
+    ],
+    "answer": "5 rad/s"
+  },
+  {
+    "id": "e-mas-2",
+    "title": "Calcular el período T",
+    "prompt": "Para una masa m = 1 kg y constante elástica k = 4 N/m, calcula el período T del oscilador.",
+    "solution": [
+      "Usar T = 2π √(m/k).",
+      "Sustituir valores: T = 2π √(1/4) = 2π · 0.5 = π.",
+      "Expresar resultado en segundos."
+    ],
+    "answer": "π s (≈ 3.1416 s)"
+  },
+  {
+    "id": "e-mas-3",
+    "title": "Posición en t dado A, ω y φ",
+    "prompt": "Si A = 0.5 m, ω = 2 rad/s y φ = π/4, calcula x(2 s).",
+    "solution": [
+      "Usar x(t) = A cos(ω t + φ).",
+      "Sustituir: x(2) = 0.5 · cos(2·2 + π/4) = 0.5 · cos(4 + 0.7854).",
+      "Evaluar el coseno y multiplicar por 0.5."
+    ],
+    "answer": "≈ -0.35 m"
+  },
+  {
+    "id": "e-mas-4",
+    "title": "Velocidad en t dado A, ω y φ",
+    "prompt": "Con A = 0.5 m, ω = 2 rad/s y φ = π/4, calcula v(2 s).",
+    "solution": [
+      "Usar v(t) = -A ω sin(ω t + φ).",
+      "Sustituir: v(2) = -0.5 · 2 · sin(4 + π/4).",
+      "Calcular el seno y multiplicar."
+    ],
+    "answer": "≈ -0.96 m/s"
+  },
+  {
+    "id": "e-mas-5",
+    "title": "Aceleración a partir de ω y x",
+    "prompt": "Dada ω = 3 rad/s y posición x = 0.2 m, calcula la aceleración a usando a = -ω² x.",
+    "solution": [
+      "Usar a = -ω² x.",
+      "Sustituir: a = - (3)² · 0.2 = -9 · 0.2.",
+      "Multiplicar para obtener el resultado."
+    ],
+    "answer": "-1.8 m/s²"
+  },
+  {
+    "id": "e-mas-6",
+    "title": "Energía mecánica total",
+    "prompt": "Calcular la energía total E para k = 50 N/m y amplitud A = 0.1 m.",
+    "solution": [
+      "Usar E = ½ k A².",
+      "Sustituir: E = 0.5 · 50 · (0.1)².",
+      "Calcular: 0.5 · 50 · 0.01 = 0.25 J."
+    ],
+    "answer": "0.25 J"
+  },
+  {
+    "id": "e-mas-7",
+    "title": "Energía cinética en x dado",
+    "prompt": "Para k = 100 N/m, A = 0.2 m y x = 0.1 m, calcula Ec = ½ k (A² - x²).",
+    "solution": [
+      "Usar Ec = ½ k (A² - x²).",
+      "Calcular A² - x² = 0.04 - 0.01 = 0.03.",
+      "Sustituir: Ec = 0.5 · 100 · 0.03 = 1.5 J."
+    ],
+    "answer": "1.5 J"
+  },
+  {
+    "id": "e-mas-8",
+    "title": "Energía potencial elástica",
+    "prompt": "Calcular Ep para k = 80 N/m y x = 0.05 m usando Ep = ½ k x².",
+    "solution": [
+      "Usar Ep = ½ k x².",
+      "Sustituir: Ep = 0.5 · 80 · (0.05)² = 0.5 · 80 · 0.0025.",
+      "Multiplicar: Ep = 0.1 J."
+    ],
+    "answer": "0.1 J"
+  },
+  {
+    "id": "e-mas-9",
+    "title": "Fuerza restauradora en x dado",
+    "prompt": "Con k = 20 N/m y x = 0.1 m, calcula F = - k x.",
+    "solution": [
+      "Usar F = - k x.",
+      "Sustituir: F = - 20 · 0.1 = -2 N.",
+      "Indicar la dirección (hacia la posición de equilibrio)."
+    ],
+    "answer": "-2 N"
+  },
+  {
+    "id": "e-mas-10",
+    "title": "Velocidad máxima v_max",
+    "prompt": "Calcular v_max para A = 0.3 m, k = 45 N/m y m = 0.5 kg usando v_max = A √(k/m).",
+    "solution": [
+      "Calcular √(k/m) = √(45 / 0.5) = √90 ≈ 9.4868.",
+      "Multiplicar por A: v_max = 0.3 · 9.4868 ≈ 2.846 m/s."
+    ],
+    "answer": "≈ 2.85 m/s"
+  },
+  {
+    "id": "e-mas-11",
+    "title": "Aceleración máxima a_max",
+    "prompt": "Con A = 0.15 m, k = 200 N/m y m = 2 kg, calcula a_max = A (k/m).",
+    "solution": [
+      "Calcular k/m = 200 / 2 = 100.",
+      "Multiplicar por A: a_max = 0.15 · 100 = 15 m/s²."
+    ],
+    "answer": "15 m/s²"
+  }
+]

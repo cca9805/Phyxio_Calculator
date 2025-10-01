@@ -1,0 +1,146 @@
+[
+  {
+    "id": "e-mp-1",
+    "title": "Componente horizontal v0x",
+    "prompt": "Con v0 = 20 m/s y θ = 30°, calcula v0x = v0·cos(θ).",
+    "solution": [
+      "Convertir θ a rad si hace falta (30° = π/6).",
+      "Aplicar v0x = v0·cos(θ) = 20·cos(30°).",
+      "cos(30°) ≈ 0.866 → v0x ≈ 17.32 m/s."
+    ],
+    "answer": "≈ 17.32 m/s"
+  },
+  {
+    "id": "e-mp-2",
+    "title": "Componente vertical v0y",
+    "prompt": "Con v0 = 20 m/s y θ = 30°, calcula v0y = v0·sin(θ).",
+    "solution": [
+      "sin(30°) = 0.5.",
+      "v0y = 20·0.5 = 10 m/s."
+    ],
+    "answer": "10 m/s"
+  },
+  {
+    "id": "e-mp-3",
+    "title": "Posición horizontal x(t)",
+    "prompt": "Con v0x = 17.32 m/s, calcula x a t = 1.0 s.",
+    "solution": [
+      "Usar x(t) = v0x·t.",
+      "x = 17.32·1.0 = 17.32 m."
+    ],
+    "answer": "17.32 m"
+  },
+  {
+    "id": "e-mp-4",
+    "title": "Posición vertical y(t)",
+    "prompt": "Con v0y = 10 m/s y g = 9.81 m/s², calcula y a t = 1.0 s.",
+    "solution": [
+      "Usar y(t) = v0y·t − ½ g t².",
+      "y = 10·1 − 0.5·9.81·1² = 10 − 4.905 = 5.095 m."
+    ],
+    "answer": "≈ 5.095 m"
+  },
+  {
+    "id": "e-mp-5",
+    "title": "Velocidad horizontal v_x(t)",
+    "prompt": "Con v0x = 17.32 m/s, determina v_x en cualquier instante.",
+    "solution": [
+      "v_x(t) = v0x (constante en MP sin rozamiento).",
+      "Por tanto v_x = 17.32 m/s."
+    ],
+    "answer": "17.32 m/s"
+  },
+  {
+    "id": "e-mp-6",
+    "title": "Velocidad vertical v_y(t)",
+    "prompt": "Con v0y = 10 m/s y g = 9.81 m/s², calcula v_y a t = 1.0 s.",
+    "solution": [
+      "Usar v_y(t) = v0y − g t.",
+      "v_y = 10 − 9.81·1 = 0.19 m/s."
+    ],
+    "answer": "≈ 0.19 m/s"
+  },
+  {
+    "id": "e-mp-7",
+    "title": "Trayectoria y(x)",
+    "prompt": "Con v0 = 20 m/s, θ = 30° y g = 9.81 m/s², calcula y cuando x = 10 m usando y = x·tanθ − (g x²)/(2 v0² cos²θ).",
+    "solution": [
+      "tan30° ≈ 0.5774, cos30° ≈ 0.866 → cos²30° ≈ 0.75.",
+      "Primer término: x·tanθ = 10·0.5774 = 5.774.",
+      "Segundo término: (g x²)/(2 v0² cos²θ) = 9.81·100/(2·400·0.75) = 981/600 ≈ 1.635.",
+      "y ≈ 5.774 − 1.635 = 4.139 m."
+    ],
+    "answer": "≈ 4.14 m"
+  },
+  {
+    "id": "e-mp-8",
+    "title": "Tiempo de vuelo T",
+    "prompt": "Con v0 = 20 m/s, θ = 30° y g = 9.81 m/s², calcula T = 2 v0 sinθ / g.",
+    "solution": [
+      "sin30° = 0.5.",
+      "T = 2·20·0.5/9.81 = 20/9.81 ≈ 2.04 s."
+    ],
+    "answer": "≈ 2.04 s"
+  },
+  {
+    "id": "e-mp-9",
+    "title": "Alcance horizontal R",
+    "prompt": "Con v0 = 20 m/s, θ = 30° y g = 9.81 m/s², calcula R = v0² sin(2θ)/g.",
+    "solution": [
+      "sin(60°) ≈ 0.8660.",
+      "R = 400·0.8660/9.81 ≈ 346.4/9.81 ≈ 35.3 m."
+    ],
+    "answer": "≈ 35.3 m"
+  },
+  {
+    "id": "e-mp-10",
+    "title": "Altura máxima H",
+    "prompt": "Con v0 = 20 m/s, θ = 30° y g = 9.81 m/s², calcula H = v0² sin²θ / (2 g).",
+    "solution": [
+      "sin30° = 0.5 → sin² = 0.25.",
+      "H = 400·0.25/(2·9.81) = 100/19.62 ≈ 5.10 m."
+    ],
+    "answer": "≈ 5.10 m"
+  },
+  {
+    "id": "e-mp-11",
+    "title": "Tiempo hasta la altura máxima t_H",
+    "prompt": "Con v0 = 20 m/s, θ = 30° y g = 9.81 m/s², calcula t_H = v0 sinθ / g.",
+    "solution": [
+      "v0 sinθ = 20·0.5 = 10.",
+      "t_H = 10/9.81 ≈ 1.02 s."
+    ],
+    "answer": "≈ 1.02 s"
+  },
+  {
+    "id": "e-mp-12",
+    "title": "Ángulo de máximo alcance",
+    "prompt": "¿Qué ángulo θ maximiza el alcance en ausencia de rozamiento?",
+    "solution": [
+      "R = (v0²/g)·sin(2θ) se maximiza cuando sin(2θ) = 1.",
+      "2θ = 90° → θ = 45°."
+    ],
+    "answer": "45°"
+  },
+  {
+    "id": "e-mp-13",
+    "title": "Tiempo de impacto (altura final distinta)",
+    "prompt": "Con y0 = 1.5 m, v0 = 20 m/s, θ = 30° (→ v0y = 10 m/s) y g = 9.81 m/s², encuentra el tiempo t cuando y_f = 0 resolviendo 0 = y0 + v0y t − ½ g t².",
+    "solution": [
+      "Plantear 0 = 1.5 + 10 t − 4.905 t² → 4.905 t² − 10 t − 1.5 = 0.",
+      "Aplicar fórmula cuadrática: t = [10 ± √(100 + 29.43)] / 9.81.",
+      "√129.43 ≈ 11.383 → t = (10 + 11.383)/9.81 ≈ 2.18 s (descartar raíz negativa)."
+    ],
+    "answer": "≈ 2.18 s"
+  },
+  {
+    "id": "e-mp-14",
+    "title": "Velocidad escalar v(t)",
+    "prompt": "Con v_x = 17.32 m/s y v_y = 5.00 m/s, calcula v = √(v_x² + v_y²).",
+    "solution": [
+      "v = √(17.32² + 5²) = √(299.97 + 25) ≈ √324.97.",
+      "v ≈ 18.03 m/s."
+    ],
+    "answer": "≈ 18.03 m/s"
+  }
+]

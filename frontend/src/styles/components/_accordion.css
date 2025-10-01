@@ -1,0 +1,794 @@
+/* Accordion Component - Estilos base */
+.accordion {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.accordion-item {
+  margin-bottom: 0.5rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  background: var(--color-bg) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-button {
+  width: 100%;
+  height: 4.8rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  border-radius: var(--border-radius);
+}
+
+
+/* Efecto hover y focus */
+.accordion-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.accordion-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+/* Icono del acordeón */
+.accordion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  color: var(--color-primary);
+  transition: all 0.2s ease;
+}
+
+/* Título del acordeón */
+.accordion-title {
+  flex: 1;
+  transition: all 0.2s ease;
+}
+
+/* Indicador de expansión */
+.accordion-caret {
+  margin-left: 0.75rem;
+  transition: transform 0.3s ease;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+}
+
+.accordion-button[aria-expanded="true"] .accordion-caret {
+  transform: rotate(180deg);
+}
+
+/* Panel del acordeón */
+.accordion-panel {
+  background: var(--color-bg);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s ease,
+              visibility 0.2s ease,
+              padding 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+  padding: 0 1.25rem;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  /* Asegurar que el panel esté completamente oculto cuando no está activo */
+  
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+}
+
+.accordion-panel[aria-hidden="false"] {
+  max-height: 2000px;
+  opacity: 1;
+  visibility: visible;
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  /* Mostrar el panel solo cuando está activo */
+  display: block;
+  position: relative;
+  z-index: 1;
+  /* Asegurar que la transición de opacidad sea más rápida */
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.1s ease 0.1s,
+              visibility 0.1s ease 0.1s,
+              padding 0.3s ease;
+}
+
+/* Contenido del acordeón */
+.accordion-content {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: 0.5rem 0;
+  font-size: 0.95em;
+}
+
+/* Efecto sutil al pasar el ratón sobre el ítem */
+.accordion-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estado activo */
+.accordion-button[aria-expanded="true"] {
+  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.05);
+}
+
+/* Mejoras para móviles */
+@media (max-width: 768px) {
+  .accordion-button {
+    padding: 0.75rem 1rem;
+  }
+  
+  .accordion-panel[aria-hidden="false"] {
+    padding: 0 1rem 1rem;
+  }
+}
+
+/* Estilos para el contenido markdown dentro del acordeón */
+.accordion-panel :first-child {
+  margin-top: 0;
+}
+
+.accordion-panel :last-child {
+  margin-bottom: 0;
+}
+
+.accordion-content {
+  padding-top: 0.5rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Variants */
+.accordion.bordered .accordion-item {
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.accordion.bordered .accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.accordion.clean .accordion-header {
+  background: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.accordion.clean .accordion-panel {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.accordion.clean .accordion-panel[aria-hidden="false"] {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 1rem;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .accordion-header:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Animation for accordion content */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordion-panel[aria-hidden="false"] .accordion-content {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* ===== ESTILOS ESPECÍFICOS PARA NIVEL3 ===== */
+
+/* Estilos para el acordeón en la sección nivel3 */
+.nivel3-section .accordion {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Estilos para los botones del acordeón en nivel3 */
+.nivel3-section .accordion-item {
+  background: var(--color-bg-light);
+  border: 1px solid var(--border-color);
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.nivel3-section .accordion-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.nivel3-section .accordion-button {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem !important;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: var(--color-bg-light);
+}
+
+.nivel3-section .accordion-button:not(.collapsed) {
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+  box-shadow: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Icono del acordeón en nivel3 */
+.nivel3-section .accordion-button .summary-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  transition: all 0.2s ease;
+}
+
+/* Efecto hover en nivel3 */
+.nivel3-section .accordion-button:hover {
+  background: rgba(var(--color-primary-rgb), 0.05);
+}
+
+.nivel3-section .accordion-button[aria-expanded="true"] {
+  background: rgba(var(--color-primary-rgb), 0.08);
+}
+
+/* Panel del acordeón en nivel3 */
+.nivel3-section .accordion-panel {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  background: transparent;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  /* Asegurar que el panel esté oculto cuando no está activo */
+  display: none;
+  position: relative;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  max-height: none;
+  overflow: visible;
+}
+
+.nivel3-section .accordion-panel[aria-hidden="false"] {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-top: 0.5rem;
+  max-height: none;
+  overflow: visible;
+}
+
+/* Contenido del panel en nivel3 */
+.nivel3-section .accordion-content {
+  padding: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+  background-color: var(--color-bg-light);
+  border-top: 1px solid var(--border-color);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* Ajustes para móviles en nivel3 */
+@media (max-width: 1000px) {
+  .nivel3-section .accordion {
+    gap: 0.5rem;
+  }
+  
+  .nivel3-section .accordion-item {
+    border-radius: 0.5rem;
+    margin: 0;
+  }
+  
+  .nivel3-section .accordion-button {
+    padding: 1rem 1.25rem !important;
+    font-size: 1rem;
+  }
+  
+  .nivel3-section .accordion-content {
+    padding: 1.25rem;
+    font-size: 0.9em;
+  }
+}
+
+/* Estilos específicos para cada tema de física */
+[data-theme="mru"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="mru"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="mru"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="mruv"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="mruv"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="mruv"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="mcu"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="mcu"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="mcu"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="mcua"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="mcua"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="mcua"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="mas"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="mas"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="mas"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="mp"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="mp"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="mp"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="mr"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="mr"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="mr"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="newton"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="newton"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="newton"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="trab-energia"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="trab-energia"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="trab-energia"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="movimpulso"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="movimpulso"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="movimpulso"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="equilibrio"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="equilibrio"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="equilibrio"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="friccion"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="friccion"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="friccion"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="gravitacion"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="gravitacion"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="gravitacion"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+[data-theme="maquinas"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="maquinas"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="maquinas"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="oscilaciones"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="oscilaciones"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="oscilaciones"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="rotacion"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="rotacion"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="rotacion"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="masaspoleas"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="masaspoleas"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="masaspoleas"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="fuerzas"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="fuerzas"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="fuerzas"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="torque"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="torque"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="torque"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="centro"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="centro"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="centro"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="leyes"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="leyes"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="leyes"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="apoyos"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="apoyos"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="apoyos"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="diagramas"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="diagramas"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="diagramas"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="friccionest"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="friccionest"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="friccionest"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="estructuras"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="estructuras"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="estructuras"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="estabilidad"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="estabilidad"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="estabilidad"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}
+
+
+[data-theme="aplicaciones"] .accordion-item {
+  background: var(--tone-300) !important;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="aplicaciones"] .accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[data-theme="aplicaciones"] .accordion-panel {
+  background: var(--sub-bg, var(--color-bg));
+  color: var(--sub-text, var(--color-text));
+}

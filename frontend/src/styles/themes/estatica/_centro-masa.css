@@ -1,0 +1,46 @@
+:root {
+  --estatica-centro-base: var(--lima-500, #84cc16);
+  --estatica-centro-accent: var(--lima-300, #bef264);
+  --estatica-centro-bg: var(--lima-50, #f7fee7);
+}
+
+[data-theme="centro"] {
+  --color-primary: var(--lima-500, #84cc16);
+  --color-primary-light: var(--lima-400, #a3e635);
+  --color-primary-dark: var(--lima-600, #65a30d);
+  --color-secondary: var(--lima-300, #bef264);
+  --color-secondary-light: var(--lima-200, #d9f99d);
+  --color-secondary-dark: var(--lima-700, #4d7c0f);
+
+  --sub-button: var(--lima-700, #4d7c0f);
+  --sub-button-hover: var(--lima-800, #3f6212);
+  --sub-bg: var(--lima-100, #ecfccb);
+  --sub-bg-panel: var(--lima-200, #d9f99d);
+  --sub-panel: var(--lima-300, #bef264);
+  --sub-border: var(--lima-800, #3f6212);
+  --sub-text: color-mix(in hsl, white 5%, var(--lima-900, #365314));
+  --sub-text-light: var(--lima-200, #d9f99d);
+  --tone-900: var(--lima-900, #365314);
+
+  .exercise-card,
+  .theory-card,
+  .formulas-card,
+  .calculators-card {
+    background: var(--sub-bg);
+    color: var(--sub-text);
+    border: 1px solid var(--sub-border);
+  }
+
+   .tema-card-btn,
+  .tema-card-btn.centro-btn {
+    background: var(--color-primary);
+    color: white;
+    border: 1px solid var(--color-primary-dark);
+    transition: background 0.2s;
+  }
+  .tema-card-btn.centro-btn:hover {
+    background: var(--color-primary-dark);
+    color: white;
+  }
+  /* ...existing code for text, buttons, etc... */
+}

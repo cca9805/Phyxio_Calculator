@@ -1,0 +1,52 @@
+[
+  {
+    "id": "velocidad-angular",
+    "title": "Cálculo de velocidad angular",
+    "prompt": "Un disco gira 3.14 radianes en 2 segundos. ¿Cuál es su velocidad angular?",
+    "solution": [
+      "ω = Δθ / Δt",
+      "ω = 3.14 / 2 = 1.57 rad/s"
+    ],
+    "answer": "1.57 rad/s"
+  },
+  {
+    "id": "aceleracion-angular",
+    "title": "Cálculo de aceleración angular",
+    "prompt": "La velocidad angular de una rueda pasa de 0 a 6.28 rad/s en 2 segundos. ¿Cuál es su aceleración angular?",
+    "solution": [
+      "α = Δω / Δt",
+      "α = 6.28 / 2 = 3.14 rad/s²"
+    ],
+    "answer": "3.14 rad/s²"
+  },
+  {
+    "id": "momento-inercia",
+    "title": "Momento de inercia de una masa puntual",
+    "prompt": "Una masa de 2 kg está a 0.5 m del eje de rotación. ¿Cuál es su momento de inercia?",
+    "solution": [
+      "I = m r²",
+      "I = 2 * 0.5² = 2 * 0.25 = 0.5 kg·m²"
+    ],
+    "answer": "0.5 kg·m²"
+  },
+  {
+    "id": "torque-rotacional",
+    "title": "Torque necesario para acelerar una rueda",
+    "prompt": "¿Qué torque se necesita para acelerar una rueda de I = 1.5 kg·m² con α = 4 rad/s²?",
+    "solution": [
+      "τ = I α",
+      "τ = 1.5 * 4 = 6 N·m"
+    ],
+    "answer": "6 N·m"
+  },
+  {
+    "id": "energia-cinetica-rotacional",
+    "title": "Energía cinética rotacional de una rueda",
+    "prompt": "Una rueda tiene I = 1.5 kg·m² y ω = 3 rad/s. ¿Cuál es su energía cinética rotacional?",
+    "solution": [
+      "E_{rot} = 0.5 * I * ω²",
+      "E_{rot} = 0.5 * 1.5 * 9 = 0.75 * 9 = 6.75 J"
+    ],
+    "answer": "6.75 J"
+  }
+]

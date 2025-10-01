@@ -1,0 +1,5 @@
+/.env
+backend/tmp_*.json
+*.tmp
+node_modules/
+/.DS_Store

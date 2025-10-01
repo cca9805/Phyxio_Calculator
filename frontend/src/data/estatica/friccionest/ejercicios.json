@@ -1,0 +1,22 @@
+[
+  {
+    "id": "friccion-estatica-maxima",
+    "title": "Fricción estática máxima en un bloque",
+    "prompt": "Un bloque de 8 kg está sobre una superficie con coeficiente de fricción estática 0.3. ¿Cuál es la fricción estática máxima?",
+    "solution": [
+      "N = m · g = 8 · 9.8 = 78.4 N",
+      "F_{fe,max} = μ_e · N = 0.3 · 78.4 = 23.52 N"
+    ],
+    "answer": "23.52 N"
+  },
+  {
+    "id": "condicion-equilibrio-friccion",
+    "title": "Condición de equilibrio con fricción",
+    "prompt": "Si la fuerza aplicada sobre el bloque anterior es 20 N, ¿el bloque se mueve?",
+    "solution": [
+      "F_{aplicada} = 20 N < F_{fe,max} = 23.52 N",
+      "Como la fuerza aplicada es menor que la fricción estática máxima, el bloque no se mueve."
+    ],
+    "answer": "No, el bloque permanece en equilibrio."
+  }
+]

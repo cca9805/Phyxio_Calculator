@@ -1,0 +1,1 @@
+export default `El Movimiento Armónico Simple (MAS) es aquel en el que un cuerpo oscila alrededor de una posición de equilibrio siguiendo una trayectoria senoidal. Conceptos clave: posición, velocidad y aceleración varían de forma periódica, ecuaciones de movimiento, x(t) = A cos(ωt + φ), v(t) = -Aω sin(ωt + φ), a(t) = -Aω² cos(ωt + φ).`;

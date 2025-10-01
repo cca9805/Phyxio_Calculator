@@ -1,0 +1,24 @@
+[
+  {
+    "id": "aceleracion-masas-polea",
+    "title": "Aceleración en sistema de masas y polea",
+    "prompt": "Dos masas de 3 kg y 2 kg están conectadas por una cuerda sobre una polea ideal. ¿Cuál es la aceleración del sistema? (g = 9.8 m/s²)",
+    "solution": [
+      "a = (m1 * g - m2 * g) / (m1 + m2)",
+      "a = (3 * 9.8 - 2 * 9.8) / (3 + 2)",
+      "a = (29.4 - 19.6) / 5 = 9.8 / 5 = 1.96 m/s²"
+    ],
+    "answer": "1.96 m/s²"
+  },
+  {
+    "id": "tension-cuerda",
+    "title": "Tensión en la cuerda",
+    "prompt": "Usando la aceleración anterior, ¿cuál es la tensión en la cuerda para la masa de 3 kg?",
+    "solution": [
+      "T = m1 * (g - a)",
+      "T = 3 * (9.8 - 1.96)",
+      "T = 3 * 7.84 = 23.52 N"
+    ],
+    "answer": "23.52 N"
+  }
+]

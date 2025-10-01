@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ventaja-mecanica",
+    "title": "Ventaja mecánica de una polea",
+    "prompt": "Una polea permite levantar una carga de 100 N aplicando una fuerza de 25 N. ¿Cuál es la ventaja mecánica?",
+    "solution": [
+      "VM = F_resistencia / F_esfuerzo",
+      "VM = 100 / 25 = 4"
+    ],
+    "answer": "4"
+  },
+  {
+    "id": "eficiencia",
+    "title": "Eficiencia de una máquina",
+    "prompt": "Una máquina realiza un trabajo útil de 200 J con un trabajo suministrado de 250 J. ¿Cuál es su eficiencia?",
+    "solution": [
+      "Eficiencia = (Trabajo útil / Trabajo suministrado) * 100",
+      "Eficiencia = (200 / 250) * 100 = 80%"
+    ],
+    "answer": "80%"
+  },
+  {
+    "id": "palanca-equilibrio",
+    "title": "Equilibrio de una palanca",
+    "prompt": "Una palanca tiene una fuerza de resistencia de 80 N a 0.2 m del fulcro. ¿Qué fuerza de esfuerzo se necesita a 0.5 m para equilibrar?",
+    "solution": [
+      "F_esfuerzo = F_resistencia * d_resistencia / d_esfuerzo",
+      "F_esfuerzo = 80 * 0.2 / 0.5 = 16 / 0.5 = 32 N"
+    ],
+    "answer": "32 N"
+  }
+]

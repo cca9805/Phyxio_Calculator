@@ -1,0 +1,32 @@
+cd frontend
+npm run dev
+
+Construir página
+npm run build
+
+Crear subtema
+node .\frontend\scripts\scaffoldSubtopicDinamica.js estatica Torque --force
+
+Modificaciones
+1- Modificar archivo en pages/nombresubtema.jsx (hay que poner data-theme="subtema")
+2- Modificar archivos subtemaSections (Teoria, Formulas, Ejercicios, Calculadora)
+3- Crear o revisar ruta en App.jsx
+4- Añadir themes en _accordion.css
+5- Modificar subtemaData.jsx
+6- Rellenar los archivos de data Teoria.jsx, Formulas.jsx, Ejercicios.jsx y Calculadora.jsx
+7- 
+
+
+
+{/* Subtemas clásicos de estática en mecánica:
+      1. Fuerzas y equilibrio (ΣF = 0)
+      2. Torque y momento de fuerza (Στ = 0)
+      3. Centro de masa y centro de gravedad
+      4. Leyes de los cuerpos rígidos
+      5. Tipos de apoyos y reacciones
+      6. Diagramas de cuerpo libre
+      7. Fricción en equilibrio
+      8. Estructuras (vigas, puentes, armaduras)
+      9. Estabilidad y condiciones de equilibrio
+      10. Aplicaciones en ingeniería y arquitectura
+      Estos subtemas permiten analizar sistemas en reposo y el diseño de estructuras estables. */}

@@ -1,0 +1,164 @@
+/* Tema Oscuro */
+[data-theme="dark"] {
+  /* Colores de fondo */
+  --color-bg: #1a1a1a;
+  --color-bg-light: #2d2d2d;
+  --color-bg-dark: #1f1f1f;
+  
+  /* Colores de texto */
+  --color-text: #e0e0e0;
+  --color-text-light: #a0a0a0;
+  --color-text-lighter: #707070;
+  
+  /* Colores de borde */
+  --border-color: #404040;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  
+  /* Componentes */
+  --card-bg: #2d2d2d;
+  --card-shadow: var(--shadow-sm);
+  --card-hover-shadow: var(--shadow-md);
+  
+  /* Barra de navegación */
+  --navbar-bg: #2d2d2d;
+  --navbar-text: #e0e0e0;
+  --navbar-hover-bg: #3d3d3d;
+  --navbar-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  
+  /* Barra lateral */
+  --sidebar-bg: #252525;
+  --sidebar-text: #e0e0e0;
+  --sidebar-hover-bg: #3d3d3d;
+  --sidebar-active-bg: #1a73e8;
+  --sidebar-active-text: #ffffff;
+  --sidebar-border: #404040;
+  
+  /* Botones */
+  --btn-primary-bg: #1a73e8;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #1765cc;
+  --btn-primary-hover-text: #ffffff;
+  --btn-primary-active-bg: #1557b0;
+  --btn-primary-active-text: #ffffff;
+  
+  /* Formularios */
+  --input-bg: #2d2d2d;
+  --input-border: #404040;
+  --input-text: #e0e0e0;
+  --input-focus-border: #1a73e8;
+  --input-focus-shadow: 0 0 0 0.2rem rgba(26, 115, 232, 0.25);
+  --input-disabled-bg: #3d3d3d;
+  
+  /* Tablas */
+  --table-bg: #2d2d2d;
+  --table-border: #404040;
+  
+  /* Navbar & Sidebar */
+  --navbar-bg: #13294d;
+  --navbar-text: #ffffff;
+  --navbar-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --navbar-logo-gradient: linear-gradient(135deg, #3b82f6 0%, #60a5fa 60%, #fff 100%);
+  
+  --sidebar-wide-width: 20rem;
+  --sidebar-narrow-width: calc(20rem / 3); /* 1/3 del ancho desplegado */
+  --sidebar-bg-start: #13294d;
+  --sidebar-bg-mid: #2e588b;
+  --sidebar-bg-end: #537ec3;
+  --sidebar-text: rgba(255, 255, 255, 0.9);
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-hover-text: #ffffff;
+  --sidebar-active-bg: rgba(26, 115, 232, 0.2);
+  --sidebar-active-text: #ffffff;
+  --sidebar-border: rgba(30, 64, 175, 0.4);
+  --sidebar-shadow: rgba(30, 30, 30, 0.08);
+  --sidebar-card-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-card-text: #faa22f;
+  --sidebar-card-border: rgba(249, 175, 3, 0.76);
+  --sidebar-card-hover-bg: rgba(255, 255, 255, 0.22);
+  --sidebar-card-hover-border: rgba(249, 175, 3, 0.9);
+  --sidebar-card-active-bg: rgba(255, 255, 255, 0.15);
+  --sidebar-card-active-border: #faa22f;
+  --sidebar-footer-bg: #061e5c;
+  --sidebar-footer-text: #f94605;
+  --sidebar-footer-border: #0337ba;
+  --sidebar-toggle-bg: #1e40af;
+  --sidebar-toggle-border: #1e40af;
+  --sidebar-toggle-hover-bg: #1e3a8a;
+  --table-striped-bg: rgba(255, 255, 255, 0.05);
+  --table-hover-bg: rgba(255, 255, 255, 0.1);
+  
+  /* Alertas */
+  --alert-success-bg: #1e4620;
+  --alert-success-text: #a5d6a7;
+  --alert-success-border: #2e7d32;
+  
+  --alert-danger-bg: #5f2120;
+  --alert-danger-text: #ef9a9a;
+  --alert-danger-border: #c62828;
+  
+  --alert-warning-bg: #5d4037;
+  --alert-warning-text: #ffcc80;
+  --alert-warning-border: #e65100;
+  
+  --alert-info-bg: #0d47a1;
+  --alert-info-text: #90caf9;
+  --alert-info-border: #1565c0;
+  
+  /* Tooltips */
+  --tooltip-bg: #e0e0e0;
+  --tooltip-text: #1a1a1a;
+  
+  /* Modales */
+  --modal-bg: #2d2d2d;
+  --modal-backdrop: rgba(0, 0, 0, 0.7);
+  --modal-header-bg: #252525;
+  --modal-header-text: #e0e0e0;
+  --modal-footer-bg: #252525;
+  --modal-border: #404040;
+  
+  /* Pestañas */
+  --tab-bg: #252525;
+  --tab-text: #a0a0a0;
+  --tab-active-bg: #2d2d2d;
+  --tab-active-text: #1a73e8;
+  --tab-border: #404040;
+  
+  /* Desplegables */
+  --dropdown-bg: #2d2d2d;
+  --dropdown-text: #e0e0e0;
+  --dropdown-hover-bg: #3d3d3d;
+  --dropdown-hover-text: #ffffff;
+  --dropdown-border: #404040;
+  --dropdown-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  
+  /* Barras de progreso */
+  --progress-bg: #3d3d3d;
+  --progress-bar-bg: #1a73e8;
+  --progress-text: #ffffff;
+  
+  /* Badges */
+  --badge-bg: #707070;
+  --badge-text: #ffffff;
+  --badge-primary-bg: #1a73e8;
+  --badge-success-bg: #2e7d32;
+  --badge-danger-bg: #c62828;
+  --badge-warning-bg: #e65100;
+  --badge-info-bg: #1565c0;
+  
+  /* Sombras de texto */
+  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  
+  /* Transparencias */
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  
+  /* Sombras de caja personalizadas */
+  --custom-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --custom-shadow-2: 0 3px 6px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.4);
+  --custom-shadow-3: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.4);
+  --custom-shadow-4: 0 14px 28px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.4);
+  --custom-shadow-5: 0 19px 38px rgba(0, 0, 0, 0.4), 0 15px 12px rgba(0, 0, 0, 0.3);
+}

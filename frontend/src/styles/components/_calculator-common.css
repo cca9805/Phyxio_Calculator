@@ -1,0 +1,199 @@
+/* Estilos base para la calculadora común */
+.calculator-common {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  margin: 0 !important;
+  padding: 1rem !important;
+  font-family: var(--font-family) !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  display: block !important;
+  position: relative !important;
+}
+
+/* Selector de calculadora */
+.calculator-input {
+  margin: 0 !important;
+  margin-bottom: 1rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+}
+
+.calculator-selector label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.calculator-dropdown {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--input-text, #212529);
+  background-color: var(--input-bg, #f5f5f5);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid var(--input-border, #ced4da);
+  border-radius: 0.25rem;
+  appearance: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-sizing: border-box;
+}
+
+.calculator-dropdown:focus {
+  border-color: var(--primary-color, #4ecdc4);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+}
+
+/* Asegurar que el contenedor del select ocupe todo el ancho */
+select.calculator-dropdown {
+  width: 100% !important;
+}
+
+/* Asegurar que el contenedor del select ocupe todo el ancho en navegadores WebKit */
+select.calculator-dropdown::-ms-expand {
+  display: none;
+}
+
+/* El título heredará los estilos del contenedor padre */
+
+/* Grid de entradas */
+.calculator-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  gap: 1rem !important;
+  margin: 0 !important;
+  margin-bottom: 1.5rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+}
+
+/* Etiquetas de entrada */
+.calculator-input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.calculator-input-label-text {
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-secondary);
+}
+
+/* Campos de entrada */
+.calculator-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--input-text, #212529);
+  background-color: var(--input-bg, #f5f5f5);
+  border: 1px solid var(--input-border, #ced4da);
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.calculator-input:focus {
+  border-color: var(--primary-color, #4ecdc4);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+}
+
+/* Botones */
+.calculator-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.calculator-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  flex: 1;
+  text-align: center;
+}
+
+.calculate-button {
+  background-color: var(--primary-color, #4ecdc4);
+  color: white;
+  border: 1px solid var(--primary-color, #4ecdc4);
+}
+
+.calculate-button:hover {
+  background-color: var(--primary-dark, #3da8a0);
+  border-color: var(--primary-dark, #3da8a0);
+}
+
+.clear-button {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color, #dee2e6);
+}
+
+.clear-button:hover {
+  background-color: var(--bg-hover, #f1f1f1);
+  color: var(--text-primary);
+}
+
+/* Resultados */
+.calculator-result {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--bg-secondary, #f8f9fa);
+}
+
+.result-success {
+  color: var(--success-color, #28a745);
+}
+
+.result-error {
+  color: var(--error-color, #dc3545);
+}
+
+.result-prompt {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Simulación MRU */
+.mru-simulation {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color, #dee2e6);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .calculator-buttons {
+    flex-direction: column;
+  }
+  
+  .calculator-button {
+    width: 100%;
+  }
+}

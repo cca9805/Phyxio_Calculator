@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ex1",
+    "title": "Velocidad angular final tras aceleración",
+    "prompt": "Una rueda parte del reposo y acelera a 3 rad/s² durante 4 s. ¿Qué velocidad angular alcanza?",
+    "solution": [
+      "Identificamos los datos: ω₀ = 0 rad/s', 'α = 3 rad/s²', 't = 4 s",
+      "Usamos la ecuación ω = ω₀ + αt",
+      "Sustituimos: ω = 0 + 3×4",
+      "Calculamos: ω = 0 + 12 = 12 rad/s."
+    ],
+    "answer": "12 rad/s"
+  },
+  {
+    "id": "ex2",
+    "title": "Desplazamiento angular con aceleración constante",
+    "prompt": "Un disco con ω₀ = 5 rad/s acelera a α = 2 rad/s² durante 3 s. ¿Qué ángulo recorre?",
+    "solution": [
+      "Identificamos los datos: ω₀ = 5 rad/s, α = 2 rad/s², t = 3 s.",
+      "Usamos la ecuación: θ = ω₀t + ½αt²",
+      "Sustituimos: θ = 5·3 + 0.5·2·3²",
+      "Calculamos: θ = 15 + 9 = 24 rad"
+    ],
+    "answer": "24 rad"
+  },
+  {
+    "id": "ex3",
+    "title": "Aceleración angular desde velocidades y desplazamiento",
+    "prompt": "Una partícula frena de 8 rad/s a 2 rad/s recorriendo 15 radianes. ¿Cuál es su aceleración angular?",
+    "solution": [
+      "Identificamos los datos: ω₀ = 8 rad/s, ω = 2 rad/s, θ = 15 rad.",
+      "Usamos la ecuación: ω² = ω₀² + 2αθ",
+      "Sustituimos: 2² = 8² + 2α·15",
+      "Calculamos: α = (4 - 64) / 30 = -2 rad/s²"
+    ],
+    "answer": "-2 rad/s²"
+  },
+  {
+    "id": "ex4",
+    "title": "Periodo de una rueda giratoria",
+    "prompt": "Una rueda gira con una velocidad angular de 10 rad/s. ¿Cuál es su periodo?",
+    "solution": [
+      "Identificamos los datos: ω = 10 rad/s.",
+      "Usamos la ecuación: T = 2π / ω",
+      "Sustituimos: T = 2π / 10",
+      "Calculamos: T ≈ 0.628 s"
+    ],
+    "answer": "0.628 s"
+  },
+  {
+    "id": "ex5",
+    "title": "Frecuencia de un objeto en movimiento circular",
+    "prompt": "Un objeto gira con una velocidad angular de 20 rad/s. ¿Cuál es su frecuencia?",
+    "solution": [
+      "Identificamos los datos: ω = 20 rad/s.",
+      "Usamos la ecuación: f = ω / 2π",
+      "Sustituimos: f = 20 / 2π",
+      "Calculamos: f ≈ 3.183 Hz"
+    ],
+    "answer": "3.183 Hz"
+  },
+  {
+    "id": "ex6",
+    "title": "Velocidad tangencial desde radio y ω",
+    "prompt": "Un objeto gira en una circunferencia de radio 0.5 m con velocidad angular ω = 4 rad/s. ¿Cuál es su velocidad tangencial v?",
+    "solution": [
+      "Identificamos los datos: r = 0.5 m, ω = 4 rad/s.",
+      "Usamos la ecuación: v = r · ω",
+      "Sustituimos: v = 0.5 · 4",
+      "Calculamos: v = 2.0 m/s"
+    ],
+    "answer": "2.0 m/s"
+  },
+  {
+    "id": "ex7",
+    "title": "Aceleración centrípeta desde v y r",
+    "prompt": "Un coche recorre una curva con velocidad tangencial v = 15 m/s y radio r = 30 m. Calcula la aceleración centrípeta a_c.",
+    "solution": [
+      "Identificamos los datos: v = 15 m/s, r = 30 m.",
+      "Usamos la ecuación: a_c = v² / r",
+      "Sustituimos: a_c = 15² / 30",
+      "Calculamos: a_c = 225 / 30 = 7.5 m/s²"
+    ],
+    "answer": "7.5 m/s²"
+  },
+  {
+    "id": "ex8",
+    "title": "Desplazamiento angular",
+    "prompt": "Una rueda gira con velocidad angular ω = 6 rad/s durante 5 s. ¿Qué ángulo θ describe?",
+    "solution": [
+      "Identificamos los datos: ω = 6 rad/s, t = 5 s.",
+      "Usamos la ecuación: θ = ω · t",
+      "Sustituimos: θ = 6 · 5",
+      "Calculamos: θ = 30 rad"
+    ],
+    "answer": "30 rad"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "centro-masa-x",
+    "title": "Centro de masa en una dimensión",
+    "prompt": "Dos masas de 2 kg en x=0 m y 3 kg en x=4 m. ¿Dónde está el centro de masa?",
+    "solution": [
+      "x_cm = (2*0 + 3*4) / (2+3)",
+      "x_cm = (0 + 12) / 5 = 12 / 5 = 2.4 m"
+    ],
+    "answer": "2.4 m"
+  },
+  {
+    "id": "centro-masa-2d",
+    "title": "Centro de masa en dos dimensiones",
+    "prompt": "Tres partículas: 1 kg en (0,0), 2 kg en (2,0), 3 kg en (0,3). ¿Dónde está el centro de masa?",
+    "solution": [
+      "x_cm = (1*0 + 2*2 + 3*0) / (1+2+3) = (0+4+0)/6 = 4/6 = 0.67 m",
+      "y_cm = (1*0 + 2*0 + 3*3) / 6 = (0+0+9)/6 = 9/6 = 1.5 m"
+    ],
+    "answer": "(0.67 m, 1.5 m)"
+  }
+]

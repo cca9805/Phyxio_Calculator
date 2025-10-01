@@ -1,0 +1,45 @@
+[
+  {
+    "id": "cantidad-movimiento",
+    "title": "Cantidad de movimiento de un coche",
+    "prompt": "Un coche de 1200 kg se mueve a 20 m/s. ¿Cuál es su cantidad de movimiento?",
+    "solution": [
+      "Usamos la fórmula: p = m · v",
+      "p = 1200 kg · 20 m/s = 24000 kg·m/s"
+    ],
+    "answer": "24000 kg·m/s"
+  },
+  {
+    "id": "impulso",
+    "title": "Impulso de una fuerza",
+    "prompt": "Una fuerza de 50 N actúa sobre una pelota durante 0.2 s. ¿Cuál es el impulso recibido?",
+    "solution": [
+      "J = F · Δt",
+      "J = 50 N · 0.2 s = 10 N·s"
+    ],
+    "answer": "10 N·s"
+  },
+  {
+    "id": "teorema-impulso",
+    "title": "Cambio de velocidad por impulso",
+    "prompt": "Una bola de 0.5 kg pasa de 2 m/s a 6 m/s tras recibir un impulso. ¿Cuál fue el impulso?",
+    "solution": [
+      "J = m · (v_f - v_i)",
+      "J = 0.5 kg · (6 m/s - 2 m/s) = 0.5 · 4 = 2 kg·m/s"
+    ],
+    "answer": "2 kg·m/s"
+  },
+  {
+    "id": "conservacion-momentum",
+    "title": "Conservación de la cantidad de movimiento en una colisión",
+    "prompt": "Dos carritos chocan y quedan juntos. El primero (1 kg) iba a 3 m/s, el segundo (2 kg) estaba en reposo. ¿Cuál es la velocidad final conjunta?",
+    "solution": [
+      "Cantidad de movimiento inicial: p_i = 1 kg · 3 m/s + 2 kg · 0 m/s = 3 kg·m/s",
+      "Cantidad de movimiento final: p_f = (1 kg + 2 kg) · v_f",
+      "Por conservación: p_i = p_f",
+      "3 kg·m/s = 3 kg · v_f",
+      "v_f = 3 kg·m/s / 3 kg = 1 m/s"
+    ],
+    "answer": "1 m/s"
+  }
+]

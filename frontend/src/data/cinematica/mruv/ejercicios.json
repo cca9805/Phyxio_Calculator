@@ -1,0 +1,26 @@
+[
+    {
+        "id": "e-mruv-1",
+        "title": "Ej 1: Velocidad a partir de la aceleración",
+        "prompt": "Un móvil parte del reposo y acelera a 3 m/s² durante 4 s. ¿Cuál es su velocidad final?",
+        "solution": [
+            "Identificamos los datos:v₀ = 0, a = 3 m/s², t = 4 s",
+            "Usamos la ecuación v = v₀ + a t",
+            "Sustituimos: v = 0 + 3×4",
+            "Calculamos: v = 0 + 12 = 12 m."
+        ],
+        "answer": "v = 12 m/s"
+    },
+    {
+        "id": "e-mruv-2",
+        "title": "Ej 2: Distancia a partir de la aceleración",
+        "prompt": "Un coche a 15 m/s frena uniformemente a -3 m/s² hasta detenerse. ¿Distancia de frenado?",
+        "solution": [
+            "Identificamos los datos: v₀ = 15 m/s', 'v = 0', 'a = -3 m/s²",
+            "Usamos la ecuación de Torricelli v² = v₀² + 2 a Δx → Δx = (v² - v₀²)/(2a)",
+            "Sustituimos: Δx = (0 - 15²)/(2(-3))",
+            "Calculamos: Δx = (0 - 225)/(-6)"
+        ],
+        "answer": "Δx = 37.5 m"
+    }
+]

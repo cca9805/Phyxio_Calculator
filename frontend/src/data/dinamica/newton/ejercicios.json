@@ -1,0 +1,54 @@
+[
+  {
+    "id": "newton-1",
+    "title": "Primera Ley de Newton: libro en reposo",
+    "prompt": "Un libro permanece sobre una mesa sin moverse. ¿Por qué no cambia su estado de movimiento?",
+    "solution": [
+      "Según la primera ley de Newton, si la suma de fuerzas es cero, el objeto permanece en reposo o movimiento rectilíneo uniforme.",
+      "El libro está en equilibrio porque la fuerza normal de la mesa cancela el peso del libro.",
+      "Por lo tanto, ΣF = 0 y el libro no cambia su estado."
+    ],
+    "answer": "Porque la suma de fuerzas es cero (ΣF = 0), el libro permanece en reposo."
+  },
+  {
+    "id": "newton-2",
+    "title": "Segunda Ley de Newton: aceleración de un bloque",
+    "prompt": "Se aplica una fuerza de 12 N a un bloque de 3 kg sobre una superficie sin fricción. ¿Cuál es su aceleración?",
+    "solution": [
+      "La segunda ley de Newton dice F = m·a.",
+      "Despejamos a: a = F / m = 12 N / 3 kg = 4 m/s²."
+    ],
+    "answer": "La aceleración es 4 m/s²."
+  },
+  {
+    "id": "newton-3",
+    "title": "Tercera Ley de Newton: acción y reacción",
+    "prompt": "Si empujas una pared con una fuerza de 50 N, ¿qué fuerza ejerce la pared sobre ti?",
+    "solution": [
+      "Por la tercera ley de Newton, la fuerza que ejerce la pared sobre ti es igual y opuesta.",
+      "F_{12} = -F_{21} ⇒ La pared ejerce -50 N sobre ti."
+    ],
+    "answer": "La pared ejerce una fuerza de 50 N en sentido opuesto."
+  },
+  {
+    "id": "peso",
+    "title": "Cálculo del peso de un objeto",
+    "prompt": "¿Cuál es el peso de una caja de 8 kg en la Tierra (g = 9.8 m/s²)?",
+    "solution": [
+      "La fórmula del peso es P = m·g.",
+      "P = 8 kg · 9.8 m/s² = 78.4 N."
+    ],
+    "answer": "El peso es 78.4 N."
+  },
+  {
+    "id": "plano-inclinado",
+    "title": "Plano inclinado: componentes de la fuerza",
+    "prompt": "Un bloque de 5 kg está sobre un plano inclinado de 30°. Calcula la fuerza paralela y la normal (g = 9.8 m/s²).",
+    "solution": [
+      "F_{||} = m·g·sinθ = 5 kg · 9.8 m/s² · sin(30°) = 5 · 9.8 · 0.5 = 24.5 N.",
+      "N = m·g·cosθ = 5 kg · 9.8 m/s² · cos(30°) ≈ 5 · 9.8 · 0.866 ≈ 42.4 N."
+    ],
+    "answer": "Fuerza paralela: 24.5 N. Fuerza normal: 42.4 N."
+  }
+]
+

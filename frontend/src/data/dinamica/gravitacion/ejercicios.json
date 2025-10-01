@@ -1,0 +1,36 @@
+[
+  {
+    "id": "ley-gravitacion-universal",
+    "title": "Fuerza gravitatoria entre dos masas",
+    "prompt": "Calcula la fuerza gravitatoria entre dos masas de 5 kg y 10 kg separadas por 2 m. Usa G = 6.674 × 10⁻¹¹ N·m²/kg².",
+    "solution": [
+      "F = G · m₁ · m₂ / r²",
+      "F = 6.674e-11 · 5 · 10 / 2²",
+      "F = 6.674e-11 · 50 / 4",
+      "F = 3.337e-10 / 4 = 8.3425e-11 N"
+    ],
+    "answer": "8.34 × 10⁻¹¹ N"
+  },
+  {
+    "id": "peso",
+    "title": "Cálculo del peso de un objeto",
+    "prompt": "¿Cuál es el peso de una caja de 12 kg en la Tierra?",
+    "solution": [
+      "P = m · g",
+      "P = 12 · 9.8 = 117.6 N"
+    ],
+    "answer": "117.6 N"
+  },
+  {
+    "id": "energia-potencial-gravitatoria",
+    "title": "Energía potencial gravitatoria entre dos masas",
+    "prompt": "Calcula la energía potencial gravitatoria entre dos masas de 3 kg y 7 kg separadas por 5 m. Usa G = 6.674 × 10⁻¹¹ N·m²/kg².",
+    "solution": [
+      "U = -G · m₁ · m₂ / r",
+      "U = -6.674e-11 · 3 · 7 / 5",
+      "U = -6.674e-11 · 21 / 5",
+      "U = -1.40154e-9 / 5 = -2.80308e-10 J"
+    ],
+    "answer": "-2.80 × 10⁻¹⁰ J"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "equilibrio-traslacional",
+    "title": "Equilibrio traslacional de una caja",
+    "prompt": "Una caja está sobre una mesa y recibe dos fuerzas opuestas de igual magnitud. ¿Está en equilibrio traslacional?",
+    "solution": [
+      "La suma de fuerzas es cero.",
+      "Por lo tanto, la caja está en equilibrio traslacional."
+    ],
+    "answer": "Sí, está en equilibrio traslacional."
+  },
+  {
+    "id": "equilibrio-rotacional",
+    "title": "Equilibrio rotacional de una barra",
+    "prompt": "Una barra horizontal recibe dos torques opuestos de igual magnitud. ¿Está en equilibrio rotacional?",
+    "solution": [
+      "La suma de torques es cero.",
+      "Por lo tanto, la barra está en equilibrio rotacional."
+    ],
+    "answer": "Sí, está en equilibrio rotacional."
+  },
+  {
+    "id": "torque",
+    "title": "Cálculo de torque",
+    "prompt": "Una fuerza de 10 N se aplica a 2 m del eje formando un ángulo de 90°. ¿Cuál es el torque?",
+    "solution": [
+      "τ = F · r · sin(θ)",
+      "τ = 10 · 2 · sin(90°) = 10 · 2 · 1 = 20 N·m"
+    ],
+    "answer": "20 N·m"
+  },
+  {
+    "id": "palanca",
+    "title": "Equilibrio de una palanca",
+    "prompt": "En una palanca, F₁ = 15 N y r₁ = 0.5 m. ¿Qué fuerza F₂ se necesita a r₂ = 0.3 m para equilibrar?",
+    "solution": [
+      "F₁ · r₁ = F₂ · r₂",
+      "15 · 0.5 = F₂ · 0.3",
+      "7.5 = F₂ · 0.3",
+      "F₂ = 7.5 / 0.3 = 25 N"
+    ],
+    "answer": "25 N"
+  }
+]

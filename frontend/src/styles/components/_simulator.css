@@ -1,0 +1,52 @@
+/* Simulator Component */
+.simulator {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.sim-canvas {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(180deg, var(--color-bg-light), transparent);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.sim-ball {
+  width: 32px;
+  height: 32px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 44px;
+  animation: move 3s linear infinite;
+  box-shadow: var(--shadow-sm);
+}
+
+@keyframes move {
+  from { left: 8px; }
+  to { left: calc(100% - 40px); }
+}
+
+.sim-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.sim-button {
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.sim-button:hover {
+  background: var(--color-primary-dark);
+}
