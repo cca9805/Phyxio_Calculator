@@ -1,56 +1,83 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/Phyxio.png';
-import '../styles/components/_navbar-sidebar.css';
+import { useState, useMemo, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../assets/phyxio_fb.png';
 import { sidebarItems } from '../data/sidebarItems';
 
+// ==========================================================================
+// Navbar
+// ==========================================================================
 export function Navbar() {
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-logo-gradient">
-        <img
-          src={logo}
-          alt="Phyxio Logo"
-          className="navbar-logo-img"
-        />
+      <Link to="/" className="navbar-logo-link">
+        <img src={logo} alt="Phyxio Logo" className="navbar-logo-img" />
         <span className="navbar-title">Phyxio Calculator</span>
       </Link>
     </nav>
   );
 }
 
-function SidebarRecursive({ items, level = 0, currentPath, openSet, toggleOpen }) {
+// ==========================================================================
+// Componente Recursivo para renderizar los elementos del menú
+// ==========================================================================
+function SidebarRecursive({ items, currentPath, openSet, toggleOpen, isExpanded }) {
+  const navigate = useNavigate();
+
+  // Manejador para el clic en la flecha (chevron)
+  const handleToggle = (e, link) => {
+    e.stopPropagation(); // Evita que el clic se propague al contenedor principal
+    toggleOpen(link);
+  };
+
   return (
-    <ul className={`sidebar-list sidebar-level-${level}`}>
+    <ul className="sidebar-list">
       {items.map((item, idx) => {
-        const isActive = item.link === currentPath;
-        const isOpen = openSet.has(item.link);
-        return (
-          <li key={item.label + idx}>
-            {item.children ? (
-              <div className={`sidebar-card${isActive ? ' sidebar-card-active' : ''}`}>
-                <Link to={item.link} state={{ palette: item.palette }} className="sidebar-card-link">
-                  <span className="sidebar-icon">{item.icon ? item.icon : (item.iconClass ? <i className={`bi ${item.iconClass}`} aria-hidden="true"></i> : '')}</span>
-                  <span className="sidebar-label">{item.label}</span>
-                </Link>
-                <button
-                  type="button"
-                  className="sidebar-chevron"
-                  aria-expanded={isOpen}
-                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleOpen(item.link); }}
-                >
-                  {isOpen ? '▼' : '▶'}
-                </button>
-              </div>
-            ) : (
-              <Link to={item.link} state={{ palette: item.palette }} className={`sidebar-card${isActive ? ' sidebar-card-active' : ''}`}>
-                <span className="sidebar-icon">{item.icon ? item.icon : (item.iconClass ? <i className={`bi ${item.iconClass}`} aria-hidden="true"></i> : '')}</span>
+        const isActive = item.link && currentPath.startsWith(item.link);
+        const isOpen = item.link && openSet.has(item.link);
+
+        // Renderiza un elemento con submenú
+        if (item.children) {
+          return (
+            <li key={`${item.label}-${idx}`} className={`sidebar-card ${isActive ? 'sidebar-card-active' : ''}`}>
+              {/* El contenedor principal navega al hacer clic */}
+              <div 
+                className="sidebar-card-link" 
+                onClick={() => navigate(item.link || '#')} 
+                role="button"
+                tabIndex="0"
+              >
+                <span className="sidebar-icon">
+                  {item.iconClass && <i className={`bi ${item.iconClass}`}></i>}
+                </span>
                 <span className="sidebar-label">{item.label}</span>
-              </Link>
-            )}
-            {item.children && isOpen && (
-              <SidebarRecursive items={item.children} level={level + 1} currentPath={currentPath} openSet={openSet} toggleOpen={toggleOpen} />
-            )}
+                {isExpanded && (
+                  // La flecha solo despliega/contrae, deteniendo la navegación
+                  <span 
+                    className={`sidebar-chevron ${isOpen ? 'sidebar-chevron-open' : ''}`} 
+                    onClick={(e) => handleToggle(e, item.link)}
+                  >
+                    <i className="bi bi-chevron-down"></i>
+                  </span>
+                )}
+              </div>
+              {isOpen && isExpanded && (
+                <div className="sidebar-submenu">
+                   <SidebarRecursive items={item.children} currentPath={currentPath} openSet={openSet} toggleOpen={toggleOpen} isExpanded={isExpanded} />
+                </div>
+              )}
+            </li>
+          );
+        }
+        
+        // Renderiza un elemento de enlace simple (sin hijos)
+        return (
+          <li key={`${item.label}-${idx}`} className={`sidebar-card ${isActive ? 'sidebar-card-active' : ''}`}>
+            <Link to={item.link} className="sidebar-card-link">
+              <span className="sidebar-icon">
+                {item.iconClass && <i className={`bi ${item.iconClass}`}></i>}
+              </span>
+              <span className="sidebar-label">{item.label}</span>
+            </Link>
           </li>
         );
       })}
@@ -58,84 +85,76 @@ function SidebarRecursive({ items, level = 0, currentPath, openSet, toggleOpen }
   );
 }
 
-export function Sidebar({ onWidthChange } = {}) {
-  const [isWide, setIsWide] = useState(false);
+
+// ==========================================================================
+// Sidebar: Controlada por props desde App.jsx
+// ==========================================================================
+export function Sidebar({ isExpanded }) {
   const location = useLocation();
   const currentPath = location.pathname;
   const [openSet, setOpenSet] = useState(new Set());
-  // Encuentra la rama activa desde sidebarItems
-  function findActiveBranch(items, path) {
+
+  // Encuentra la rama activa para mantenerla abierta en la carga de la página
+  const findActiveBranch = (items, path) => {
     for (const item of items) {
-      if (item.link === path) return [item];
-      if (item.children) {
-        const branch = findActiveBranch(item.children, path);
-        if (branch.length) return [item, ...branch];
+      if (item.link && path.startsWith(item.link)) {
+        const branch = [item];
+        if (item.children) {
+          const childBranch = findActiveBranch(item.children, path);
+          if (childBranch.length > 0) {
+            return [...branch, ...childBranch];
+          }
+        }
+        return branch;
       }
     }
     return [];
-  }
-  let activeBranch = findActiveBranch(sidebarItems, currentPath);
-  if (!activeBranch.length && currentPath.startsWith('/clasica')) {
-    activeBranch = findActiveBranch(sidebarItems, '/clasica');
-  }
-  if (!activeBranch.length && currentPath.startsWith('/fisica')) {
-    activeBranch = findActiveBranch(sidebarItems, '/fisica');
-  }
-  // initialize openSet from activeBranch so the path to current page is expanded
-  useState(() => {
-    if (activeBranch.length) {
-      const s = new Set(activeBranch.map((it) => it.link));
-      setOpenSet(s);
+  };
+
+  useEffect(() => {
+    let branch = findActiveBranch(sidebarItems, currentPath);
+    if (currentPath === '/' || currentPath === '/fisica') {
+      branch = findActiveBranch(sidebarItems, '/');
     }
-  });
+
+    if (branch.length > 0) {
+      setOpenSet(new Set(branch.map(item => item.link).filter(Boolean)));
+    } else {
+      setOpenSet(new Set());
+    }
+  }, [currentPath]);
+
+  // Abre o cierra un submenú
   const toggleOpen = (link) => {
-    setOpenSet((prev) => {
-      const s = new Set(prev);
-      if (s.has(link)) s.delete(link);
-      else s.add(link);
-      return s;
+    setOpenSet(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(link)) {
+        newSet.delete(link);
+      } else {
+        newSet.add(link);
+      }
+      return newSet;
     });
   };
-  const iconsToShow = activeBranch.length
-  ? activeBranch.map((item, idx) => ({ icon: item.icon, iconClass: item.iconClass, label: item.label, active: idx === activeBranch.length - 1 }))
-  : sidebarItems.map((item) => ({ icon: item.icon, iconClass: item.iconClass, label: item.label, active: false }));
+  
+  const sidebarClassName = isExpanded ? 'sidebar-expanded' : 'sidebar-collapsed';
+
   return (
-    <aside className={`sidebar sidebar-flex${isWide ? ' sidebar-wide' : ' sidebar-narrow'}`}
-      tabIndex={0}
-    onMouseEnter={() => { setIsWide(true); if (onWidthChange) onWidthChange(true); }}
-    onMouseLeave={() => { setIsWide(false); if (onWidthChange) onWidthChange(false); }}
-    >
-      <div className="sidebar-content">
-        {isWide ? (
-          <SidebarRecursive items={sidebarItems} currentPath={currentPath} openSet={openSet} toggleOpen={toggleOpen} />
-        ) : (
-          <ul className="sidebar-list sidebar-narrow-list">
-            {iconsToShow.map((item, idx) => (
-              <li key={item.label + idx}>
-                <span className={`sidebar-icon${item.active ? ' sidebar-icon-active' : ''}`}>
-                  {item.icon ? item.icon : (item.iconClass ? <i className={`bi ${item.iconClass}`}></i> : null)}
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      
-      {/* botón de herramientas (simple) */}
-      <div className="sidebar-footer-button">
-        <Link
-          to="/pages/Constantes"
-          title="Constantes"
-          aria-label="Constantes"
-          className="tools-button"
-          style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '8px 0', textDecoration: 'none' }}
-        >
-          <i className="bi bi-rulers" aria-hidden="true" style={{ fontSize: 20, color: '#fff' }}></i>
-          {isWide ? <span style={{ marginLeft: 8, color: '#fff' }}>Constantes</span> : null}
+    <aside className={`sidebar ${sidebarClassName}`}>
+      <nav className="sidebar-nav">
+        <SidebarRecursive 
+            items={sidebarItems} 
+            currentPath={currentPath} 
+            openSet={openSet} 
+            toggleOpen={toggleOpen}
+            isExpanded={isExpanded}
+        />
+      </nav>
+      <div className="sidebar-footer">
+        <Link to="/constantes" className="sidebar-card-link" title="Constantes Físicas">
+            <span className="sidebar-icon"><i className="bi bi-rulers"></i></span>
+            <span className="sidebar-label">Constantes</span>
         </Link>
-      </div>
-      <div className="sidebar-footer-label">
-        <span style={{ display: 'inline-block', lineHeight: 1.1 }}>Phyxio<br/>CCA</span>
       </div>
     </aside>
   );

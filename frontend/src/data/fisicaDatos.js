@@ -11,7 +11,7 @@ export const temasFisica = [
     btn: {
       texto: 'Explorar',
       clase: 'clasica',
-      link: '/clasica/nivel2'
+      link: '/clasica'
     }
   },
   {

@@ -1,4 +1,3 @@
-<!-- filepath: src/data/dinamica/${subId}/teoria.md -->
 # Teoría: ROTACIÓN
 
 La **rotación** es el movimiento de un cuerpo alrededor de un eje. Es fundamental en la física para describir el comportamiento de ruedas, discos, planetas y cualquier objeto que gire.

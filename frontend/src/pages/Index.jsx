@@ -1,17 +1,21 @@
-import '../styles/inicio.css';
-import Layout from '../components/Layout';
 import { temasFisica } from '../data/fisicaDatos';
-import { introCards } from '../data/introCards';
+import '../styles/pages.css';
 
 function IndexPage() {
+  const titulo = '¿Qué es la Física?';
+  const intro = 'La física estudia cómo funciona el universo: el movimiento, las fuerzas, la energía, el espacio y el tiempo. Se divide en ramas como la Física Clásica y la Moderna según la época y fenómenos que trata.';
+
   return (
     <div className="page-root">
-      <Layout title={introCards.index.titulo} intro={introCards.index.texto}>
+        <div className="intro-card theme-sky">
+              <strong>{titulo}</strong>
+              <div>{intro}</div>
+        </div>
         <div className="tema-cards-row">
           {temasFisica.map(card => (
-            <div className={`tema-card ${card.tipo}`} key={card.tipo}>
+            <div className={`tema-card theme-sky ${card.tipo}`} key={card.tipo}>
               <span className="tema-card-icon">
-                <img src={card.icono} alt={card.titulo} style={{width: '48px', height: '48px', objectFit: 'contain'}} />
+                <img src={card.icono} alt={card.titulo} className="tema-card-icon-img" />
               </span>
               <div className="tema-card-content">
                 <div className="tema-card-title">{card.titulo}</div>
@@ -21,7 +25,7 @@ function IndexPage() {
             </div>
           ))}
         </div>
-        <div className="compara-card">
+        <div className="compara-card theme-sky">
           <h3>¿En qué se diferencian?</h3>
           <ul>
             <li><strong>Clásica:</strong> Objetos grandes y velocidades bajas.</li>
@@ -30,7 +34,6 @@ function IndexPage() {
             <li><strong>Moderna: Einstein, Planck:</strong> Relatividad y teoría cuántica.</li>
           </ul>
         </div>
-      </Layout>
     </div>
   );
 }

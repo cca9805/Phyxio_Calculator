@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MarkdownRenderer from './MarkdownRenderer';
-import { getTheoryByTopic } from '../utils/loadTheory';
+import { getTheoryByTopic } from '../utils/contentLoader';
 
 export default function TheoryCommon({ topicId = 'mcu', fallback = null, panelStyle = null }) {
   const [content, setContent] = useState(null);

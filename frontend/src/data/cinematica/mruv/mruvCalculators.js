@@ -1,109 +1,304 @@
+import { formatNumber } from '../../../utils/formatNumber';
+
 export const calculators = [
-  // 1
+
+  // --- Grupo 1: vf = v₀ + at ---
   {
-    id: 'v_from_v0_a_t',
-    title: 'v = v₀ + a·t — Velocidad (MRUV)',
-    expr: 'v0 + a * t',
-    vars: [
-      { name: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '0' },
-      { name: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' },
-      { name: 't', label: 'Tiempo (t)', unit: 's', example: '3' }
+    id: 'mruv-velocidad-final',
+    title: 'Calcular Velocidad Final',
+    formula: 'vf = v₀ + at',
+    variables: [
+      { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+      { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' },
+      { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' }
     ],
-    output: { name: 'v', label: 'Velocidad final (v)', unit: 'm/s' }
+    output: { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s' },
+    resolve: ({ v0, a, t }) => {
+      const vf = v0 + a * t;
+      return { result: { vf }, steps: [`vf = ${v0} + ${a} * ${t} = ${formatNumber(vf)} m/s`] };
+    }
   },
-  // 2
   {
-    id: 'v_media_from_v0_v',
-    title: 'v_media = (v₀ + v) / 2 — Velocidad media (MRUV)',
-    expr: '(v0 + v) / 2',
-    vars: [
-      { name: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '0' },
-      { name: 'v', label: 'Velocidad final (v)', unit: 'm/s', example: '10' }  
+    id: 'mruv-velocidad-inicial',
+    title: 'Calcular Velocidad Inicial',
+    formula: 'v₀ = vf - at',
+    variables: [
+      { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s', example: '11' },
+      { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' },
+      { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' }
     ],
-    output: { name: 'v_media', label: 'Velocidad media (v_media)', unit: 'm/s' }
+    output: { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s' },
+    resolve: ({ vf, a, t }) => {
+      const v0 = vf - a * t;
+      return { result: { v0 }, steps: [`v₀ = ${vf} - ${a} * ${t} = ${formatNumber(v0)} m/s`] };
+    }
   },
-  // 3
   {
-    id: 'v_from_v0_a_d',
-    title: 'v² = v₀² + 2·a·d — Velocidad (Torricelli, MRUV)',
-    expr: 'Math.sqrt(v0 * v0 + 2 * a * d)', // expr produces v from other data
-    vars: [
-      { name: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '0' },
-      { name: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' },
-      { name: 'd', label: 'Distancia (d)', unit: 'm', example: '100' }
+    id: 'mruv-aceleracion',
+    title: 'Calcular Aceleración',
+    formula: 'a = (vf - v₀) / t',
+    variables: [
+      { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s', example: '11' },
+      { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+      { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' }
     ],
-    output: { name: 'v', label: 'Velocidad final (v)', unit: 'm/s' }
+    output: { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²' },
+    resolve: ({ vf, v0, t }) => {
+      if (t === 0) return { error: "El tiempo no puede ser cero." };
+      const a = (vf - v0) / t;
+      return { result: { a }, steps: [`a = (${vf} - ${v0}) / ${t} = ${formatNumber(a)} m/s²`] };
+    }
   },
-  // 4
   {
-    id: 'x_from_x0_v0_a_t',
-    title: 'x = x₀ + v₀·t + ½·a·t² — Posición (MRUV)',
-    expr: 'x0 + v0 * t + 0.5 * a * t * t',
-    vars: [
-      { name: 'x0', label: 'Posición inicial (x₀)', unit: 'm', example: '0' },
-      { name: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '0' },
-      { name: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' },
-      { name: 't', label: 'Tiempo (t)', unit: 's', example: '4' }
+    id: 'mruv-tiempo',
+    title: 'Calcular Tiempo',
+    formula: 't = (vf - v₀) / a',
+    variables: [
+      { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s', example: '11' },
+      { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+      { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' }
     ],
-    output: { name: 'x', label: 'Posición final (x)', unit: 'm' }
+    output: { symbol: 't', label: 'Tiempo (t)', unit: 's' },
+    resolve: ({ vf, v0, a }) => {
+      if (a === 0) return { error: "La aceleración no puede ser cero." };
+      const t = (vf - v0) / a;
+      return { result: { t }, steps: [`t = (${vf} - ${v0}) / ${a} = ${formatNumber(t)} s`] };
+    }
   },
-  // 5
+
+  // --- Grupo 2: xf = x₀ + v₀t + ½at² ---
   {
-    id: 'delta_x_from_v_media_t',
-    title: 'Δx = v_media·t — Distancia (MRUV)',
-    expr: 'v_media * t',
-    vars: [
-      { name: 'v_media', label: 'Velocidad media (v_media)', unit: 'm/s', example: '5' },
-      { name: 't', label: 'Tiempo (t)', unit: 's', example: '4' }
-    ],    
-    output: { name: 'delta_x', label: 'Distancia (Δx)', unit: 'm' }
-  },   
-  // 6
-  {
-    id: 'a_from_delta_v_t',
-    title: 'a = (v - v₀) / t — Aceleración (MRUV)',
-    expr: '(v - v0) / t',
-    vars: [
-      { name: 'v', label: 'Velocidad final (v)', unit: 'm/s', example: '20' },
-      { name: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
-      { name: 't', label: 'Tiempo (t)', unit: 's', example: '3' }
+    id: 'mruv-posicion-final',
+    title: 'Calcular Posición Final',
+    formula: 'xf = x₀ + v₀t + ½at²',
+    variables: [
+      { symbol: 'x0', label: 'Posición inicial (x₀)', unit: 'm', example: '10' },
+      { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+      { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' },
+      { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' }
     ],
-    output: { name: 'a', label: 'Aceleración (a)', unit: 'm/s²' }
+    output: { symbol: 'xf', label: 'Posición final (xf)', unit: 'm' },
+    resolve: ({ x0, v0, t, a }) => {
+      const xf = x0 + v0 * t + 0.5 * a * Math.pow(t, 2);
+      return { result: { xf }, steps: [`xf = ${x0} + ${v0}*${t} + 0.5*${a}*${t}² = ${formatNumber(xf)} m`] };
+    }
   },
-  // 7
   {
-    id: 't_from_delta_v_a',
-    title: 't = (v - v₀) / a — Tiempo (MRUV)',
-    expr: '(v - v0) / a',
-    vars: [
-      { name: 'v', label: 'Velocidad final (v)', unit: 'm/s', example: '20' },
-      { name: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '0' },
-      { name: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' }
+    id: 'mruv-posicion-inicial',
+    title: 'Calcular Posición Inicial',
+    formula: 'x₀ = xf - v₀t - ½at²',
+    variables: [
+      { symbol: 'xf', label: 'Posición final (xf)', unit: 'm', example: '34' },
+      { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+      { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' },
+      { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' }
     ],
-    output: { name: 't', label: 'Tiempo (t)', unit: 's' }
+    output: { symbol: 'x0', label: 'Posición inicial (x₀)', unit: 'm' },
+    resolve: ({ xf, v0, t, a }) => {
+      const x0 = xf - v0 * t - 0.5 * a * Math.pow(t, 2);
+      return { result: { x0 }, steps: [`x₀ = ${xf} - ${v0}*${t} - 0.5*${a}*${t}² = ${formatNumber(x0)} m`] };
+    }
   },
-  // 8
   {
-    id: 't_break_from_v0_a',
-    title: 't_break = -v₀ / a — Tiempo para detenerse (MRUV)',
-    expr: '-v0 / a',
-    vars: [
-      { name: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '10' },
-      { name: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '-2' }
+    id: 'mruv-velocidad-inicial-desde-posicion',
+    title: 'Calcular v₀ (desde Posición)',
+    formula: 'v₀ = (xf - x₀ - ½at²) / t',
+    variables: [
+        { symbol: 'xf', label: 'Posición final (xf)', unit: 'm', example: '34' },
+        { symbol: 'x0', label: 'Posición inicial (x₀)', unit: 'm', example: '10' },
+        { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' },
+        { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' }
     ],
-    output: { name: 't_break', label: 'Tiempo para detenerse (t_break)', unit: 's' }
+    output: { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s' },
+    resolve: ({ xf, x0, t, a }) => {
+        if (t === 0) return { error: "El tiempo no puede ser cero." };
+        const v0 = (xf - x0 - 0.5 * a * Math.pow(t, 2)) / t;
+        return { result: { v0 }, steps: [`v₀ = (${xf} - ${x0} - 0.5*${a}*${t}²) / ${t} = ${formatNumber(v0)} m/s`] };
+    }
   },
-  // 9
   {
-    id: 'd_break_from_v0_a',
-    title: 'd_break = -v₀² / (2·a) — Distancia para detenerse (MRUV)',
-    expr: '-(v0 * v0) / (2 * a)',
-    vars: [
-      { name: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '10' },
-      { name: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '-2' }
-    ], 
-    output: { name: 'd_break', label: 'Distancia para detenerse (d_break)', unit: 'm' }
+    id: 'mruv-aceleracion-desde-posicion',
+    title: 'Calcular a (desde Posición)',
+    formula: 'a = 2(xf - x₀ - v₀t) / t²',
+    variables: [
+        { symbol: 'xf', label: 'Posición final (xf)', unit: 'm', example: '34' },
+        { symbol: 'x0', label: 'Posición inicial (x₀)', unit: 'm', example: '10' },
+        { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+        { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' }
+    ],
+    output: { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²' },
+    resolve: ({ xf, x0, v0, t }) => {
+        if (t === 0) return { error: "El tiempo no puede ser cero." };
+        const a = 2 * (xf - x0 - v0 * t) / Math.pow(t, 2);
+        return { result: { a }, steps: [`a = 2(${xf} - ${x0} - ${v0}*${t}) / ${t}² = ${formatNumber(a)} m/s²`] };
+    }
+  },
+  {
+    id: 'mruv-tiempo-cuadratica',
+    title: 'Calcular Tiempo (Fórmula Cuadrática)',
+    formula: 't = [-v₀ ± √(v₀² - 4(½a)(x₀-xf))] / a',
+    variables: [
+        { symbol: 'x0', label: 'Posición inicial (x₀)', unit: 'm', example: '0' },
+        { symbol: 'xf', label: 'Posición final (xf)', unit: 'm', example: '50' },
+        { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '10' },
+        { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '4' }
+    ],
+    output: { symbol: 't', label: 'Tiempo (t)', unit: 's' },
+    resolve: ({ x0, xf, v0, a }) => {
+        if (a === 0) return { error: "La aceleración no puede ser cero." };
+        const C = x0 - xf;
+        const B = v0;
+        const A = 0.5 * a;
+        const discriminant = Math.pow(B, 2) - 4 * A * C;
+        if (discriminant < 0) return { error: "Sin solución real." };
+        const t1 = (-B + Math.sqrt(discriminant)) / (2 * A);
+        const t2 = (-B - Math.sqrt(discriminant)) / (2 * A);
+        const steps = [
+            `Ecuación: ${A}t² + ${B}t + ${C} = 0`,
+            `Discriminante: Δ = ${B}² - 4(${A})(${C}) = ${formatNumber(discriminant)}`,
+            `t₁ = (-${B} + √Δ) / (2*${A}) = ${formatNumber(t1)} s`,
+            `t₂ = (-${B} - √Δ) / (2*${A}) = ${formatNumber(t2)} s`,
+            `Se toman las soluciones de tiempo positivas.`
+        ];
+        const finalResult = {};
+        if(t1 >= 0 && t2 >= 0) finalResult.t = `t₁=${formatNumber(t1)}, t₂=${formatNumber(t2)}`;
+        else if (t1 >= 0) finalResult.t = formatNumber(t1);
+        else if (t2 >= 0) finalResult.t = formatNumber(t2);
+        else return { error: "No hay soluciones de tiempo positivas." };
+        return { result: finalResult, steps };
+    }
+  },
+
+  // --- Grupo 3: vf² = v₀² + 2aΔx ---
+  {
+    id: 'mruv-velocidad-final-torricelli',
+    title: 'Calcular vf (sin tiempo)',
+    formula: 'vf = √(v₀² + 2aΔx)',
+    variables: [
+      { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+      { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' },
+      { symbol: 'dx', label: 'Desplazamiento (Δx)', unit: 'm', example: '24' }
+    ],
+    output: { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s' },
+    resolve: ({ v0, a, dx }) => {
+      const vf_sq = Math.pow(v0, 2) + 2 * a * dx;
+      if (vf_sq < 0) return { error: "Resultado imaginario (vf² < 0)." };
+      const vf = Math.sqrt(vf_sq);
+      return { result: { vf }, steps: [`vf = √(${v0}² + 2*${a}*${dx}) = ${formatNumber(vf)} m/s`] };
+    }
+  },
+    {
+    id: 'mruv-velocidad-inicial-torricelli',
+    title: 'Calcular v₀ (sin tiempo)',
+    formula: 'v₀ = √(vf² - 2aΔx)',
+    variables: [
+      { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s', example: '11' },
+      { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' },
+      { symbol: 'dx', label: 'Desplazamiento (Δx)', unit: 'm', example: '24' }
+    ],
+    output: { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s' },
+    resolve: ({ vf, a, dx }) => {
+      const v0_sq = Math.pow(vf, 2) - 2 * a * dx;
+      if (v0_sq < 0) return { error: "Resultado imaginario (v₀² < 0)." };
+      const v0 = Math.sqrt(v0_sq);
+      return { result: { v0 }, steps: [`v₀ = √(${vf}² - 2*${a}*${dx}) = ${formatNumber(v0)} m/s`] };
+    }
+  },
+  {
+    id: 'mruv-aceleracion-torricelli',
+    title: 'Calcular a (sin tiempo)',
+    formula: 'a = (vf² - v₀²) / 2Δx',
+    variables: [
+      { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s', example: '11' },
+      { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+      { symbol: 'dx', label: 'Desplazamiento (Δx)', unit: 'm', example: '24' }
+    ],
+    output: { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²' },
+    resolve: ({ vf, v0, dx }) => {
+      if (dx === 0) return { error: "El desplazamiento no puede ser cero." };
+      const a = (Math.pow(vf, 2) - Math.pow(v0, 2)) / (2 * dx);
+      return { result: { a }, steps: [`a = (${vf}² - ${v0}²) / (2 * ${dx}) = ${formatNumber(a)} m/s²`] };
+    }
+  },
+  {
+    id: 'mruv-desplazamiento-torricelli',
+    title: 'Calcular Δx (sin tiempo)',
+    formula: 'Δx = (vf² - v₀²) / 2a',
+    variables: [
+      { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s', example: '11' },
+      { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+      { symbol: 'a', label: 'Aceleración (a)', unit: 'm/s²', example: '2' }
+    ],
+    output: { symbol: 'dx', label: 'Desplazamiento (Δx)', unit: 'm' },
+    resolve: ({ vf, v0, a }) => {
+      if (a === 0) return { error: "La aceleración no puede ser cero." };
+      const dx = (Math.pow(vf, 2) - Math.pow(v0, 2)) / (2 * a);
+      return { result: { dx }, steps: [`Δx = (${vf}² - ${v0}²) / (2 * ${a}) = ${formatNumber(dx)} m`] };
+    }
+  },
+
+  // --- Grupo 4: Δx = ½(v₀ + vf)t ---
+  {
+    id: 'mruv-desplazamiento-media',
+    title: 'Calcular Δx (con Vel. Media)',
+    formula: 'Δx = ½(v₀ + vf)t',
+    variables: [
+      { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+      { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s', example: '11' },
+      { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' }
+    ],
+    output: { symbol: 'dx', label: 'Desplazamiento (Δx)', unit: 'm' },
+    resolve: ({ v0, vf, t }) => {
+      const dx = 0.5 * (v0 + vf) * t;
+      return { result: { dx }, steps: [`Δx = 0.5 * (${v0} + ${vf}) * ${t} = ${formatNumber(dx)} m`] };
+    }
+  },
+  {
+    id: 'mruv-tiempo-media',
+    title: 'Calcular Tiempo (con Vel. Media)',
+    formula: 't = 2Δx / (v₀ + vf)',
+    variables: [
+        { symbol: 'dx', label: 'Desplazamiento (Δx)', unit: 'm', example: '24' },
+        { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' },
+        { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s', example: '11' }
+    ],
+    output: { symbol: 't', label: 'Tiempo (t)', unit: 's' },
+    resolve: ({ dx, v0, vf }) => {
+        if (v0 + vf === 0) return { error: "La suma de velocidades no puede ser cero." };
+        const t = (2 * dx) / (v0 + vf);
+        return { result: { t }, steps: [`t = (2 * ${dx}) / (${v0} + ${vf}) = ${formatNumber(t)} s`] };
+    }
+  },
+  {
+    id: 'mruv-velocidad-final-media',
+    title: 'Calcular vf (con Vel. Media)',
+    formula: 'vf = (2Δx / t) - v₀',
+    variables: [
+        { symbol: 'dx', label: 'Desplazamiento (Δx)', unit: 'm', example: '24' },
+        { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' },
+        { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s', example: '5' }
+    ],
+    output: { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s' },
+    resolve: ({ dx, t, v0 }) => {
+        if (t === 0) return { error: "El tiempo no puede ser cero." };
+        const vf = (2 * dx / t) - v0;
+        return { result: { vf }, steps: [`vf = (2*${dx}/${t}) - ${v0} = ${formatNumber(vf)} m/s`] };
+    }
+  },
+  {
+    id: 'mruv-velocidad-inicial-media',
+    title: 'Calcular v₀ (con Vel. Media)',
+    formula: 'v₀ = (2Δx / t) - vf',
+    variables: [
+        { symbol: 'dx', label: 'Desplazamiento (Δx)', unit: 'm', example: '24' },
+        { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '3' },
+        { symbol: 'vf', label: 'Velocidad final (vf)', unit: 'm/s', example: '11' }
+    ],
+    output: { symbol: 'v0', label: 'Velocidad inicial (v₀)', unit: 'm/s' },
+    resolve: ({ dx, t, vf }) => {
+        if (t === 0) return { error: "El tiempo no puede ser cero." };
+        const v0 = (2 * dx / t) - vf;
+        return { result: { v0 }, steps: [`v₀ = (2*${dx}/${t}) - ${vf} = ${formatNumber(v0)} m/s`] };
+    }
   }
 ];
-
-export default calculators;

@@ -1,22 +1,46 @@
 [
   {
     "id": "friccion-estatica-maxima",
-    "title": "Fricción estática máxima en un bloque",
-    "prompt": "Un bloque de 8 kg está sobre una superficie con coeficiente de fricción estática 0.3. ¿Cuál es la fricción estática máxima?",
+    "title": "Cálculo de Fricción Estática Máxima",
+    "prompt": "Un bloque de 10 kg reposa sobre una superficie horizontal. El coeficiente de fricción estática entre el bloque y la superficie es de 0.5. ¿Cuál es la magnitud de la fuerza de fricción estática máxima? (Considerar g = 9.8 m/s²)",
     "solution": [
-      "N = m · g = 8 · 9.8 = 78.4 N",
-      "F_{fe,max} = μ_e · N = 0.3 · 78.4 = 23.52 N"
+      "Primero, calculamos la fuerza normal (N), que es igual al peso del bloque: $N = m \\cdot g = 10 \\text{ kg} \\cdot 9.8 \\text{ m/s}^2 = 98 \\text{ N}$.",
+      "Luego, usamos la fórmula de la fricción estática máxima: $f_{s,max} = \\mu_s \\cdot N$.",
+      "$f_{s,max} = 0.5 \\cdot 98 \\text{ N} = 49 \\text{ N}$."
     ],
-    "answer": "23.52 N"
+    "answer": "La fricción estática máxima es de 49 N."
   },
   {
-    "id": "condicion-equilibrio-friccion",
-    "title": "Condición de equilibrio con fricción",
-    "prompt": "Si la fuerza aplicada sobre el bloque anterior es 20 N, ¿el bloque se mueve?",
+    "id": "condicion-deslizamiento",
+    "title": "Condición de Deslizamiento",
+    "prompt": "Sobre el bloque del ejercicio anterior (fs,max = 49 N) se aplica una fuerza horizontal de 40 N. ¿Comenzará a moverse el bloque?",
     "solution": [
-      "F_{aplicada} = 20 N < F_{fe,max} = 23.52 N",
-      "Como la fuerza aplicada es menor que la fricción estática máxima, el bloque no se mueve."
+      "La condición para que el bloque no se mueva es que la fuerza aplicada sea menor o igual a la fricción estática máxima ($F_{aplicada} \\le f_{s,max}$).",
+      "Comparamos la fuerza aplicada con la fricción estática máxima: $40 \\text{ N} \\le 49 \\text{ N}$.",
+      "Como la condición se cumple, el bloque no se moverá. La fuerza de fricción estática se ajustará para ser igual a la fuerza aplicada (40 N)."
     ],
-    "answer": "No, el bloque permanece en equilibrio."
+    "answer": "No, el bloque no comenzará a moverse."
+  },
+  {
+    "id": "friccion-cinetica-ejercicio",
+    "title": "Cálculo de Fricción Cinética",
+    "prompt": "Un objeto de 15 kg se desliza sobre una superficie con un coeficiente de fricción cinética (μk) de 0.2. ¿Cuál es la fuerza de fricción cinética que actúa sobre él? (g = 9.8 m/s²)",
+    "solution": [
+      "Calculamos la fuerza normal: $N = m \\cdot g = 15 \\text{ kg} \\cdot 9.8 \\text{ m/s}^2 = 147 \\text{ N}$.",
+      "Calculamos la fricción cinética: $f_k = \\mu_k \\cdot N$.",
+      "$f_k = 0.2 \\cdot 147 \\text{ N} = 29.4 \\text{ N}$."
+    ],
+    "answer": "La fuerza de fricción cinética es de 29.4 N."
+  },
+  {
+    "id": "angulo-de-friccion-ejercicio",
+    "title": "Cálculo del Ángulo de Fricción",
+    "prompt": "El coeficiente de fricción estática entre una caja y un plano inclinado es de 0.7. ¿Cuál es el ángulo de fricción estática (φs)?",
+    "solution": [
+      "La relación entre el coeficiente y el ángulo de fricción es $\\tan(\\phi_s) = \\mu_s$.",
+      "Para encontrar el ángulo, usamos la función arcotangente: $\\phi_s = \\operatorname{atan}(\\mu_s)$.",
+      "$\\phi_s = \\operatorname{atan}(0.7) \\approx 35.0°$."
+    ],
+    "answer": "El ángulo de fricción estática es de aproximadamente 35.0°."
   }
 ]

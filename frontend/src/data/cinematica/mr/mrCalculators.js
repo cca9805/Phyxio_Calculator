@@ -1,202 +1,212 @@
-// filepath: src/data/cinematica/mr/mrCalculators.js
+import { formatNumber } from '../../../utils/formatNumber';
+
 export const calculators = [
-  // Posición relativa r_AB = r_A − r_B (2D)
+  // --- Grupo 1: Movimiento Relativo en 1D ---
   {
-    id: 'calc-rab-x',
-    title: 'r_AB,x = r_Ax − r_Bx — Posición relativa (componente x)',
-    expr: 'rAx - rBx',
-    vars: [
-      { name: 'rAx', label: 'r_Ax', unit: 'm' },
-      { name: 'rBx', label: 'r_Bx', unit: 'm' }
+    id: 'mr-posicion-relativa-1d',
+    title: 'Posición Relativa (1D)',
+    formula: 'xₐᵦ = xₐ - xᵦ',
+    variables: [
+      { symbol: 'xa', label: 'Posición de A (xₐ)', unit: 'm', example: '100' },
+      { symbol: 'xb', label: 'Posición de B (xᵦ)', unit: 'm', example: '30' }
     ],
-    output: { name: 'r_ABx', unit: 'm' }
+    output: { symbol: 'xab', label: 'Posición de A respecto a B (xₐᵦ)', unit: 'm' },
+    resolve: ({ xa, xb }) => {
+      const xab = xa - xb;
+      return { result: { xab }, steps: [`xₐᵦ = ${xa} - ${xb} = ${formatNumber(xab)} m`] };
+    }
   },
   {
-    id: 'calc-rab-y',
-    title: 'r_AB,y = r_Ay − r_By — Posición relativa (componente y)',
-    expr: 'rAy - rBy',
-    vars: [
-      { name: 'rAy', label: 'r_Ay', unit: 'm' },
-      { name: 'rBy', label: 'r_By', unit: 'm' }
+    id: 'mr-despeje-xa-posicion-1d',
+    title: 'Calcular xₐ (Posición Relativa 1D)',
+    formula: 'xₐ = xₐᵦ + xᵦ',
+    variables: [
+      { symbol: 'xab', label: 'Posición de A respecto a B (xₐᵦ)', unit: 'm', example: '70' },
+      { symbol: 'xb', label: 'Posición de B (xᵦ)', unit: 'm', example: '30' }
     ],
-    output: { name: 'r_ABy', unit: 'm' }
-  },
-
-  // Velocidad relativa v_AB = v_A − v_B (2D)
-  {
-    id: 'calc-vab-x',
-    title: 'v_AB,x = v_Ax − v_Bx — Velocidad relativa (x)',
-    expr: 'vAx - vBx',
-    vars: [
-      { name: 'vAx', label: 'v_Ax', unit: 'm/s' },
-      { name: 'vBx', label: 'v_Bx', unit: 'm/s' }
-    ],
-    output: { name: 'v_ABx', unit: 'm/s' }
+    output: { symbol: 'xa', label: 'Posición de A (xₐ)', unit: 'm' },
+    resolve: ({ xab, xb }) => {
+      const xa = xab + xb;
+      return { result: { xa }, steps: [`xₐ = ${xab} + ${xb} = ${formatNumber(xa)} m`] };
+    }
   },
   {
-    id: 'calc-vab-y',
-    title: 'v_AB,y = v_Ay − v_By — Velocidad relativa (y)',
-    expr: 'vAy - vBy',
-    vars: [
-      { name: 'vAy', label: 'v_Ay', unit: 'm/s' },
-      { name: 'vBy', label: 'v_By', unit: 'm/s' }
+    id: 'mr-velocidad-relativa-1d',
+    title: 'Velocidad Relativa (1D)',
+    formula: 'vₐᵦ = vₐ - vᵦ',
+    variables: [
+      { symbol: 'va', label: 'Velocidad de A (vₐ)', unit: 'm/s', example: '20' },
+      { symbol: 'vb', label: 'Velocidad de B (vᵦ)', unit: 'm/s', example: '-5' }
     ],
-    output: { name: 'v_ABy', unit: 'm/s' }
-  },
-
-  // Aceleración relativa a_AB = a_A − a_B (2D)
-  {
-    id: 'calc-aab-x',
-    title: 'a_AB,x = a_Ax − a_Bx — Aceleración relativa (x)',
-    expr: 'aAx - aBx',
-    vars: [
-      { name: 'aAx', label: 'a_Ax', unit: 'm/s²' },
-      { name: 'aBx', label: 'a_Bx', unit: 'm/s²' }
-    ],
-    output: { name: 'a_ABx', unit: 'm/s²' }
+    output: { symbol: 'vab', label: 'Velocidad de A respecto a B (vₐᵦ)', unit: 'm/s' },
+    resolve: ({ va, vb }) => {
+      const vab = va - vb;
+      return { result: { vab }, steps: [`vₐᵦ = ${va} - (${vb}) = ${formatNumber(vab)} m/s`] };
+    }
   },
   {
-    id: 'calc-aab-y',
-    title: 'a_AB,y = a_Ay − a_By — Aceleración relativa (y)',
-    expr: 'aAy - aBy',
-    vars: [
-      { name: 'aAy', label: 'a_Ay', unit: 'm/s²' },
-      { name: 'aBy', label: 'a_By', unit: 'm/s²' }
+    id: 'mr-despeje-va-velocidad-1d',
+    title: 'Calcular vₐ (Velocidad Relativa 1D)',
+    formula: 'vₐ = vₐᵦ + vᵦ',
+    variables: [
+      { symbol: 'vab', label: 'Velocidad de A respecto a B (vₐᵦ)', unit: 'm/s', example: '25' },
+      { symbol: 'vb', label: 'Velocidad de B (vᵦ)', unit: 'm/s', example: '-5' }
     ],
-    output: { name: 'a_ABy', unit: 'm/s²' }
+    output: { symbol: 'va', label: 'Velocidad de A (vₐ)', unit: 'm/s' },
+    resolve: ({ vab, vb }) => {
+      const va = vab + vb;
+      return { result: { va }, steps: [`vₐ = ${vab} + (${vb}) = ${formatNumber(va)} m/s`] };
+    }
   },
 
-  // Transformación galileana de posición: r = r' + V·t (2D)
+  // --- Grupo 2: Transformada de Galileo (1D) ---
   {
-    id: 'calc-galileana-r-x',
-    title: "r_x = r'_x + V_x·t — Transformación de posición (x)",
-    expr: 'rpx + Vx * t',
-    vars: [
-      { name: 'rpx', label: "r'_x", unit: 'm' },
-      { name: 'Vx', label: 'V_x', unit: 'm/s' },
-      { name: 't', label: 't', unit: 's' }
+    id: 'mr-galileo-posicion',
+    title: "Posición en Sistema Fijo S",
+    formula: "x = x' + V*t",
+    description: "Convierte la posición de un sistema en movimiento (S') a un sistema fijo (S).",
+    variables: [
+      { symbol: 'xp', label: "Posición en S' (x')", unit: 'm', example: '10' },
+      { symbol: 'V', label: "Velocidad de S' respecto a S (V)", unit: 'm/s', example: '5' },
+      { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '4' }
     ],
-    output: { name: 'r_x', unit: 'm' }
+    output: { symbol: 'x', label: 'Posición en S (x)', unit: 'm' },
+    resolve: ({ xp, V, t }) => {
+      const x = xp + V * t;
+      return { result: { x }, steps: [`x = ${xp} + ${V} * ${t} = ${formatNumber(x)} m`] };
+    }
+  },
+    {
+    id: 'mr-galileo-posicion-prima',
+    title: "Posición en Sistema Móvil S'",
+    formula: "x' = x - V*t",
+    variables: [
+      { symbol: 'x', label: "Posición en S (x)", unit: 'm', example: '30' },
+      { symbol: 'V', label: "Velocidad de S' respecto a S (V)", unit: 'm/s', example: '5' },
+      { symbol: 't', label: 'Tiempo (t)', unit: 's', example: '4' }
+    ],
+    output: { symbol: 'xp', label: "Posición en S' (x')", unit: 'm' },
+    resolve: ({ x, V, t }) => {
+      const xp = x - V * t;
+      return { result: { xp }, steps: [`x' = ${x} - ${V} * ${t} = ${formatNumber(xp)} m`] };
+    }
   },
   {
-    id: 'calc-galileana-r-y',
-    title: "r_y = r'_y + V_y·t — Transformación de posición (y)",
-    expr: 'rpy + Vy * t',
-    vars: [
-      { name: 'rpy', label: "r'_y", unit: 'm' },
-      { name: 'Vy', label: 'V_y', unit: 'm/s' },
-      { name: 't', label: 't', unit: 's' }
+    id: 'mr-galileo-velocidad',
+    title: "Velocidad en Sistema Fijo S",
+    formula: "v = v' + V",
+    variables: [
+      { symbol: 'vp', label: "Velocidad en S' (v')", unit: 'm/s', example: '2' },
+      { symbol: 'V', label: "Velocidad de S' respecto a S (V)", unit: 'm/s', example: '5' }
     ],
-    output: { name: 'r_y', unit: 'm' }
-  },
-
-  // Transformación galileana de velocidad: v = v' + V (2D)
-  {
-    id: 'calc-galileana-v-x',
-    title: "v_x = v'_x + V_x — Transformación de velocidad (x)",
-    expr: 'vpx + Vx',
-    vars: [
-      { name: 'vpx', label: "v'_x", unit: 'm/s' },
-      { name: 'Vx', label: 'V_x', unit: 'm/s' }
-    ],
-    output: { name: 'v_x', unit: 'm/s' }
-  },
-  {
-    id: 'calc-galileana-v-y',
-    title: "v_y = v'_y + V_y — Transformación de velocidad (y)",
-    expr: 'vpy + Vy',
-    vars: [
-      { name: 'vpy', label: "v'_y", unit: 'm/s' },
-      { name: 'Vy', label: 'V_y', unit: 'm/s' }
-    ],
-    output: { name: 'v_y', unit: 'm/s' }
-  },
-
-  // Transformación galileana de aceleración: a = a' (2D)
-  {
-    id: 'calc-galileana-a-x',
-    title: "a_x = a'_x — Transformación de aceleración (x)",
-    expr: 'apx',
-    vars: [
-      { name: 'apx', label: "a'_x", unit: 'm/s²' }
-    ],
-    output: { name: 'a_x', unit: 'm/s²' }
-  },
-  {
-    id: 'calc-galileana-a-y',
-    title: "a_y = a'_y — Transformación de aceleración (y)",
-    expr: 'apy',
-    vars: [
-      { name: 'apy', label: "a'_y", unit: 'm/s²' }
-    ],
-    output: { name: 'a_y', unit: 'm/s²' }
+    output: { symbol: 'v', label: 'Velocidad en S (v)', unit: 'm/s' },
+    resolve: ({ vp, V }) => {
+      const v = vp + V;
+      return { result: { v }, steps: [`v = ${vp} + ${V} = ${formatNumber(v)} m/s`] };
+    }
   },
 
-  // Composición de velocidades: v_obj/suelo = v_obj/medio + v_medio/suelo (2D)
+  // --- Grupo 3: Encuentro en 1D ---
   {
-    id: 'calc-compos-vel-x',
-    title: 'v_obj/suelo,x = v_obj/medio,x + v_medio/suelo,x',
-    expr: 'v_obj_medio_x + v_medio_suelo_x',
-    vars: [
-      { name: 'v_obj_medio_x', label: 'v_obj/medio,x', unit: 'm/s' },
-      { name: 'v_medio_suelo_x', label: 'v_medio/suelo,x', unit: 'm/s' }
+    id: 'mr-tiempo-encuentro-1d',
+    title: 'Tiempo de Encuentro (1D)',
+    formula: 't = (xᵦ₀ - xₐ₀) / (vₐ - vᵦ)',
+    variables: [
+      { symbol: 'xa0', label: 'Posición inicial de A (xₐ₀)', unit: 'm', example: '0' },
+      { symbol: 'va', label: 'Velocidad de A (vₐ)', unit: 'm/s', example: '20' },
+      { symbol: 'xb0', label: 'Posición inicial de B (xᵦ₀)', unit: 'm', example: '100' },
+      { symbol: 'vb', label: 'Velocidad de B (vᵦ)', unit: 'm/s', example: '-10' },
     ],
-    output: { name: 'v_obj_suelo_x', unit: 'm/s' }
-  },
-  {
-    id: 'calc-compos-vel-y',
-    title: 'v_obj/suelo,y = v_obj/medio,y + v_medio/suelo,y',
-    expr: 'v_obj_medio_y + v_medio_suelo_y',
-    vars: [
-      { name: 'v_obj_medio_y', label: 'v_obj/medio,y', unit: 'm/s' },
-      { name: 'v_medio_suelo_y', label: 'v_medio/suelo,y', unit: 'm/s' }
-    ],
-    output: { name: 'v_obj_suelo_y', unit: 'm/s' }
-  },
-
-  // Proyección de velocidad relativa sobre û (normaliza û si no es unitario)
-  {
-    id: 'calc-proyeccion',
-    title: 'v_AB·û = (v_A − v_B)·û — Proyección escalar',
-    expr: '((vAx - vBx) * ux + (vAy - vBy) * uy) / Math.max(1e-12, Math.hypot(ux, uy))',
-    vars: [
-      { name: 'vAx', label: 'v_Ax', unit: 'm/s' },
-      { name: 'vAy', label: 'v_Ay', unit: 'm/s' },
-      { name: 'vBx', label: 'v_Bx', unit: 'm/s' },
-      { name: 'vBy', label: 'v_By', unit: 'm/s' },
-      { name: 'ux', label: 'û_x', unit: '' },
-      { name: 'uy', label: 'û_y', unit: '' }
-    ],
-    output: { name: 'v_rel_proj', unit: 'm/s' }
+    output: { symbol: 't_enc', label: 'Tiempo de encuentro (t)', unit: 's' },
+    resolve: ({ xa0, va, xb0, vb }) => {
+      const delta_v = va - vb;
+      if (delta_v === 0) return { error: 'La velocidad relativa es cero, no se encontrarán.' };
+      const t = (xb0 - xa0) / delta_v;
+      if (t < 0) return { error: `El encuentro ocurrió en el pasado (t=${formatNumber(t)} s).` };
+      const x_enc = xa0 + va * t;
+      return { result: { t_enc: t }, steps: [`t = (${xb0} - ${xa0}) / (${va} - (${vb})) = ${formatNumber(t)} s`, `Posición de encuentro: x = ${xa0} + (${va})*${formatNumber(t)} = ${formatNumber(x_enc)} m`] };
+    }
   },
 
-  // Distancia relativa d_AB = |r_A − r_B| (2D)
+  // --- Grupo 4: Operaciones Vectoriales en 2D ---
   {
-    id: 'calc-dist-rel',
-    title: 'd_AB = | r_A − r_B | — Distancia relativa',
-    expr: 'Math.hypot(rAx - rBx, rAy - rBy)',
-    vars: [
-      { name: 'rAx', label: 'r_Ax', unit: 'm' },
-      { name: 'rAy', label: 'r_Ay', unit: 'm' },
-      { name: 'rBx', label: 'r_Bx', unit: 'm' },
-      { name: 'rBy', label: 'r_By', unit: 'm' }
+    id: 'mr-suma-vectores-2d',
+    title: 'Suma de Vectores 2D (Componentes)',
+    formula: 'R = A + B = (Ax+Bx, Ay+By)',
+    variables: [
+        { symbol: 'ax', label: 'Componente Ax', unit: '', example: '3' },
+        { symbol: 'ay', label: 'Componente Ay', unit: '', example: '4' },
+        { symbol: 'bx', label: 'Componente Bx', unit: '', example: '1' },
+        { symbol: 'by', label: 'Componente By', unit: '', example: '-2' },
     ],
-    output: { name: 'd_AB', unit: 'm' }
+    output: { symbol: 'R', label: 'Vector Resultante R', unit: '' },
+    resolve: ({ ax, ay, bx, by }) => {
+        const rx = ax + bx;
+        const ry = ay + by;
+        const mag = Math.sqrt(Math.pow(rx, 2) + Math.pow(ry, 2));
+        const angle = Math.atan2(ry, rx) * (180 / Math.PI);
+        return { result: { R: `(${formatNumber(rx)}, ${formatNumber(ry)})` }, steps: [`Rx = ${ax} + ${bx} = ${formatNumber(rx)}`, `Ry = ${ay} + ${by} = ${formatNumber(ry)}`, `Magnitud |R| = √(${rx}² + ${ry}²) = ${formatNumber(mag)}`, `Ángulo θ = ${formatNumber(angle)}°`] };
+    }
+  },
+  {
+    id: 'mr-resta-vectores-2d',
+    title: 'Resta de Vectores 2D (Componentes)',
+    formula: 'R = A - B = (Ax-Bx, Ay-By)',
+    variables: [
+        { symbol: 'ax', label: 'Componente Ax', unit: '', example: '3' },
+        { symbol: 'ay', label: 'Componente Ay', unit: '', example: '4' },
+        { symbol: 'bx', label: 'Componente Bx', unit: '', example: '1' },
+        { symbol: 'by', label: 'Componente By', unit: '', example: '-2' },
+    ],
+    output: { symbol: 'R', label: 'Vector Resultante R', unit: '' },
+    resolve: ({ ax, ay, bx, by }) => {
+        const rx = ax - bx;
+        const ry = ay - by;
+        const mag = Math.sqrt(Math.pow(rx, 2) + Math.pow(ry, 2));
+        const angle = Math.atan2(ry, rx) * (180 / Math.PI);
+        return { result: { R: `(${formatNumber(rx)}, ${formatNumber(ry)})` }, steps: [`Rx = ${ax} - ${bx} = ${formatNumber(rx)}`, `Ry = ${ay} - ${by} = ${formatNumber(ry)}`, `Magnitud |R| = √(${rx}² + ${ry}²) = ${formatNumber(mag)}`, `Ángulo θ = ${formatNumber(angle)}°`] };
+    }
   },
 
-  // Intercepción 1D: r_A0 + v_A t = r_B0 + v_B t
+  // --- Grupo 5: Velocidad Relativa en 2D ---
   {
-    id: 'calc-intercepcion-1d',
-    title: 't = (r_B0 − r_A0) / (v_A − v_B) — Intercepción (1D)',
-    expr: '(rB0 - rA0) / (vA - vB)',
-    vars: [
-      { name: 'rA0', label: 'r_A0', unit: 'm' },
-      { name: 'vA', label: 'v_A', unit: 'm/s' },
-      { name: 'rB0', label: 'r_B0', unit: 'm' },
-      { name: 'vB', label: 'v_B', unit: 'm/s' }
+    id: 'mr-velocidad-relativa-2d',
+    title: 'Velocidad Relativa (2D)',
+    description: 'Calcula la velocidad de A respecto a B en 2D (vₐᵦ = vₐ - vᵦ).',
+    formula: 'vₐᵦ = vₐ - vᵦ',
+    variables: [
+      { symbol: 'vax', label: 'Velocidad vₐ (componente x)', unit: 'm/s', example: '10' },
+      { symbol: 'vay', label: 'Velocidad vₐ (componente y)', unit: 'm/s', example: '5' },
+      { symbol: 'vbx', label: 'Velocidad vᵦ (componente x)', unit: 'm/s', example: '3' },
+      { symbol: 'vby', label: 'Velocidad vᵦ (componente y)', unit: 'm/s', example: '8' },
     ],
-    output: { name: 't', unit: 's' }
+    output: { symbol: 'vab', label: 'Velocidad Relativa vₐᵦ', unit: 'm/s' },
+    resolve: ({ vax, vay, vbx, vby }) => {
+      const vabx = vax - vbx;
+      const vaby = vay - vby;
+      const mag = Math.sqrt(Math.pow(vabx, 2) + Math.pow(vaby, 2));
+      const angle = Math.atan2(vaby, vabx) * (180 / Math.PI);
+      return { result: { vab: `(${formatNumber(vabx)}, ${formatNumber(vaby)})` }, steps: [`vₐᵦₓ = ${vax} - ${vbx} = ${formatNumber(vabx)}`, `vₐᵦᵧ = ${vay} - ${vby} = ${formatNumber(vaby)}`, `|vₐᵦ| = √(${vabx}² + ${vaby}²) = ${formatNumber(mag)} m/s`, `Ángulo θ = ${formatNumber(angle)}°`] };
+    }
+  },
+  {
+    id: 'mr-composicion-velocidades-2d',
+    title: 'Composición de Velocidades (2D)',
+    description: 'Calcula la velocidad respecto a un sistema fijo (vₐₑ = vₐᵦ + vᵦₑ).',
+    formula: 'vₐₑ = vₐᵦ + vᵦₑ',
+    variables: [
+      { symbol: 'vabx', label: 'vₐᵦ (componente x)', unit: 'm/s', example: '15' }, // Ej: Velocidad de un bote respecto al agua
+      { symbol: 'vaby', label: 'vₐᵦ (componente y)', unit: 'm/s', example: '0' },
+      { symbol: 'vbex', label: 'vᵦₑ (componente x)', unit: 'm/s', example: '0' },   // Ej: Velocidad del agua (río) respecto a la tierra
+      { symbol: 'vbey', label: 'vᵦₑ (componente y)', unit: 'm/s', example: '4' },
+    ],
+    output: { symbol: 'vae', label: 'Velocidad Resultante vₐₑ', unit: 'm/s' },
+    resolve: ({ vabx, vaby, vbex, vbey }) => {
+      const vaex = vabx + vbex;
+      const vaey = vaby + vbey;
+      const mag = Math.sqrt(Math.pow(vaex, 2) + Math.pow(vaey, 2));
+      const angle = Math.atan2(vaey, vaex) * (180 / Math.PI);
+      return { result: { vae: `(${formatNumber(vaex)}, ${formatNumber(vaey)})` }, steps: [`vₐₑₓ = ${vabx} + ${vbex} = ${formatNumber(vaex)}`, `vₐₑᵧ = ${vaby} + ${vbey} = ${formatNumber(vaey)}`, `|vₐₑ| = √(${vaex}² + ${vaey}²) = ${formatNumber(mag)} m/s`, `Ángulo θ = ${formatNumber(angle)}°`] };
+    }
   }
 ];
-
-export default calculators;

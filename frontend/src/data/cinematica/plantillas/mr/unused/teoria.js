@@ -1,1 +1,0 @@
-export default `El Movimiento Rectilíneo (MR) es aquel en el que un cuerpo se desplaza en línea recta, sin especificar si la velocidad es constante o variable. Es la base para los movimientos MRU y MRUV. Conceptos clave: trayectoria recta, posición, desplazamiento, velocidad y aceleración.`;

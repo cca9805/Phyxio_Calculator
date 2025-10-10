@@ -3,87 +3,85 @@ import { useLocation } from 'react-router-dom';
 
 const ThemeContext = createContext();
 
+// Mapa para convertir el segmento de la URL al nombre del tema.
+// Es mucho más fácil de mantener que una cadena de if-else.
+const THEME_MAP = {
+  // Cinemática
+  'mruv': 'mruv',
+  'mru': 'mru',
+  'mcua': 'mcua',
+  'mcu': 'mcu',
+  'mas': 'mas',
+  'mp': 'mp',
+  'mr': 'mr',
+  // Dinámica
+  'equilibrio': 'equilibrio',
+  'newton': 'newton',
+  'trabajoenergia': 'trab-energia',
+  'movimpulso': 'movimpulso',
+  'rotacion': 'rotacion',
+  'gravitacion': 'gravitacion',
+  'oscilaciones': 'oscilaciones',
+  'masaspoleas': 'masaspoleas',
+  'maquinas': 'maquinas',
+  // Estática
+  'fuerzas': 'fuerzas',
+  'torque': 'torque',
+  'centro': 'centro-masa',
+  'cuerpos': 'leyes',
+  'apoyos': 'apoyos',
+  'diagramas': 'diagramas-cuerpo-libre',
+  'estructuras': 'estructuras',
+  'estabilidad': 'estabilidad',
+  'aplicaciones': 'aplicaciones',
+  // ElectroMagenetismo
+  // Electricidad
+  'circuitos': 'circuitos',
+  'corriente': 'corriente',
+  'ohm': 'ohm',
+  // Magnetismo
+  'campos': 'campos',
+  'induccion': 'induccion',
+  // Maxwell
+  'maxwell': 'maxwell'
+};
+
+const DEFAULT_THEME = 'light'; // Tema neutral por defecto.
+
 export const ThemeProvider = ({ children }) => {
   const location = useLocation();
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(DEFAULT_THEME);
 
-  // Determinar el tema basado en la ruta actual
   useEffect(() => {
     const path = location.pathname;
+    let newTheme = DEFAULT_THEME;
 
-    // Temas de cinemática
-    if (path.includes('/clasica/mecanica/cinematica/mruv') || path.includes('/mruv')) {
-      setTheme('mruv');
-    } else if (path.includes('/clasica/mecanica/cinematica/mru') || path.includes('/mru')) {
-      setTheme('mru');
-    } else if (path.includes('/clasica/mecanica/cinematica/mcua') || path.includes('/mcua')) {
-      setTheme('mcua');
-    } else if (path.includes('/clasica/mecanica/cinematica/mcu') || path.includes('/mcu')) {
-      setTheme('mcu');
-    } else if (path.includes('/clasica/mecanica/cinematica/mas') || path.includes('/mas')) {
-      setTheme('mas');
-    } else if (path.includes('/clasica/mecanica/cinematica/mp') || path.includes('/mp')) {
-      setTheme('mp');
-    } else if (path.includes('/clasica/mecanica/cinematica/mr') || path.includes('/mr')) {
-      setTheme('mr');
-    }
-    // Temas de dinámica
-    else if (path.includes('/clasica/mecanica/dinamica/equilibrio') || path.includes('/equilibrio')) {
-      setTheme('equilibrio');
-    } else if (path.includes('/clasica/mecanica/dinamica/newton') || path.includes('/newton')) {
-      setTheme('newton');
-    } else if (path.includes('/clasica/mecanica/dinamica/trabajoenergia') || path.includes('/trabajoenergia')) {
-      setTheme('trab-energia');
-    } else if (path.includes('/clasica/mecanica/dinamica/movimpulso') || path.includes('/movimpulso')) {
-      setTheme('movimpulso');
-    } else if (path.includes('/clasica/mecanica/dinamica/rotacion') || path.includes('/rotacion')) {
-      setTheme('rotacion');
-    } else if (path.includes('/clasica/mecanica/dinamica/gravitacion') || path.includes('/gravitacion')) {
-      setTheme('gravitacion');
-    } else if (path.includes('/clasica/mecanica/dinamica/friccion') || path.includes('/friccion')) {
-      setTheme('friccion');
-    } else if (path.includes('/clasica/mecanica/dinamica/oscilaciones') || path.includes('/oscilaciones')) {
-      setTheme('oscilaciones');
-    } else if (path.includes('/clasica/mecanica/dinamica/masaspoleas') || path.includes('/masaspoleas')) {
-      setTheme('masaspoleas');
-    } else if (path.includes('/clasica/mecanica/dinamica/maquinas') || path.includes('/maquinas')) {
-      setTheme('maquinas');
-    }
-    // Temas de estática
-    else if (path.includes('/clasica/mecanica/estatica/fuerzas') || path.includes('/fuerzas')) {
-      setTheme('fuerzas');
-    } else if (path.includes('/clasica/mecanica/estatica/torque') || path.includes('/torque')) {
-      setTheme('torque');
-    } else if (path.includes('/clasica/mecanica/estatica/centro') || path.includes('/centro')) {
-      setTheme('centro-masa');
-    } else if (path.includes('/clasica/mecanica/estatica/cuerpos') || path.includes('/cuerpos')) {
-      setTheme('leyes');
-    } else if (path.includes('/clasica/mecanica/estatica/apoyos') || path.includes('/apoyos')) {
-      setTheme('apoyos');
-    } else if (path.includes('/clasica/mecanica/estatica/diagramas') || path.includes('/diagramas')) {
-      setTheme('diagramas-cuerpo-libre');
-    } else if (path.includes('/clasica/mecanica/estatica/friccion') || path.includes('/friccion')) {
-      setTheme('friccion-equilibrio');
-    } else if (path.includes('/clasica/mecanica/estatica/estructuras') || path.includes('/estructuras')) {
-      setTheme('estructuras');
-    } else if (path.includes('/clasica/mecanica/estatica/estabilidad') || path.includes('/estabilidad')) {
-      setTheme('estabilidad');
-    } else if (path.includes('/clasica/mecanica/estatica/aplicaciones') || path.includes('/aplicaciones')) {
-      setTheme('aplicaciones');
-    }
-    // Tema por defecto
-    else {
-      setTheme('light');
+    // 1. Manejar casos especiales donde el tema depende de la ruta completa.
+    if (path.includes('/clasica/mecanica/estatica/friccion')) {
+      newTheme = 'friccion-equilibrio';
+    } else if (path.includes('/clasica/mecanica/dinamica/friccion')) {
+      newTheme = 'friccion';
+    } else {
+      // 2. Lógica general: extraer el último segmento de la URL.
+      const pathSegments = path.split('/').filter(Boolean);
+      const lastSegment = pathSegments[pathSegments.length - 1];
+
+      if (lastSegment) {
+        // Usar el mapa para encontrar el tema; si no existe, se mantiene el DEFAULT_THEME.
+        newTheme = THEME_MAP[lastSegment] || DEFAULT_THEME;
+      }
     }
 
-    // Depuración: Mostrar la ruta y el tema aplicado
-    console.log('Ruta actual:', path, '| Tema aplicado:', theme);
+    setTheme(newTheme);
+
+    // Opcional: Depuración para ver el tema aplicado en la consola.
+    // console.log('Ruta actual:', path, '| Tema aplicado:', newTheme);
+
   }, [location]);
 
-  // Actualizar el atributo data-theme en el elemento raíz
+  // Efecto para actualizar el atributo data-theme en el <html>.
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    // Limpiar al desmontar
     return () => {
       document.documentElement.removeAttribute('data-theme');
     };

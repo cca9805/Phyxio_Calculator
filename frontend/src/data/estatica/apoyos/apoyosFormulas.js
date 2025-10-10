@@ -1,36 +1,25 @@
 export const formulas = [
   {
-    id: 'reaccion-apoyo-simple',
-    title: 'Reacción en apoyo simple',
-    formula: 'R = F',
-    latex: 'R = F',
-    description: 'La reacción en un apoyo simple es igual a la fuerza aplicada verticalmente sobre el apoyo.',
+    id: "reaccion-apoyo-b-viga-simple",
+    title: "Reacción en Apoyo B (Rodillo)",
+    formula: "R_B = (P * a) / L",
+    description: "Calcula la reacción vertical en el apoyo B (generalmente un rodillo) de una viga simplemente apoyada con una carga puntual.",
     variables: [
-      { symbol: 'R', name: 'Reacción', unit: 'N' },
-      { symbol: 'F', name: 'Fuerza aplicada', unit: 'N' }
+      { symbol: "R_B", name: "Reacción en B", unit: "N" },
+      { symbol: "P", name: "Carga puntual", unit: "N" },
+      { symbol: "a", name: "Distancia de la carga al apoyo A", unit: "m" },
+      { symbol: "L", name: "Longitud de la viga", unit: "m" }
     ]
   },
   {
-    id: 'reaccion-apoyo-movil',
-    title: 'Reacción en apoyo móvil (rodillo)',
-    formula: 'R = F',
-    latex: 'R = F',
-    description: 'La reacción en un apoyo móvil es igual a la fuerza vertical aplicada sobre el apoyo.',
+    id: "reaccion-apoyo-a-viga-simple",
+    title: "Reacción en Apoyo A (Pasador)",
+    formula: "R_A = P - R_B",
+    description: "Calcula la reacción vertical en el apoyo A (generalmente un pasador) usando la suma de fuerzas verticales, una vez conocida R_B.",
     variables: [
-      { symbol: 'R', name: 'Reacción', unit: 'N' },
-      { symbol: 'F', name: 'Fuerza aplicada', unit: 'N' }
-    ]
-  },
-  {
-    id: 'reaccion-apoyo-fijo',
-    title: 'Reacciones en apoyo fijo',
-    formula: 'R_x, R_y, M',
-    latex: 'R_x, R_y, M',
-    description: 'El apoyo fijo genera reacciones horizontales, verticales y un momento.',
-    variables: [
-      { symbol: 'R_x', name: 'Reacción horizontal', unit: 'N' },
-      { symbol: 'R_y', name: 'Reacción vertical', unit: 'N' },
-      { symbol: 'M', name: 'Momento', unit: 'N·m' }
+      { symbol: "R_A", name: "Reacción en A", unit: "N" },
+      { symbol: "P", name: "Carga puntual total", unit: "N" },
+      { symbol: "R_B", name: "Reacción en B", unit: "N" }
     ]
   }
 ];

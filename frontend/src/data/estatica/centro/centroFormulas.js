@@ -1,31 +1,24 @@
 export const formulas = [
   {
     id: 'centro-masa-x',
-    title: 'Centro de masa en una dimensión',
-    formula: 'x_cm = (Σ m_i x_i) / (Σ m_i)',
-    latex: 'x_{cm} = \\frac{\\sum m_i x_i}{\\sum m_i}',
-    description: 'Calcula la posición del centro de masa en el eje x para un sistema de partículas.',
+    title: 'Coordenada X del Centro de Masa',
+    formula: 'X_cm = (Σ x_i * m_i) / (Σ m_i)',
+    description: 'Calcula la coordenada X del centro de masa de un sistema de partículas.',
     variables: [
-      { symbol: 'x_{cm}', name: 'Centro de masa (x)', unit: 'm' },
-      { symbol: 'm_i', name: 'Masa de la partícula i', unit: 'kg' },
-      { symbol: 'x_i', name: 'Posición de la partícula i', unit: 'm' }
+      { symbol: 'X_cm', label: 'Coordenada X del Centro de Masa', unit: 'unidades' },
+      { symbol: 'x_i', label: 'Coordenada X de la masa i', unit: 'unidades' },
+      { symbol: 'm_i', label: 'Masa de la partícula i', unit: 'kg' },
     ]
   },
   {
-    id: 'centro-masa-2d',
-    title: 'Centro de masa en dos dimensiones',
-    formula: 'x_cm = (Σ m_i x_i) / (Σ m_i), y_cm = (Σ m_i y_i) / (Σ m_i)',
-    latex: 'x_{cm} = \\frac{\\sum m_i x_i}{\\sum m_i}, \\quad y_{cm} = \\frac{\\sum m_i y_i}{\\sum m_i}',
-    description: 'Calcula la posición del centro de masa en x e y para un sistema de partículas.',
+    id: 'centro-masa-y',
+    title: 'Coordenada Y del Centro de Masa',
+    formula: 'Y_cm = (Σ y_i * m_i) / (Σ m_i)',
+    description: 'Calcula la coordenada Y del centro de masa de un sistema de partículas.',
     variables: [
-      { symbol: 'x_{cm}', name: 'Centro de masa (x)', unit: 'm' },
-      { symbol: 'y_{cm}', name: 'Centro de masa (y)', unit: 'm' },
-      { symbol: 'm_i', name: 'Masa de la partícula i', unit: 'kg' },
-      { symbol: 'x_i', name: 'Posición x de la partícula i', unit: 'm' },
-      { symbol: 'y_i', name: 'Posición y de la partícula i', unit: 'm' }
+      { symbol: 'Y_cm', label: 'Coordenada Y del Centro de Masa', unit: 'unidades' },
+      { symbol: 'y_i', label: 'Coordenada Y de la masa i', unit: 'unidades' },
+      { symbol: 'm_i', label: 'Masa de la partícula i', unit: 'kg' },
     ]
   }
 ];
-
-export default formulas;
-
