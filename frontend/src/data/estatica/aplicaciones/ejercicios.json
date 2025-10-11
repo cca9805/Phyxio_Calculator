@@ -1,12 +1,107 @@
 [
   {
-    "id": "equilibrio-aplicacion",
-    "title": "Equilibrio en una estructura",
-    "prompt": "Un edificio recibe una fuerza de viento de 5000 N y una reacción de los cimientos de -5000 N. ¿Está en equilibrio?",
-    "solution": [
-      "ΣF = 5000 N (viento) + (-5000 N) (cimientos) = 0 N",
-      "La suma de fuerzas es cero, por lo tanto el edificio está en equilibrio."
-    ],
-    "answer": "Sí, está en equilibrio."
+    "id": "app-sum-vec-1",
+    "title": "Suma de Vectores #1",
+    "prompt": "El vector A tiene componentes Ax=3, Ay=4. El vector B tiene Bx=-1, By=5. ¿Cuáles son las componentes del vector resultante R = A + B?",
+    "solution": ["Rx = 3 + (-1) = 2", "Ry = 4 + 5 = 9"],
+    "answer": "Rx = 2, Ry = 9"
+  },
+  {
+    "id": "app-sum-vec-2",
+    "title": "Suma de Vectores #2",
+    "prompt": "Suma dos vectores: A=(5, -2) y B=(2, 8). Halla las componentes de la resultante.",
+    "solution": ["Rx = 5 + 2 = 7", "Ry = -2 + 8 = 6"],
+    "answer": "Rx = 7, Ry = 6"
+  },
+  {
+    "id": "app-sum-vec-3",
+    "title": "Suma de Vectores #3",
+    "prompt": "Si A=(-10, 0) y B=(10, 0), ¿cuál es el vector resultante?",
+    "solution": ["Rx = -10 + 10 = 0", "Ry = 0 + 0 = 0"],
+    "answer": "Rx = 0, Ry = 0"
+  },
+  {
+    "id": "app-sum-vec-4",
+    "title": "Suma de Vectores #4",
+    "prompt": "Calcula R = A + B, donde A=(7, 2) y B=(3, -9).",
+    "solution": ["Rx = 7 + 3 = 10", "Ry = 2 + (-9) = -7"],
+    "answer": "Rx = 10, Ry = -7"
+  },
+  {
+    "id": "app-sum-vec-5",
+    "title": "Suma de Vectores #5",
+    "prompt": "Dos fuerzas actúan en componentes: F1=(20, 30) N y F2=(10, -10) N. ¿Cuál es la fuerza resultante en componentes?",
+    "solution": ["Rx = 20 + 10 = 30", "Ry = 30 + (-10) = 20"],
+    "answer": "Rx = 30 N, Ry = 20 N"
+  },
+  {
+    "id": "app-eq-1",
+    "title": "Fuerza de Equilibrio #1",
+    "prompt": "Dos fuerzas, F1=50N a 0° y F2=50N a 180°, actúan sobre un punto. ¿Qué tercera fuerza F3 se necesita para el equilibrio?",
+    "solution": ["Las fuerzas son iguales y opuestas, se anulan. F3 = 0."],
+    "answer": "F3 = 0 N"
+  },
+  {
+    "id": "app-eq-2",
+    "title": "Fuerza de Equilibrio #2",
+    "prompt": "Una fuerza F1 es de 10N a 45° y F2 es de 10N a 225°. ¿Qué fuerza F3 equilibra el sistema?",
+    "solution": ["Los ángulos tienen 180° de diferencia, las fuerzas se anulan. F3 = 0."],
+    "answer": "F3 = 0 N"
+  },
+  {
+    "id": "app-eq-3",
+    "title": "Fuerza de Equilibrio #3",
+    "prompt": "Si F1=20N a 90° y F2=30N a 270°, calcula la fuerza de equilibrio F3.",
+    "solution": ["ΣFy = 20 - 30 = -10N. Para equilibrar, F3 debe ser 10N en sentido opuesto (90°)."],
+    "answer": "F3 = 10 N a 90°"
+  },
+  {
+    "id": "app-eq-4",
+    "title": "Fuerza de Equilibrio #4",
+    "prompt": "Dos tensiones: T1=100N a 60° y T2=100N a 120°. ¿Qué fuerza F3 se requiere para el equilibrio?",
+    "solution": ["ΣFx = 100cos(60) + 100cos(120)=0", "ΣFy = 100sin(60)+100sin(120)=173.2N. F3 debe ser opuesta."],
+    "answer": "F3 = 173.2 N a -90° (o 270°)"
+  },
+  {
+    "id": "app-eq-5",
+    "title": "Fuerza de Equilibrio #5",
+    "prompt": "F1=80N a 0° y F2=60N a 90°. Encuentra la magnitud y el ángulo de la fuerza de equilibrio F3.",
+    "solution": ["Rx = 80, Ry = 60. R = 100N a 36.87°. F3 debe ser opuesta."],
+    "answer": "F3 = 100 N a 216.87° (o -143.13°)"
+  },
+  {
+    "id": "app-decomp-1",
+    "title": "Descomposición de Fuerza #1",
+    "prompt": "Una fuerza de 100N actúa a un ángulo de 30° con la horizontal. Halla Fx y Fy.",
+    "solution": ["Fx = 100·cos(30) = 86.6", "Fy = 100·sin(30) = 50"],
+    "answer": "Fx = 86.6 N, Fy = 50 N"
+  },
+  {
+    "id": "app-decomp-2",
+    "title": "Descomposición de Fuerza #2",
+    "prompt": "Calcula las componentes de una fuerza de 500N a 135°.",
+    "solution": ["Fx = 500·cos(135) = -353.55", "Fy = 500·sin(135) = 353.55"],
+    "answer": "Fx = -353.55 N, Fy = 353.55 N"
+  },
+  {
+    "id": "app-decomp-3",
+    "title": "Descomposición de Fuerza #3",
+    "prompt": "Descompón un vector de 150N orientado a 270°.",
+    "solution": ["Fx = 150·cos(270) = 0", "Fy = 150·sin(270) = -150"],
+    "answer": "Fx = 0 N, Fy = -150 N"
+  },
+  {
+    "id": "app-decomp-4",
+    "title": "Descomposición de Fuerza #4",
+    "prompt": "Una tensión de 75N forma un ángulo de -45° con el eje x. ¿Cuáles son sus componentes?",
+    "solution": ["Fx = 75·cos(-45) = 53.03", "Fy = 75·sin(-45) = -53.03"],
+    "answer": "Fx = 53.03 N, Fy = -53.03 N"
+  },
+  {
+    "id": "app-decomp-5",
+    "title": "Descomposición de Fuerza #5",
+    "prompt": "¿Cuáles son las componentes Fx y Fy de una fuerza de 1000N que actúa en la dirección horizontal negativa (180°)?",
+    "solution": ["Fx = 1000·cos(180) = -1000", "Fy = 1000·sin(180) = 0"],
+    "answer": "Fx = -1000 N, Fy = 0 N"
   }
 ]

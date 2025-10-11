@@ -1,14 +1,32 @@
 [
   {
-    "id": "equilibrio-dcl",
-    "title": "DCL de una caja en equilibrio",
-    "prompt": "Dibuja el diagrama de cuerpo libre de una caja en reposo sobre una mesa y determina si está en equilibrio.",
-    "solution": [
-      "Fuerza de gravedad hacia abajo: F_g = m·g",
-      "Fuerza normal hacia arriba: N",
-      "ΣF = N - F_g = 0 ⇒ N = F_g",
-      "La caja está en equilibrio porque la suma de fuerzas es cero."
-    ],
-    "answer": "Sí, está en equilibrio."
+    "id_formula": "componentes-peso-inclinado",
+    "question": "Un objeto de 100N de peso se encuentra sobre un plano inclinado 30°. Calcula las componentes paralela (Wx) y perpendicular (Wy) del peso.",
+    "solution": {"Wx": 50, "Wy": 86.6},
+    "variables": {"W": 100, "θ": 30}
+  },
+  {
+    "id_formula": "componentes-peso-inclinado",
+    "question": "Para un bloque de 50N en un plano con inclinación de 45°, ¿cuáles son los valores de las componentes del peso Wx y Wy?",
+    "solution": {"Wx": 35.36, "Wy": 35.36},
+    "variables": {"W": 50, "θ": 45}
+  },
+  {
+    "id_formula": "componentes-peso-inclinado",
+    "question": "Un cuerpo que pesa 200N descansa en un plano inclinado 60°. Determina las componentes Wx y Wy del peso.",
+    "solution": {"Wx": 173.21, "Wy": 100},
+    "variables": {"W": 200, "θ": 60}
+  },
+  {
+    "id_formula": "componentes-peso-inclinado",
+    "question": "Calcula las componentes del peso para un objeto de 15N en un plano con una inclinación de 15°.",
+    "solution": {"Wx": 3.88, "Wy": 14.49},
+    "variables": {"W": 15, "θ": 15}
+  },
+  {
+    "id_formula": "componentes-peso-inclinado",
+    "question": "Un bloque de 500N está en una superficie horizontal (ángulo de 0°). ¿Cuáles son sus componentes Wx y Wy?",
+    "solution": {"Wx": 0, "Wy": 500},
+    "variables": {"W": 500, "θ": 0}
   }
 ]

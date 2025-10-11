@@ -1,22 +1,152 @@
 [
   {
-    "id": "centro-masa-x",
-    "title": "Centro de masa en una dimensión",
-    "prompt": "Dos masas de 2 kg en x=0 m y 3 kg en x=4 m. ¿Dónde está el centro de masa?",
-    "solution": [
-      "x_cm = (2*0 + 3*4) / (2+3)",
-      "x_cm = (0 + 12) / 5 = 12 / 5 = 2.4 m"
-    ],
-    "answer": "2.4 m"
+    "id_formula": "centro_masa_particulas",
+    "question": "Dos masas, m1=4kg en x1=2m y m2=6kg en x2=8m, están en el eje x. ¿Cuál es la posición de su centro de masa?",
+    "solution": {"X_cm": 5.6},
+    "variables": {"m1": 4, "x1": 2, "m2": 6, "x2": 8}
   },
   {
-    "id": "centro-masa-2d",
-    "title": "Centro de masa en dos dimensiones",
-    "prompt": "Tres partículas: 1 kg en (0,0), 2 kg en (2,0), 3 kg en (0,3). ¿Dónde está el centro de masa?",
-    "solution": [
-      "x_cm = (1*0 + 2*2 + 3*0) / (1+2+3) = (0+4+0)/6 = 4/6 = 0.67 m",
-      "y_cm = (1*0 + 2*0 + 3*3) / 6 = (0+0+9)/6 = 9/6 = 1.5 m"
-    ],
-    "answer": "(0.67 m, 1.5 m)"
+    "id_formula": "centro_masa_particulas",
+    "question": "Una partícula de 1kg está en el origen (x=0) y otra de 3kg está en x=4m. Hallar el centro de masa.",
+    "solution": {"X_cm": 3},
+    "variables": {"m1": 1, "x1": 0, "m2": 3, "x2": 4}
+  },
+  {
+    "id_formula": "centro_masa_particulas",
+    "question": "Si m1=5kg en x1=-2m y m2=5kg en x2=6m, ¿dónde está el centro de masa?",
+    "solution": {"X_cm": 2},
+    "variables": {"m1": 5, "x1": -2, "m2": 5, "x2": 6}
+  },
+  {
+    "id_formula": "centro_masa_particulas",
+    "question": "Calcula el CM de dos masas: 10kg en x=-5m y 2kg en x=1m.",
+    "solution": {"X_cm": -4},
+    "variables": {"m1": 10, "x1": -5, "m2": 2, "x2": 1}
+  },
+  {
+    "id_formula": "centro_masa_particulas",
+    "question": "Una masa de 7kg está en x=3m y otra de 1kg en x=-1m. Encuentra su centro de masa.",
+    "solution": {"X_cm": 2.5},
+    "variables": {"m1": 7, "x1": 3, "m2": 1, "x2": -1}
+  },
+  {
+    "id_formula": "centro_gravedad_particulas",
+    "question": "Dos cuerpos, W1=10N en x1=2m y W2=30N en x2=6m, están en el eje x. ¿Cuál es la posición de su centro de gravedad?",
+    "solution": {"X_cg": 5},
+    "variables": {"W1": 10, "x1": 2, "W2": 30, "x2": 6}
+  },
+  {
+    "id_formula": "centro_gravedad_particulas",
+    "question": "Un cuerpo de 50N está en el origen (x=0) y otro de 25N está en x=9m. Hallar el centro de gravedad.",
+    "solution": {"X_cg": 3},
+    "variables": {"W1": 50, "x1": 0, "W2": 25, "x2": 9}
+  },
+  {
+    "id_formula": "centro_gravedad_particulas",
+    "question": "Si W1=100N en x1=-4m y W2=100N en x2=10m, ¿dónde está el centro de gravedad?",
+    "solution": {"X_cg": 3},
+    "variables": {"W1": 100, "x1": -4, "W2": 100, "x2": 10}
+  },
+  {
+    "id_formula": "centro_gravedad_particulas",
+    "question": "Calcula el CG de dos pesos: 200N en x=-5m y 50N en x=2m.",
+    "solution": {"X_cg": -3.6},
+    "variables": {"W1": 200, "x1": -5, "W2": 50, "x2": 2}
+  },
+  {
+    "id_formula": "centro_gravedad_particulas",
+    "question": "Un peso de 40N está en x=3m y otro de 60N en x=-8m. Encuentra su centro de gravedad.",
+    "solution": {"X_cg": -3.6},
+    "variables": {"W1": 40, "x1": 3, "W2": 60, "x2": -8}
+  },
+  {
+    "id_formula": "centroide_linea_compuesta",
+    "question": "Dos varillas: L1=2m con centroide en (1,0) y L2=8m con centroide en (2,3). ¿Cuál es el centroide (Xc, Yc) del conjunto?",
+    "solution": {"Xc": 1.8, "Yc": 2.4},
+    "variables": {"L1": 2, "x1": 1, "y1": 0, "L2": 8, "x2": 2, "y2": 3}
+  },
+  {
+    "id_formula": "centroide_linea_compuesta",
+    "question": "Una línea de 5m tiene su centroide en (2.5, 0) y se une a otra de 5m con centroide en (5, 2.5). Encuentra el centroide (Xc, Yc) total.",
+    "solution": {"Xc": 3.75, "Yc": 1.25},
+    "variables": {"L1": 5, "x1": 2.5, "y1": 0, "L2": 5, "x2": 5, "y2": 2.5}
+  },
+  {
+    "id_formula": "centroide_linea_compuesta",
+    "question": "Calcula el centroide (Xc, Yc) de dos alambres: L1=1m, centroide (0.5,0); L2=3m, centroide (1,1.5).",
+    "solution": {"Xc": 0.875, "Yc": 1.125},
+    "variables": {"L1": 1, "x1": 0.5, "y1": 0, "L2": 3, "x2": 1, "y2": 1.5}
+  },
+  {
+    "id_formula": "centroide_linea_compuesta",
+    "question": "Dos segmentos de 12m y 10m tienen sus centroides en (6,0) y (12,5) respectivamente. Hallar las coordenadas (Xc, Yc) del centroide del conjunto.",
+    "solution": {"Xc": 8.73, "Yc": 2.27},
+    "variables": {"L1": 12, "x1": 6, "y1": 0, "L2": 10, "x2": 12, "y2": 5}
+  },
+  {
+    "id_formula": "centroide_linea_compuesta",
+    "question": "Un alambre L1=4m tiene su centroide en (1,1) y se une a otro L2=6m con centroide en (4,3). Halla el centroide total (Xc, Yc).",
+    "solution": {"Xc": 2.8, "Yc": 2.2},
+    "variables": {"L1": 4, "x1": 1, "y1": 1, "L2": 6, "x2": 4, "y2": 3}
+  },
+  {
+    "id_formula": "centroide_area_compuesta",
+    "question": "Un rectángulo (A1=12m²) tiene su centroide en (3,2). Un triángulo (A2=6m²) se une a él, con centroide en (7,4). Hallar el centroide del área compuesta (Xc, Yc).",
+    "solution": {"Xc": 4.33, "Yc": 2.67},
+    "variables": {"A1": 12, "x1": 3, "y1": 2, "A2": 6, "x2": 7, "y2": 4}
+  },
+  {
+    "id_formula": "centroide_area_compuesta",
+    "question": "Una placa cuadrada de 100m² con centroide en (5,5) tiene un agujero circular de 10m² con centroide en (6,6). Calcula el nuevo centroide (Xc, Yc).",
+    "solution": {"Xc": 4.89, "Yc": 4.89},
+    "variables": {"A1": 100, "x1": 5, "y1": 5, "A2": -10, "x2": 6, "y2": 6}
+  },
+  {
+    "id_formula": "centroide_area_compuesta",
+    "question": "Se combina un área A1=50 con centroide (10,10) y un área A2=25 con centroide (5,5). ¿Cuál es el centroide (Xc, Yc) de la figura?",
+    "solution": {"Xc": 8.33, "Yc": 8.33},
+    "variables": {"A1": 50, "x1": 10, "y1": 10, "A2": 25, "x2": 5, "y2": 5}
+  },
+  {
+    "id_formula": "centroide_area_compuesta",
+    "question": "A una placa de 40m² con centroide en (0,0) se le quita un trozo de 8m² cuyo centroide estaba en (5,2). Hallar el nuevo centroide (Xc, Yc).",
+    "solution": {"Xc": -1.25, "Yc": -0.5},
+    "variables": {"A1": 40, "x1": 0, "y1": 0, "A2": -8, "x2": 5, "y2": 2}
+  },
+  {
+    "id_formula": "centroide_area_compuesta",
+    "question": "Calcular el centroide de la unión de dos áreas: A1=15, centroide (2,2); A2=30, centroide (8,5).",
+    "solution": {"Xc": 6, "Yc": 4},
+    "variables": {"A1": 15, "x1": 2, "y1": 2, "A2": 30, "x2": 8, "y2": 5}
+  },
+  {
+    "id_formula": "centroide_volumen_compuesto",
+    "question": "Un cubo de 8m³ (V1) con centroide en (1,1) se une a un cilindro de 4m³ (V2) con centroide en (3,2). Hallar el centroide del conjunto (Xc, Yc).",
+    "solution": {"Xc": 1.67, "Yc": 1.33},
+    "variables": {"V1": 8, "x1": 1, "y1": 1, "V2": 4, "x2": 3, "y2": 2}
+  },
+  {
+    "id_formula": "centroide_volumen_compuesto",
+    "question": "Un bloque de 100m³ (V1) con centroide en (5,5) se perfora con un hueco de 20m³ (V2) cuyo centroide estaba en (8,2). Hallar el nuevo centroide (Xc, Yc).",
+    "solution": {"Xc": 4.25, "Yc": 5.75},
+    "variables": {"V1": 100, "x1": 5, "y1": 5, "V2": -20, "x2": 8, "y2": 2}
+  },
+  {
+    "id_formula": "centroide_volumen_compuesto",
+    "question": "Dos esferas, V1=1m³ en (0,0) y V2=1m³ en (4,2). Calcular el centroide total (Xc, Yc).",
+    "solution": {"Xc": 2, "Yc": 1},
+    "variables": {"V1": 1, "x1": 0, "y1": 0, "V2": 1, "x2": 4, "y2": 2}
+  },
+  {
+    "id_formula": "centroide_volumen_compuesto",
+    "question": "Un volumen de 5m³ (V1) con centroide en (10,5) se une a otro de 15m³ (V2) con centroide en (2,1). Hallar el centroide (Xc, Yc) del conjunto.",
+    "solution": {"Xc": 4, "Yc": 2},
+    "variables": {"V1": 5, "x1": 10, "y1": 5, "V2": 15, "x2": 2, "y2": 1}
+  },
+  {
+    "id_formula": "centroide_volumen_compuesto",
+    "question": "Un cuerpo V1=30m³ (x1=0, y1=10) se ahueca con un V2=5m³ (x2=3, y2=4). ¿Cuál es el centroide (Xc, Yc) del cuerpo resultante?",
+    "solution": {"Xc": -0.6, "Yc": 11.2},
+    "variables": {"V1": 30, "x1": 0, "y1": 10, "V2": -5, "x2": 3, "y2": 4}
   }
 ]

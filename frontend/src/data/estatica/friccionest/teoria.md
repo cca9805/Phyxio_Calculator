@@ -1,54 +1,71 @@
-# Teoría de Fricción en Estática
+# Fricción: La Fuerza que se Opone al Movimiento
 
-La **fuerza de fricción** es una fuerza de contacto que se opone al movimiento relativo o a la tendencia de movimiento entre dos superficies. En estática, su función es fundamental para mantener el equilibrio de los cuerpos.
+La **fricción** es una fuerza de contacto que se opone al deslizamiento o al intento de deslizamiento entre dos superficies. Es una fuerza omnipresente en nuestra vida diaria, esencial para caminar, conducir un coche o incluso sujetar un lápiz. En estática, nos centramos principalmente en la fricción que impide que los objetos comiencen a moverse.
 
 ---
 
-## Tipos de Fricción
+## 1. Fricción Estática ($f_s$)
 
-Existen dos tipos principales de fuerza de fricción:
+La **fricción estática** es la fuerza que actúa cuando un objeto está en reposo sobre una superficie y se le aplica una fuerza paralela a esta, intentando moverlo. Esta fuerza de fricción aumenta para igualar la fuerza aplicada, hasta un punto límite.
 
-1.  **Fricción Estática ($f_s$)**: Es la fuerza que impide que un objeto inicie un movimiento. Se ajusta automáticamente para ser igual en magnitud y opuesta en dirección a la fuerza aplicada, hasta alcanzar un umbral.
-2.  **Fricción Cinética ($f_k$)**: Es la fuerza que actúa sobre un objeto una vez que este ya se encuentra en movimiento. Generalmente, su magnitud es constante y menor que el umbral de la fricción estática.
+La **fuerza de fricción estática máxima ($f_{s,max}$)** es la máxima resistencia que las superficies pueden ofrecer antes de que el objeto empiece a deslizar. Se calcula con la fórmula:
 
-### Fricción Estática Máxima
+$$ f_{s,max} = \mu_s \cdot N $$
 
-El valor máximo de la fricción estática se alcanza justo en el instante previo a que el objeto comience a deslizar. Se calcula con la fórmula:
+- Si la fuerza aplicada es *menor o igual* a $f_{s,max}$, el objeto no se mueve.
+- Si la fuerza aplicada *supera* a $f_{s,max}$, el objeto rompe el reposo y empieza a moverse.
 
-$$ f_{s, max} = \mu_s \cdot N $$
+---
 
-Donde:
-- **$f_{s, max}$**: Es la fuerza de fricción estática máxima (N).
-- **$\mu_s$**: Es el **coeficiente de fricción estática**, un valor adimensional que depende de la naturaleza de las superficies en contacto.
-- **$N$**: Es la **fuerza normal**, que es la fuerza perpendicular que una superficie ejerce sobre la otra (N).
+## 2. Fricción Cinética ($f_k$)
 
-Para que un cuerpo permanezca en equilibrio, la fuerza de fricción requerida debe ser menor o igual a este valor máximo:  
-$f_s \le f_{s, max}$
+Una vez que el objeto está en movimiento, la fuerza de fricción que actúa sobre él cambia. Esta se conoce como **fricción cinética** (o dinámica). Generalmente, la fricción cinética es *menor* que la fricción estática máxima, lo que explica por qué cuesta más empezar a mover un objeto pesado que mantenerlo en movimiento.
 
-### Fricción Cinética
-
-Cuando la fuerza aplicada supera la fricción estática máxima, el objeto comienza a moverse. En ese momento, la fuerza de fricción pasa a ser cinética y se calcula como:
+La fuerza de fricción cinética es relativamente constante y se calcula como:
 
 $$ f_k = \mu_k \cdot N $$
 
-Donde:
-- **$f_k$**: Es la fuerza de fricción cinética (N).
-- **$\mu_k$**: Es el **coeficiente de fricción cinética**. Generalmente, se cumple que $\mu_k < \mu_s$.
+El movimiento solo se mantendrá si la fuerza aplicada es igual o mayor que $f_k$.
 
 ---
 
-## Ángulo de Fricción
+## 3. Fuerza Normal y Coeficientes de Fricción
 
-El **ángulo de fricción estática ($\phi_s$)** es una forma alternativa de medir la "rugosidad" entre dos superficies. Se define como el ángulo cuya tangente es igual al coeficiente de fricción estática:
+Dos elementos clave aparecen en las fórmulas de fricción:
 
-$$ \tan(\phi_s) = \mu_s $$
+- **Fuerza Normal (N)**: Es la fuerza perpendicular que una superficie ejerce sobre un objeto que descansa sobre ella. En un plano horizontal, la fuerza normal es igual al peso del objeto ($N = W = m \cdot g$). Sin embargo, en un plano inclinado, esta relación cambia.
 
-Este ángulo representa la máxima inclinación que puede tener un plano antes de que un objeto colocado sobre él comience a deslizar por efecto de su propio peso.
+- **Coeficiente de Fricción (μ)**: Es un valor adimensional que depende de la naturaleza y rugosidad de las dos superficies en contacto. 
+    - **$\\mu_s$ (Coeficiente de fricción estática)**: Relacionado con la fuerza para iniciar el movimiento.
+    - **$\\mu_k$ (Coeficiente de fricción cinética)**: Relacionado con la fuerza para mantener el movimiento. 
+    Por lo general, $\mu_s > \mu_k$.
 
 ---
 
-## Aplicaciones en Estática
+## 4. Caso Especial: Fricción en un Plano Inclinado
 
-La fricción es una fuerza clave en el análisis de equilibrio. Al dibujar un Diagrama de Cuerpo Libre (DCL), la fuerza de fricción estática se incluye como una de las incógnitas. Su magnitud y dirección se determinan aplicando las ecuaciones de equilibrio ($\\Sigma F_x = 0$, $\\Sigma F_y = 0$).
+Cuando un objeto de masa **m** se encuentra en un plano con una inclinación **θ**, su peso ($W = m \cdot g$) se descompone en dos componentes:
 
-Es fundamental comprobar siempre si la fuerza de fricción necesaria para mantener el equilibrio ($f_s$) no supera el máximo posible ($f_{s, max}$). Si $f_s > f_{s, max}$, la suposición de equilibrio es incorrecta y el objeto se deslizará.
+1.  Una componente **perpendicular** al plano: $W_\perp = W \cdot \cos(\theta)$
+2.  Una componente **paralela** al plano: $W_\parallel = W \cdot \sin(\theta)$
+
+En ausencia de otras fuerzas perpendiculares, la **fuerza normal (N)** es igual a la componente perpendicular del peso:
+
+$$ N = W \cdot \cos(\theta) = m \cdot g \cdot \cos(\theta) $$
+
+La componente paralela, $W_\parallel$, es la que intenta hacer que el objeto se deslice hacia abajo. La fricción estática se opondrá a esta fuerza hasta su límite máximo.
+
+---
+
+## Leyenda de Símbolos
+
+- **$f_s, f_{s,max}$**: Fuerza de fricción estática y su valor máximo. (N)
+- **$f_k$**: Fuerza de fricción cinética. (N)
+- **μ (mu)**: Coeficiente de fricción (adimensional).
+  - **$\\mu_s$**: Coeficiente estático.
+  - **$\\mu_k$**: Coeficiente cinético.
+- **N**: Fuerza Normal. (N)
+- **W**: Peso del objeto ($m \cdot g$). (N)
+- **m**: Masa del objeto. (kg)
+- **g**: Aceleración debida a la gravedad (aprox. 9.81 m/s²). (m/s²)
+- **θ (theta)**: Ángulo de inclinación de un plano. (grados)

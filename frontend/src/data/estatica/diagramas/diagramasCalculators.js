@@ -1,79 +1,39 @@
+import { formatNumber } from "../../../utils/formatNumber";
+
+// Función para convertir grados a radianes
+const toRadians = (degrees) => degrees * (Math.PI / 180);
 
 export const calculators = [
   {
-    id: "identificar-fuerzas-dcl",
-    title: "Identificador de Fuerzas para DCL",
-    formula: "ΣF = 0 y ΣM = 0",
+    id: 'componentes-peso-inclinado',
+    title: 'Componentes del Peso en un Plano Inclinado',
+    description: 'Descompone el peso de un objeto en un plano inclinado en componentes paralela (Wx) y perpendicular (Wy) al plano.',
     variables: [
-      {
-        symbol: "escenario",
-        label: "Selecciona el escenario",
-        type: "select",
-        options: [
-          { value: "caja-horizontal", label: "Caja sobre superficie horizontal" },
-          { value: "caja-inclinado", label: "Caja en un plano inclinado" },
-          { value: "viga-apoyada", label: "Viga simplemente apoyada con carga" },
-          { value: "objeto-colgando", label: "Objeto colgando de dos cuerdas" },
-        ],
-        defaultValue: "caja-horizontal",
-      },
+      { symbol: 'W', label: 'Peso del objeto', unit: 'N', example: '100' },
+      { symbol: 'θ', label: 'Ángulo de inclinación', unit: '°', example: '30' },
     ],
-    output: {
-      symbol: "DCL",
-      label: "Fuerzas a Considerar",
-      type: "markdown",
-    },
+    output: [
+        { symbol: 'Wx', label: 'Componente paralela al plano', unit: 'N' },
+        { symbol: 'Wy', label: 'Componente perpendicular al plano', unit: 'N' },
+    ],
     resolve: (args) => {
-      const { escenario } = args;
-      let forces_list, explanation, title;
+      const W = Number(args.W);
+      const theta = Number(args.θ);
 
-      switch (escenario) {
-        case "caja-horizontal":
-          title = "Caja sobre Superficie Horizontal";
-          forces_list = [
-            "**Peso (P o W):** Fuerza vertical hacia abajo.",
-            "**Fuerza Normal (N):** Fuerza perpendicular a la superficie, hacia arriba.",
-            "**Fuerza de Fricción (f):** Paralela a la superficie, oponiéndose al movimiento.",
-            "**Fuerza Aplicada (F):** Fuerza externa que empuja o tira de la caja."
-          ];
-          break;
-        case "caja-inclinado":
-          title = "Caja en un Plano Inclinado";
-          forces_list = [
-            "**Peso (P o W):** Vertical hacia abajo (se descompone en ejes del plano).",
-            "**Fuerza Normal (N):** Perpendicular a la superficie del plano.",
-            "**Fuerza de Fricción (f):** Paralela a la superficie, oponiéndose al deslizamiento.",
-          ];
-          break;
-        case "viga-apoyada":
-          title = "Viga Simplemente Apoyada";
-          forces_list = [
-            "**Cargas Externas (P, w):** Fuerzas que actúan sobre la viga.",
-            "**Reacción en Apoyo Fijo (R_A):** Una reacción horizontal (R_Ax) y una vertical (R_Ay).",
-            "**Reacción en Apoyo Móvil (R_B):** Una única reacción perpendicular a la superficie de apoyo (R_By).",
-          ];
-          break;
-        case "objeto-colgando":
-           title = "Objeto Colgando de Cuerdas";
-           forces_list = [
-            "**Peso del Objeto (P o W):** Vertical hacia abajo.",
-            "**Tensión 1 (T1):** Fuerza de tracción a lo largo del primer cable.",
-            "**Tensión 2 (T2):** Fuerza de tracción a lo largo del segundo cable.",
-          ];
-          break;
-        default:
-          return { error: "Por favor, selecciona un escenario válido." };
+      if (isNaN(W) || isNaN(theta)) {
+        return { error: "Por favor, ingrese valores numéricos válidos." };
       }
-      
-      const formatted_forces = forces_list.map(force => `- ${force}`).join('\n');
-      const result = `### ${title}\n\n${formatted_forces}`;
+
+      const thetaRad = toRadians(theta);
+      const Wx = W * Math.sin(thetaRad);
+      const Wy = W * Math.cos(thetaRad);
 
       return {
-        result,
+        result: { Wx, Wy },
         steps: [
-            `Principio de Equilibrio: ΣF = 0 y ΣM = 0`,
-            `Análisis del escenario: '${title}'`,
-            `Conclusión: Las fuerzas clave a incluir en el DCL son las listadas en el resultado.`
+          `Paso 1: Convertir el ángulo a radianes: $θ_{rad} = ${formatNumber(theta)}° * (\\frac{\\pi}{180}) \\approx ${formatNumber(thetaRad)}$ rad`,
+          `Paso 2: Calcular la componente paralela (Wx): $W_x = W * sin(θ_{rad}) = ${formatNumber(W)} * sin(${formatNumber(thetaRad)}) \\approx ${formatNumber(Wx)}$ N`,
+          `Paso 3: Calcular la componente perpendicular (Wy): $W_y = W * cos(θ_{rad}) = ${formatNumber(W)} * cos(${formatNumber(thetaRad)}) \\approx ${formatNumber(Wy)}$ N`,
         ],
       };
     },

@@ -1,46 +1,92 @@
 [
   {
-    "id": "friccion-estatica-maxima",
-    "title": "Cálculo de Fricción Estática Máxima",
-    "prompt": "Un bloque de 10 kg reposa sobre una superficie horizontal. El coeficiente de fricción estática entre el bloque y la superficie es de 0.5. ¿Cuál es la magnitud de la fuerza de fricción estática máxima? (Considerar g = 9.8 m/s²)",
-    "solution": [
-      "Primero, calculamos la fuerza normal (N), que es igual al peso del bloque: $N = m \\cdot g = 10 \\text{ kg} \\cdot 9.8 \\text{ m/s}^2 = 98 \\text{ N}$.",
-      "Luego, usamos la fórmula de la fricción estática máxima: $f_{s,max} = \\mu_s \\cdot N$.",
-      "$f_{s,max} = 0.5 \\cdot 98 \\text{ N} = 49 \\text{ N}$."
-    ],
-    "answer": "La fricción estática máxima es de 49 N."
+    "id_formula": "friccion_estatica_maxima",
+    "question": "Un armario de 150 N de peso normal reposa sobre un suelo con un coeficiente de fricción estática μs = 0.6. ¿Cuál es la fuerza máxima que se puede aplicar antes de que se mueva?",
+    "solution": {"fs_max": 90},
+    "variables": {"μs": 0.6, "N": 150}
   },
   {
-    "id": "condicion-deslizamiento",
-    "title": "Condición de Deslizamiento",
-    "prompt": "Sobre el bloque del ejercicio anterior (fs,max = 49 N) se aplica una fuerza horizontal de 40 N. ¿Comenzará a moverse el bloque?",
-    "solution": [
-      "La condición para que el bloque no se mueva es que la fuerza aplicada sea menor o igual a la fricción estática máxima ($F_{aplicada} \\le f_{s,max}$).",
-      "Comparamos la fuerza aplicada con la fricción estática máxima: $40 \\text{ N} \\le 49 \\text{ N}$.",
-      "Como la condición se cumple, el bloque no se moverá. La fuerza de fricción estática se ajustará para ser igual a la fuerza aplicada (40 N)."
-    ],
-    "answer": "No, el bloque no comenzará a moverse."
+    "id_formula": "friccion_estatica_maxima",
+    "question": "Para una caja que experimenta una fuerza normal de 490 N, y un μs de 0.35, calcula la fuerza de fricción estática máxima.",
+    "solution": {"fs_max": 171.5},
+    "variables": {"μs": 0.35, "N": 490}
   },
   {
-    "id": "friccion-cinetica-ejercicio",
-    "title": "Cálculo de Fricción Cinética",
-    "prompt": "Un objeto de 15 kg se desliza sobre una superficie con un coeficiente de fricción cinética (μk) de 0.2. ¿Cuál es la fuerza de fricción cinética que actúa sobre él? (g = 9.8 m/s²)",
-    "solution": [
-      "Calculamos la fuerza normal: $N = m \\cdot g = 15 \\text{ kg} \\cdot 9.8 \\text{ m/s}^2 = 147 \\text{ N}$.",
-      "Calculamos la fricción cinética: $f_k = \\mu_k \\cdot N$.",
-      "$f_k = 0.2 \\cdot 147 \\text{ N} = 29.4 \\text{ N}$."
-    ],
-    "answer": "La fuerza de fricción cinética es de 29.4 N."
+    "id_formula": "friccion_estatica_maxima",
+    "question": "Si el coeficiente de fricción estática entre un libro y la mesa es de 0.4 y la fuerza normal es de 20 N, ¿cuál es la fricción estática máxima?",
+    "solution": {"fs_max": 8},
+    "variables": {"μs": 0.4, "N": 20}
   },
   {
-    "id": "angulo-de-friccion-ejercicio",
-    "title": "Cálculo del Ángulo de Fricción",
-    "prompt": "El coeficiente de fricción estática entre una caja y un plano inclinado es de 0.7. ¿Cuál es el ángulo de fricción estática (φs)?",
-    "solution": [
-      "La relación entre el coeficiente y el ángulo de fricción es $\\tan(\\phi_s) = \\mu_s$.",
-      "Para encontrar el ángulo, usamos la función arcotangente: $\\phi_s = \\operatorname{atan}(\\mu_s)$.",
-      "$\\phi_s = \\operatorname{atan}(0.7) \\approx 35.0°$."
-    ],
-    "answer": "El ángulo de fricción estática es de aproximadamente 35.0°."
+    "id_formula": "friccion_estatica_maxima",
+    "question": "Un neumático soporta un peso normal de 5000 N. Si el μs con el asfalto es 0.8, ¿qué fuerza de fricción estática máxima puede generar?",
+    "solution": {"fs_max": 4000},
+    "variables": {"μs": 0.8, "N": 5000}
+  },
+  {
+    "id_formula": "friccion_estatica_maxima",
+    "question": "Calcula la fricción estática máxima para un objeto con una fuerza normal de 98 N y un μs de 0.25.",
+    "solution": {"fs_max": 24.5},
+    "variables": {"μs": 0.25, "N": 98}
+  },
+  {
+    "id_formula": "friccion_cinetica",
+    "question": "Un trineo de 250 N de peso normal es arrastrado sobre nieve con un μk de 0.1. ¿Cuál es la fuerza de fricción cinética?",
+    "solution": {"fk": 25},
+    "variables": {"μk": 0.1, "N": 250}
+  },
+  {
+    "id_formula": "friccion_cinetica",
+    "question": "Un disco de hockey se desliza sobre el hielo (μk=0.05). Si la fuerza normal es 1.6 N, ¿cuál es la fricción cinética?",
+    "solution": {"fk": 0.08},
+    "variables": {"μk": 0.05, "N": 1.6}
+  },
+  {
+    "id_formula": "friccion_cinetica",
+    "question": "Calcula la fuerza de fricción cinética para un bloque de 50 N de fuerza normal sobre una superficie con μk = 0.2.",
+    "solution": {"fk": 10},
+    "variables": {"μk": 0.2, "N": 50}
+  },
+  {
+    "id_formula": "friccion_cinetica",
+    "question": "Un esquiador de 700 N de peso normal se desliza por una pista. Si μk es 0.08, ¿qué fuerza de fricción cinética actúa sobre él?",
+    "solution": {"fk": 56},
+    "variables": {"μk": 0.08, "N": 700}
+  },
+  {
+    "id_formula": "friccion_cinetica",
+    "question": "Si se arrastra una caja con una fuerza normal de 120 N y el μk es 0.3, ¿cuál es la magnitud de la fricción cinética?",
+    "solution": {"fk": 36},
+    "variables": {"μk": 0.3, "N": 120}
+  },
+  {
+    "id_formula": "fuerza_normal_plano_inclinado",
+    "question": "Un coche de 1200 kg está aparcado en una calle con una inclinación de 10 grados. Calcula la fuerza normal.",
+    "solution": {"N": 11581.05},
+    "variables": {"m": 1200, "theta": 10, "g": 9.81}
+  },
+  {
+    "id_formula": "fuerza_normal_plano_inclinado",
+    "question": "Un bloque de 10 kg descansa en una rampa de 30 grados. ¿Cuál es la fuerza normal sobre el bloque?",
+    "solution": {"N": 84.96},
+    "variables": {"m": 10, "theta": 30, "g": 9.81}
+  },
+  {
+    "id_formula": "fuerza_normal_plano_inclinado",
+    "question": "Calcula la fuerza normal para un objeto de 5 kg en un plano inclinado a 45 grados.",
+    "solution": {"N": 34.68},
+    "variables": {"m": 5, "theta": 45, "g": 9.81}
+  },
+  {
+    "id_formula": "fuerza_normal_plano_inclinado",
+    "question": "Un esquiador de 75 kg está en una pendiente de 20 grados. ¿Qué fuerza normal ejerce la nieve sobre los esquís?",
+    "solution": {"N": 691.01},
+    "variables": {"m": 75, "theta": 20, "g": 9.81}
+  },
+  {
+    "id_formula": "fuerza_normal_plano_inclinado",
+    "question": "Una caja de 2 kg se coloca sobre una tabla inclinada 5 grados. Encuentra la fuerza normal.",
+    "solution": {"N": 19.55},
+    "variables": {"m": 2, "theta": 5, "g": 9.81}
   }
 ]

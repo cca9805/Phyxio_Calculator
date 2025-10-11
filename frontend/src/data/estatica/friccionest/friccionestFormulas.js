@@ -1,46 +1,36 @@
 export const formulas = [
   {
-    id: 'friccion-estatica-maxima',
+    id: 'friccion_estatica_maxima',
     title: 'Fricción Estática Máxima',
-    formula: 'f_{s,max} = \\mu_s \\cdot N',
-    description: 'La máxima fuerza de fricción que puede existir entre dos superficies antes de que comience el movimiento.',
+    formula: 'fs_max = μs * N',
+    description: 'Calcula la fuerza máxima de fricción estática que se debe superar para iniciar el movimiento de un objeto.',
     variables: [
-      { symbol: 'f_{s,max}', name: 'Fricción estática máxima', unit: 'N' },
-      { symbol: '\\mu_s', name: 'Coeficiente de fricción estática', unit: '' },
+      { symbol: 'fs_max', name: 'Fuerza de fricción estática máxima', unit: 'N' },
+      { symbol: 'μs', name: 'Coeficiente de fricción estática', unit: 'adimensional' },
       { symbol: 'N', name: 'Fuerza normal', unit: 'N' }
     ]
   },
   {
-    id: 'friccion-cinetica-formula',
+    id: 'friccion_cinetica',
     title: 'Fricción Cinética',
-    formula: 'f_k = \\mu_k \\cdot N',
-    description: 'La fuerza de fricción que actúa sobre un objeto una vez que está en movimiento.',
+    formula: 'fk = μk * N',
+    description: 'Calcula la fuerza de fricción que actúa sobre un objeto mientras está en movimiento.',
     variables: [
-      { symbol: 'f_k', name: 'Fricción cinética', unit: 'N' },
-      { symbol: '\\mu_k', name: 'Coeficiente de fricción cinética', unit: '' },
+      { symbol: 'fk', name: 'Fuerza de fricción cinética', unit: 'N' },
+      { symbol: 'μk', name: 'Coeficiente de fricción cinética', unit: 'adimensional' },
       { symbol: 'N', name: 'Fuerza normal', unit: 'N' }
     ]
   },
   {
-    id: 'angulo-friccion-formula',
-    title: 'Ángulo de Fricción Estática',
-    formula: '\\tan(\\phi_s) = \\mu_s',
-    description: 'El ángulo máximo de inclinación de un plano antes de que un objeto comience a deslizar.',
+    id: 'fuerza_normal_plano_inclinado',
+    title: 'Fuerza Normal (Plano Inclinado)',
+    formula: 'N = W * cos(θ) = m * g * cos(θ)',
+    description: 'Calcula la fuerza normal sobre un objeto en un plano inclinado sin otras fuerzas verticales.',
     variables: [
-      { symbol: '\\phi_s', name: 'Ángulo de fricción estática', unit: '°' },
-      { symbol: '\\mu_s', name: 'Coeficiente de fricción estática', unit: '' }
-    ]
-  },
-  {
-    id: 'condicion-equilibrio-friccion',
-    title: 'Condición de Equilibrio con Fricción',
-    formula: 'f_s \\leq f_{s,max}',
-    description: 'Para que un cuerpo no deslice, la fuerza de fricción requerida debe ser menor o igual a la fricción estática máxima.',
-    variables: [
-      { symbol: 'f_s', name: 'Fuerza de fricción requerida', unit: 'N' },
-      { symbol: 'f_{s,max}', name: 'Fricción estática máxima', unit: 'N' }
+      { symbol: 'N', name: 'Fuerza normal', unit: 'N' },
+      { symbol: 'm', name: 'Masa del objeto', unit: 'kg' },
+      { symbol: 'g', name: 'Aceleración de la gravedad', unit: 'm/s²' },
+      { symbol: 'θ', name: 'Ángulo de inclinación del plano', unit: 'grados' }
     ]
   }
 ];
-
-export default formulas;

@@ -1,12 +1,32 @@
 [
   {
-    "id": "condicion-estabilidad",
-    "title": "Estabilidad de un bloque",
-    "prompt": "Un bloque tiene el centro de gravedad a 0.2 m de altura y una base de 0.5 m de ancho. ¿Es estable si la vertical desde el centro de gravedad cae dentro de la base?",
-    "solution": [
-      "La vertical desde el centro de gravedad cae dentro de la base.",
-      "Por lo tanto, el bloque es estable."
-    ],
-    "answer": "Sí, es estable."
+    "id_formula": "condicion-estabilidad",
+    "question": "El centro de gravedad de una grúa se proyecta en x=5m. Su base de apoyo se extiende de x=2m a x=8m. ¿Es estable la grúa?",
+    "solution": "Estable",
+    "variables": {"x_cg": 5, "x_base_min": 2, "x_base_max": 8}
+  },
+  {
+    "id_formula": "condicion-estabilidad",
+    "question": "Un robot tiene su C.G. en x=0.4m. Su base de apoyo va de x=0.5m a x=1.0m. ¿Se volcará?",
+    "solution": "No Estable",
+    "variables": {"x_cg": 0.4, "x_base_min": 0.5, "x_base_max": 1.0}
+  },
+  {
+    "id_formula": "condicion-estabilidad",
+    "question": "Una pila de libros tiene su C.G. en x=10cm. La base del libro inferior va de x=0cm a x=20cm. ¿Es estable la pila?",
+    "solution": "Estable",
+    "variables": {"x_cg": 10, "x_base_min": 0, "x_base_max": 20}
+  },
+  {
+    "id_formula": "condicion-estabilidad",
+    "question": "El C.G. de una motocicleta se ubica en x=1.2m. Su base de apoyo (distancia entre ruedas) va de x=0.8m a x=2.2m. ¿Es estable?",
+    "solution": "Estable",
+    "variables": {"x_cg": 1.2, "x_base_min": 0.8, "x_base_max": 2.2}
+  },
+  {
+    "id_formula": "condicion-estabilidad",
+    "question": "Un objeto decorativo tiene su C.G. en x=-3cm. Su base se extiende desde x=-2cm a x=2cm. ¿Permanecerá en pie?",
+    "solution": "No Estable",
+    "variables": {"x_cg": -3, "x_base_min": -2, "x_base_max": 2}
   }
 ]

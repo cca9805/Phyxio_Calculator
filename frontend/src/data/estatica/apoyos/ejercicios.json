@@ -1,31 +1,72 @@
 [
   {
-    "id": "reaccion-apoyo-simple",
-    "title": "Reacción en apoyo simple",
-    "prompt": "Una viga recibe una fuerza de 50 N sobre un apoyo simple. ¿Cuál es la reacción?",
-    "solution": [
-      "R = F = 50 N"
-    ],
+    "id": "apoyos-rb-1",
+    "title": "Reacción en Apoyo B #1",
+    "prompt": "Una viga de 10 m de largo tiene una carga de 500 N aplicada a 2 m del apoyo A. Calcula la reacción en el apoyo B (rodillo).",
+    "solution": ["R_B = (P * a) / L = (500 N * 2 m) / 10 m = 100 N"],
+    "answer": "100 N"
+  },
+  {
+    "id": "apoyos-rb-2",
+    "title": "Reacción en Apoyo B #2",
+    "prompt": "En una viga de 8 m, se coloca una carga de 1200 N justo en el centro (a=4 m). ¿Cuál es la reacción en B?",
+    "solution": ["R_B = (1200 N * 4 m) / 8 m = 600 N"],
+    "answer": "600 N"
+  },
+  {
+    "id": "apoyos-rb-3",
+    "title": "Reacción en Apoyo B #3",
+    "prompt": "Una carga de 75 N se aplica a 5 m del apoyo A en una viga de 6 m. ¿Qué valor tiene la reacción en B?",
+    "solution": ["R_B = (75 N * 5 m) / 6 m = 62.5 N"],
+    "answer": "62.5 N"
+  },
+  {
+    "id": "apoyos-rb-4",
+    "title": "Reacción en Apoyo B #4",
+    "prompt": "Una viga de 12 m soporta una carga de 2000 N a 9 m de A. Calcula la reacción en el rodillo B.",
+    "solution": ["R_B = (2000 N * 9 m) / 12 m = 1500 N"],
+    "answer": "1500 N"
+  },
+  {
+    "id": "apoyos-rb-5",
+    "title": "Reacción en Apoyo B #5",
+    "prompt": "Si se aplica una carga P=150N en a=1m sobre una viga de L=1.5m, ¿cuál es la reacción R_B?",
+    "solution": ["R_B = (150 N * 1 m) / 1.5 m = 100 N"],
+    "answer": "100 N"
+  },
+  {
+    "id": "apoyos-ra-1",
+    "title": "Reacción en Apoyo A #1",
+    "prompt": "La carga total en una viga es de 500 N y la reacción en B es de 100 N. ¿Cuál es la reacción en el apoyo A?",
+    "solution": ["R_A = P - R_B = 500 N - 100 N = 400 N"],
+    "answer": "400 N"
+  },
+  {
+    "id": "apoyos-ra-2",
+    "title": "Reacción en Apoyo A #2",
+    "prompt": "Una carga de 1200 N se reparte entre dos apoyos. Si R_B = 600 N, ¿cuánto vale R_A?",
+    "solution": ["R_A = 1200 N - 600 N = 600 N"],
+    "answer": "600 N"
+  },
+  {
+    "id": "apoyos-ra-3",
+    "title": "Reacción en Apoyo A #3",
+    "prompt": "La reacción en el apoyo B es de 62.5 N y la carga puntual es de 75 N. Calcula la reacción en A.",
+    "solution": ["R_A = 75 N - 62.5 N = 12.5 N"],
+    "answer": "12.5 N"
+  },
+  {
+    "id": "apoyos-ra-4",
+    "title": "Reacción en Apoyo A #4",
+    "prompt": "Para una carga P de 2000 N, la reacción en B es de 1500 N. Halla R_A.",
+    "solution": ["R_A = 2000 N - 1500 N = 500 N"],
+    "answer": "500 N"
+  },
+  {
+    "id": "apoyos-ra-5",
+    "title": "Reacción en Apoyo A #5",
+    "prompt": "Si la carga total es 150 N y R_B es 100 N, ¿cuál es la reacción en el pasador A?",
+    "solution": ["R_A = 150 N - 100 N = 50 N"],
     "answer": "50 N"
-  },
-  {
-    "id": "reaccion-apoyo-movil",
-    "title": "Reacción en apoyo móvil",
-    "prompt": "Una viga recibe una fuerza de 30 N sobre un apoyo móvil (rodillo). ¿Cuál es la reacción?",
-    "solution": [
-      "R = F = 30 N"
-    ],
-    "answer": "30 N"
-  },
-  {
-    "id": "reaccion-apoyo-fijo",
-    "title": "Reacciones en apoyo fijo",
-    "prompt": "Un apoyo fijo soporta una fuerza horizontal de 10 N, una vertical de 40 N y un momento de 5 N·m. ¿Cuáles son las reacciones?",
-    "solution": [
-      "R_x = 10 N",
-      "R_y = 40 N",
-      "M = 5 N·m"
-    ],
-    "answer": "R_x = 10 N, R_y = 40 N, M = 5 N·m"
   }
 ]

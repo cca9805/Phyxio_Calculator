@@ -1,0 +1,72 @@
+[
+  {
+    "id": "mom-fuerza-1",
+    "title": "Momento de Fuerza #1",
+    "prompt": "Calcula el momento generado por una fuerza de 50 N aplicada perpendicularmente a una palanca de 2 m.",
+    "solution": ["M = F·r·sin(θ) = 50 N · 2 m · sin(90°) = 100 N·m"],
+    "answer": "100 N·m"
+  },
+  {
+    "id": "mom-fuerza-2",
+    "title": "Momento de Fuerza #2",
+    "prompt": "Una fuerza de 30 N se aplica a una puerta de 0.8 m de ancho, con un ángulo de 60°. ¿Cuál es el torque?",
+    "solution": ["M = 30 N · 0.8 m · sin(60°) = 24 · 0.866 = 20.78 N·m"],
+    "answer": "≈ 20.78 N·m"
+  },
+  {
+    "id": "mom-fuerza-3",
+    "title": "Momento de Fuerza #3",
+    "prompt": "Si se aplica un torque de 50 N·m con una fuerza de 100 N en un ángulo de 45°, ¿cuál es la longitud del brazo de palanca r?",
+    "solution": ["r = M / (F·sin(θ)) = 50 / (100 · sin(45°)) = 50 / 70.7 = 0.707 m"],
+    "answer": "≈ 0.707 m"
+  },
+  {
+    "id": "mom-fuerza-4",
+    "title": "Momento de Fuerza #4",
+    "prompt": "¿Qué fuerza perpendicular se necesita para generar un torque de 25 N·m en una llave de 25 cm (0.25 m)?",
+    "solution": ["F = M / r = 25 N·m / 0.25 m = 100 N"],
+    "answer": "100 N"
+  },
+  {
+    "id": "mom-fuerza-5",
+    "title": "Momento de Fuerza #5",
+    "prompt": "Se ejerce una fuerza de 200 N en el extremo de una viga de 4 m. Si el ángulo es 150°, ¿cuál es el momento?",
+    "solution": ["M = 200 N · 4 m · sin(150°) = 800 · 0.5 = 400 N·m"],
+    "answer": "400 N·m"
+  },
+  {
+    "id": "mom-varignon-1",
+    "title": "Momento por Componentes #1",
+    "prompt": "Una fuerza se descompone en Fx=30N y Fy=40N y se aplica en el punto (2, 3) m. Calcula el momento respecto al origen.",
+    "solution": ["M = (Fy·x) - (Fx·y) = (40·2) - (30·3) = 80 - 90 = -10 N·m"],
+    "answer": "-10 N·m"
+  },
+  {
+    "id": "mom-varignon-2",
+    "title": "Momento por Componentes #2",
+    "prompt": "F = (-10, 20) N se aplica en P = (-3, 1) m. Calcula el momento en el origen.",
+    "solution": ["M = (20·(-3)) - ((-10)·1) = -60 - (-10) = -50 N·m"],
+    "answer": "-50 N·m"
+  },
+  {
+    "id": "mom-varignon-3",
+    "title": "Momento por Componentes #3",
+    "prompt": "Fuerza Fx=0, Fy=50N en x=4m, y=0. ¿Momento?",
+    "solution": ["M = (50·4) - (0·0) = 200 N·m"],
+    "answer": "200 N·m"
+  },
+  {
+    "id": "mom-varignon-4",
+    "title": "Momento por Componentes #4",
+    "prompt": "Fuerza Fx=-20, Fy=-30 en P=(-1, -2). ¿Momento?",
+    "solution": ["M = (-30·(-1)) - ((-20)·(-2)) = 30 - 40 = -10 N·m"],
+    "answer": "-10 N·m"
+  },
+  {
+    "id": "mom-varignon-5",
+    "title": "Momento por Componentes #5",
+    "prompt": "Una fuerza F=(100, -50) N se aplica en P=(0.5, 0.5) m. ¿Cuál es el momento respecto al origen?",
+    "solution": ["M = ((-50)·0.5) - (100·0.5) = -25 - 50 = -75 N·m"],
+    "answer": "-75 N·m"
+  }
+]
