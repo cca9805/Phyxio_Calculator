@@ -1,0 +1,125 @@
+
+[
+  {
+    "id": "lorentz_1",
+    "title": "Fuerza sobre un Protón",
+    "prompt": "Un protón (carga q = 1.6e-19 C) se mueve a una velocidad de 2x10^6 m/s perpendicularmente a un campo magnético de 0.5 T. ¿Cuál es la magnitud de la fuerza magnética que experimenta?",
+    "solution": [
+      "Usar la fórmula de la Fuerza de Lorentz: F = q * v * B * sin(θ).",
+      "Sustituir los valores: q = 1.6e-19 C, v = 2e6 m/s, B = 0.5 T.",
+      "Como el movimiento es perpendicular, θ = 90°, y sin(90°) = 1.",
+      "F = (1.6e-19) * (2e6) * (0.5) * 1 = 1.6e-13 N."
+    ],
+    "answer": "La fuerza magnética es de 1.6 x 10⁻¹³ N.",
+    "formula_id": "fuerza_de_lorentz"
+  },
+  {
+    "id": "lorentz_2",
+    "title": "Cálculo de Campo Magnético",
+    "prompt": "Un electrón (q = -1.6e-19 C) experimenta una fuerza de 2.4x10^-13 N al moverse a 1.5x10^6 m/s en un ángulo de 45° con respecto a un campo magnético. ¿Cuál es la magnitud del campo magnético (B)?",
+    "solution": [
+      "Reorganizar la fórmula de Lorentz para despejar B: B = F / (q * v * sin(θ)).",
+      "Usar la magnitud de la carga: q = 1.6e-19 C.",
+      "Sustituir: F = 2.4e-13 N, v = 1.5e6 m/s, θ = 45°.",
+      "B = (2.4e-13) / (1.6e-19 * 1.5e6 * sin(45°)) ≈ 1.41 T."
+    ],
+    "answer": "El campo magnético es de aproximadamente 1.41 T.",
+    "formula_id": "fuerza_de_lorentz"
+  },
+  {
+    "id": "lorentz_3",
+    "title": "Cálculo de Velocidad",
+    "prompt": "Una partícula con carga de 3.2e-19 C se mueve perpendicular a un campo magnético de 1.2 T, experimentando una fuerza de 7.5x10^-13 N. ¿Cuál es la velocidad (v) de la partícula?",
+    "solution": [
+      "Reorganizar la fórmula de Lorentz para despejar v: v = F / (q * B * sin(θ)).",
+      "Sustituir: F = 7.5e-13 N, q = 3.2e-19 C, B = 1.2 T, θ = 90°.",
+      "v = (7.5e-13) / (3.2e-19 * 1.2 * 1) ≈ 1.95 x 10^6 m/s."
+    ],
+    "answer": "La velocidad de la partícula es de aproximadamente 1.95 x 10^6 m/s.",
+    "formula_id": "fuerza_de_lorentz"
+  },
+  {
+    "id": "lorentz_4",
+    "title": "Cálculo de Carga",
+    "prompt": "Un ion se mueve a 1x10^5 m/s en un ángulo de 30° respecto a un campo de 0.8 T. Si la fuerza medida es de 4x10^-15 N, ¿cuál es la carga (q) del ion?",
+    "solution": [
+      "Reorganizar la fórmula de Lorentz para despejar q: q = F / (v * B * sin(θ)).",
+      "Sustituir: F = 4e-15 N, v = 1e5 m/s, B = 0.8 T, θ = 30°.",
+      "q = (4e-15) / (1e5 * 0.8 * sin(30°)) = 1.0 x 10^-19 C."
+    ],
+    "answer": "La carga del ion es de 1.0 x 10⁻¹⁹ C.",
+    "formula_id": "fuerza_de_lorentz"
+  },
+  {
+    "id": "lorentz_5",
+    "title": "Fuerza sobre Partícula Alfa",
+    "prompt": "Una partícula alfa (q = 3.2e-19 C) viaja a 5x10^5 m/s y entra en una región con un campo magnético de 0.25 T. Si el ángulo de entrada es de 60°, ¿qué fuerza magnética actúa sobre ella?",
+    "solution": [
+      "Usar la fórmula de la Fuerza de Lorentz: F = q * v * B * sin(θ).",
+      "Sustituir: q = 3.2e-19 C, v = 5e5 m/s, B = 0.25 T, θ = 60°.",
+      "F = (3.2e-19) * (5e5) * (0.25) * sin(60°) ≈ 3.46 x 10^-14 N."
+    ],
+    "answer": "La fuerza magnética es de aproximadamente 3.46 x 10⁻¹⁴ N.",
+    "formula_id": "fuerza_de_lorentz"
+  },
+  {
+    "id": "conductor_1",
+    "title": "Fuerza sobre Alambre Recto",
+    "prompt": "Un alambre de 0.5 m de longitud transporta una corriente de 3 A. El alambre está en un campo magnético uniforme de 0.2 T y es perpendicular a él. ¿Cuál es la magnitud de la fuerza magnética sobre el alambre?",
+    "solution": [
+      "Usar la fórmula de fuerza sobre un conductor: F = I * L * B * sin(θ).",
+      "Sustituir: I = 3 A, L = 0.5 m, B = 0.2 T, θ = 90°.",
+      "F = 3 * 0.5 * 0.2 * 1 = 0.3 N."
+    ],
+    "answer": "La fuerza magnética sobre el alambre es de 0.3 N.",
+    "formula_id": "fuerza_sobre_conductor"
+  },
+  {
+    "id": "conductor_2",
+    "title": "Cálculo de Campo a partir de Fuerza",
+    "prompt": "Un segmento de alambre de 1.2 m en un campo magnético experimenta una fuerza de 0.6 N. Si transporta una corriente de 5 A y forma un ángulo de 90° con el campo, ¿cuál es la magnitud del campo magnético (B)?",
+    "solution": [
+      "Reorganizar la fórmula: B = F / (I * L * sin(θ)).",
+      "Sustituir: F = 0.6 N, I = 5 A, L = 1.2 m, θ = 90°.",
+      "B = 0.6 / (5 * 1.2 * 1) = 0.1 T."
+    ],
+    "answer": "El campo magnético es de 0.1 T.",
+    "formula_id": "fuerza_sobre_conductor"
+  },
+  {
+    "id": "conductor_3",
+    "title": "Cálculo de Corriente",
+    "prompt": "Un alambre de 0.8 m de longitud se encuentra en un campo magnético de 0.5 T, formando un ángulo de 30° con el campo. Si la fuerza sobre él es de 1.2 N, ¿qué corriente (I) fluye por el alambre?",
+    "solution": [
+      "Reorganizar la fórmula: I = F / (L * B * sin(θ)).",
+      "Sustituir: F = 1.2 N, L = 0.8 m, B = 0.5 T, θ = 30°.",
+      "I = 1.2 / (0.8 * 0.5 * sin(30°)) = 6.0 A."
+    ],
+    "answer": "La corriente que fluye por el alambre es de 6.0 A.",
+    "formula_id": "fuerza_sobre_conductor"
+  },
+  {
+    "id": "conductor_4",
+    "title": "Cálculo de Longitud",
+    "prompt": "Un alambre que conduce 10 A está orientado a 45° dentro de un campo magnético de 1.5 T. Si la fuerza que actúa sobre una sección del alambre es de 2.5 N, ¿cuál es la longitud (L) de esa sección?",
+    "solution": [
+      "Reorganizar la fórmula: L = F / (I * B * sin(θ)).",
+      "Sustituir: F = 2.5 N, I = 10 A, B = 1.5 T, θ = 45°.",
+      "L = 2.5 / (10 * 1.5 * sin(45°)) ≈ 0.236 m."
+    ],
+    "answer": "La longitud de la sección es de aproximadamente 23.6 cm.",
+    "formula_id": "fuerza_sobre_conductor"
+  },
+  {
+    "id": "conductor_5",
+    "title": "Fuerza en Ángulo",
+    "prompt": "Considera un alambre de 2 metros por el que pasan 8 A de corriente. Si se coloca en un campo magnético de 0.75 T con un ángulo de 60°, ¿qué fuerza magnética sentirá el alambre?",
+    "solution": [
+      "Usar la fórmula: F = I * L * B * sin(θ).",
+      "Sustituir: I = 8 A, L = 2 m, B = 0.75 T, θ = 60°.",
+      "F = 8 * 2 * 0.75 * sin(60°) ≈ 10.39 N."
+    ],
+    "answer": "La fuerza magnética será de aproximadamente 10.39 N.",
+    "formula_id": "fuerza_sobre_conductor"
+  }
+]

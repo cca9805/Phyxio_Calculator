@@ -1,0 +1,123 @@
+
+[
+  {
+    "id": "alambre_infinito_1",
+    "title": "Campo de Alambre Infinito",
+    "prompt": "Un alambre recto y muy largo transporta una corriente de 10 A. ¿Cuál es la magnitud del campo magnético a una distancia de 0.05 m del alambre?",
+    "solution": [
+      "Usar la fórmula del campo para un alambre infinito: B = (μ₀ * I) / (2π * r).",
+      "Sustituir: μ₀ = 4πe-7 T·m/A, I = 10 A, r = 0.05 m.",
+      "B = (4πe-7 * 10) / (2π * 0.05) = (2 * 10e-7) / 0.05 = 4 x 10^-5 T."
+    ],
+    "answer": "El campo magnético es de 4.0 x 10⁻⁵ T.",
+    "formula_id": "f-magnetismo-4"
+  },
+  {
+    "id": "alambre_infinito_2",
+    "title": "Corriente en Alambre",
+    "prompt": "A una distancia de 10 cm de un alambre largo, se mide un campo magnético de 4x10^-5 T. ¿Qué corriente (I) circula por el alambre?",
+    "solution": [
+      "Reorganizar la fórmula: I = (B * 2π * r) / μ₀.",
+      "Sustituir: B = 4e-5 T, r = 0.1 m, μ₀ = 4πe-7 T·m/A.",
+      "I = (4e-5 * 2π * 0.1) / (4πe-7) = (2e-6) / (1e-7) = 20 A."
+    ],
+    "answer": "Por el alambre circulan 20 A.",
+    "formula_id": "f-magnetismo-4"
+  },
+  {
+    "id": "alambre_infinito_3",
+    "title": "Distancia para un Campo Dado",
+    "prompt": "Un alambre transporta 25 A. ¿A qué distancia del alambre el campo magnético tiene una magnitud de 5x10^-5 T?",
+    "solution": [
+      "Reorganizar la fórmula: r = (μ₀ * I) / (2π * B).",
+      "Sustituir: I = 25 A, B = 5e-5 T, μ₀ = 4πe-7 T·m/A.",
+      "r = (4πe-7 * 25) / (2π * 5e-5) = (2e-7 * 25) / 5e-5 = 0.1 m."
+    ],
+    "answer": "La distancia es de 0.1 m o 10 cm.",
+    "formula_id": "f-magnetismo-4"
+  },
+  {
+    "id": "alambre_infinito_4",
+    "title": "Campo a 2 cm",
+    "prompt": "Calcula el campo magnético generado por un alambre recto con una corriente de 15 A a una distancia de 2 cm.",
+    "solution": [
+      "Usar la fórmula: B = (μ₀ * I) / (2π * r).",
+      "Sustituir: I = 15 A, r = 0.02 m.",
+      "B = (4πe-7 * 15) / (2π * 0.02) = 1.5 x 10^-4 T."
+    ],
+    "answer": "El campo magnético es de 1.5 x 10⁻⁴ T.",
+    "formula_id": "f-magnetismo-4"
+  },
+  {
+    "id": "alambre_infinito_5",
+    "title": "Corriente para un Campo Dado",
+    "prompt": "Si un campo magnético de 2.5x10^-5 T se mide a 20 cm de un alambre, ¿cuál es la corriente (I) que este transporta?",
+    "solution": [
+      "Reorganizar la fórmula: I = (B * 2π * r) / μ₀.",
+      "Sustituir: B = 2.5e-5 T, r = 0.2 m.",
+      "I = (2.5e-5 * 2π * 0.2) / (4πe-7) = 25 A."
+    ],
+    "answer": "La corriente es de 25 A.",
+    "formula_id": "f-magnetismo-4"
+  },
+  {
+    "id": "espira_1",
+    "title": "Campo en Centro de Espira",
+    "prompt": "Una espira circular de 10 cm de radio transporta una corriente de 5 A. ¿Cuál es el campo magnético en el centro de la espira?",
+    "solution": [
+      "Usar la fórmula del campo en el centro de una espira: B = (μ₀ * I) / (2 * R).",
+      "Sustituir: I = 5 A, R = 0.1 m.",
+      "B = (4πe-7 * 5) / (2 * 0.1) ≈ 3.14 x 10^-5 T."
+    ],
+    "answer": "El campo magnético es de aproximadamente 3.14 x 10⁻⁵ T.",
+    "formula_id": "f-magnetismo-3"
+  },
+  {
+    "id": "espira_2",
+    "title": "Corriente en Espira",
+    "prompt": "El campo magnético en el centro de una espira es de 3.14x10^-5 T. Si el radio de la espira es de 5 cm, ¿qué corriente (I) circula por ella?",
+    "solution": [
+      "Reorganizar la fórmula: I = (B * 2 * R) / μ₀.",
+      "Sustituir: B = 3.14e-5 T, R = 0.05 m.",
+      "I = (3.14e-5 * 2 * 0.05) / (4πe-7) ≈ 2.5 A."
+    ],
+    "answer": "La corriente es de aproximadamente 2.5 A.",
+    "formula_id": "f-magnetismo-3"
+  },
+  {
+    "id": "espira_3",
+    "title": "Radio de Espira",
+    "prompt": "Una espira con una corriente de 12 A genera un campo magnético de 6x10^-5 T en su centro. ¿Cuál es el radio (R) de esta espira?",
+    "solution": [
+      "Reorganizar la fórmula: R = (μ₀ * I) / (2 * B).",
+      "Sustituir: I = 12 A, B = 6e-5 T.",
+      "R = (4πe-7 * 12) / (2 * 6e-5) ≈ 0.126 m."
+    ],
+    "answer": "El radio de la espira es de aproximadamente 12.6 cm.",
+    "formula_id": "f-magnetismo-3"
+  },
+  {
+    "id": "espira_4",
+    "title": "Campo de Bobina Delgada",
+    "prompt": "Una bobina delgada con forma de espira tiene un radio de 15 cm y es recorrida por una corriente de 8 A. Determine el campo magnético (B) en el centro de la espira.",
+    "solution": [
+      "Usar la fórmula: B = (μ₀ * I) / (2 * R).",
+      "Sustituir: I = 8 A, R = 0.15 m.",
+      "B = (4πe-7 * 8) / (2 * 0.15) ≈ 3.35 x 10^-5 T."
+    ],
+    "answer": "El campo magnético es de aproximadamente 3.35 x 10⁻⁵ T.",
+    "formula_id": "f-magnetismo-3"
+  },
+  {
+    "id": "espira_5",
+    "title": "Corriente para Campo Deseado",
+    "prompt": "Se desea generar un campo de 1x10^-4 T en el centro de una espira de 8 cm de radio. ¿Qué corriente (I) se necesita para lograrlo?",
+    "solution": [
+      "Reorganizar la fórmula: I = (B * 2 * R) / μ₀.",
+      "Sustituir: B = 1e-4 T, R = 0.08 m.",
+      "I = (1e-4 * 2 * 0.08) / (4πe-7) ≈ 12.73 A."
+    ],
+    "answer": "Se necesita una corriente de aproximadamente 12.73 A.",
+    "formula_id": "f-magnetismo-3"
+  }
+]

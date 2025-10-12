@@ -1,0 +1,65 @@
+
+[
+  {
+    "id": "faraday_1",
+    "title": "Cálculo de FEM Inducida",
+    "prompt": "Una bobina con 200 espiras experimenta un cambio de flujo magnético de 0.04 Wb en un intervalo de 0.2 segundos. ¿Cuál es la magnitud de la Fuerza Electromotriz (FEM) inducida?",
+    "solution": [
+      "Usar la Ley de Faraday: ε = -N * (ΔΦB / Δt).",
+      "Sustituir: N = 200, ΔΦB = 0.04 Wb, Δt = 0.2 s.",
+      "ε = -200 * (0.04 / 0.2) = -200 * 0.2 = -40 V.",
+      "La magnitud es el valor absoluto, 40 V."
+    ],
+    "answer": "La magnitud de la FEM inducida es de 40 V.",
+    "formula_id": "f-magnetismo-5"
+  },
+  {
+    "id": "faraday_2",
+    "title": "Cambio de Flujo Magnético",
+    "prompt": "Se induce una FEM de 12 V en una bobina de 500 espiras. El cambio ocurrió en 0.5 segundos. Asumiendo que la FEM es constante, ¿cuál fue el cambio total en el flujo magnético (ΔΦB)?",
+    "solution": [
+      "Reorganizar la Ley de Faraday para ΔΦB: ΔΦB = - (ε * Δt) / N.",
+      "Sustituir: ε = 12 V, N = 500, Δt = 0.5 s.",
+      "ΔΦB = - (12 * 0.5) / 500 = -6 / 500 = -0.012 Wb."
+    ],
+    "answer": "El cambio total en el flujo magnético fue de -0.012 Wb.",
+    "formula_id": "f-magnetismo-5"
+  },
+  {
+    "id": "faraday_3",
+    "title": "Tiempo de Cambio",
+    "prompt": "Una sola espira (N=1) ve un cambio en el flujo magnético de 0.01 Wb, lo que genera una FEM inducida de -0.5 V. ¿En cuánto tiempo (Δt) ocurrió este cambio?",
+    "solution": [
+      "Reorganizar la Ley de Faraday para Δt: Δt = -N * (ΔΦB / ε).",
+      "Sustituir: N = 1, ΔΦB = 0.01 Wb, ε = -0.5 V.",
+      "Δt = -1 * (0.01 / -0.5) = 0.02 s."
+    ],
+    "answer": "El cambio ocurrió en 0.02 segundos.",
+    "formula_id": "f-magnetismo-5"
+  },
+  {
+    "id": "faraday_4",
+    "title": "Número de Espiras",
+    "prompt": "El flujo magnético a través de una bobina cambia en 0.08 Wb en 0.1 s, induciendo una FEM de -40 V. ¿Cuántas espiras (N) tiene la bobina?",
+    "solution": [
+      "Reorganizar la Ley de Faraday para N: N = - (ε * Δt) / ΔΦB.",
+      "Sustituir: ε = -40 V, ΔΦB = 0.08 Wb, Δt = 0.1 s.",
+      "N = - (-40 * 0.1) / 0.08 = 4 / 0.08 = 50."
+    ],
+    "answer": "La bobina tiene 50 espiras.",
+    "formula_id": "f-magnetismo-5"
+  },
+  {
+    "id": "faraday_5",
+    "title": "FEM con Flujo Decreciente",
+    "prompt": "Una bobina de 150 espiras se encuentra en un campo magnético. El flujo cambia de 0.05 Wb a 0.02 Wb en 0.3 segundos. ¿Cuál es la FEM inducida?",
+    "solution": [
+      "Primero, calcular el cambio en el flujo: ΔΦB = Φ_final - Φ_inicial = 0.02 - 0.05 = -0.03 Wb.",
+      "Usar la Ley de Faraday: ε = -N * (ΔΦB / Δt).",
+      "Sustituir: N = 150, ΔΦB = -0.03 Wb, Δt = 0.3 s.",
+      "ε = -150 * (-0.03 / 0.3) = -150 * (-0.1) = 15 V."
+    ],
+    "answer": "La FEM inducida es de 15 V.",
+    "formula_id": "f-magnetismo-5"
+  }
+]
