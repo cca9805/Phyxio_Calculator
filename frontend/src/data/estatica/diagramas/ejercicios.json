@@ -1,32 +1,60 @@
 [
   {
-    "id_formula": "componentes-peso-inclinado",
-    "question": "Un objeto de 100N de peso se encuentra sobre un plano inclinado 30°. Calcula las componentes paralela (Wx) y perpendicular (Wy) del peso.",
-    "solution": {"Wx": 50, "Wy": 86.6},
-    "variables": {"W": 100, "θ": 30}
+    "id": "dcl-plano-inclinado",
+    "title": "DCL en Plano Inclinado",
+    "prompt": "Un bloque está en reposo sobre un plano inclinado rugoso. Describe todas las fuerzas que deberían incluirse en un Diagrama de Cuerpo Libre (DCL) del bloque y especifica la dirección de cada una.",
+    "solution": [
+      "1. Peso (W): Fuerza vertical que actúa directamente hacia abajo, desde el centro de masa del bloque hacia el centro de la Tierra.",
+      "2. Fuerza Normal (N): Fuerza de contacto que actúa perpendicular a la superficie del plano inclinado, apuntando hacia afuera del plano.",
+      "3. Fuerza de Fricción Estática (fs): Fuerza que se opone a la tendencia del movimiento. Actúa paralela a la superficie del plano inclinado, apuntando hacia arriba del plano para evitar que el bloque se deslice hacia abajo."
+    ],
+    "answer": "El DCL debe incluir: el Peso (hacia abajo), la Fuerza Normal (perpendicular al plano, hacia afuera) y la Fuerza de Fricción (paralela al plano, hacia arriba)."
   },
   {
-    "id_formula": "componentes-peso-inclinado",
-    "question": "Para un bloque de 50N en un plano con inclinación de 45°, ¿cuáles son los valores de las componentes del peso Wx y Wy?",
-    "solution": {"Wx": 35.36, "Wy": 35.36},
-    "variables": {"W": 50, "θ": 45}
+    "id": "dcl-objeto-suspendido",
+    "title": "DCL de Objeto Suspendido",
+    "prompt": "Una lámpara cuelga del techo mediante dos cables que forman ángulos diferentes con la horizontal. Realiza un DCL del punto donde los tres cables (los dos del techo y el que sostiene la lámpara) se unen.",
+    "solution": [
+      "El DCL se centra en el nudo o punto de unión.",
+      "1. Tensión del Cable 1 (T1): Fuerza que actúa a lo largo del primer cable, jalando del nudo hacia el punto de anclaje en el techo.",
+      "2. Tensión del Cable 2 (T2): Fuerza que actúa a lo largo del segundo cable, jalando del nudo hacia su respectivo punto de anclaje.",
+      "3. Peso (o Tensión del cable de la lámpara, W): Fuerza que actúa verticalmente hacia abajo, representando el tirón de la lámpara sobre el nudo."
+    ],
+    "answer": "El DCL muestra tres fuerzas que se originan en un punto: las tensiones T1 y T2 jalando hacia arriba y en diagonal, y el peso W jalando verticalmente hacia abajo."
   },
   {
-    "id_formula": "componentes-peso-inclinado",
-    "question": "Un cuerpo que pesa 200N descansa en un plano inclinado 60°. Determina las componentes Wx y Wy del peso.",
-    "solution": {"Wx": 173.21, "Wy": 100},
-    "variables": {"W": 200, "θ": 60}
+    "id": "dcl-escalera-apoyada",
+    "title": "DCL de una Escalera",
+    "prompt": "Una escalera uniforme está apoyada contra una pared vertical lisa (sin fricción) y sobre un suelo horizontal rugoso (con fricción). Describe todas las fuerzas que actúan sobre la escalera para su DCL.",
+    "solution": [
+      "1. Peso de la escalera (W): Actúa en el centro geométrico de la escalera, apuntando verticalmente hacia abajo.",
+      "2. Normal de la Pared (Np): Fuerza de reacción de la pared. Como la pared es lisa, esta fuerza es puramente horizontal, empujando la escalera alejándose de la pared.",
+      "3. Normal del Suelo (Ns): Fuerza de reacción del suelo. Es vertical y apunta hacia arriba, soportando la escalera.",
+      "4. Fricción del Suelo (fs): Fuerza que evita que la base de la escalera se deslice. Es horizontal y apunta hacia la pared, oponiéndose al deslizamiento."
+    ],
+    "answer": "El DCL debe mostrar: el Peso (vertical, abajo, en el centro), la Normal de la pared (horizontal, empujando), la Normal del suelo (vertical, arriba) y la Fricción del suelo (horizontal, hacia la pared)."
   },
   {
-    "id_formula": "componentes-peso-inclinado",
-    "question": "Calcula las componentes del peso para un objeto de 15N en un plano con una inclinación de 15°.",
-    "solution": {"Wx": 3.88, "Wy": 14.49},
-    "variables": {"W": 15, "θ": 15}
+    "id": "dcl-cuerpo-flotante",
+    "title": "DCL de un Cuerpo Flotante",
+    "prompt": "Un bloque de madera está flotando en equilibrio en la superficie del agua. ¿Cuáles son las fuerzas que deben dibujarse en su Diagrama de Cuerpo Libre?",
+    "solution": [
+      "En este caso, solo dos fuerzas actúan sobre el bloque para mantenerlo en equilibrio estático.",
+      "1. Peso (W): La fuerza de la gravedad actuando sobre la masa del bloque, dirigida verticalmente hacia abajo desde su centro de masa.",
+      "2. Fuerza de Empuje o Flotación (B): La fuerza que ejerce el fluido (agua) sobre la parte sumergida del bloque. Según el principio de Arquímedes, esta fuerza actúa verticalmente hacia arriba, a través del centroide del volumen de agua desplazado."
+    ],
+    "answer": "El DCL consta de dos fuerzas opuestas: el Peso del bloque (hacia abajo) y la Fuerza de Empuje del agua (hacia arriba)."
   },
   {
-    "id_formula": "componentes-peso-inclinado",
-    "question": "Un bloque de 500N está en una superficie horizontal (ángulo de 0°). ¿Cuáles son sus componentes Wx y Wy?",
-    "solution": {"Wx": 0, "Wy": 500},
-    "variables": {"W": 500, "θ": 0}
+    "id": "dcl-viga-simplemente-apoyada",
+    "title": "DCL de una Viga Simple",
+    "prompt": "Una viga horizontal está soportada por un pasador (articulación) en su extremo izquierdo (A) y un rodillo en su extremo derecho (B). Una carga P actúa verticalmente hacia abajo en un punto entre los apoyos. Describe el DCL de la viga.",
+    "solution": [
+      "El DCL debe mostrar la viga y todas las fuerzas externas que actúan sobre ella.",
+      "1. Carga Aplicada (P): La fuerza externa que actúa sobre la viga, en la dirección y punto especificados.",
+      "2. Reacciones en el Pasador A: Un pasador impide la traslación en X e Y. Por lo tanto, se dibujan dos componentes de reacción: una fuerza horizontal (Ax) y una fuerza vertical (Ay). Sus sentidos se asumen inicialmente.",
+      "3. Reacción en el Rodillo B: Un rodillo solo impide el movimiento perpendicular a la superficie de rodadura. Por lo tanto, se dibuja una única fuerza de reacción vertical (By), apuntando hacia arriba."
+    ],
+    "answer": "El DCL muestra la carga P hacia abajo, dos reacciones en A (Ax y Ay) y una reacción en B (By, vertical)."
   }
 ]

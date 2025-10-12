@@ -1,56 +1,73 @@
+# El Diagrama de Cuerpo Libre (DCL)
 
-# Diagramas de Cuerpo Libre (DCL)
+El **Diagrama de Cuerpo Libre (DCL)** es, sin duda, la herramienta más importante de toda la estática. Es un dibujo simplificado que traduce un problema físico complejo del mundo real en un "mapa de fuerzas" claro y sencillo que podemos resolver con matemáticas. Dominar el DCL es el primer y más crucial paso para resolver casi cualquier problema de equilibrio.
 
-Un **diagrama de cuerpo libre (DCL)** es una representación gráfica simplificada de un objeto aislado en la que se muestran todas las fuerzas externas que actúan sobre él. Es una herramienta fundamental en estática para aplicar las leyes de Newton y resolver problemas de equilibrio.
-
----
-
-## Pasos para Crear un DCL
-
-1.  **Aislar el objeto:** Identifica el cuerpo de interés y sepáralo mentalmente de su entorno.
-2.  **Dibujar el objeto:** Representa el objeto de forma esquemática, como un punto o un contorno.
-3.  **Identificar y dibujar las fuerzas:** Dibuja todas las fuerzas externas que actúan sobre el objeto. No incluyas las fuerzas internas (dentro del objeto) ni las que el objeto ejerce sobre otros.
-4.  **Etiquetar las fuerzas:** Asigna un nombre claro a cada fuerza (por ejemplo, T para tensión, N para normal, W para peso) y, si es posible, su dirección y magnitud.
+La idea central es **aislar** un objeto de interés de su entorno y dibujar **todas las fuerzas externas** que actúan sobre él.
 
 ---
 
-## Fuerzas Comunes en Estática
+## Pasos para Construir un DCL Perfecto
 
--   **Peso (W):** La fuerza de la gravedad, que siempre actúa verticalmente hacia abajo. Se calcula como $W = mg$, donde $m$ es la masa y $g$ es la aceleración de la gravedad.
--   **Fuerza Normal (N):** La fuerza de contacto ejercida por una superficie sobre un objeto. Es siempre perpendicular a la superficie.
--   **Tensión (T):** La fuerza que se transmite a través de una cuerda, cable o cadena cuando es tirado por fuerzas que actúan desde extremos opuestos.
--   **Fricción (f):** La fuerza que se opone al movimiento (o al intento de movimiento) entre superficies en contacto. Es paralela a la superficie.
+1.  **Elige y Aísla tu Objeto:** Decide qué objeto o parte de la estructura vas a analizar. Imagina que lo "liberas" de todo lo que lo rodea: el suelo, las cuerdas, las paredes, otros objetos, etc.
 
----
+2.  **Dibuja un Contorno Simplificado:** No necesitas ser un artista. Dibuja una representación simple del objeto, como un punto, un cuadro o un contorno básico. Esto es tu "cuerpo libre".
 
-## Ejemplo 1: Bloque en un Plano Inclinado
+3.  **Identifica y Dibuja Todas las Fuerzas Externas:** Ahora, dibuja flechas (vectores) que representen cada una de las fuerzas que el "entorno" ejerce **sobre** tu objeto. Las fuerzas se pueden dividir en dos tipos:
+    -   **Fuerzas a distancia:** Como el peso (la gravedad de la Tierra tirando del objeto).
+    -   **Fuerzas de contacto:** Cualquier cosa que esté tocando el objeto (cuerdas, superficies, pasadores, etc.).
+    *Importante: No incluyas las fuerzas que el objeto ejerce sobre su entorno, solo las que actúan sobre él.*
 
-Imagina un bloque en reposo sobre un plano inclinado un ángulo $\theta$. Las fuerzas que actúan sobre el bloque son:
+4.  **Establece un Sistema de Coordenadas:** Dibuja los ejes `x` e `y`. Esto es fundamental porque te permitirá descomponer las fuerzas y aplicar las ecuaciones de equilibrio.
 
--   **Peso (W):** Verticalmente hacia abajo.
--   **Fuerza Normal (N):** Perpendicular al plano inclinado.
--   **Fuerza de Fricción (f):** Paralela al plano, oponiéndose al deslizamiento hacia abajo.
-
-Al descomponer el peso en componentes paralela ($W_\parallel = W \sin(\theta)$) y perpendicular ($W_\perp = W \cos(\theta)$) al plano, las condiciones de equilibrio son:
-
-$$ \sum F_x = f - W_\parallel = 0 $$
-$$ \sum F_y = N - W_\perp = 0 $$
+5.  **Etiqueta Todo:** Asigna un nombre claro a cada fuerza (ej. `W` para peso, `N` para normal, `T` para tensión) y anota los ángulos y dimensiones importantes.
 
 ---
 
-## Ejemplo 2: Sistema de Poleas
+## Las Fuerzas Más Comunes
 
-En un sistema con una polea que sostiene un peso (W) mediante una cuerda, si el sistema está en equilibrio, el DCL del peso muestra dos fuerzas:
+-   **Peso ($\vec{W}$):** Es la fuerza de la gravedad. Siempre actúa **verticalmente hacia abajo**, apuntando hacia el centro de la Tierra. Se calcula con la fórmula:
+    $$ W = m \cdot g $$
+    Donde `m` es la masa (kg) y `g` es la aceleración de la gravedad (aprox. 9.81 m/s²).
 
--   **Peso (W):** Hacia abajo.
--   **Tensión (T):** Hacia arriba, ejercida por la cuerda.
+-   **Fuerza Normal ($\vec{N}$):** Es una fuerza de "reacción" que ejerce una superficie para evitar que un objeto la atraviese. Siempre es **perpendicular** a la superficie y apunta hacia afuera de ella.
 
-La condición de equilibrio es simplemente:
+-   **Tensión ($\vec{T}$):** Es la fuerza que se transmite a través de un elemento "tenso" como una cuerda, cable o cadena. Siempre **tira** del objeto y actúa a lo largo de la dirección de la cuerda.
 
-$$ \sum F_y = T - W = 0 \implies T = W $$
+-   **Fricción ($\vec{f}$):** Es la fuerza que se opone al movimiento (o al intento de movimiento) entre dos superficies en contacto. Siempre es **paralela** a la superficie.
 
 ---
 
-## Importancia del DCL
+## Ejemplo: Bloque en un Plano Inclinado
 
-El DCL es el primer paso y el más crucial para resolver la mayoría de los problemas en estática y dinámica. Permite visualizar claramente las fuerzas y aplicar correctamente las ecuaciones de equilibrio para encontrar incógnitas como tensiones, reacciones en apoyos o fuerzas de fricción.
+Imagina un bloque en reposo sobre un plano inclinado un ángulo $\theta$. El DCL del bloque se vería así:
+
+1.  **Aislar:** El bloque.
+2.  **Fuerzas:** El peso (`W`) hacia abajo, la normal (`N`) perpendicular al plano, y la fricción (`f`) paralela al plano, oponiéndose al deslizamiento.
+3.  **Ejes:** Para simplificar, inclinamos los ejes `x` e `y` para que coincidan con el plano.
+
+En este sistema de ejes inclinado, el peso `W` es la única fuerza que necesita descomponerse:
+-   Componente perpendicular al plano: $W_\perp = W \cos(\theta)$
+-   Componente paralela al plano: $W_\parallel = W \sin(\(\theta)
+
+Las ecuaciones de equilibrio son:
+$$ \sum F_x = f - W \sin(\theta) = 0 $$
+$$ \sum F_y = N - W \cos(\theta) = 0 $$
+
+Donde:
+- **$f$**: Fuerza de fricción (N).
+- **$N$**: Fuerza normal (N).
+- **$W$**: Peso del bloque (N).
+- **$\theta$**: Ángulo de inclinación del plano (°).
+
+Estas ecuaciones nos permitirían calcular, por ejemplo, cuánta fricción se necesita para que el bloque no se deslice.
+
+---
+
+## Leyenda General de Símbolos
+- **DCL**: Diagrama de Cuerpo Libre.
+- **$\vec{W}$**: Vector peso (N).
+- **$\vec{N}$**: Vector de fuerza normal (N).
+- **$\vec{T}$**: Vector de tensión (N).
+- **$\vec{f}$**: Vector de fuerza de fricción (N).
+- **$m$**: Masa (kg).
+- **$g$**: Aceleración de la gravedad (m/s²).

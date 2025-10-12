@@ -1,0 +1,10 @@
+1- Que todos los subtemas tengan todas las fórmulas que corresponden a ese subtema.
+2- Que hay el mismo número de calculadoras que de fórmulas. 
+3- Que las fórmulas que no calculen, tengan una explicación que detalle el por qué.
+4- Que en ejercicios.json de cada subtema, haya al menos 5 ejercicios de cada fórmula.
+5- Que la teoría.md de cada subtema explique lo mas didactimente posible cada subtema y cada fórmula y que tenga una leyenda de que significa cada término implicado en ese subtema.
+6- Que las calculadoras especiales (ej: estatica/vectores) tendrán un tratamiento distinto y no se aplicarán las reglas generales. Tendrñan un tratamiento especial pero en todo caso se conservarán sin modificaciones hasta nueva orden.
+7- Los pasos de resolve son importantísimos, junto con los resultados finales asegurarse que se muestren correctamente
+8- Los ejercicios deben tener los campos id, title, prompt, solution, answer.
+9- Las calculadoras y las formulas deben tener los campos id, title, description, formula, variables: [ symbol ], output: [ symbol ] y las calculadoras además resolve
+10- La creación de nuevos subtemas se regirá por la misma estructura empleada en otros subtemas como los de cinemática, dinámica o estática tanto en creación de carpeta como en estructuración de cada archivo.

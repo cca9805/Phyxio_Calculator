@@ -1,0 +1,54 @@
+[
+  {
+    "id": "ejercicio_mc_01",
+    "title": "Cálculo de Velocidad Angular",
+    "prompt": "Un disco de vinilo gira a 45 RPM (revoluciones por minuto). ¿Cuál es su velocidad angular en radianes por segundo?",
+    "solution": [
+      "Convertimos las RPM a revoluciones por segundo (RPS): $$ f = \\frac{45\\text{ rev}}{1\\text{ min}} \\cdot \\frac{1\\text{ min}}{60\\text{ s}} = 0.75\\text{ RPS (rev/s)} $$",
+      "Convertimos las revoluciones por segundo a radianes por segundo (ω), sabiendo que 1 revolución = 2π radianes: $$ \\omega = 0.75 \\frac{\\text{rev}}{\\text{s}} \\cdot \\frac{2\\pi\\text{ rad}}{1\\text{ rev}} \\approx 4.71 \\text{ rad/s} $$"
+    ],
+    "answer": "≈ 4.71 rad/s"
+  },
+  {
+    "id": "ejercicio_mc_02",
+    "title": "Velocidad Tangencial en un Carrusel",
+    "prompt": "Un niño está sentado en un carrusel a 2.5 metros del centro. Si el carrusel tiene una velocidad angular de 1.2 rad/s, ¿cuál es la velocidad tangencial del niño?",
+    "solution": [
+      "Usamos la fórmula que relaciona la velocidad tangencial (v) con la velocidad angular (ω) y el radio (r): $$ v = \\omega \\cdot r $$",
+      "Sustituimos los valores dados: $$ v = 1.2 \\text{ rad/s} \\cdot 2.5 \\text{ m} = 3.0 \\text{ m/s} $$"
+    ],
+    "answer": "3.0 m/s"
+  },
+  {
+    "id": "ejercicio_mc_03",
+    "title": "Aceleración Centrípeta de la Luna",
+    "prompt": "La Luna orbita la Tierra a una distancia aproximada de 384,400 km y tiene una velocidad orbital de unos 1.022 km/s. Calcula su aceleración centrípeta.",
+    "solution": [
+      "Primero, convertimos las unidades al Sistema Internacional (metros y m/s): $$ r = 384,400 \\text{ km} = 3.844 \\times 10^8 \\text{ m} $$ $$ v = 1.022 \\text{ km/s} = 1022 \\text{ m/s} $$",
+      "Aplicamos la fórmula de la aceleración centrípeta: $$ a_c = \\frac{v^2}{r} $$",
+      "Sustituimos y calculamos: $$ a_c = \\frac{(1022 \\text{ m/s})^2}{3.844 \\times 10^8 \\text{ m}} \\approx 0.00272 \\text{ m/s}^2 $$"
+    ],
+    "answer": "≈ 0.00272 m/s²"
+  },
+  {
+    "id": "ejercicio_mc_04",
+    "title": "Fuerza Centrípeta sobre una Pelota",
+    "prompt": "Una pelota de 0.5 kg está atada a una cuerda de 1.5 m de longitud y se hace girar en un círculo horizontal. Si la pelota completa 2 revoluciones por segundo, ¿cuál es la tensión en la cuerda (fuerza centrípeta)?",
+    "solution": [
+      "La frecuencia es f = 2 rev/s. Calculamos la velocidad angular (ω): $$ \\omega = 2\\pi f = 2\\pi \\cdot 2 = 4\\pi \\text{ rad/s} \\approx 12.57 \\text{ rad/s} $$",
+      "Usamos la velocidad angular para encontrar la aceleración centrípeta (a_c): $$ a_c = \\omega^2 r = (4\\pi)^2 \\cdot 1.5 \\approx 236.9 \\text{ m/s}^2 $$",
+      "Finalmente, calculamos la fuerza centrípeta (F_c), que es igual a la tensión de la cuerda: $$ F_c = m \\cdot a_c = 0.5 \\text{ kg} \\cdot 236.9 \\text{ m/s}^2 \\approx 118.45 \\text{ N} $$"
+    ],
+    "answer": "≈ 118.45 N"
+  },
+  {
+    "id": "ejercicio_mc_05",
+    "title": "Período y Frecuencia de un Atleta",
+    "prompt": "Un atleta corre en una pista circular de 100 m de radio. Si completa una vuelta en 50 segundos, ¿cuáles son su período y su frecuencia?",
+    "solution": [
+      "El período (T) es el tiempo que tarda en completar una revolución. Según el enunciado: $$ T = 50 \\text{ s} $$",
+      "La frecuencia (f) es la inversa del período: $$ f = \\frac{1}{T} = \\frac{1}{50 \\text{ s}} = 0.02 \\text{ Hz} $$"
+    ],
+    "answer": "T = 50 s y f = 0.02 Hz"
+  }
+]

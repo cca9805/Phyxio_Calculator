@@ -1,1 +1,79 @@
-# Momento de una Fuerza (Torque)\n\nEn estática, no solo importa cuánta fuerza se aplica, sino también *dónde* y *cómo* se aplica. El **momento**, también conocido como **torque**, es la medida de la tendencia de una fuerza para hacer girar un objeto alrededor de un punto o eje. Es el equivalente rotacional de la fuerza.\n\nImagina apretar una tuerca con una llave: el momento es la \"fuerza de giro\" que aplicas.\n\n---\n\n## 1. Cálculo del Momento (Fórmula Escalar 2D)\n\nEl momento (M) generado por una fuerza (F) depende de tres factores:\n1.  La **magnitud de la fuerza** (F).\n2.  La **distancia (r)** desde el punto de giro (o pivote) hasta el punto donde se aplica la fuerza. A esta distancia se le llama **brazo de palanca**.\n3.  El **ángulo (θ)** entre el vector de la fuerza y el brazo de palanca.\n\nLa fórmula escalar para el momento en dos dimensiones es:\n\n$$ M = F \\cdot r \\cdot \\sin(\\theta) $$\n\nEl momento es máximo cuando la fuerza se aplica perpendicularmente al brazo de palanca (θ = 90°), ya que $\\sin(90°) = 1$. Si la fuerza se aplica paralela al brazo (θ = 0° o 180°), no produce momento alguno, ya que $\\sin(0°) = 0$.\n\n---\n\n## 2. Convención de Signos: Sentido del Giro\n\nEl momento es una cantidad vectorial, pero en problemas 2D, podemos simplificar su dirección a un signo. La convención estándar es:\n\n- **Momento Positivo (+)**: Si la fuerza tiende a causar una rotación en sentido **antihorario** (contrario a las manecillas del reloj).\n- **Momento Negativo (-)**: Si la fuerza tiende a causar una rotación en sentido **horario** (como las manecillas del reloj).\n\nPara el equilibrio rotacional, la suma de todos los momentos que actúan sobre un objeto debe ser cero ($\\\sum M = 0$).\n\n---\n\n## 3. Teorema de Varignon (Momento por Componentes)\n\nEl Teorema de Varignon establece que *\"el momento de una fuerza con respecto a un punto es igual a la suma de los momentos de sus componentes con respecto al mismo punto.\"*\n\nEste teorema es increíblemente útil. En lugar de usar la fórmula $F \\cdot r \\cdot \\sin(\\theta)$, podemos descomponer la fuerza en sus componentes cartesianas ($F_x$, $F_y$) aplicadas en un punto $(x, y)$. El momento respecto al origen (O) se calcula entonces como:\n\n$$ M_O = (F_y \\cdot x) - (F_x \\\\cdot y) $$\n\n- El término $(F_y \\cdot x)$ es el momento producido por la componente vertical de la fuerza. Es positivo si x > 0 y Fy > 0 (tiende a rotar antihorario).\n- El término $(F_x \\cdot y)$ es el momento producido por la componente horizontal. El signo negativo se debe a que una $F_x$ positiva aplicada a una $y$ positiva tiende a causar una rotación horaria.\n\n---\n\n## Leyenda de Símbolos\n\n- **M, M_O**: Momento o Torque. (N·m)\n- **F**: Magnitud de la fuerza. (N)\n- **r**: Brazo de palanca; distancia desde el pivote al punto de aplicación de la fuerza. (m)\n- **θ (theta)**: Ángulo entre el vector de fuerza y el brazo de palanca. (grados)\n- **$F_x, F_y$**: Componentes rectangulares de la fuerza F. (N)\n- **x, y**: Coordenadas del punto de aplicación de la fuerza. (m)\n- **Σ (sigma)**: Símbolo de sumatoria.
+# Momento de una Fuerza (Torque)
+
+En estática, no solo importa *cuánta* fuerza se aplica, sino también *dónde* se aplica. El **momento**, también conocido como **torque**, es la medida de la capacidad de una fuerza para hacer **girar** un objeto alrededor de un punto o eje. Es, en esencia, una "fuerza de giro".
+
+Piensa en abrir una puerta:
+- Es más fácil abrirla empujando lejos de las bisagras (mayor distancia).
+- Es más efectivo empujar perpendicularmente a la puerta (ángulo de 90°).
+- Si empujas directamente hacia las bisagras (fuerza paralela), la puerta no girará.
+
+Esto captura la esencia del momento.
+
+---
+
+## 1. Cálculo del Momento: La Fórmula Principal
+
+El momento (`M`) se define como el producto de la magnitud de la fuerza (`F`) por el **brazo de palanca** (`d`).
+
+$$ M = F \cdot d $$
+
+Donde:
+- **$M$**: Es el momento o torque (medido en Newton-metro, N·m).
+- **$F$**: Es la magnitud de la fuerza aplicada (en Newtons, N).
+- **$d$**: Es el **brazo de palanca**, definido como la **distancia perpendicular** desde el punto de giro (pivote) hasta la línea de acción de la fuerza.
+
+En muchos casos, la fuerza no se aplica de forma perpendicular. Si tenemos una fuerza `F` aplicada a una distancia `r` del pivote, con un ángulo `θ` entre la línea de `r` y la fuerza, el brazo de palanca `d` se calcula como `d = r · sen(θ)`. Esto nos da la fórmula más general:
+
+$$ M = F \cdot r \cdot \sin(\theta) $$
+
+- **$r$**: Es la distancia directa desde el pivote hasta el punto donde se aplica la fuerza.
+- **$\theta$**: Es el ángulo entre la fuerza y la línea de `r`.
+
+---
+
+## 2. Convención de Signos: ¿En qué dirección gira?
+
+El momento puede causar giros en dos direcciones. Para diferenciarlos, usamos una convención de signos estándar:
+
+- **Momento Positivo (+)**: Si la fuerza tiende a causar una rotación en sentido **antihorario** (contrario a las manecillas del reloj).
+- **Momento Negativo (-)**: Si la fuerza tiende a causar una rotación en sentido **horario** (como las manecillas del reloj).
+
+Esta convención es crucial para aplicar la **Segunda Condición de Equilibrio**: para que un objeto no rote, la suma de todos los momentos que actúan sobre él debe ser cero.
+
+$$ \sum M = 0 $$
+
+(Momentos antihorarios) = (Momentos horarios)
+
+---
+
+## 3. Teorema de Varignon: El Método de Componentes (¡El más fácil!)
+
+Calcular `r · sen(θ)` puede ser complicado. El **Teorema de Varignon** nos ofrece un método mucho más simple y poderoso: "El momento de una fuerza es igual a la suma de los momentos de sus componentes".
+
+El procedimiento es el siguiente:
+
+1.  Elige un punto de giro (generalmente el origen, `(0,0)`).
+2.  Toma la fuerza `F` que está aplicada en un punto `(x, y)`.
+3.  Descompón la fuerza en sus componentes horizontal (`F_x`) y vertical (`F_y`).
+4.  Calcula el momento de *cada* componente por separado y súmalos.
+
+-   **Momento de $F_y$**: La distancia perpendicular desde el origen a la línea de acción de $F_y$ es `x`. Una $F_y$ positiva tiende a causar un giro **antihorario** (+). Por tanto: $M_{Fy} = + F_y \cdot x$.
+-   **Momento de $F_x$**: La distancia perpendicular desde el origen a la línea de acción de $F_x$ es `y`. Una $F_x$ positiva tiende a causar un giro **horario** (-). Por tanto: $M_{Fx} = - F_x \cdot y$.
+
+Sumando ambos, obtenemos la fórmula del momento total respecto al origen `O`:
+
+$$ M_O = (F_y \cdot x) - (F_x \cdot y) $$
+
+Este método evita el uso de senos y cosenos para el momento y es la forma más utilizada en la práctica.
+
+---
+
+## Leyenda General de Símbolos
+- **$M, M_O$**: Momento o Torque (N·m).
+- **$F$**: Magnitud de la fuerza (N).
+- **$d$**: Brazo de palanca o distancia perpendicular (m).
+- **$r$**: Distancia directa del pivote al punto de aplicación de la fuerza (m).
+- **$\theta$**: Ángulo entre la fuerza y `r` (°).
+- **$F_x, F_y$**: Componentes de la fuerza (N).
+- **$x, y$**: Coordenadas del punto de aplicación de la fuerza (m).
+- **$\sum$**: Símbolo de sumatoria.

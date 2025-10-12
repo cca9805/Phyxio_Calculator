@@ -1,0 +1,235 @@
+
+[
+  {
+    "id": "maxwell_gauss_electrico_1",
+    "title": "Cálculo de Flujo Eléctrico",
+    "prompt": "Una carga puntual de +3 nC (3 x 10⁻⁹ C) se encuentra en el centro de una esfera. Calcula el flujo eléctrico total que atraviesa la superficie de la esfera. Considera ε₀ ≈ 8.854 x 10⁻¹² F/m.",
+    "solution": [
+      "Usamos la Ley de Gauss para el campo eléctrico: Φ_E = Q_enc / ε₀.",
+      "Identificamos la carga encerrada: Q_enc = 3 x 10⁻⁹ C.",
+      "Sustituimos los valores en la ecuación: Φ_E = (3 x 10⁻⁹ C) / (8.854 x 10⁻¹² F/m).",
+      "Calculamos el resultado: Φ_E ≈ 338.8 N·m²/C."
+    ],
+    "answer": "El flujo eléctrico es de aproximadamente 338.8 N·m²/C."
+  },
+  {
+    "id": "maxwell_gauss_electrico_2",
+    "title": "Cálculo de Carga Encerrada",
+    "prompt": "Se mide un flujo eléctrico neto de 250 N·m²/C entrando en una superficie cerrada. ¿Cuál es la carga neta total encerrada dentro de la superficie?",
+    "solution": [
+      "Despejamos la carga encerrada (Q_enc) de la Ley de Gauss: Q_enc = Φ_E * ε₀.",
+      "El flujo es entrante, por lo que es negativo: Φ_E = -250 N·m²/C.",
+      "Sustituimos los valores: Q_enc = (-250 N·m²/C) * (8.854 x 10⁻¹² F/m).",
+      "Calculamos el resultado: Q_enc ≈ -2.21 x 10⁻⁹ C."
+    ],
+    "answer": "La carga neta encerrada es de aproximadamente -2.21 nC."
+  },
+  {
+    "id": "maxwell_gauss_electrico_3",
+    "title": "Flujo en un Dipolo",
+    "prompt": "Un dipolo eléctrico, formado por una carga de +5 μC y otra de -5 μC, se encuentra completamente dentro de un cubo. ¿Cuál es el flujo eléctrico neto a través de la superficie del cubo?",
+    "solution": [
+      "La carga total encerrada (Q_enc) es la suma algebraica de todas las cargas dentro de la superficie.",
+      "Q_enc = (+5 μC) + (-5 μC) = 0.",
+      "Según la Ley de Gauss, Φ_E = Q_enc / ε₀.",
+      "Como la carga neta es cero, el flujo eléctrico neto también es cero."
+    ],
+    "answer": "El flujo eléctrico neto a través del cubo es 0."
+  },
+  {
+    "id": "maxwell_gauss_electrico_4",
+    "title": "Independencia de la Superficie",
+    "prompt": "Una carga de 10 nC está en el centro de una esfera de radio R, generando un flujo Φ. Si la esfera se reemplaza por un cubo que también encierra la carga, ¿cuál es el nuevo flujo?",
+    "solution": [
+      "La Ley de Gauss establece que el flujo eléctrico total solo depende de la cantidad de carga encerrada.",
+      "No depende de la forma ni del tamaño de la superficie gaussiana.",
+      "Dado que la carga encerrada sigue siendo 10 nC, el flujo eléctrico no cambia.",
+      "El nuevo flujo seguirá siendo Φ."
+    ],
+    "answer": "El flujo eléctrico a través del cubo es el mismo, Φ."
+  },
+  {
+    "id": "maxwell_gauss_electrico_5",
+    "title": "Campo de un Plano Infinito",
+    "prompt": "Un plano infinito tiene una densidad de carga superficial uniforme σ = 2 μC/m². ¿Cuál es la magnitud del campo eléctrico E en un punto cercano al plano?",
+    "solution": [
+      "Para un plano infinito, la Ley de Gauss se simplifica a E = σ / (2 * ε₀).",
+      "Datos: σ = 2 x 10⁻⁶ C/m², ε₀ = 8.854 x 10⁻¹² F/m.",
+      "Sustituimos: E = (2 x 10⁻⁶) / (2 * 8.854 x 10⁻¹²).",
+      "Calculamos: E ≈ 1.13 x 10⁵ N/C."
+    ],
+    "answer": "La magnitud del campo eléctrico es de aproximadamente 1.13 x 10⁵ N/C."
+  },
+  {
+    "id": "maxwell_gauss_magnetico_1",
+    "title": "Flujo Magnético en Superficie Cerrada",
+    "prompt": "Un imán de barra se coloca completamente dentro de una esfera. ¿Cuál es el flujo magnético neto que atraviesa la superficie de la esfera?",
+    "solution": [
+      "Aplicamos la Ley de Gauss para el magnetismo: ∮ B ⋅ dA = 0.",
+      "Esta ley establece que el flujo magnético neto a través de cualquier superficie cerrada es siempre cero.",
+      "Esto se debe a que no existen monopolos magnéticos; las líneas de campo magnético son siempre bucles cerrados.",
+      "Por lo tanto, el flujo neto es cero, sin importar la fuerza o la posición del imán."
+    ],
+    "answer": "El flujo magnético neto es 0."
+  },
+  {
+    "id": "maxwell_gauss_magnetico_2",
+    "title": "Inexistencia de Monopolos Magnéticos",
+    "prompt": "¿Qué implicación fundamental tiene la ecuación ∮ B ⋅ dA = 0 sobre las fuentes del campo magnético?",
+    "solution": [
+      "La ecuación dice que no hay 'fuentes' o 'sumideros' netos de campo magnético.",
+      "A diferencia del campo eléctrico, que se origina en cargas, las líneas de campo magnético no tienen principio ni fin.",
+      "Esto implica que no se puede aislar un polo norte o un polo sur. A esto se le llama la inexistencia de monopolos magnéticos."
+    ],
+    "answer": "Implica que no existen los monopolos magnéticos."
+  },
+  {
+    "id": "maxwell_gauss_magnetico_3",
+    "title": "Líneas de Campo Magnético",
+    "prompt": "Si el flujo magnético a través de cualquier superficie cerrada es cero, ¿qué nos dice esto sobre la forma de las líneas de campo magnético?",
+    "solution": [
+      "Si el flujo neto es cero, significa que toda línea de campo magnético que entra en una superficie cerrada debe también salir de ella.",
+      "Esto impone la condición de que las líneas de campo magnético no pueden terminar ni empezar en un punto.",
+      "Por lo tanto, las líneas de campo magnético siempre deben formar bucles cerrados."
+    ],
+    "answer": "Las líneas de campo magnético deben formar bucles cerrados."
+  },
+  {
+    "id": "maxwell_gauss_magnetico_4",
+    "title": "Flujo en un Electroimán Apagado",
+    "prompt": "Un solenoide (electroimán) está dentro de una caja. Si no fluye corriente por el solenoide, ¿cuál es el flujo magnético a través de la caja?",
+    "solution": [
+      "Si no hay corriente, no se genera campo magnético (B=0 en todas partes).",
+      "La integral de flujo ∮ B ⋅ dA será la integral de cero, que es cero.",
+      "Incluso si hubiera un campo, la Ley de Gauss para el magnetismo garantiza que el flujo neto a través de la superficie cerrada sería cero."
+    ],
+    "answer": "El flujo magnético es 0."
+  },
+  {
+    "id": "maxwell_gauss_magnetico_5",
+    "title": "Diferencia con Campo Eléctrico",
+    "prompt": "¿Por qué la Ley de Gauss para el campo eléctrico (∮ E ⋅ dA) puede ser distinta de cero mientras que para el magnético es siempre cero?",
+    "solution": [
+      "La Ley de Gauss eléctrica es proporcional a la carga encerrada (Q_enc). Como existen cargas eléctricas aisladas (electrones, protones), Q_enc puede ser no nula.",
+      "La Ley de Gauss magnética sería proporcional a la 'carga magnética' encerrada.",
+      "Dado que experimentalmente no se han encontrado monopolos magnéticos, la 'carga magnética' encerrada es siempre cero."
+    ],
+    "answer": "Porque existen cargas eléctricas (monopolos eléctricos), pero no monopolos magnéticos."
+  },
+  {
+    "id": "maxwell_faraday_lenz_1",
+    "title": "Cálculo de FEM Inducida",
+    "prompt": "El flujo magnético que atraviesa una espira conductora cambia uniformemente de 1.5 Wb a 4.5 Wb en un intervalo de 2 segundos. ¿Cuál es la magnitud de la fuerza electromotriz (FEM) inducida en la espira?",
+    "solution": [
+      "Usamos la Ley de Faraday: |ε| = | -ΔΦ_B / Δt |.",
+      "Calculamos el cambio en el flujo magnético: ΔΦ_B = 4.5 Wb - 1.5 Wb = 3.0 Wb.",
+      "El intervalo de tiempo es Δt = 2 s.",
+      "Sustituimos los valores: |ε| = | 3.0 Wb / 2 s | = 1.5 V."
+    ],
+    "answer": "La magnitud de la FEM inducida es 1.5 V."
+  },
+  {
+    "id": "maxwell_faraday_lenz_2",
+    "title": "Dirección de Corriente (Ley de Lenz)",
+    "prompt": "Se aleja el polo norte de un imán de una espira circular. Visto desde la posición del imán, ¿cuál es la dirección de la corriente inducida en la espira?",
+    "solution": [
+      "Al alejar el polo norte, el flujo magnético que atraviesa la espira (hacia adentro) disminuye.",
+      "Según la Ley de Lenz, la corriente inducida creará un campo magnético para oponerse a este cambio, es decir, intentará mantener el flujo (creando un campo hacia adentro).",
+      "Usando la regla de la mano derecha, un campo magnético hacia adentro es generado por una corriente en sentido horario."
+    ],
+    "answer": "La corriente inducida fluye en sentido horario."
+  },
+  {
+    "id": "maxwell_faraday_lenz_3",
+    "title": "FEM con Flujo Constante",
+    "prompt": "Una espira se encuentra en un campo magnético uniforme y constante de 5 T. La espira no se mueve ni se deforma. ¿Cuál es la FEM inducida?",
+    "solution": [
+      "La Ley de Faraday establece que la FEM se induce por un *cambio* en el flujo magnético (dΦ_B/dt).",
+      "Si el campo magnético es constante y la espira no cambia de área ni orientación, el flujo magnético Φ_B es constante.",
+      "Por lo tanto, la tasa de cambio del flujo es cero: dΦ_B/dt = 0.",
+      "En consecuencia, la FEM inducida es cero."
+    ],
+    "answer": "La FEM inducida es 0 V."
+  },
+  {
+    "id": "maxwell_faraday_lenz_4",
+    "title": "Cálculo de Cambio de Flujo",
+    "prompt": "Una FEM constante de 3 V es inducida en una bobina durante 0.5 segundos. ¿Cuál fue el cambio total en el flujo magnético (ΔΦ_B) a través de la bobina durante ese tiempo?",
+    "solution": [
+      "Partimos de la Ley de Faraday: |ε| = |ΔΦ_B / Δt|.",
+      "Despejamos el cambio de flujo: |ΔΦ_B| = |ε| * Δt.",
+      "Sustituimos los datos: |ΔΦ_B| = 3 V * 0.5 s.",
+      "Calculamos el resultado: |ΔΦ_B| = 1.5 Wb."
+    ],
+    "answer": "El cambio total en el flujo magnético fue de 1.5 Wb."
+  },
+  {
+    "id": "maxwell_faraday_lenz_5",
+    "title": "FEM por Cambio de Área",
+    "prompt": "Una espira cuadrada de lado 10 cm se encuentra en un campo magnético perpendicular de 2 T. La espira se colapsa hasta que su área es cero en 0.2 s. Calcule la FEM inducida promedio.",
+    "solution": [
+      "Calculamos el área inicial: A_inicial = (0.10 m)² = 0.01 m².",
+      "Calculamos el flujo inicial: Φ_inicial = B * A = 2 T * 0.01 m² = 0.02 Wb.",
+      "El flujo final es cero, ya que el área es cero.",
+      "Calculamos la magnitud de la FEM: |ε| = | (Φ_final - Φ_inicial) / Δt | = | (0 - 0.02) / 0.2 | = 0.1 V."
+    ],
+    "answer": "La FEM inducida promedio es de 0.1 V."
+  },
+  {
+    "id": "maxwell_ampere_maxwell_1",
+    "title": "Campo Magnético de un Cable",
+    "prompt": "Un cable recto y muy largo transporta una corriente constante de 8 A. Calcule la magnitud del campo magnético a una distancia radial de 5 cm (0.05 m). Use μ₀ = 4π x 10⁻⁷ H/m.",
+    "solution": [
+      "Para un cable largo, la Ley de Ampère se simplifica a B = (μ₀ * I) / (2π * r).",
+      "Sustituimos los datos: B = (4π x 10⁻⁷ H/m * 8 A) / (2π * 0.05 m).",
+      "Simplificamos los términos de π y 2: B = (2 x 10⁻⁷ * 8) / 0.05.",
+      "Calculamos: B = 1.6 x 10⁻⁶ / 0.05 = 3.2 x 10⁻⁵ T."
+    ],
+    "answer": "El campo magnético es de 3.2 x 10⁻⁵ T."
+  },
+  {
+    "id": "maxwell_ampere_maxwell_2",
+    "title": "Corriente de Desplazamiento",
+    "prompt": "¿En qué situación es indispensable el término de la corriente de desplazamiento (ε₀ * dΦ_E/dt) de Maxwell en la Ley de Ampère?",
+    "solution": [
+      "La Ley de Ampère original (∮ B ⋅ dl = μ₀ * I_enc) solo considera la corriente de conducción (I_enc).",
+      "El término de Maxwell es necesario cuando hay un campo eléctrico que cambia en el tiempo (dΦ_E/dt ≠ 0).",
+      "El ejemplo clásico es el espacio entre las placas de un condensador mientras se carga, donde no hay corriente de conducción pero sí un campo eléctrico variable que genera un campo magnético."
+    ],
+    "answer": "Es indispensable para explicar el campo magnético en un condensador que se está cargando/descargando."
+  },
+  {
+    "id": "maxwell_ampere_maxwell_3",
+    "title": "Simetría con Faraday",
+    "prompt": "¿Qué simetría en la naturaleza revelan la Ley de Faraday y la Ley de Ampère-Maxwell juntas?",
+    "solution": [
+      "La Ley de Faraday establece que un campo magnético variable crea un campo eléctrico (∮ E ⋅ dl = -dΦ_B/dt).",
+      "La Ley de Ampère-Maxwell establece que un campo eléctrico variable crea un campo magnético (∮ B ⋅ dl = μ₀ε₀ * dΦ_E/dt, en ausencia de corrientes).",
+      "Juntas, muestran que un cambio en uno de los campos induce la aparición del otro. Esta interdependencia es la base de las ondas electromagnéticas."
+    ],
+    "answer": "Un campo magnético variable crea un campo eléctrico, y un campo eléctrico variable crea un campo magnético."
+  },
+  {
+    "id": "maxwell_ampere_maxwell_4",
+    "title": "Cálculo de Corriente Encerrada",
+    "prompt": "La integral de línea ∮ B ⋅ dl a lo largo de un bucle cerrado es 1.256 x 10⁻⁶ T·m. Si no hay campos eléctricos variables, ¿cuál es la corriente neta (I_enc) que atraviesa el bucle?",
+    "solution": [
+      "Usamos la Ley de Ampère-Maxwell: ∮ B ⋅ dl = μ₀ * (I_enc + ε₀ * dΦ_E/dt).",
+      "Como no hay campos eléctricos variables, el término de desplazamiento es cero.",
+      "La ecuación se simplifica a ∮ B ⋅ dl = μ₀ * I_enc.",
+      "Despejamos I_enc = (∮ B ⋅ dl) / μ₀ = (1.256 x 10⁻⁶ T·m) / (4π x 10⁻⁷ H/m) ≈ 1 A."
+    ],
+    "answer": "La corriente neta encerrada es de aproximadamente 1 A."
+  },
+  {
+    "id": "maxwell_ampere_maxwell_5",
+    "title": "Circulación Cero",
+    "prompt": "Si en una región no hay corrientes de conducción (I_enc=0) y el campo eléctrico es estático (dΦ_E/dt=0), ¿cuál es el valor de la circulación ∮ B ⋅ dl para cualquier bucle en esa región?",
+    "solution": [
+      "La Ley de Ampère-Maxwell completa es ∮ B ⋅ dl = μ₀ * I_enc + μ₀ε₀ * dΦ_E/dt.",
+      "Si ambos términos del lado derecho son cero (I_enc=0 y dΦ_E/dt=0), entonces toda la expresión es cero.",
+      "∮ B ⋅ dl = 0. Esto significa que el campo magnético es conservativo en esa región (o cero)."
+    ],
+    "answer": "El valor de la circulación ∮ B ⋅ dl es 0."
+  }
+]

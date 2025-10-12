@@ -1,0 +1,282 @@
+
+[
+  {
+    "id": "ondas_velocidad_luz_vacio_1",
+    "title": "Concepto de la Velocidad de la Luz",
+    "prompt": "¿Qué representan las constantes μ₀ (permeabilidad del vacío) y ε₀ (permitividad del vacío) en la fórmula de la velocidad de la luz c = 1 / sqrt(μ₀ε₀)?",
+    "solution": [
+      "μ₀ representa cómo un campo magnético puede permear o establecerse en el vacío.",
+      "ε₀ representa cómo un campo eléctrico puede permear o establecerse en el vacío.",
+      "La fórmula muestra que la velocidad de la luz no es un valor arbitrario, sino que está determinada por estas dos propiedades fundamentales del propio vacío."
+    ],
+    "answer": "Representan las propiedades eléctricas y magnéticas del vacío."
+  },
+  {
+    "id": "ondas_velocidad_luz_vacio_2",
+    "title": "Verificación de Unidades",
+    "prompt": "Si μ₀ se mide en H/m (o T·m/A) y ε₀ en F/m (o C²/(N·m²)), demuestra que 1 / sqrt(μ₀ε₀) tiene unidades de m/s.",
+    "solution": [
+      "Las unidades de μ₀ε₀ son (T·m/A) * (C²/(N·m²)).",
+      "Usando F=qvB y F=qE, sabemos que T = N/(C·m/s) y N/C = V/m.",
+      "Simplificando la expresión compleja de unidades se llega a s²/m².",
+      "Por lo tanto, la raíz cuadrada sqrt(μ₀ε₀) tiene unidades de s/m, y su inverso, 1/sqrt(μ₀ε₀), tiene unidades de m/s."
+    ],
+    "answer": "La combinación de unidades resulta en metros por segundo (m/s)."
+  },
+  {
+    "id": "ondas_velocidad_luz_vacio_3",
+    "title": "Dependencia de la Velocidad de la Luz",
+    "prompt": "Según la fórmula c = 1 / sqrt(μ₀ε₀), ¿de qué depende la velocidad de la luz en el vacío?",
+    "solution": [
+      "La fórmula solo contiene las constantes μ₀ y ε₀.",
+      "Estas son constantes fundamentales de la naturaleza, no dependen de la velocidad de la fuente ni del observador.",
+      "Por lo tanto, la velocidad de la luz en el vacío es una constante universal."
+    ],
+    "answer": "Depende únicamente de las constantes fundamentales del electromagnetismo en el vacío."
+  },
+  {
+    "id": "ondas_velocidad_luz_vacio_4",
+    "title": "Cálculo Numérico",
+    "prompt": "Sabiendo que μ₀ = 4π x 10⁻⁷ H/m y ε₀ ≈ 8.854 x 10⁻¹² F/m, realiza un cálculo aproximado de 'c'.",
+    "solution": [
+      "Sustituimos los valores en la fórmula: c = 1 / sqrt((4π x 10⁻⁷) * (8.854 x 10⁻¹²)).",
+      "Calculamos el producto dentro de la raíz: μ₀ε₀ ≈ 1.112 x 10⁻¹⁷ s²/m².",
+      "Calculamos la raíz cuadrada: sqrt(1.112 x 10⁻¹⁷) ≈ 3.335 x 10⁻⁹ s/m.",
+      "Calculamos el inverso: c = 1 / (3.335 x 10⁻⁹) ≈ 2.998 x 10⁸ m/s."
+    ],
+    "answer": "El cálculo resulta en aproximadamente 2.998 x 10⁸ m/s."
+  },
+  {
+    "id": "ondas_velocidad_luz_vacio_5",
+    "title": "Medio Material",
+    "prompt": "Si la luz pasa del vacío a un medio material, ¿cómo cambian la permitividad y la permeabilidad (ε y μ) y qué efecto tiene en la velocidad?",
+    "solution": [
+      "En un medio material, la permitividad (ε) y la permeabilidad (μ) son mayores que sus valores en el vacío (ε > ε₀, μ > μ₀).",
+      "La velocidad de la luz en el medio es v = 1 / sqrt(εμ).",
+      "Como el denominador aumenta, la velocidad 'v' en el medio será menor que 'c'."
+    ],
+    "answer": "La permitividad y permeabilidad aumentan, y la velocidad de la luz disminuye."
+  },
+  {
+    "id": "ondas_relacion_amplitud_e_b_1",
+    "title": "Cálculo de Amplitud de Campo Eléctrico",
+    "prompt": "Una onda electromagnética en el vacío tiene una amplitud de campo magnético B = 2.0 x 10⁻⁷ T. ¿Cuál es la amplitud del campo eléctrico E? (c ≈ 3 x 10⁸ m/s)",
+    "solution": [
+      "Usamos la relación E = cB.",
+      "Sustituimos los valores: E = (3 x 10⁸ m/s) * (2.0 x 10⁻⁷ T).",
+      "Calculamos el producto: E = 6 x 10¹ N/C."
+    ],
+    "answer": "La amplitud del campo eléctrico es 60 N/C."
+  },
+  {
+    "id": "ondas_relacion_amplitud_e_b_2",
+    "title": "Cálculo de Amplitud de Campo Magnético",
+    "prompt": "La amplitud del campo eléctrico de una onda de radio es de 30 N/C en un punto. ¿Cuál es la amplitud del campo magnético B en ese punto?",
+    "solution": [
+      "Reorganizamos la fórmula: B = E / c.",
+      "Sustituimos: B = 30 N/C / (3 x 10⁸ m/s).",
+      "Calculamos el cociente: B = 1 x 10⁻⁷ T."
+    ],
+    "answer": "La amplitud del campo magnético es 100 nT."
+  },
+  {
+    "id": "ondas_relacion_amplitud_e_b_3",
+    "title": "Relación en un Medio",
+    "prompt": "En un medio material con velocidad de la luz v < c, ¿cómo es la relación entre E y B?",
+    "solution": [
+      "La relación fundamental sigue siendo válida, pero se usa la velocidad de la luz en ese medio: E = vB.",
+      "Como v < c, para una misma amplitud de campo magnético B, la amplitud del campo eléctrico E será menor en el medio que en el vacío."
+    ],
+    "answer": "La relación es E = vB, donde v es la velocidad de la luz en el medio."
+  },
+  {
+    "id": "ondas_relacion_amplitud_e_b_4",
+    "title": "Perpendicularidad",
+    "prompt": "Además de la relación entre sus magnitudes (E=cB), ¿qué otra relación geométrica existe entre los vectores E, B y la dirección de propagación?",
+    "solution": [
+      "Los tres vectores son mutuamente perpendiculares.",
+      "El campo eléctrico E es perpendicular al campo magnético B.",
+      "Ambos, E y B, son perpendiculares a la dirección en la que se propaga la onda."
+    ],
+    "answer": "Los vectores E, B y la dirección de propagación son perpendiculares entre sí."
+  },
+  {
+    "id": "ondas_relacion_amplitud_e_b_5",
+    "title": "Energía de los Campos",
+    "prompt": "Sabiendo que E es mucho mayor que B en magnitud (por el factor 'c'), ¿significa que el campo eléctrico transporta más energía que el magnético en una onda EM?",
+    "solution": [
+      "No. La densidad de energía del campo eléctrico es uE = ½ε₀E² y la del campo magnético es uB = ½(B²/μ₀).",
+      "Sustituyendo E = cB y c² = 1/(μ₀ε₀), se puede demostrar que uE = uB.",
+      "Ambos campos, eléctrico y magnético, contribuyen por igual a la energía total de la onda."
+    ],
+    "answer": "No, ambos campos transportan la misma cantidad de energía."
+  },
+  {
+    "id": "ondas_velocidad_luz_medio_1",
+    "title": "Cálculo de Velocidad en un Medio",
+    "prompt": "La luz viaja a través del agua, que tiene un índice de refracción n ≈ 1.33. ¿Cuál es la velocidad de la luz en el agua?",
+    "solution": [
+      "Usamos la fórmula v = c / n.",
+      "Sustituimos los valores: v = (3 x 10⁸ m/s) / 1.33.",
+      "Calculamos el resultado: v ≈ 2.25 x 10⁸ m/s."
+    ],
+    "answer": "La velocidad de la luz en el agua es aproximadamente 2.25 x 10⁸ m/s."
+  },
+  {
+    "id": "ondas_velocidad_luz_medio_2",
+    "title": "Cálculo de Índice de Refracción",
+    "prompt": "La velocidad de la luz en un tipo de vidrio es de 1.97 x 10⁸ m/s. ¿Cuál es el índice de refracción de este vidrio?",
+    "solution": [
+      "Reorganizamos la fórmula para despejar n: n = c / v.",
+      "Sustituimos los valores: n = (3 x 10⁸ m/s) / (1.97 x 10⁸ m/s).",
+      "Calculamos el resultado: n ≈ 1.52."
+    ],
+    "answer": "El índice de refracción del vidrio es aproximadamente 1.52."
+  },
+  {
+    "id": "ondas_velocidad_luz_medio_3",
+    "title": "Índice de Refracción del Vacío",
+    "prompt": "¿Cuál es el índice de refracción del vacío?",
+    "solution": [
+      "El índice de refracción se define como n = c / v.",
+      "En el vacío, la velocidad de la luz es v = c.",
+      "Por lo tanto, n = c / c = 1."
+    ],
+    "answer": "El índice de refracción del vacío es exactamente 1."
+  },
+  {
+    "id": "ondas_velocidad_luz_medio_4",
+    "title": "Frecuencia y Longitud de Onda",
+    "prompt": "Cuando la luz entra en un medio con n > 1, su velocidad disminuye. ¿Qué pasa con su frecuencia y su longitud de onda?",
+    "solution": [
+      "La frecuencia (f) de la onda la determina la fuente y no cambia al pasar de un medio a otro.",
+      "La relación es v = λf. Si v disminuye y f es constante, entonces la longitud de onda (λ) debe disminuir.",
+      "λ_medio = v/f = (c/n)/f = λ_vacio / n."
+    ],
+    "answer": "La frecuencia permanece constante, mientras que la longitud de onda disminuye."
+  },
+  {
+    "id": "ondas_velocidad_luz_medio_5",
+    "title": "Material Hipotético",
+    "prompt": "¿Sería posible que un material tuviera un índice de refracción n = 0.8?",
+    "solution": [
+      "Si n = 0.8, la velocidad de la luz en ese medio sería v = c / 0.8 = 1.25c.",
+      "Esto significaría que la luz viajaría más rápido que la velocidad de la luz en el vacío.",
+      "Según la relatividad especial, esto es imposible para la información o la energía. Sin embargo, en ciertos contextos exóticos, la 'velocidad de fase' puede superar c, aunque la 'velocidad de grupo' (la de la información) no lo hace."
+    ],
+    "answer": "No es posible para la propagación de energía o información, ya que violaría la relatividad."
+  },
+  {
+    "id": "ondas_vector_poynting_1",
+    "title": "Concepto del Vector de Poynting",
+    "prompt": "¿Qué representa físicamente el Vector de Poynting, S?",
+    "solution": [
+      "El vector S representa el flujo de energía de una onda electromagnética.",
+      "La magnitud de S es la potencia por unidad de área (W/m²), también conocida como intensidad.",
+      "La dirección de S indica la dirección en la que la energía de la onda se está propagando."
+    ],
+    "answer": "Representa la densidad de flujo de energía y la dirección de propagación de la onda."
+  },
+  {
+    "id": "ondas_vector_poynting_2",
+    "title": "Dirección del Vector S",
+    "prompt": "Si en una onda plana el campo eléctrico E oscila en el eje Y y el campo magnético B oscila en el eje Z, ¿en qué dirección apunta el vector de Poynting S?",
+    "solution": [
+      "El vector S está dado por el producto vectorial S ∝ E x B.",
+      "Usando la regla de la mano derecha: si E está en la dirección Y (j) y B en la dirección Z (k), entonces E x B está en la dirección X (i).",
+      "j x k = i. Por lo tanto, la onda se propaga en la dirección del eje X."
+    ],
+    "answer": "En la dirección del eje X."
+  },
+  {
+    "id": "ondas_vector_poynting_3",
+    "title": "Cálculo de Magnitud de S (Promedio)",
+    "prompt": "Una onda electromagnética tiene una amplitud de campo eléctrico E_max = 100 V/m. Calcule la intensidad promedio (magnitud promedio de S). Use c ≈ 3x10⁸ m/s y μ₀ = 4πx10⁻⁷ H/m.",
+    "solution": [
+      "La intensidad promedio S_avg se relaciona con la amplitud del campo eléctrico por la fórmula S_avg = (E_max²)/(2 * μ₀ * c).",
+      "Sustituimos los valores: S_avg = (100²)/(2 * 4πx10⁻⁷ * 3x10⁸).",
+      "Calculamos el denominador: 2 * 4π * 3 * 10¹ ≈ 75.4 x 10¹ = 754.",
+      "Calculamos S_avg = 10000 / 754 ≈ 13.2 W/m²."
+    ],
+    "answer": "La intensidad promedio es de aproximadamente 13.2 W/m²."
+  },
+  {
+    "id": "ondas_vector_poynting_4",
+    "title": "Intensidad y Distancia",
+    "prompt": "Una fuente puntual emite ondas electromagnéticas uniformemente en todas direcciones. ¿Cómo cambia la intensidad (magnitud de S) con la distancia r a la fuente?",
+    "solution": [
+      "La potencia total emitida (P) se distribuye sobre la superficie de una esfera de radio r, cuya área es A = 4πr².",
+      "La intensidad S es la potencia por unidad de área: S = P / A = P / (4πr²).",
+      "Por lo tanto, la intensidad disminuye con el cuadrado de la distancia."
+    ],
+    "answer": "La intensidad es inversamente proporcional al cuadrado de la distancia (ley de la inversa del cuadrado)."
+  },
+  {
+    "id": "ondas_vector_poynting_5",
+    "title": "Vector de Poynting Nulo",
+    "prompt": "¿Puede ser el Vector de Poynting cero en un punto del espacio aunque los campos E y B no sean cero?",
+    "solution": [
+      "Sí. El vector de Poynting depende del producto vectorial S ∝ E x B.",
+      "Si los campos E y B son paralelos o antiparalelos en un punto, el producto cruz será cero.",
+      "Esto ocurre, por ejemplo, en una onda estacionaria, donde hay puntos (nodos) en los que la energía no fluye."
+    ],
+    "answer": "Sí, si los campos E y B son paralelos, como en una onda estacionaria."
+  },
+  {
+    "id": "ondas_relacion_onda_frecuencia_1",
+    "title": "Cálculo de Longitud de Onda",
+    "prompt": "Una estación de radio FM emite a una frecuencia de 100 MHz (1 x 10⁸ Hz). ¿Cuál es la longitud de onda de estas ondas de radio en el vacío?",
+    "solution": [
+      "Usamos la relación c = λf, que se puede reescribir como λ = c / f.",
+      "Sustituimos los valores: λ = (3 x 10⁸ m/s) / (1 x 10⁸ Hz).",
+      "Calculamos el resultado: λ = 3 metros."
+    ],
+    "answer": "La longitud de onda es de 3 metros."
+  },
+  {
+    "id": "ondas_relacion_onda_frecuencia_2",
+    "title": "Cálculo de Frecuencia",
+    "prompt": "La luz de un puntero láser rojo tiene una longitud de onda de aproximadamente 650 nm (6.5 x 10⁻⁷ m). ¿Cuál es su frecuencia?",
+    "solution": [
+      "Reorganizamos la fórmula para la frecuencia: f = c / λ.",
+      "Sustituimos los valores: f = (3 x 10⁸ m/s) / (6.5 x 10⁻⁷ m).",
+      "Calculamos el resultado: f ≈ 4.61 x 10¹⁴ Hz."
+    ],
+    "answer": "Su frecuencia es de aproximadamente 4.61 x 10¹⁴ Hz (o 461 THz)."
+  },
+  {
+    "id": "ondas_relacion_onda_frecuencia_3",
+    "title": "Espectro Electromagnético",
+    "prompt": "Ordena los siguientes tipos de radiación electromagnética de menor a mayor frecuencia: luz visible, rayos X, microondas.",
+    "solution": [
+      "La relación f = c / λ implica que a mayor longitud de onda, menor frecuencia.",
+      "Las microondas tienen longitudes de onda de cm a m (frecuencia baja).",
+      "La luz visible tiene longitudes de onda de cientos de nm (frecuencia intermedia).",
+      "Los rayos X tienen longitudes de onda muy cortas, a escala atómica (frecuencia alta)."
+    ],
+    "answer": "Microondas, luz visible, rayos X."
+  },
+  {
+    "id": "ondas_relacion_onda_frecuencia_4",
+    "title": "Relación en un Medio",
+    "prompt": "Una onda de luz con frecuencia 'f' y longitud de onda 'λ' en el vacío entra en un bloque de vidrio con índice de refracción 'n'. ¿Cuál es la nueva relación entre v, f y λ dentro del vidrio?",
+    "solution": [
+      "La relación fundamental sigue siendo válida para la velocidad en el medio: v = λ_medio * f.",
+      "La frecuencia 'f' no cambia.",
+      "La velocidad se convierte en v = c/n y la longitud de onda en λ_medio = λ_vacio / n.",
+      "Sustituyendo: (c/n) = (λ_vacio/n) * f, lo cual es consistente con c = λ_vacio * f."
+    ],
+    "answer": "La relación se mantiene como v = λ_medio * f, donde v y λ_medio son los valores en el vidrio."
+  },
+  {
+    "id": "ondas_relacion_onda_frecuencia_5",
+    "title": "Energía de un Fotón",
+    "prompt": "¿Cómo se relaciona la frecuencia 'f' de una onda electromagnética con la energía de un solo fotón de esa radiación?",
+    "solution": [
+      "La relación viene dada por la ecuación de Planck: E = hf.",
+      "'E' es la energía del fotón, 'f' es la frecuencia de la onda y 'h' es la constante de Planck.",
+      "Esto muestra que las ondas de mayor frecuencia (como los rayos gamma) tienen fotones más energéticos que las de baja frecuencia (como las ondas de radio)."
+    ],
+    "answer": "La energía del fotón es directamente proporcional a la frecuencia (E = hf)."
+  }
+]

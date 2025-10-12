@@ -1,0 +1,83 @@
+[
+  {
+    "id": "C4_E6_Resistencia_Serie_Paralelo",
+    "title": "Resistencia Equivalente Serie-Paralelo",
+    "prompt": "En un circuito, R1=100Ω. R2=50Ω y R3=50Ω están en paralelo entre sí, y a su vez en serie con R1. Calcular la resistencia total equivalente (en Ω).",
+    "solution": [
+      "Calcular la resistencia equivalente del paralelo R23 = (R2*R3)/(R2+R3) = 25Ω.",
+      "Sumar la resistencia en serie: R_total = R1 + R23."
+    ],
+    "answer": "125 Ω"
+  },
+  {
+    "id": "C4_E8_Divisor_Tension",
+    "title": "Divisor de Tensión",
+    "prompt": "Dos resistores, R1 = 100 Ω y R2 = 200 Ω, están conectados en serie a una fuente de 12 V. Calcular el voltaje V2 a través de R2.",
+    "solution": [
+      "Usar la fórmula del divisor de voltaje: V2 = V_total * (R2 / (R1 + R2)).",
+      "V2 = 12 V * (200 / (100 + 200))."
+    ],
+    "answer": "8 V"
+  },
+  {
+    "id": "C4_E10_Circuito_RC",
+    "title": "Constante de Tiempo RC",
+    "prompt": "Un circuito RC serie tiene R = 1 MΩ y C = 5 µF. Se conecta a una fuente de 12 V. ¿Cuál es la constante de tiempo (τ) del circuito y qué carga (en C) tendrá el capacitor después de un tiempo t = τ?",
+    "solution": [
+      "Calcular tau = R*C.",
+      "Calcular carga máxima Q_max = C*V.",
+      "Calcular q(t=τ) = Q_max * (1 - 1/e).",
+      "(1 - 1/e) es aproximadamente 0.632."
+    ],
+    "answer": "τ = 5 s; q(τ) ≈ 3.79·10⁻⁵ C"
+  },
+  {
+    "id": "lck_1",
+    "title": "Nodo con Tres Ramas",
+    "prompt": "En un nodo, la corriente de entrada es I1 = 5A. Las corrientes de salida son I2 = 2A e I3. ¿Cuál es el valor de I3?",
+    "solution": ["Según LCK, la suma de corrientes de entrada es igual a la suma de corrientes de salida.", "I1 = I2 + I3", "5A = 2A + I3", "Resolver para I3."],
+    "answer": "I3 = 3A"
+  },
+  {
+    "id": "lvk_1",
+    "title": "Malla Simple con Fuente y Resistencia",
+    "prompt": "En un circuito en serie, una fuente de 12V está conectada a una resistencia de 4Ω. ¿Cuál es la caída de voltaje a través de la resistencia?",
+    "solution": ["Según LVK, la suma de voltajes en un lazo cerrado es cero.", "Voltaje de la fuente - Caída de voltaje en la resistencia = 0", "12V - V_R = 0", "Resolver para V_R."],
+    "answer": "V_R = 12V"
+  },
+  {
+    "id": "resistencia_serie_1",
+    "title": "Cálculo de Resistencia en Serie",
+    "prompt": "Tres resistencias de 10Ω, 20Ω y 30Ω están conectadas en serie. ¿Cuál es la resistencia equivalente?",
+    "solution": ["Para resistencias en serie, la resistencia equivalente es la suma de las resistencias individuales.", "Req = R1 + R2 + R3", "Req = 10Ω + 20Ω + 30Ω"],
+    "answer": "60Ω"
+  },
+  {
+    "id": "resistencia_paralelo_1",
+    "title": "Cálculo de Resistencia en Paralelo",
+    "prompt": "Dos resistencias de 60Ω y 30Ω están conectadas en paralelo. ¿Cuál es la resistencia equivalente?",
+    "solution": ["Para resistencias en paralelo, el inverso de la resistencia equivalente es la suma de los inversos de las resistencias individuales.", "1/Req = 1/R1 + 1/R2", "1/Req = 1/60Ω + 1/30Ω", "Resolver para Req."],
+    "answer": "20Ω"
+  },
+  {
+    "id": "divisor_voltaje_1",
+    "title": "Voltaje en Resistor de un Divisor",
+    "prompt": "Un circuito divisor de voltaje consiste en una fuente de 24V y dos resistencias en serie, R1 = 100Ω y R2 = 300Ω. Calcule el voltaje a través de R2.",
+    "solution": ["Usar la fórmula del divisor de voltaje: V₂ = V_total * (R₂ / (R₁ + R₂))", "Sustituir los valores: V₂ = 24V * (300Ω / (100Ω + 300Ω))"],
+    "answer": "18V"
+  },
+  {
+    "id": "carga_capacitor_rc_1",
+    "title": "Carga de un Capacitor tras un Tiempo",
+    "prompt": "En un circuito RC, un capacitor de 100µF está conectado a una resistencia de 1kΩ y una fuente de 12V. ¿Cuál es la carga en el capacitor después de 0.1 segundos?",
+    "solution": ["Calcular la constante de tiempo: τ = R * C = 1000Ω * 100µF = 0.1s", "Calcular la carga máxima: Q_f = C * V = 100µF * 12V = 1.2mC", "Usar la fórmula de carga: q(t) = Q_f * (1 - e^(-t/τ))", "Sustituir t = 0.1s."],
+    "answer": "0.758mC"
+  },
+  {
+    "id": "descarga_capacitor_rc_1",
+    "title": "Descarga de un Capacitor tras un Tiempo",
+    "prompt": "Un capacitor de 200µF, inicialmente cargado a 50V, se descarga a través de una resistencia de 500Ω. ¿Cuál es la carga restante en el capacitor después de 0.1 segundos?",
+    "solution": ["Calcular la constante de tiempo: τ = R * C = 500Ω * 200µF = 0.1s", "Calcular la carga inicial: Q_0 = C * V = 200µF * 50V = 10mC", "Usar la fórmula de descarga: q(t) = Q_0 * e^(-t/τ)", "Sustituir t = 0.1s."],
+    "answer": "3.68mC"
+  }
+]

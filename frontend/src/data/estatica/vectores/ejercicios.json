@@ -1,32 +1,81 @@
 [
   {
-    "id": "equilibrio-traslacional",
-    "title": "Equilibrio traslacional de una caja",
-    "prompt": "Una caja recibe una fuerza de 10 N hacia la derecha y otra de 10 N hacia la izquierda. ¿Está en equilibrio traslacional?",
+    "id": "descomposicion-vector-1",
+    "title": "Descomposición de un Vector",
+    "prompt": "Una fuerza de 100 N forma un ángulo de 30° con el eje x positivo. Calcula sus componentes rectangulares (Fx y Fy).",
     "solution": [
-      "ΣF = 10 N (derecha) + (-10 N) (izquierda) = 0 N",
-      "La suma de fuerzas es cero, por lo tanto la caja está en equilibrio traslacional."
+      "Se utilizan las funciones trigonométricas para descomponer el vector:",
+      "Fx = |F| * cos(θ) = 100 N * cos(30°)",
+      "Fx = 100 N * (√3 / 2) ≈ 86.6 N",
+      "Fy = |F| * sin(θ) = 100 N * sin(30°)",
+      "Fy = 100 N * (1 / 2) = 50 N"
     ],
-    "answer": "Sí, está en equilibrio traslacional."
+    "answer": "Las componentes son Fx ≈ 86.6 N y Fy = 50 N."
   },
   {
-    "id": "equilibrio-rotacional",
-    "title": "Equilibrio rotacional de una barra",
-    "prompt": "Una barra horizontal recibe dos torques opuestos de igual magnitud. ¿Está en equilibrio rotacional?",
+    "id": "recomposicion-vector-1",
+    "title": "Cálculo de Magnitud y Dirección",
+    "prompt": "Un vector tiene una componente en x de 60 N y una componente en y de 80 N. ¿Cuál es la magnitud y dirección (ángulo) del vector resultante?",
     "solution": [
-      "Στ = τ (sentido horario) + (-τ) (sentido antihorario) = 0",
-      "La suma de torques es cero, por lo tanto la barra está en equilibrio rotacional."
+      "La magnitud se calcula con el Teorema de Pitágoras:",
+      "|R| = sqrt(Rx² + Ry²) = sqrt(60² + 80²) = sqrt(3600 + 6400) = sqrt(10000)",
+      "|R| = 100 N",
+      "La dirección se calcula con la tangente inversa:",
+      "θ = arctan(Ry / Rx) = arctan(80 / 60) = arctan(1.333)",
+      "θ ≈ 53.13°"
     ],
-    "answer": "Sí, está en equilibrio rotacional."
+    "answer": "La magnitud es de 100 N y su dirección es de aproximadamente 53.13°."
   },
   {
-    "id": "descomposicion-fuerzas",
-    "title": "Descomposición de una fuerza",
-    "prompt": "Una fuerza de 5 N actúa en dirección diagonal y se descompone en 3 N en x y 4 N en y. ¿Cuál es la fuerza total?",
+    "id": "suma-vectores-componentes",
+    "title": "Suma de dos Vectores",
+    "prompt": "Dados dos vectores, A = (3î + 4ĵ) N y B = (5î - 2ĵ) N. Encuentra el vector resultante R = A + B.",
     "solution": [
-      "F = sqrt(F_x^2 + F_y^2)",
-      "F = sqrt(3^2 + 4^2) = sqrt(9 + 16) = sqrt(25) = 5 N"
+      "Para sumar los vectores, sumamos sus componentes correspondientes:",
+      "Rx = Ax + Bx = 3 N + 5 N = 8 N",
+      "Ry = Ay + By = 4 N + (-2 N) = 2 N",
+      "El vector resultante es R = (8î + 2ĵ) N."
     ],
-    "answer": "5 N"
+    "answer": "El vector resultante es R = (8î + 2ĵ) N."
+  },
+  {
+    "id": "fuerza-resultante-varios-vectores",
+    "title": "Fuerza Resultante",
+    "prompt": "Dos fuerzas actúan sobre un perno. La fuerza F1 es de 60 N a 45° y la fuerza F2 es de 80 N a 150°. Encuentra la magnitud y dirección de la fuerza resultante.",
+    "solution": [
+      "1. Descomponer cada fuerza:",
+      "F1x = 60 * cos(45°) ≈ 42.43 N",
+      "F1y = 60 * sin(45°) ≈ 42.43 N",
+      "F2x = 80 * cos(150°) ≈ -69.28 N",
+      "F2y = 80 * sin(150°) = 40 N",
+      "2. Sumar componentes:",
+      "Rx = F1x + F2x = 42.43 - 69.28 = -26.85 N",
+      "Ry = F1y + F2y = 42.43 + 40 = 82.43 N",
+      "3. Recomponer el resultado:",
+      "|R| = sqrt((-26.85)² + 82.43²) ≈ sqrt(720.9 + 6794.7) ≈ sqrt(7515.6) ≈ 86.69 N",
+      "θ_ref = arctan(|Ry / Rx|) = arctan(82.43 / 26.85) ≈ 71.9°",
+      "Como Rx es negativo y Ry es positivo, el vector está en el segundo cuadrante.",
+      "θ = 180° - 71.9° = 108.1°"
+    ],
+    "answer": "La magnitud de la resultante es aprox. 86.7 N con una dirección de 108.1°."
+  },
+  {
+    "id": "equilibrio-con-tres-fuerzas",
+    "title": "Condición de Equilibrio",
+    "prompt": "Un semáforo de 120 N cuelga de dos cables. El cable 1 forma un ángulo de 37° con la horizontal y el cable 2 forma 53° con la horizontal. ¿Cuáles son las tensiones en los dos cables para que el sistema esté en equilibrio?",
+    "solution": [
+      "Llamemos T1 y T2 a las tensiones. El peso (W) es de 120 N hacia abajo.",
+      "Condición de Equilibrio: ΣFx = 0 y ΣFy = 0",
+      "ΣFx = -T1*cos(37°) + T2*cos(53°) = 0",
+      "ΣFy = T1*sin(37°) + T2*sin(53°) - 120 N = 0",
+      "De la primera ecuación: T2 = T1 * (cos(37°)/cos(53°)) ≈ T1 * (0.7986 / 0.6018) ≈ 1.327 * T1",
+      "Sustituyendo T2 en la segunda ecuación:",
+      "T1*sin(37°) + (1.327 * T1)*sin(53°) = 120",
+      "T1 * (0.6018 + 1.327 * 0.7986) = 120",
+      "T1 * (1.6608) = 120 => T1 ≈ 72.25 N",
+      "Ahora calculamos T2:",
+      "T2 ≈ 1.327 * 72.25 N ≈ 95.9 N"
+    ],
+    "answer": "La tensión en el cable 1 es de aproximadamente 72.3 N y en el cable 2 es de aproximadamente 95.9 N."
   }
 ]

@@ -1,72 +1,76 @@
 [
   {
-    "id": "apoyos-rb-1",
-    "title": "Reacción en Apoyo B #1",
-    "prompt": "Una viga de 10 m de largo tiene una carga de 500 N aplicada a 2 m del apoyo A. Calcula la reacción en el apoyo B (rodillo).",
-    "solution": ["R_B = (P * a) / L = (500 N * 2 m) / 10 m = 100 N"],
-    "answer": "100 N"
+    "id": "viga-simplemente-apoyada-multiples-cargas",
+    "title": "Viga con Múltiples Cargas",
+    "prompt": "Una viga de 8 m está apoyada por un pasador en A (extremo izquierdo) y un rodillo en B (extremo derecho). Soporta dos cargas verticales hacia abajo: una de 40 N a 2 m de A, y otra de 60 N a 6 m de A. Calcula las fuerzas de reacción en los apoyos A y B.",
+    "solution": [
+      "1. Suma de Momentos respecto a A (ΣMa = 0) para encontrar By:",
+      "ΣMa = -(40 N * 2 m) - (60 N * 6 m) + (By * 8 m) = 0",
+      "-80 N·m - 360 N·m + 8*By = 0",
+      "8*By = 440 N·m  => By = 55 N",
+      "2. Suma de Fuerzas Verticales (ΣFy = 0) para encontrar Ay:",
+      "ΣFy = Ay + By - 40 N - 60 N = 0",
+      "Ay + 55 N - 100 N = 0  => Ay = 45 N",
+      "3. Suma de Fuerzas Horizontales (ΣFx = 0): Como no hay fuerzas horizontales, Ax = 0."
+    ],
+    "answer": "La reacción en A es de 45 N (vertical) y en B es de 55 N (vertical)."
   },
   {
-    "id": "apoyos-rb-2",
-    "title": "Reacción en Apoyo B #2",
-    "prompt": "En una viga de 8 m, se coloca una carga de 1200 N justo en el centro (a=4 m). ¿Cuál es la reacción en B?",
-    "solution": ["R_B = (1200 N * 4 m) / 8 m = 600 N"],
-    "answer": "600 N"
+    "id": "viga-con-voladizo",
+    "title": "Viga con Voladizo",
+    "prompt": "Una viga de 10 m tiene un apoyo de pasador en A (extremo izquierdo) y un rodillo en B (a 8 m de A). Una carga de 300 N cuelga del extremo libre a los 10 m (en el voladizo). Calcula las reacciones en los apoyos A y B.",
+    "solution": [
+      "1. Suma de Momentos respecto a A (ΣMa = 0) para encontrar By:",
+      "ΣMa = (By * 8 m) - (300 N * 10 m) = 0",
+      "8*By = 3000 N·m  => By = 375 N",
+      "2. Suma de Fuerzas Verticales (ΣFy = 0) para encontrar Ay:",
+      "ΣFy = Ay + By - 300 N = 0",
+      "Ay + 375 N - 300 N = 0  => Ay = -75 N",
+      "El signo negativo indica que la reacción Ay apunta hacia abajo, no hacia arriba."
+    ],
+    "answer": "La reacción en A es de 75 N (hacia abajo) y en B es de 375 N (hacia arriba)."
   },
   {
-    "id": "apoyos-rb-3",
-    "title": "Reacción en Apoyo B #3",
-    "prompt": "Una carga de 75 N se aplica a 5 m del apoyo A en una viga de 6 m. ¿Qué valor tiene la reacción en B?",
-    "solution": ["R_B = (75 N * 5 m) / 6 m = 62.5 N"],
-    "answer": "62.5 N"
+    "id": "viga-en-voladizo-empotramiento",
+    "title": "Viga en Cantilever (Empotramiento)",
+    "prompt": "Una viga de 4 metros está empotrada en una pared en el punto A (extremo izquierdo) y libre en el otro extremo. Una carga de 200 N actúa hacia abajo en el extremo libre. Calcula las reacciones en el apoyo empotrado A (fuerza vertical, fuerza horizontal y momento).",
+    "solution": [
+      "Un apoyo empotrado puede ejercer tres reacciones: una fuerza horizontal (Ax), una vertical (Ay) y un momento (Ma).",
+      "1. Suma de Fuerzas Horizontales (ΣFx = 0):",
+      "Ax = 0 (No hay otras fuerzas horizontales)",
+      "2. Suma de Fuerzas Verticales (ΣFy = 0):",
+      "Ay - 200 N = 0  => Ay = 200 N (hacia arriba)",
+      "3. Suma de Momentos respecto a A (ΣMa = 0):",
+      "Ma - (200 N * 4 m) = 0  => Ma = 800 N·m",
+      "El momento de reacción Ma es positivo, lo que indica que es en sentido anti-horario para contrarrestar el momento de la carga."
+    ],
+    "answer": "Las reacciones en A son: Ay = 200 N, Ax = 0 N, y un momento de reacción Ma = 800 N·m (anti-horario)."
   },
   {
-    "id": "apoyos-rb-4",
-    "title": "Reacción en Apoyo B #4",
-    "prompt": "Una viga de 12 m soporta una carga de 2000 N a 9 m de A. Calcula la reacción en el rodillo B.",
-    "solution": ["R_B = (2000 N * 9 m) / 12 m = 1500 N"],
-    "answer": "1500 N"
+    "id": "viga-con-carga-en-angulo",
+    "title": "Viga con Carga en Ángulo",
+    "prompt": "Una viga de 5 m está sobre un pasador en A y un rodillo en B. Una fuerza de 100 N se aplica a 2 m de A, con un ángulo de 30° hacia abajo respecto a la horizontal. Calcula las componentes de la reacción en A (Ax, Ay) y la reacción en B (By).",
+    "solution": [
+      "1. Descomponer la carga: Fx = 100*cos(30°) ≈ 86.6 N (derecha), Fy = 100*sin(30°) = 50 N (abajo).",
+      "2. Suma de Momentos respecto a A para hallar By:",
+      "ΣMa = -(Fy * 2 m) + (By * 5 m) = 0",
+      "-(50 N * 2 m) + 5*By = 0 => 5*By = 100 N·m => By = 20 N",
+      "3. Suma de Fuerzas Horizontales para hallar Ax:",
+      "ΣFx = Ax + Fx = 0 => Ax + 86.6 N = 0 => Ax = -86.6 N (hacia la izquierda)",
+      "4. Suma de Fuerzas Verticales para hallar Ay:",
+      "ΣFy = Ay + By - Fy = 0 => Ay + 20 N - 50 N = 0 => Ay = 30 N"
+    ],
+    "answer": "Las reacciones son: Ax ≈ -86.6 N (izquierda), Ay = 30 N (arriba), y By = 20 N (arriba)."
   },
   {
-    "id": "apoyos-rb-5",
-    "title": "Reacción en Apoyo B #5",
-    "prompt": "Si se aplica una carga P=150N en a=1m sobre una viga de L=1.5m, ¿cuál es la reacción R_B?",
-    "solution": ["R_B = (150 N * 1 m) / 1.5 m = 100 N"],
-    "answer": "100 N"
-  },
-  {
-    "id": "apoyos-ra-1",
-    "title": "Reacción en Apoyo A #1",
-    "prompt": "La carga total en una viga es de 500 N y la reacción en B es de 100 N. ¿Cuál es la reacción en el apoyo A?",
-    "solution": ["R_A = P - R_B = 500 N - 100 N = 400 N"],
-    "answer": "400 N"
-  },
-  {
-    "id": "apoyos-ra-2",
-    "title": "Reacción en Apoyo A #2",
-    "prompt": "Una carga de 1200 N se reparte entre dos apoyos. Si R_B = 600 N, ¿cuánto vale R_A?",
-    "solution": ["R_A = 1200 N - 600 N = 600 N"],
-    "answer": "600 N"
-  },
-  {
-    "id": "apoyos-ra-3",
-    "title": "Reacción en Apoyo A #3",
-    "prompt": "La reacción en el apoyo B es de 62.5 N y la carga puntual es de 75 N. Calcula la reacción en A.",
-    "solution": ["R_A = 75 N - 62.5 N = 12.5 N"],
-    "answer": "12.5 N"
-  },
-  {
-    "id": "apoyos-ra-4",
-    "title": "Reacción en Apoyo A #4",
-    "prompt": "Para una carga P de 2000 N, la reacción en B es de 1500 N. Halla R_A.",
-    "solution": ["R_A = 2000 N - 1500 N = 500 N"],
-    "answer": "500 N"
-  },
-  {
-    "id": "apoyos-ra-5",
-    "title": "Reacción en Apoyo A #5",
-    "prompt": "Si la carga total es 150 N y R_B es 100 N, ¿cuál es la reacción en el pasador A?",
-    "solution": ["R_A = 150 N - 100 N = 50 N"],
-    "answer": "50 N"
+    "id": "tipos-de-reaccion-conceptual",
+    "title": "Identificación de Reacciones (Conceptual)",
+    "prompt": "Indica el número de reacciones desconocidas que introduce cada uno de los siguientes tipos de apoyo en un problema 2D: a) Rodillo (Roller), b) Pasador o Articulación (Pin), c) Apoyo Fijo o Empotramiento (Fixed Support).",
+    "solution": [
+      "a) Rodillo: Previene el movimiento en una sola dirección, perpendicular a la superficie. Introduce 1 reacción desconocida (una fuerza normal).",
+      "b) Pasador: Previene la traslación en cualquier dirección, pero permite la rotación. Introduce 2 reacciones desconocidas (dos componentes de fuerza, Fx y Fy).",
+      "c) Empotramiento: Previene cualquier movimiento, tanto traslación como rotación. Introduce 3 reacciones desconocidas (dos componentes de fuerza, Fx y Fy, y un momento M)."
+    ],
+    "answer": "a) Rodillo: 1 (fuerza normal), b) Pasador: 2 (fuerzas Fx y Fy), c) Empotramiento: 3 (fuerzas Fx, Fy y un momento M)."
   }
 ]

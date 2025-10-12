@@ -1,0 +1,33 @@
+[
+  {
+    "id": "C2_E1_Potencial_Superposicion",
+    "title": "Cálculo de Potencial Eléctrico",
+    "prompt": "Dos cargas puntuales q1 = 5 nC en (3, 4, 0) m y q2 = 4 nC en (2, 0, 0) m están en el vacío. Determinar el potencial eléctrico (en V) en el origen de coordenadas (0, 0, 0). Usar k = 9·10⁹.",
+    "solution": [
+      "Calcular las distancias R1=5m y R2=2m.",
+      "Calcular V1 = k*q1/R1 y V2 = k*q2/R2.",
+      "Sumar los potenciales escalares: V = V1 + V2."
+    ],
+    "answer": "18 V"
+  },
+  {
+    "id": "C2_E8_Capacidad_Paralelo",
+    "title": "Capacidad Equivalente y Carga en Paralelo",
+    "prompt": "Tres condensadores C1 = 3 pF, C2 = 6 pF y C3 = 5 pF se conectan en paralelo a una batería de 10 V. Calcular la capacidad equivalente (en pF) y la carga total (en pC).",
+    "solution": [
+      "Capacidad equivalente en paralelo: C = C1 + C2 + C3.",
+      "Carga total: Q = C_equivalente * V."
+    ],
+    "answer": "C = 14 pF; Q = 140 pC"
+  },
+  {
+    "id": "C2_E9_Capacidad_Serie",
+    "title": "Capacidad Equivalente en Serie",
+    "prompt": "Tres condensadores C1 = 3 F, C2 = 6 F y C3 = 1 F se conectan en serie a una batería de 9 V. Calcular la capacidad equivalente (en F).",
+    "solution": [
+      "Calcular la inversa de la capacidad equivalente: 1/C = 1/C1 + 1/C2 + 1/C3.",
+      "Despejar C."
+    ],
+    "answer": "2/3 F (aprox. 0.667 F)"
+  }
+]

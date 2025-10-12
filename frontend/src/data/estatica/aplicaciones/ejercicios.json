@@ -1,107 +1,74 @@
 [
   {
-    "id": "app-sum-vec-1",
-    "title": "Suma de Vectores #1",
-    "prompt": "El vector A tiene componentes Ax=3, Ay=4. El vector B tiene Bx=-1, By=5. ¿Cuáles son las componentes del vector resultante R = A + B?",
-    "solution": ["Rx = 3 + (-1) = 2", "Ry = 4 + 5 = 9"],
-    "answer": "Rx = 2, Ry = 9"
+    "id": "armadura-metodo-nodos",
+    "title": "Análisis de Armadura por Nodos",
+    "prompt": "Una armadura simple en forma de triángulo (truss) tiene nodos en A(0,0), B(4,0) y C(2,3). Está apoyada en A (pasador) y B (rodillo). Una fuerza vertical de 600 N actúa hacia abajo en el nodo C. Calcula la fuerza en cada miembro (AB, BC, AC), indicando si es tensión (T) o compresión (C).",
+    "solution": [
+      "1. Calcular reacciones: Por simetría, las reacciones verticales en A y B son iguales. ΣFy = Ay + By - 600 = 0. Ay = By = 300 N. Ax = 0.",
+      "2. Analizar Nodo A: ΣFy = Ay + Fac_y = 0 => 300 + Fac * (3/sqrt(13)) = 0. Fac = -360.5 N (Compresión). ΣFx = Ax + Fab + Fac_x = 0 => 0 + Fab + (-360.5) * (2/sqrt(13)) = 0. Fab = 200 N (Tensión).",
+      "3. Analizar Nodo B: ΣFy = By + Fbc_y = 0 => 300 + Fbc * (3/sqrt(13)) = 0. Fbc = -360.5 N (Compresión).",
+      "Comprobación en Nodo C: ΣFy = -600 - Fac_y - Fbc_y = -600 - (-360.5)*(3/sqrt(13)) - (-360.5)*(3/sqrt(13)) = -600 + 300 + 300 = 0. Correcto."
+    ],
+    "answer": "Fuerza AB = 200 N (T), Fuerza AC = 360.5 N (C), Fuerza BC = 360.5 N (C)."
   },
   {
-    "id": "app-sum-vec-2",
-    "title": "Suma de Vectores #2",
-    "prompt": "Suma dos vectores: A=(5, -2) y B=(2, 8). Halla las componentes de la resultante.",
-    "solution": ["Rx = 5 + 2 = 7", "Ry = -2 + 8 = 6"],
-    "answer": "Rx = 7, Ry = 6"
+    "id": "armadura-metodo-secciones",
+    "title": "Análisis de Armadura por Secciones",
+    "prompt": "Una armadura Warren horizontal de 3 paneles está apoyada en sus extremos. Cada panel es un triángulo equilátero de 2m de lado. Una carga vertical de 10 kN cuelga del nodo central inferior. Realiza un corte vertical a través del panel central para encontrar la fuerza en el miembro horizontal superior de ese panel.",
+    "solution": [
+      "1. Reacciones: Por simetría, las reacciones en los apoyos son de 5 kN cada una.",
+      "2. Corte: Se realiza un corte vertical que atraviesa el miembro superior horizontal (FH), el diagonal (FD) y el inferior horizontal (FL).",
+      "3. Equilibrio de Momentos: Para encontrar FH, tomamos momentos respecto al nodo inferior donde se cortaron el miembro diagonal y el inferior. La altura de la armadura es h = 2 * sin(60°) = 1.732 m.",
+      "ΣM_nodo_inferior = 0 => (Reacción de apoyo * 3m) - (Carga * 1m) - (FH * altura) = 0",
+      "(5 kN * 3) - (10 kN * 1) - (FH * 1.732) = 0 => 15 - 10 = 1.732 * FH",
+      "5 = 1.732 * FH => FH = 2.887 kN. El momento de FH es negativo, por lo que FH debe ser compresión para que el momento sea positivo."
+    ],
+    "answer": "La fuerza en el miembro horizontal superior es de 2.89 kN (Compresión)."
   },
   {
-    "id": "app-sum-vec-3",
-    "title": "Suma de Vectores #3",
-    "prompt": "Si A=(-10, 0) y B=(10, 0), ¿cuál es el vector resultante?",
-    "solution": ["Rx = -10 + 10 = 0", "Ry = 0 + 0 = 0"],
-    "answer": "Rx = 0, Ry = 0"
+    "id": "analisis-de-bastidor",
+    "title": "Análisis de un Bastidor (Frame)",
+    "prompt": "Un bastidor en forma de 'L' está compuesto por un miembro vertical (AC) y uno horizontal (BC) unidos por un pasador en C. El miembro AC está anclado a la pared con un pasador en A. El miembro BC está apoyado sobre un rodillo en B. Una fuerza horizontal de 500 N actúa en el punto medio de AC. Si AC=4m y BC=3m, calcula las componentes de la fuerza en el pasador C.",
+    "solution": [
+      "1. DCL del cuerpo entero: No podemos resolver todas las reacciones externas directamente.",
+      "2. DCL del miembro BC: Es un miembro de dos fuerzas, por lo que la fuerza en C (F_c) debe ser a lo largo de la línea BC. Ojo, el peso no es considerado, solo la carga externa.",
+      "No, BC no es un miembro de dos fuerzas debido al pasador C. Hay que analizarlo por separado. DCL de BC: ΣMc = 0 => B_y * 3 = 0 => By = 0. ΣFx = Cx = 0. ΣFy = Cy + By = 0 => Cy = 0. Esto no puede ser correcto.",
+      "Re-análisis: La carga de 500N está en AC. DCL de AC: ΣMa = 0 => (500 N * 2 m) + (Cx * 4 m) = 0 => Cx = -250 N. El momento de la carga de 500N es negativo, el de Cx debe ser positivo, por lo que Cx debe apuntar a la izquierda. Correcto.",
+      "ΣFx = Ax + 500 + Cx = 0 => Ax + 500 - 250 = 0 => Ax = -250 N. ΣFy = Ay + Cy = 0.",
+      "DCL de BC: ΣFx = -Cx = 0 => Cx = 0. Esto contradice lo anterior. El error está en suponer By=0.",
+      "Solución Correcta: DCL de BC: ΣMc = 0 => By * 3 = 0 -> By=0. Solo tiene reacción horizontal Bx. DCL global: ΣMa = (500 * 2) - (Bx * 4) = 0 => Bx = 250N. Ahora las fuerzas en C. DCL de BC: ΣFx = -Cx + Bx = 0 => Cx = 250N. ΣFy = Cy = 0."
+    ],
+    "answer": "Las componentes de la fuerza en el pasador C son Cx = 250 N y Cy = 0 N."
   },
   {
-    "id": "app-sum-vec-4",
-    "title": "Suma de Vectores #4",
-    "prompt": "Calcula R = A + B, donde A=(7, 2) y B=(3, -9).",
-    "solution": ["Rx = 7 + 3 = 10", "Ry = 2 + (-9) = -7"],
-    "answer": "Rx = 10, Ry = -7"
+    "id": "analisis-de-maquina-pinzas",
+    "title": "Análisis de Máquina: Pinzas",
+    "prompt": "Considera un par de pinzas simples. La distancia desde el pivote hasta los mangos donde se aplica una fuerza de 10 N es de 12 cm. La distancia desde el pivote hasta la punta de agarre es de 4 cm. ¿Cuál es la fuerza de agarre que ejercen las pinzas sobre un objeto?",
+    "solution": [
+      "Este es un problema de palancas, donde el pivote es el fulcro.",
+      "Analizamos una de las dos mitades de las pinzas.",
+      "La suma de momentos respecto al pivote debe ser cero para el equilibrio.",
+      "Momento de entrada = Momento de salida",
+      "F_entrada * d_entrada = F_salida * d_salida",
+      "10 N * 12 cm = F_agarre * 4 cm",
+      "F_agarre = (10 N * 12 cm) / 4 cm = 30 N"
+    ],
+    "answer": "La fuerza de agarre es de 30 N."
   },
   {
-    "id": "app-sum-vec-5",
-    "title": "Suma de Vectores #5",
-    "prompt": "Dos fuerzas actúan en componentes: F1=(20, 30) N y F2=(10, -10) N. ¿Cuál es la fuerza resultante en componentes?",
-    "solution": ["Rx = 20 + 10 = 30", "Ry = 30 + (-10) = 20"],
-    "answer": "Rx = 30 N, Ry = 20 N"
-  },
-  {
-    "id": "app-eq-1",
-    "title": "Fuerza de Equilibrio #1",
-    "prompt": "Dos fuerzas, F1=50N a 0° y F2=50N a 180°, actúan sobre un punto. ¿Qué tercera fuerza F3 se necesita para el equilibrio?",
-    "solution": ["Las fuerzas son iguales y opuestas, se anulan. F3 = 0."],
-    "answer": "F3 = 0 N"
-  },
-  {
-    "id": "app-eq-2",
-    "title": "Fuerza de Equilibrio #2",
-    "prompt": "Una fuerza F1 es de 10N a 45° y F2 es de 10N a 225°. ¿Qué fuerza F3 equilibra el sistema?",
-    "solution": ["Los ángulos tienen 180° de diferencia, las fuerzas se anulan. F3 = 0."],
-    "answer": "F3 = 0 N"
-  },
-  {
-    "id": "app-eq-3",
-    "title": "Fuerza de Equilibrio #3",
-    "prompt": "Si F1=20N a 90° y F2=30N a 270°, calcula la fuerza de equilibrio F3.",
-    "solution": ["ΣFy = 20 - 30 = -10N. Para equilibrar, F3 debe ser 10N en sentido opuesto (90°)."],
-    "answer": "F3 = 10 N a 90°"
-  },
-  {
-    "id": "app-eq-4",
-    "title": "Fuerza de Equilibrio #4",
-    "prompt": "Dos tensiones: T1=100N a 60° y T2=100N a 120°. ¿Qué fuerza F3 se requiere para el equilibrio?",
-    "solution": ["ΣFx = 100cos(60) + 100cos(120)=0", "ΣFy = 100sin(60)+100sin(120)=173.2N. F3 debe ser opuesta."],
-    "answer": "F3 = 173.2 N a -90° (o 270°)"
-  },
-  {
-    "id": "app-eq-5",
-    "title": "Fuerza de Equilibrio #5",
-    "prompt": "F1=80N a 0° y F2=60N a 90°. Encuentra la magnitud y el ángulo de la fuerza de equilibrio F3.",
-    "solution": ["Rx = 80, Ry = 60. R = 100N a 36.87°. F3 debe ser opuesta."],
-    "answer": "F3 = 100 N a 216.87° (o -143.13°)"
-  },
-  {
-    "id": "app-decomp-1",
-    "title": "Descomposición de Fuerza #1",
-    "prompt": "Una fuerza de 100N actúa a un ángulo de 30° con la horizontal. Halla Fx y Fy.",
-    "solution": ["Fx = 100·cos(30) = 86.6", "Fy = 100·sin(30) = 50"],
-    "answer": "Fx = 86.6 N, Fy = 50 N"
-  },
-  {
-    "id": "app-decomp-2",
-    "title": "Descomposición de Fuerza #2",
-    "prompt": "Calcula las componentes de una fuerza de 500N a 135°.",
-    "solution": ["Fx = 500·cos(135) = -353.55", "Fy = 500·sin(135) = 353.55"],
-    "answer": "Fx = -353.55 N, Fy = 353.55 N"
-  },
-  {
-    "id": "app-decomp-3",
-    "title": "Descomposición de Fuerza #3",
-    "prompt": "Descompón un vector de 150N orientado a 270°.",
-    "solution": ["Fx = 150·cos(270) = 0", "Fy = 150·sin(270) = -150"],
-    "answer": "Fx = 0 N, Fy = -150 N"
-  },
-  {
-    "id": "app-decomp-4",
-    "title": "Descomposición de Fuerza #4",
-    "prompt": "Una tensión de 75N forma un ángulo de -45° con el eje x. ¿Cuáles son sus componentes?",
-    "solution": ["Fx = 75·cos(-45) = 53.03", "Fy = 75·sin(-45) = -53.03"],
-    "answer": "Fx = 53.03 N, Fy = -53.03 N"
-  },
-  {
-    "id": "app-decomp-5",
-    "title": "Descomposición de Fuerza #5",
-    "prompt": "¿Cuáles son las componentes Fx y Fy de una fuerza de 1000N que actúa en la dirección horizontal negativa (180°)?",
-    "solution": ["Fx = 1000·cos(180) = -1000", "Fy = 1000·sin(180) = 0"],
-    "answer": "Fx = -1000 N, Fy = 0 N"
+    "id": "viga-con-carga-distribuida",
+    "title": "Equilibrio con Carga Distribuida",
+    "prompt": "Una viga de 10 m simplemente apoyada en sus extremos A y B soporta una carga uniformemente distribuida de 50 N/m a lo largo de toda su longitud. Calcula las fuerzas de reacción en los apoyos A y B.",
+    "solution": [
+      "1. Reemplazar la carga distribuida por una fuerza puntual equivalente.",
+      "F_total = carga * longitud = 50 N/m * 10 m = 500 N.",
+      "2. La fuerza equivalente actúa en el centroide de la distribución de carga, que para una carga uniforme es el centro de la viga (a 5 m de A).",
+      "3. Aplicar las condiciones de equilibrio.",
+      "ΣFy = Ay + By - 500 N = 0 => Ay + By = 500 N.",
+      "Debido a la simetría de la carga y los apoyos, las reacciones son iguales.",
+      "Ay = By = 500 N / 2 = 250 N.",
+      "(Comprobación con momentos: ΣMa = (By * 10 m) - (500 N * 5 m) = 0 => 10*By = 2500 => By = 250 N)."
+    ],
+    "answer": "Las fuerzas de reacción en los apoyos A y B son ambas de 250 N."
   }
 ]

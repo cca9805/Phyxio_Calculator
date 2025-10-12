@@ -295,7 +295,14 @@ function InteractiveCalculator({ calculator }) {
                     ) : (
                         <div className='alert alert-success'>
                             <h5 className='alert-heading'>Resultados en Tiempo Real:</h5>
-                            {result.steps.map((step, index) => <div key={index} className='my-1 font-monospace small'><Latex>{`$${step}$`}</Latex></div>)}
+                            {result.steps.map((step, index) => {
+                                const content = step.includes('\\') ? `$${step}$` : step;
+                                return (
+                                    <div key={index} className='my-1 font-monospace small'>
+                                        <Latex>{content}</Latex>
+                                    </div>
+                                );
+                            })}
                         </div>
                     )}
                 </div>
@@ -392,9 +399,14 @@ function FormBasedCalculator({ calculator }) {
               <details>
                 <summary>Ver pasos del cálculo</summary>
                 <div className='mt-2 font-monospace small bg-dark text-light p-2 rounded'>
-                  {result.steps.map((step, index) => (
-                    <div key={index} style={{ whiteSpace: 'pre-wrap' }}><Latex>{`$${step}$`}</Latex></div>
-                  ))}
+                  {result.steps.map((step, index) => {
+                      const content = step.includes('\\') ? `$${step}$` : step;
+                      return (
+                          <div key={index} style={{ whiteSpace: 'pre-wrap' }}>
+                              <Latex>{content}</Latex>
+                          </div>
+                      );
+                  })}
                 </div>
               </details>
             </div>

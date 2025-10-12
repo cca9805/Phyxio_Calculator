@@ -1,0 +1,243 @@
+[
+  {
+    "id": "C1_E1_Fuerza_Superposicion",
+    "title": "Fuerza Neta por Superposición",
+    "prompt": "Se tienen tres cargas en el vacío: q1 = 12 nC en (4, 6, 0) m, q2 = -5 nC en (10, 4, 0) m y q3 = 10 nC en (-2, 0, 0) m. Calcular la fuerza neta vectorial (en nN) sobre la carga q3.",
+    "solution": [
+      "Calcular F1,3 (fuerza de q1 sobre q3). Vector r3-r1 = (-6, -6, 0). Módulo = sqrt(72).",
+      "Calcular F2,3 (fuerza de q2 sobre q3). Vector r3-r2 = (-12, -4, 0). Módulo = sqrt(160).",
+      "Sumar vectorial: F = F1,3 + F2,3."
+    ],
+    "answer": "(-7.938, -9.717, 0) nN",
+    "formula_id": "ley-coulomb"
+  },
+  {
+    "id": "C1_EA4_Fuerza_Equilibrio",
+    "title": "Cálculo de Carga en Equilibrio",
+    "prompt": "Se tienen tres cargas puntuales q1=2 nC, q2=2 nC y q3=-3 nC, colocadas como indica la Figura 1.28 del texto (q1 en (0,1), q2 en (2,1), q3 en (1,0)). Calcular la fuerza eléctrica total sobre la carga q1 (en 10⁻⁹ N).",
+    "solution": [
+      "Determinar las distancias y vectores entre q2 y q1 (repulsión), y q3 y q1 (atracción).",
+      "Calcular la fuerza F2,1 y F3,1 por separado utilizando la Ley de Coulomb: F = k*|q1*q2|/r².",
+      "Sumar vectorialmente las fuerzas: F_total = F2,1 + F3,1."
+    ],
+    "answer": "(-9.10, 9.13, 5.10) N",
+    "formula_id": "ley-coulomb"
+  },
+  {
+    "id": "coulomb_3",
+    "title": "Fuerza entre dos Cargas",
+    "prompt": "Dos cargas puntuales, Q1 = +5 µC and Q2 = -3 µC, están separadas por una distancia de 10 cm. ¿Cuál es la magnitud de la fuerza electrostática entre ellas? ¿Es atractiva o repulsiva?",
+    "solution": [
+      "Usar la Ley de Coulomb: F = k * |Q1 * Q2| / r².",
+      "Sustituir los valores: k = 8.99e9 N·m²/C², Q1 = 5e-6 C, Q2 = -3e-6 C, r = 0.1 m.",
+      "Como las cargas tienen signos opuestos, la fuerza es atractiva."
+    ],
+    "answer": "13.485 N, atractiva.",
+    "formula_id": "ley-coulomb"
+  },
+  {
+    "id": "coulomb_4",
+    "title": "Equilibrio de Fuerzas",
+    "prompt": "Una carga q1 = -4 nC se encuentra en el origen. Una segunda carga, q2, se coloca en x = 50 cm. ¿Cuál debe ser el valor de q2 para que la fuerza neta sobre una tercera carga q3 = +2 nC ubicada en x = 20 cm sea cero?",
+    "solution": [
+      "La fuerza neta sobre q3 es la suma de la fuerza de q1 sobre q3 (F13) y la de q2 sobre q3 (F23).",
+      "Para que la fuerza sea cero, F13 + F23 = 0, lo que implica F13 = -F23.",
+      "Calcular F13. La distancia es 20 cm. La fuerza es repulsiva.",
+      "Igualar las magnitudes de las fuerzas y resolver para q2. La distancia entre q2 y q3 es 30 cm."
+    ],
+    "answer": "-9.0 nC",
+    "formula_id": "ley-coulomb"
+  },
+  {
+    "id": "coulomb_5",
+    "title": "Punto de Fuerza Neta Cero",
+    "prompt": "Dos cargas están en línea: q1 = +15 µC en x = 0, y q2 = -6 µC en x = 40 cm. ¿En qué posición debe colocarse una tercera carga q3 para que la fuerza neta sobre ella sea cero?",
+    "solution": [
+      "El punto no puede estar entre las cargas, porque ambas fuerzas apuntarían en la misma dirección.",
+      "El punto debe estar más cerca de la carga de menor magnitud (q2).",
+      "Colocar q3 en una posición x > 40 cm. Igualar las fuerzas F13 y F23 y resolver para x."
+    ],
+    "answer": "x = 69.0 cm",
+    "formula_id": "ley-coulomb"
+  },
+  {
+    "id": "densidad_lineal_1",
+    "title": "Cálculo de Densidad Lineal",
+    "prompt": "Una carga total de 80 nC se distribuye uniformemente a lo largo de una varilla delgada de 20 cm de longitud. Calcule la densidad de carga lineal (λ).",
+    "solution": [
+      "Usar la fórmula: λ = Q / L.",
+      "Convertir unidades: Q = 80e-9 C, L = 0.20 m.",
+      "Calcular λ."
+    ],
+    "answer": "4.0 x 10⁻⁷ C/m o 400 nC/m.",
+    "formula_id": "densidad_lineal"
+  },
+  {
+    "id": "densidad_lineal_2",
+    "title": "Carga Total a partir de Densidad",
+    "prompt": "Un alambre con una densidad de carga lineal de λ = -2.5 µC/m tiene una longitud de 1.5 m. ¿Cuál es la carga total en el alambre?",
+    "solution": [
+      "Reorganizar la fórmula: Q = λ * L.",
+      "Sustituir los valores: λ = -2.5e-6 C/m, L = 1.5 m.",
+      "Calcular Q."
+    ],
+    "answer": "-3.75 µC.",
+    "formula_id": "densidad_lineal"
+  },
+    {
+    "id": "densidad_lineal_3",
+    "title": "Conversión de Unidades en Densidad Lineal",
+    "prompt": "Si un alambre de 50 cm de largo tiene una carga total de Q = +10 nC distribuida uniformemente, ¿cuál es la densidad de carga lineal en C/m?",
+    "solution": [
+      "Usar la fórmula: λ = Q / L.",
+      "Convertir unidades: L = 50 cm = 0.5 m, Q = 10 nC = 10e-9 C.",
+      "Calcular λ = (10e-9 C) / (0.5 m)."
+    ],
+    "answer": "2.0 x 10⁻⁸ C/m o 20 nC/m.",
+    "formula_id": "densidad_lineal"
+  },
+  {
+    "id": "densidad_lineal_4",
+    "title": "Carga en una Sección",
+    "prompt": "Un filamento cargado tiene una densidad lineal de λ = 3.0 µC/m. ¿Cuánta carga está contenida en una sección de 5 cm de este filamento?",
+    "solution": [
+      "Usar la fórmula Q = λ * L.",
+      "Convertir la longitud a metros: L = 5 cm = 0.05 m.",
+      "Calcular Q = (3.0e-6 C/m) * (0.05 m)."
+    ],
+    "answer": "0.15 µC.",
+    "formula_id": "densidad_lineal"
+  },
+  {
+    "id": "densidad_lineal_5",
+    "title": "Longitud a partir de Carga y Densidad",
+    "prompt": "¿Qué longitud de un cable con una densidad de carga lineal de λ = 1.2 µC/m se necesitaría para albergar una carga total de 600 nC?",
+    "solution": [
+      "Reorganizar la fórmula: L = Q / λ.",
+      "Convertir unidades: Q = 600 nC = 600e-9 C.",
+      "Calcular L = (600e-9 C) / (1.2e-6 C/m)."
+    ],
+    "answer": "0.5 m o 50 cm.",
+    "formula_id": "densidad_lineal"
+  },
+  {
+    "id": "densidad_superficial_1",
+    "title": "Cálculo de Densidad Superficial",
+    "prompt": "Una carga de 12 µC se distribuye uniformemente sobre una placa cuadrada con lados de 50 cm. ¿Cuál es la densidad de carga superficial (σ)?",
+    "solution": [
+      "Calcular el área: A = L² = (0.5 m)² = 0.25 m².",
+      "Usar la fórmula: σ = Q / A.",
+      "Calcular σ = (12e-6 C) / (0.25 m²)."
+    ],
+    "answer": "4.8 x 10⁻⁵ C/m².",
+    "formula_id": "densidad_superficial"
+  },
+  {
+    "id": "densidad_superficial_2",
+    "title": "Densidad en una Esfera",
+    "prompt": "Una esfera de radio 15 cm tiene una carga total de Q = +3 nC distribuida uniformemente en su superficie. Calcule la densidad de carga superficial (σ).",
+    "solution": [
+      "Calcular el área de la superficie de la esfera: A = 4 * π * r² = 4 * π * (0.15 m)².",
+      "Usar la fórmula: σ = Q / A.",
+      "Calcular σ = (3e-9 C) / A."
+    ],
+    "answer": "1.06 x 10⁻⁸ C/m².",
+    "formula_id": "densidad_superficial"
+  },
+    {
+    "id": "densidad_superficial_3",
+    "title": "Carga a partir de Densidad Superficial",
+    "prompt": "La densidad de carga superficial en una lámina grande y plana es σ = -5.0 µC/m². ¿Cuál es la carga total en una sección circular de esta lámina con un radio de 10 cm?",
+    "solution": [
+      "Calcular el área del círculo: A = π * r² = π * (0.10 m)².",
+      "Reorganizar la fórmula: Q = σ * A.",
+      "Calcular Q = (-5.0e-6 C/m²) * A."
+    ],
+    "answer": "-1.57 µC.",
+    "formula_id": "densidad_superficial"
+  },
+  {
+    "id": "densidad_superficial_4",
+    "title": "Densidad en un Disco",
+    "prompt": "Un disco conductor de radio 8 cm contiene una carga total de 450 nC. ¿Cuál es su densidad de carga superficial?",
+    "solution": [
+      "Calcular el área del disco: A = π * r² = π * (0.08 m)².",
+      "Usar la fórmula: σ = Q / A.",
+      "Calcular σ = (450e-9 C) / A."
+    ],
+    "answer": "2.24 x 10⁻⁵ C/m².",
+    "formula_id": "densidad_superficial"
+  },
+  {
+    "id": "densidad_superficial_5",
+    "title": "Área a partir de Carga y Densidad",
+    "prompt": "¿Qué área se requiere para mantener una carga total de 1 mC si la densidad de carga superficial es σ = 0.01 C/m²?",
+    "solution": [
+      "Reorganizar la fórmula: A = Q / σ.",
+      "Convertir carga: Q = 1 mC = 1e-3 C.",
+      "Calcular A = (1e-3 C) / (0.01 C/m²)."
+    ],
+    "answer": "0.1 m².",
+    "formula_id": "densidad_superficial"
+  },
+  {
+    "id": "densidad_volumetrica_1",
+    "title": "Cálculo de Densidad Volumétrica",
+    "prompt": "Una carga de -400 µC se distribuye uniformemente en una esfera de radio 5 cm. ¿Cuál es la densidad de carga volumétrica (ρ)?",
+    "solution": [
+      "Calcular el volumen de la esfera: V = (4/3) * π * r³ = (4/3) * π * (0.05 m)³.",
+      "Usar la fórmula: ρ = Q / V.",
+      "Calcular ρ = (-400e-6 C) / V."
+    ],
+    "answer": "-0.764 C/m³.",
+    "formula_id": "densidad_volumetrica"
+  },
+  {
+    "id": "densidad_volumetrica_2",
+    "title": "Carga Total en un Cubo",
+    "prompt": "Un cubo con lados de 10 cm tiene una densidad de carga volumétrica uniforme de ρ = +80 µC/m³. ¿Cuál es la carga total dentro del cubo?",
+    "solution": [
+      "Calcular el volumen del cubo: V = L³ = (0.1 m)³ = 0.001 m³.",
+      "Reorganizar la fórmula: Q = ρ * V.",
+      "Calcular Q = (80e-6 C/m³) * (0.001 m³)."
+    ],
+    "answer": "0.08 µC o 80 nC.",
+    "formula_id": "densidad_volumetrica"
+  },
+  {
+    "id": "densidad_volumetrica_3",
+    "title": "Densidad en un Cilindro",
+    "prompt": "¿Cuál es la densidad de carga volumétrica de un cilindro con radio 2 cm y altura 10 cm que contiene una carga total de 1.5 nC?",
+    "solution": [
+      "Calcular el volumen del cilindro: V = π * r² * h = π * (0.02 m)² * (0.10 m).",
+      "Usar la fórmula: ρ = Q / V.",
+      "Calcular ρ = (1.5e-9 C) / V."
+    ],
+    "answer": "1.19 x 10⁻⁵ C/m³.",
+    "formula_id": "densidad_volumetrica"
+  },
+  {
+    "id": "densidad_volumetrica_4",
+    "title": "Carga Total a partir de Densidad Volumétrica",
+    "prompt": "La densidad de carga volumétrica dentro de una esfera es ρ = 2.5 x 10⁻⁵ C/m³. Si el radio de la esfera es de 20 cm, ¿cuál es la carga total Q?",
+    "solution": [
+      "Calcular el volumen de la esfera: V = (4/3) * π * r³ = (4/3) * π * (0.20 m)³.",
+      "Reorganizar la fórmula: Q = ρ * V.",
+      "Calcular Q = (2.5e-5 C/m³) * V."
+    ],
+    "answer": "0.838 µC.",
+    "formula_id": "densidad_volumetrica"
+  },
+  {
+    "id": "densidad_volumetrica_5",
+    "title": "Carga en un Volumen Dado",
+    "prompt": "Un material aislante tiene una densidad de carga volumétrica de ρ = -6.0 nC/m³. ¿Cuánta carga está contenida dentro de un volumen de 0.25 m³ de este material?",
+    "solution": [
+      "Usar la fórmula: Q = ρ * V.",
+      "Sustituir los valores: ρ = -6.0e-9 C/m³, V = 0.25 m³.",
+      "Calcular Q."
+    ],
+    "answer": "-1.5 nC.",
+    "formula_id": "densidad_volumetrica"
+  }
+]

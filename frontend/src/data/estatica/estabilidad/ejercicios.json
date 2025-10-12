@@ -1,32 +1,66 @@
 [
   {
-    "id_formula": "condicion-estabilidad",
-    "question": "El centro de gravedad de una grúa se proyecta en x=5m. Su base de apoyo se extiende de x=2m a x=8m. ¿Es estable la grúa?",
-    "solution": "Estable",
-    "variables": {"x_cg": 5, "x_base_min": 2, "x_base_max": 8}
+    "id": "angulo-de-vuelco",
+    "title": "Cálculo del Ángulo de Vuelco",
+    "prompt": "Un bloque rectangular homogéneo de 20 cm de base y 50 cm de altura descansa sobre una superficie. Si la superficie se inclina lentamente, ¿a qué ángulo (θ) con respecto a la horizontal comenzará a volcar el bloque?",
+    "solution": [
+      "El bloque volcará cuando la proyección vertical de su centro de gravedad (CG) caiga fuera de su base de apoyo.",
+      "El CG está en el centro geométrico, a 10 cm del borde de la base y a 25 cm de altura.",
+      "En el instante del vuelco, la proyección del CG pasa justo por el borde inferior de la base.",
+      "Se forma un triángulo rectángulo con el CG, el borde de la base y la vertical. El ángulo en el CG es igual al ángulo de inclinación θ.",
+      "tan(θ) = (cateto opuesto) / (cateto adyacente) = (base/2) / (altura/2) = (10 cm) / (25 cm) = 0.4",
+      "θ = arctan(0.4) ≈ 21.8°"
+    ],
+    "answer": "El bloque comenzará a volcar a un ángulo de aproximadamente 21.8°."
   },
   {
-    "id_formula": "condicion-estabilidad",
-    "question": "Un robot tiene su C.G. en x=0.4m. Su base de apoyo va de x=0.5m a x=1.0m. ¿Se volcará?",
-    "solution": "No Estable",
-    "variables": {"x_cg": 0.4, "x_base_min": 0.5, "x_base_max": 1.0}
+    "id": "tipos-de-equilibrio-conceptual",
+    "title": "Tipos de Equilibrio",
+    "prompt": "Describe las tres condiciones de equilibrio estático (estable, inestable, neutro) usando el ejemplo de una canica en diferentes superficies.",
+    "solution": [
+      "1. Equilibrio Estable: Si se desplaza ligeramente de su posición, tiende a volver a ella. Ejemplo: una canica en el fondo de un cuenco. Al moverla, la gravedad la devuelve al punto más bajo.",
+      "2. Equilibrio Inestable: Si se desplaza ligeramente, continúa moviéndose y no regresa a su posición original. Ejemplo: una canica balanceada en la cima de una esfera. Cualquier perturbación la hará caer.",
+      "3. Equilibrio Neutro: Si se desplaza, permanece en la nueva posición sin tendencia a moverse más ni a regresar. Ejemplo: una canica sobre una superficie perfectamente plana y horizontal."
+    ],
+    "answer": "Estable (vuelve a la posición), Inestable (se aleja de la posición), Neutro (permanece en la nueva posición)."
   },
   {
-    "id_formula": "condicion-estabilidad",
-    "question": "Una pila de libros tiene su C.G. en x=10cm. La base del libro inferior va de x=0cm a x=20cm. ¿Es estable la pila?",
-    "solution": "Estable",
-    "variables": {"x_cg": 10, "x_base_min": 0, "x_base_max": 20}
+    "id": "estabilidad-con-fuerza-externa",
+    "title": "Estabilidad ante Fuerza Externa",
+    "prompt": "Un archivador de 1.2 m de alto, 0.8 m de ancho y 80 kg de masa descansa en el suelo. Se aplica una fuerza horizontal (F) en la parte superior. Asumiendo que no desliza, ¿qué magnitud de F provocará el vuelco del archivador? (g=9.8 m/s²)",
+    "solution": [
+      "El vuelco ocurrirá cuando el momento de la fuerza F respecto al punto de pivote (el borde inferior opuesto) iguale o supere al momento restaurador del peso.",
+      "Punto de pivote P: borde inferior del archivador.",
+      "Momento de Vuelco (M_vuelco) = F * altura = F * 1.2 m",
+      "Momento Restaurador (M_peso) = Peso * (ancho/2) = (80 kg * 9.8 m/s²) * (0.8 m / 2) = 784 N * 0.4 m = 313.6 N·m",
+      "En el límite de la estabilidad: M_vuelco = M_peso",
+      "F * 1.2 = 313.6 => F = 313.6 / 1.2 ≈ 261.3 N"
+    ],
+    "answer": "Una fuerza horizontal de aproximadamente 261.3 N aplicada en la parte superior provocará el vuelco."
   },
   {
-    "id_formula": "condicion-estabilidad",
-    "question": "El C.G. de una motocicleta se ubica en x=1.2m. Su base de apoyo (distancia entre ruedas) va de x=0.8m a x=2.2m. ¿Es estable?",
-    "solution": "Estable",
-    "variables": {"x_cg": 1.2, "x_base_min": 0.8, "x_base_max": 2.2}
+    "id": "factor-de-seguridad-vuelco",
+    "title": "Factor de Seguridad al Vuelco",
+    "prompt": "Una presa de hormigón tiene un momento restaurador (debido a su peso) de 500 MN·m. El momento de vuelco (debido a la presión del agua) es de 200 MN·m. ¿Cuál es el factor de seguridad (FS) contra el vuelco?",
+    "solution": [
+      "El factor de seguridad contra el vuelco se define como la relación entre los momentos que resisten el vuelco (restauradores) y los momentos que lo provocan.",
+      "FS = (Momento Restaurador) / (Momento de Vuelco)",
+      "FS = 500 MN·m / 200 MN·m = 2.5"
+    ],
+    "answer": "El factor de seguridad contra el vuelco es de 2.5."
   },
   {
-    "id_formula": "condicion-estabilidad",
-    "question": "Un objeto decorativo tiene su C.G. en x=-3cm. Su base se extiende desde x=-2cm a x=2cm. ¿Permanecerá en pie?",
-    "solution": "No Estable",
-    "variables": {"x_cg": -3, "x_base_min": -2, "x_base_max": 2}
+    "id": "pandeo-columna-conceptual",
+    "title": "Estabilidad de Columna (Pandeo)",
+    "prompt": "¿Qué es el pandeo (buckling) en el contexto de la estabilidad estructural, y de qué factores clave depende la 'carga crítica' de una columna según la fórmula de Euler?",
+    "solution": [
+      "El pandeo es un tipo de falla de estabilidad que ocurre en miembros largos y esbeltos (como columnas) sometidos a una alta carga de compresión axial. En lugar de fallar por aplastamiento, el miembro se deforma lateralmente de manera súbita.",
+      "La Carga Crítica de Euler (Pcr) es la carga máxima que una columna ideal puede soportar sin pandearse.",
+      "Según la fórmula Pcr = (π² * E * I) / L², los factores clave son:",
+      "1. E (Módulo de Young): La rigidez del material de la columna.",
+      "2. I (Momento de Inercia de Área): La forma de la sección transversal de la columna. Una I mayor significa más resistencia al pandeo.",
+      "3. L (Longitud Efectiva): La longitud de la columna, ajustada según cómo estén sus extremos (fijos, articulados, etc.). A mayor longitud, menor carga crítica."
+    ],
+    "answer": "El pandeo es una falla por flexión lateral en columnas bajo compresión. La carga crítica depende de la rigidez del material (E), la forma de la sección (I) y la longitud de la columna (L)."
   }
 ]

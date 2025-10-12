@@ -1,0 +1,25 @@
+[
+  {
+    "id": "C1_E2_Campo_Superposicion",
+    "title": "Campo Eléctrico Neto en un Punto",
+    "prompt": "Calcular el campo eléctrico vectorial (en N/C) en el punto P = (3, 1, 0) m creado por tres cargas: q1 = 2 nC en (0, 0, 0) m, q2 = -1 nC en (0, 2, 0) m y q3 = -2 nC en (3, 0, 0) m. Usar k = 9·10⁹.",
+    "solution": [
+      "Calcular el vector de posición y el módulo r para cada carga al punto P.",
+      "Calcular E_i para cada carga usando la Ley de Coulomb vectorial para el campo.",
+      "Sumar los vectores: E_neto = E1 + E2 + E3."
+    ],
+    "answer": "(0.85, -17.14, 0) N/C"
+  },
+  {
+    "id": "C1_E10_Campo_Gauss_Hilo",
+    "title": "Campo de Hilo Infinito (Ley de Gauss)",
+    "prompt": "Una distribución uniforme de carga con densidad lineal λ se encuentra sobre un hilo recto e indefinido. Utilizando la Ley de Gauss, determinar la magnitud del campo eléctrico E a una distancia r del hilo.",
+    "solution": [
+      "Elegir una superficie gaussiana cilíndrica de radio r y longitud L.",
+      "Aplicar la Ley de Gauss: Flujo = E * (Área Lateral) = E * 2πrL.",
+      "Igualar al flujo por carga encerrada: Q_interior / ε₀ = λL / ε₀.",
+      "Despejar E: E = λ / (2πε₀r)."
+    ],
+    "answer": "λ / (2πε₀r)"
+  }
+]

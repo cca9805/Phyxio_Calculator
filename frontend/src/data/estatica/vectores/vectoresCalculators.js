@@ -8,22 +8,17 @@ export const calculators = [
     id: "vector-magnitud-3d",
     title: "Magnitud y Dirección de Vector 3D",
     description: "Calcula la magnitud y los ángulos directores (α, β, γ) de un vector a partir de sus componentes 3D.",
-    formula: "|V| = √(Vx² + Vy² + Vz²)",
+    formula: "|V| = \\sqrt{V_x^2 + V_y^2 + V_z^2}",
     variables: [
-      { symbol: "Vx", label: "Componente en X (Vx)", unit: "unidades", example: "10" },
-      { symbol: "Vy", label: "Componente en Y (Vy)", unit: "unidades", example: "20" },
-      { symbol: "Vz", label: "Componente en Z (Vz)", unit: "unidades", example: "-5" },
+      { symbol: "V_x", label: "Componente en X (Vx)", unit: "unidades", example: "10" },
+      { symbol: "V_y", label: "Componente en Y (Vy)", unit: "unidades", example: "20" },
+      { symbol: "V_z", label: "Componente en Z (Vz)", unit: "unidades", example: "-5" },
     ],
-    output: [
-      { symbol: "V", label: "Magnitud |V|", unit: "unidades" },
-      { symbol: "alpha", label: "Ángulo α (vs eje X)", unit: "°" },
-      { symbol: "beta", label: "Ángulo β (vs eje Y)", unit: "°" },
-      { symbol: "gamma", label: "Ángulo γ (vs eje Z)", unit: "°" },
-    ],
+    output: { symbol: "|V|, \\alpha, \\beta, \\gamma", label: "Magnitud y Ángulos Directores", unit: "unidades, °" },
     resolve: (args) => {
-      const Vx = Number(args.Vx);
-      const Vy = Number(args.Vy);
-      const Vz = Number(args.Vz);
+      const Vx = Number(args['V_x']);
+      const Vy = Number(args['V_y']);
+      const Vz = Number(args['V_z']);
 
       if (isNaN(Vx) || isNaN(Vy) || isNaN(Vz)) {
         return { error: "Por favor, introduzca valores numéricos válidos para las componentes." };
@@ -39,14 +34,17 @@ export const calculators = [
       const gamma = radToDeg(Math.acos(Vz / V));
       
       return {
-        result: { V, alpha, beta, gamma },
+        result: { 
+          '|V|': formatNumber(V),
+          '\\alpha': formatNumber(alpha),
+          '\\beta': formatNumber(beta),
+          '\\gamma': formatNumber(gamma)
+        },
         steps: [
-          `1. Calcular la Magnitud |V|:`,
-          `   |V| = √(${formatNumber(Vx)}² + ${formatNumber(Vy)}² + ${formatNumber(Vz)}²) = ${formatNumber(V)} unidades`,
-          `2. Calcular Ángulos Directores:`,
-          `   α = arccos(${formatNumber(Vx)} / ${formatNumber(V)}) = ${formatNumber(alpha)}°`,
-          `   β = arccos(${formatNumber(Vy)} / ${formatNumber(V)}) = ${formatNumber(beta)}°`,
-          `   γ = arccos(${formatNumber(Vz)} / ${formatNumber(V)}) = ${formatNumber(gamma)}°`,
+          `|V| = \\sqrt{V_x^2 + V_y^2 + V_z^2} = \\sqrt{${formatNumber(Vx)}^2 + ${formatNumber(Vy)}^2 + (${formatNumber(Vz)})^2} = ${formatNumber(V)}\\text{ unidades}`,
+          `\\alpha = \\arccos(\\frac{V_x}{|V|}) = \\arccos(\\frac{${formatNumber(Vx)}}{${formatNumber(V)}}) = ${formatNumber(alpha)}°`,
+          `\\beta = \\arccos(\\frac{V_y}{|V|}) = \\arccos(\\frac{${formatNumber(Vy)}}{${formatNumber(V)}}) = ${formatNumber(beta)}°`,
+          `\\gamma = \\arccos(\\frac{V_z}{|V|}) = \\arccos(\\frac{${formatNumber(Vz)}}{${formatNumber(V)}}) = ${formatNumber(gamma)}°`,
         ],
       };
     },
@@ -55,25 +53,21 @@ export const calculators = [
     id: "suma-vectores-3d",
     title: "Suma de Vectores 3D",
     description: "Suma dos vectores en 3D (A y B) para obtener un vector resultante R.",
-    formula: "R = A + B = (Ax+Bx)î + (Ay+By)ĵ + (Az+Bz)k̂",
+    formula: "\\vec{R} = \\vec{A} + \\vec{B}",
     variables: [
       { type: 'divider', label: 'Vector A' },
-      { symbol: "Ax", label: "Componente X de A (Ax)", unit: "", example: "5" },
-      { symbol: "Ay", label: "Componente Y de A (Ay)", unit: "", example: "2" },
-      { symbol: "Az", label: "Componente Z de A (Az)", unit: "", example: "-3" },
+      { symbol: "A_x", label: "Componente X de A (Ax)", unit: "", example: "5" },
+      { symbol: "A_y", label: "Componente Y de A (Ay)", unit: "", example: "2" },
+      { symbol: "A_z", label: "Componente Z de A (Az)", unit: "", example: "-3" },
       { type: 'divider', label: 'Vector B' },
-      { symbol: "Bx", label: "Componente X de B (Bx)", unit: "", example: "3" },
-      { symbol: "By", label: "Componente Y de B (By)", unit: "", example: "4" },
-      { symbol: "Bz", label: "Componente Z de B (Bz)", unit: "", example: "1" },
+      { symbol: "B_x", label: "Componente X de B (Bx)", unit: "", example: "3" },
+      { symbol: "B_y", label: "Componente Y de B (By)", unit: "", example: "4" },
+      { symbol: "B_z", label: "Componente Z de B (Bz)", unit: "", example: "1" },
     ],
-    output: [
-      { symbol: "Rx", label: "Componente X Resultante (Rx)", unit: "" },
-      { symbol: "Ry", label: "Componente Y Resultante (Ry)", unit: "" },
-      { symbol: "Rz", label: "Componente Z Resultante (Rz)", unit: "" },
-    ],
+    output: { symbol: "R_x, R_y, R_z", label: "Componentes del Vector Resultante", unit: "" },
     resolve: (args) => {
-      const Ax = Number(args.Ax); const Ay = Number(args.Ay); const Az = Number(args.Az);
-      const Bx = Number(args.Bx); const By = Number(args.By); const Bz = Number(args.Bz);
+      const Ax = Number(args['A_x']); const Ay = Number(args['A_y']); const Az = Number(args['A_z']);
+      const Bx = Number(args['B_x']); const By = Number(args['B_y']); const Bz = Number(args['B_z']);
 
       if ([Ax, Ay, Az, Bx, By, Bz].some(isNaN)) {
         return { error: "Por favor, introduzca valores numéricos para todas las componentes." };
@@ -84,12 +78,16 @@ export const calculators = [
       const Rz = Az + Bz;
       
       return {
-        result: { Rx, Ry, Rz },
+        result: { 
+          'R_x': formatNumber(Rx),
+          'R_y': formatNumber(Ry),
+          'R_z': formatNumber(Rz)
+        },
         steps: [
-          `Rx = ${formatNumber(Ax)} + ${formatNumber(Bx)} = ${formatNumber(Rx)}`,
-          `Ry = ${formatNumber(Ay)} + ${formatNumber(By)} = ${formatNumber(Ry)}`,
-          `Rz = ${formatNumber(Az)} + ${formatNumber(Bz)} = ${formatNumber(Rz)}`,
-          `Vector Resultante: R = ${formatNumber(Rx)}î + ${formatNumber(Ry)}ĵ + ${formatNumber(Rz)}k̂`
+          `R_x = A_x + B_x = ${formatNumber(Ax)} + ${formatNumber(Bx)} = ${formatNumber(Rx)}`,
+          `R_y = A_y + B_y = ${formatNumber(Ay)} + ${formatNumber(By)} = ${formatNumber(Ry)}`,
+          `R_z = A_z + B_z = ${formatNumber(Az)} + ${formatNumber(Bz)} = ${formatNumber(Rz)}`,
+          `\\vec{R} = ${formatNumber(Rx)}\\hat{i} + ${formatNumber(Ry)}\\hat{j} + ${formatNumber(Rz)}\\hat{k}`
         ],
       };
     },
@@ -98,21 +96,21 @@ export const calculators = [
     id: "producto-escalar-3d",
     title: "Producto Escalar (Producto Punto) 3D",
     description: "Calcula el producto escalar de dos vectores 3D. El resultado es una magnitud escalar.",
-    formula: "A · B = Ax*Bx + Ay*By + Az*Bz",
+    formula: "A \\cdot B = A_x B_x + A_y B_y + A_z B_z",
     variables: [
       { type: 'divider', label: 'Vector A' },
-      { symbol: "Ax", label: "Componente X de A (Ax)", unit: "", example: "2" },
-      { symbol: "Ay", label: "Componente Y de A (Ay)", unit: "", example: "3" },
-      { symbol: "Az", label: "Componente Z de A (Az)", unit: "", example: "4" },
+      { symbol: "A_x", label: "Componente X de A (Ax)", unit: "", example: "2" },
+      { symbol: "A_y", label: "Componente Y de A (Ay)", unit: "", example: "3" },
+      { symbol: "A_z", label: "Componente Z de A (Az)", unit: "", example: "4" },
       { type: 'divider', label: 'Vector B' },
-      { symbol: "Bx", label: "Componente X de B (Bx)", unit: "", example: "5" },
-      { symbol: "By", label: "Componente Y de B (By)", unit: "", example: "6" },
-      { symbol: "Bz", label: "Componente Z de B (Bz)", unit: "", example: "7" },
+      { symbol: "B_x", label: "Componente X de B (Bx)", unit: "", example: "5" },
+      { symbol: "B_y", label: "Componente Y de B (By)", unit: "", example: "6" },
+      { symbol: "B_z", label: "Componente Z de B (Bz)", unit: "", example: "7" },
     ],
-    output: { symbol: "dotProduct", label: "Producto Escalar (A · B)", unit: "unidades²" },
+    output: { symbol: "A \\cdot B", label: "Producto Escalar", unit: "unidades²" },
     resolve: (args) => {
-      const Ax = Number(args.Ax); const Ay = Number(args.Ay); const Az = Number(args.Az);
-      const Bx = Number(args.Bx); const By = Number(args.By); const Bz = Number(args.Bz);
+      const Ax = Number(args['A_x']); const Ay = Number(args['A_y']); const Az = Number(args['A_z']);
+      const Bx = Number(args['B_x']); const By = Number(args['B_y']); const Bz = Number(args['B_z']);
 
       if ([Ax, Ay, Az, Bx, By, Bz].some(isNaN)) {
         return { error: "Por favor, introduzca valores numéricos para todas las componentes." };
@@ -120,10 +118,11 @@ export const calculators = [
 
       const dotProduct = Ax * Bx + Ay * By + Az * Bz;
       return {
-        result: { dotProduct },
+        result: { 'A \\cdot B': formatNumber(dotProduct) },
         steps: [
-          `A · B = (${formatNumber(Ax)} * ${formatNumber(Bx)}) + (${formatNumber(Ay)} * ${formatNumber(By)}) + (${formatNumber(Az)} * ${formatNumber(Bz)})`,
-          `Resultado = ${formatNumber(Ax * Bx)} + ${formatNumber(Ay * By)} + ${formatNumber(Az * Bz)} = ${formatNumber(dotProduct)} unidades²`,
+          `A \\cdot B = (A_x)(B_x) + (A_y)(B_y) + (A_z)(B_z)`,
+          `A \\cdot B = (${formatNumber(Ax)})(${formatNumber(Bx)}) + (${formatNumber(Ay)})(${formatNumber(By)}) + (${formatNumber(Az)})(${formatNumber(Bz)})`,
+          `A \\cdot B = ${formatNumber(Ax * Bx)} + ${formatNumber(Ay * By)} + ${formatNumber(Az * Bz)} = ${formatNumber(dotProduct)}\\text{ unidades²}`,
         ],
       };
     },
@@ -132,25 +131,21 @@ export const calculators = [
     id: "producto-vectorial-3d",
     title: "Producto Vectorial (Producto Cruz) 3D",
     description: "Calcula el producto vectorial de dos vectores 3D (A x B), resultando en un nuevo vector C perpendicular a ambos.",
-    formula: "C = A x B",
+    formula: "\\vec{C} = \\vec{A} \\times \\vec{B}",
     variables: [
       { type: 'divider', label: 'Vector A' },
-      { symbol: "Ax", label: "Componente X de A (Ax)", unit: "", example: "2" },
-      { symbol: "Ay", label: "Componente Y de A (Ay)", unit: "", example: "3" },
-      { symbol: "Az", label: "Componente Z de A (Az)", unit: "", example: "4" },
+      { symbol: "A_x", label: "Componente X de A (Ax)", unit: "", example: "2" },
+      { symbol: "A_y", label: "Componente Y de A (Ay)", unit: "", example: "3" },
+      { symbol: "A_z", label: "Componente Z de A (Az)", unit: "", example: "4" },
       { type: 'divider', label: 'Vector B' },
-      { symbol: "Bx", label: "Componente X de B (Bx)", unit: "", example: "5" },
-      { symbol: "By", label: "Componente Y de B (By)", unit: "", example: "6" },
-      { symbol: "Bz", label: "Componente Z de B (Bz)", unit: "", example: "7" },
+      { symbol: "B_x", label: "Componente X de B (Bx)", unit: "", example: "5" },
+      { symbol: "B_y", label: "Componente Y de B (By)", unit: "", example: "6" },
+      { symbol: "B_z", label: "Componente Z de B (Bz)", unit: "", example: "7" },
     ],
-    output: [
-      { symbol: "Cx", label: "Componente X Resultante (Cx)", unit: "" },
-      { symbol: "Cy", label: "Componente Y Resultante (Cy)", unit: "" },
-      { symbol: "Cz", label: "Componente Z Resultante (Cz)", unit: "" },
-    ],
+    output: { symbol: "C_x, C_y, C_z", label: "Componentes del Vector Resultante", unit: "" },
     resolve: (args) => {
-      const Ax = Number(args.Ax); const Ay = Number(args.Ay); const Az = Number(args.Az);
-      const Bx = Number(args.Bx); const By = Number(args.By); const Bz = Number(args.Bz);
+      const Ax = Number(args['A_x']); const Ay = Number(args['A_y']); const Az = Number(args['A_z']);
+      const Bx = Number(args['B_x']); const By = Number(args['B_y']); const Bz = Number(args['B_z']);
 
        if ([Ax, Ay, Az, Bx, By, Bz].some(isNaN)) {
         return { error: "Por favor, introduzca valores numéricos para todas las componentes." };
@@ -161,15 +156,16 @@ export const calculators = [
       const Cz = Ax * By - Ay * Bx;
       
       return {
-        result: { Cx, Cy, Cz },
+        result: { 
+          'C_x': formatNumber(Cx),
+          'C_y': formatNumber(Cy),
+          'C_z': formatNumber(Cz)
+        },
         steps: [
-          `1. Calcular Componente Cx:`,
-          `   Cx = (Ay * Bz) - (Az * By) = (${formatNumber(Ay)} * ${formatNumber(Bz)}) - (${formatNumber(Az)} * ${formatNumber(By)}) = ${formatNumber(Cx)}`,
-          `2. Calcular Componente Cy:`,
-          `   Cy = (Az * Bx) - (Ax * Bz) = (${formatNumber(Az)} * ${formatNumber(Bx)}) - (${formatNumber(Ax)} * ${formatNumber(Bz)}) = ${formatNumber(Cy)}`,
-          `3. Calcular Componente Cz:`,
-          `   Cz = (Ax * By) - (Ay * Bx) = (${formatNumber(Ax)} * ${formatNumber(By)}) - (${formatNumber(Ay)} * ${formatNumber(Bx)}) = ${formatNumber(Cz)}`,
-          `Vector Resultante: C = ${formatNumber(Cx)}î + ${formatNumber(Cy)}ĵ + ${formatNumber(Cz)}k̂`
+          `C_x = (A_y)(B_z) - (A_z)(B_y) = (${formatNumber(Ay)})(${formatNumber(Bz)}) - (${formatNumber(Az)})(${formatNumber(By)}) = ${formatNumber(Cx)}`,
+          `C_y = (A_z)(B_x) - (A_x)(B_z) = (${formatNumber(Az)})(${formatNumber(Bx)}) - (${formatNumber(Ax)})(${formatNumber(Bz)}) = ${formatNumber(Cy)}`,
+          `C_z = (A_x)(B_y) - (A_y)(B_x) = (${formatNumber(Ax)})(${formatNumber(By)}) - (${formatNumber(Ay)})(${formatNumber(Bx)}) = ${formatNumber(Cz)}`,
+          `\\vec{C} = ${formatNumber(Cx)}\\hat{i} + ${formatNumber(Cy)}\\hat{j} + ${formatNumber(Cz)}\\hat{k}`
         ],
       };
     },

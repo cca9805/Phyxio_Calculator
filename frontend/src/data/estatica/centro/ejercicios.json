@@ -1,152 +1,75 @@
 [
   {
-    "id_formula": "centro_masa_particulas",
-    "question": "Dos masas, m1=4kg en x1=2m y m2=6kg en x2=8m, están en el eje x. ¿Cuál es la posición de su centro de masa?",
-    "solution": {"X_cm": 5.6},
-    "variables": {"m1": 4, "x1": 2, "m2": 6, "x2": 8}
+    "id": "centroide-figura-L",
+    "title": "Centroide de una Figura en L",
+    "prompt": "Una figura en forma de L está formada por dos rectángulos. El rectángulo vertical tiene una base de 2 cm y una altura de 6 cm (de y=0 a y=6). El rectángulo horizontal tiene una base de 4 cm y una altura de 2 cm (de x=2 a x=6). Calcula las coordenadas (Xc, Yc) del centroide de la figura compuesta.",
+    "solution": [
+      "1. Dividir la L en dos rectángulos:",
+      "Rectángulo 1 (vertical): A1 = 2*6=12 cm². Centroide c1 = (1, 3).",
+      "Rectángulo 2 (horizontal): A2 = 4*2=8 cm². Centroide c2 = (2+4/2, 1) = (4, 1).",
+      "2. Calcular el área total: A_total = A1 + A2 = 12 + 8 = 20 cm².",
+      "3. Calcular Xc (coordenada x del centroide total):",
+      "Xc = (A1*x1 + A2*x2) / A_total = (12*1 + 8*4) / 20 = (12 + 32) / 20 = 44 / 20 = 2.2 cm.",
+      "4. Calcular Yc (coordenada y del centroide total):",
+      "Yc = (A1*y1 + A2*y2) / A_total = (12*3 + 8*1) / 20 = (36 + 8) / 20 = 44 / 20 = 2.2 cm."
+    ],
+    "answer": "El centroide de la figura en L está en (Xc = 2.2 cm, Yc = 2.2 cm)."
   },
   {
-    "id_formula": "centro_masa_particulas",
-    "question": "Una partícula de 1kg está en el origen (x=0) y otra de 3kg está en x=4m. Hallar el centro de masa.",
-    "solution": {"X_cm": 3},
-    "variables": {"m1": 1, "x1": 0, "m2": 3, "x2": 4}
+    "id": "centroide-placa-con-agujero",
+    "title": "Centroide con Área Negativa",
+    "prompt": "Una placa rectangular de 10 m de ancho (eje x) y 8 m de alto (eje y) tiene un agujero circular de radio 2 m centrado en (x=3, y=4). Calcula el centroide de la placa perforada.",
+    "solution": [
+      "1. Usar el método de áreas negativas. A1 es el rectángulo, A2 es el círculo (negativo).",
+      "Rectángulo (A1): Área = 10*8=80 m². Centroide c1 = (5, 4).",
+      "Círculo (A2): Área = -π*r² = -π*(2)² ≈ -12.57 m². Centroide c2 = (3, 4).",
+      "2. Calcular el área total: A_total = 80 - 12.57 = 67.43 m².",
+      "3. Calcular Xc:",
+      "Xc = (A1*x1 + A2*x2) / A_total = (80*5 + (-12.57)*3) / 67.43 = (400 - 37.71) / 67.43 ≈ 5.37 m.",
+      "4. Calcular Yc:",
+      "Yc = (A1*y1 + A2*y2) / A_total = (80*4 + (-12.57)*4) / 67.43 = (320 - 50.28) / 67.43 = 269.72 / 67.43 = 4 m. Era de esperar por la simetría."
+    ],
+    "answer": "El centroide de la placa perforada está aproximadamente en (Xc = 5.37 m, Yc = 4.0 m)."
   },
   {
-    "id_formula": "centro_masa_particulas",
-    "question": "Si m1=5kg en x1=-2m y m2=5kg en x2=6m, ¿dónde está el centro de masa?",
-    "solution": {"X_cm": 2},
-    "variables": {"m1": 5, "x1": -2, "m2": 5, "x2": 6}
+    "id": "centroide-figura-compuesta-rect-triang",
+    "title": "Centroide de Figura Compuesta",
+    "prompt": "Calcula el centroide de una figura formada por un rectángulo de base 6 y altura 4, con un triángulo rectángulo isósceles de catetos 4x4 adosado en su lado derecho.",
+    "solution": [
+      "1. Dividir en dos figuras. Origen en la esquina inferior izquierda del rectángulo.",
+      "Rectángulo (A1): Área = 6*4=24. Centroide c1 = (3, 2).",
+      "Triángulo (A2): Área = (4*4)/2 = 8. Su base va de x=6 a x=10. Centroide c2 = (6 + 4/3, 4/3) ≈ (7.33, 1.33).",
+      "2. Calcular área total: A_total = 24 + 8 = 32.",
+      "3. Calcular Xc:",
+      "Xc = (24*3 + 8*7.33) / 32 = (72 + 58.64) / 32 = 130.64 / 32 ≈ 4.08.",
+      "4. Calcular Yc:",
+      "Yc = (24*2 + 8*1.33) / 32 = (48 + 10.64) / 32 = 58.64 / 32 ≈ 1.83."
+    ],
+    "answer": "El centroide está aproximadamente en (Xc = 4.08, Yc = 1.83)."
   },
   {
-    "id_formula": "centro_masa_particulas",
-    "question": "Calcula el CM de dos masas: 10kg en x=-5m y 2kg en x=1m.",
-    "solution": {"X_cm": -4},
-    "variables": {"m1": 10, "x1": -5, "m2": 2, "x2": 1}
+    "id": "centroide-perfil-T",
+    "title": "Centroide de un Perfil en T",
+    "prompt": "Un perfil en T se compone de un alma (web) vertical de 10x2 cm y un patín (flange) horizontal de 8x2 cm centrado en la parte superior del alma. Calcula el centroide de la sección transversal.",
+    "solution": [
+      "1. Origen en la base del alma. Por simetría, Xc = 0 (si está centrado). Calculemos Yc.",
+      "Alma (A1): Área = 10*2 = 20 cm². Su altura va de y=0 a y=10. Centroide y1 = 5 cm.",
+      "Patín (A2): Área = 8*2 = 16 cm². Su altura va de y=10 a y=12. Centroide y2 = 10 + (2/2) = 11 cm.",
+      "2. Calcular área total: A_total = 20 + 16 = 36 cm².",
+      "3. Calcular Yc:",
+      "Yc = (A1*y1 + A2*y2) / A_total = (20*5 + 16*11) / 36 = (100 + 176) / 36 = 276 / 36 ≈ 7.67 cm."
+    ],
+    "answer": "El centroide del perfil en T está a 7.67 cm desde la base."
   },
   {
-    "id_formula": "centro_masa_particulas",
-    "question": "Una masa de 7kg está en x=3m y otra de 1kg en x=-1m. Encuentra su centro de masa.",
-    "solution": {"X_cm": 2.5},
-    "variables": {"m1": 7, "x1": 3, "m2": 1, "x2": -1}
-  },
-  {
-    "id_formula": "centro_gravedad_particulas",
-    "question": "Dos cuerpos, W1=10N en x1=2m y W2=30N en x2=6m, están en el eje x. ¿Cuál es la posición de su centro de gravedad?",
-    "solution": {"X_cg": 5},
-    "variables": {"W1": 10, "x1": 2, "W2": 30, "x2": 6}
-  },
-  {
-    "id_formula": "centro_gravedad_particulas",
-    "question": "Un cuerpo de 50N está en el origen (x=0) y otro de 25N está en x=9m. Hallar el centro de gravedad.",
-    "solution": {"X_cg": 3},
-    "variables": {"W1": 50, "x1": 0, "W2": 25, "x2": 9}
-  },
-  {
-    "id_formula": "centro_gravedad_particulas",
-    "question": "Si W1=100N en x1=-4m y W2=100N en x2=10m, ¿dónde está el centro de gravedad?",
-    "solution": {"X_cg": 3},
-    "variables": {"W1": 100, "x1": -4, "W2": 100, "x2": 10}
-  },
-  {
-    "id_formula": "centro_gravedad_particulas",
-    "question": "Calcula el CG de dos pesos: 200N en x=-5m y 50N en x=2m.",
-    "solution": {"X_cg": -3.6},
-    "variables": {"W1": 200, "x1": -5, "W2": 50, "x2": 2}
-  },
-  {
-    "id_formula": "centro_gravedad_particulas",
-    "question": "Un peso de 40N está en x=3m y otro de 60N en x=-8m. Encuentra su centro de gravedad.",
-    "solution": {"X_cg": -3.6},
-    "variables": {"W1": 40, "x1": 3, "W2": 60, "x2": -8}
-  },
-  {
-    "id_formula": "centroide_linea_compuesta",
-    "question": "Dos varillas: L1=2m con centroide en (1,0) y L2=8m con centroide en (2,3). ¿Cuál es el centroide (Xc, Yc) del conjunto?",
-    "solution": {"Xc": 1.8, "Yc": 2.4},
-    "variables": {"L1": 2, "x1": 1, "y1": 0, "L2": 8, "x2": 2, "y2": 3}
-  },
-  {
-    "id_formula": "centroide_linea_compuesta",
-    "question": "Una línea de 5m tiene su centroide en (2.5, 0) y se une a otra de 5m con centroide en (5, 2.5). Encuentra el centroide (Xc, Yc) total.",
-    "solution": {"Xc": 3.75, "Yc": 1.25},
-    "variables": {"L1": 5, "x1": 2.5, "y1": 0, "L2": 5, "x2": 5, "y2": 2.5}
-  },
-  {
-    "id_formula": "centroide_linea_compuesta",
-    "question": "Calcula el centroide (Xc, Yc) de dos alambres: L1=1m, centroide (0.5,0); L2=3m, centroide (1,1.5).",
-    "solution": {"Xc": 0.875, "Yc": 1.125},
-    "variables": {"L1": 1, "x1": 0.5, "y1": 0, "L2": 3, "x2": 1, "y2": 1.5}
-  },
-  {
-    "id_formula": "centroide_linea_compuesta",
-    "question": "Dos segmentos de 12m y 10m tienen sus centroides en (6,0) y (12,5) respectivamente. Hallar las coordenadas (Xc, Yc) del centroide del conjunto.",
-    "solution": {"Xc": 8.73, "Yc": 2.27},
-    "variables": {"L1": 12, "x1": 6, "y1": 0, "L2": 10, "x2": 12, "y2": 5}
-  },
-  {
-    "id_formula": "centroide_linea_compuesta",
-    "question": "Un alambre L1=4m tiene su centroide en (1,1) y se une a otro L2=6m con centroide en (4,3). Halla el centroide total (Xc, Yc).",
-    "solution": {"Xc": 2.8, "Yc": 2.2},
-    "variables": {"L1": 4, "x1": 1, "y1": 1, "L2": 6, "x2": 4, "y2": 3}
-  },
-  {
-    "id_formula": "centroide_area_compuesta",
-    "question": "Un rectángulo (A1=12m²) tiene su centroide en (3,2). Un triángulo (A2=6m²) se une a él, con centroide en (7,4). Hallar el centroide del área compuesta (Xc, Yc).",
-    "solution": {"Xc": 4.33, "Yc": 2.67},
-    "variables": {"A1": 12, "x1": 3, "y1": 2, "A2": 6, "x2": 7, "y2": 4}
-  },
-  {
-    "id_formula": "centroide_area_compuesta",
-    "question": "Una placa cuadrada de 100m² con centroide en (5,5) tiene un agujero circular de 10m² con centroide en (6,6). Calcula el nuevo centroide (Xc, Yc).",
-    "solution": {"Xc": 4.89, "Yc": 4.89},
-    "variables": {"A1": 100, "x1": 5, "y1": 5, "A2": -10, "x2": 6, "y2": 6}
-  },
-  {
-    "id_formula": "centroide_area_compuesta",
-    "question": "Se combina un área A1=50 con centroide (10,10) y un área A2=25 con centroide (5,5). ¿Cuál es el centroide (Xc, Yc) de la figura?",
-    "solution": {"Xc": 8.33, "Yc": 8.33},
-    "variables": {"A1": 50, "x1": 10, "y1": 10, "A2": 25, "x2": 5, "y2": 5}
-  },
-  {
-    "id_formula": "centroide_area_compuesta",
-    "question": "A una placa de 40m² con centroide en (0,0) se le quita un trozo de 8m² cuyo centroide estaba en (5,2). Hallar el nuevo centroide (Xc, Yc).",
-    "solution": {"Xc": -1.25, "Yc": -0.5},
-    "variables": {"A1": 40, "x1": 0, "y1": 0, "A2": -8, "x2": 5, "y2": 2}
-  },
-  {
-    "id_formula": "centroide_area_compuesta",
-    "question": "Calcular el centroide de la unión de dos áreas: A1=15, centroide (2,2); A2=30, centroide (8,5).",
-    "solution": {"Xc": 6, "Yc": 4},
-    "variables": {"A1": 15, "x1": 2, "y1": 2, "A2": 30, "x2": 8, "y2": 5}
-  },
-  {
-    "id_formula": "centroide_volumen_compuesto",
-    "question": "Un cubo de 8m³ (V1) con centroide en (1,1) se une a un cilindro de 4m³ (V2) con centroide en (3,2). Hallar el centroide del conjunto (Xc, Yc).",
-    "solution": {"Xc": 1.67, "Yc": 1.33},
-    "variables": {"V1": 8, "x1": 1, "y1": 1, "V2": 4, "x2": 3, "y2": 2}
-  },
-  {
-    "id_formula": "centroide_volumen_compuesto",
-    "question": "Un bloque de 100m³ (V1) con centroide en (5,5) se perfora con un hueco de 20m³ (V2) cuyo centroide estaba en (8,2). Hallar el nuevo centroide (Xc, Yc).",
-    "solution": {"Xc": 4.25, "Yc": 5.75},
-    "variables": {"V1": 100, "x1": 5, "y1": 5, "V2": -20, "x2": 8, "y2": 2}
-  },
-  {
-    "id_formula": "centroide_volumen_compuesto",
-    "question": "Dos esferas, V1=1m³ en (0,0) y V2=1m³ en (4,2). Calcular el centroide total (Xc, Yc).",
-    "solution": {"Xc": 2, "Yc": 1},
-    "variables": {"V1": 1, "x1": 0, "y1": 0, "V2": 1, "x2": 4, "y2": 2}
-  },
-  {
-    "id_formula": "centroide_volumen_compuesto",
-    "question": "Un volumen de 5m³ (V1) con centroide en (10,5) se une a otro de 15m³ (V2) con centroide en (2,1). Hallar el centroide (Xc, Yc) del conjunto.",
-    "solution": {"Xc": 4, "Yc": 2},
-    "variables": {"V1": 5, "x1": 10, "y1": 5, "V2": 15, "x2": 2, "y2": 1}
-  },
-  {
-    "id_formula": "centroide_volumen_compuesto",
-    "question": "Un cuerpo V1=30m³ (x1=0, y1=10) se ahueca con un V2=5m³ (x2=3, y2=4). ¿Cuál es el centroide (Xc, Yc) del cuerpo resultante?",
-    "solution": {"Xc": -0.6, "Yc": 11.2},
-    "variables": {"V1": 30, "x1": 0, "y1": 10, "V2": -5, "x2": 3, "y2": 4}
+    "id": "centroide-semicirculo",
+    "title": "Centroide de un Semicírculo",
+    "prompt": "Calcula las coordenadas del centroide de un área semicircular de radio R=5 cm, situada en el semiplano superior (y>=0) y centrada en el origen.",
+    "solution": [
+      "Por simetría, la coordenada x del centroide es cero (Xc = 0).",
+      "La coordenada y del centroide de un semicírculo se calcula con la fórmula: Yc = 4*R / (3*π).",
+      "Yc = (4 * 5) / (3 * π) = 20 / (3 * π) ≈ 2.12 cm."
+    ],
+    "answer": "El centroide del semicírculo está en (Xc = 0, Yc ≈ 2.12 cm)."
   }
 ]

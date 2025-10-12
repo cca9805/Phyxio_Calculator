@@ -1,0 +1,209 @@
+/* ==========================================================================
+   Variables de Diseño Requeridas
+   ========================================================================== */
+:root {
+  /* Paleta de Colores Principal */
+  --bg-dark-primary: #01133e;
+  --bg-dark-secondary: #001f63;
+  --bg-dark-tertiary: #003483;
+  --bg-dark-quaternary: #8fabd1;
+  --bg-light: #f1f5f9;
+  --text-light-primary: #f8fafc;
+  --text-light-secondary: #cbd5e1;
+  --border-dark: #334155;
+
+  /* Tamaños de Layout */
+  --navbar-height: 110px;
+  --sidebar-width-expanded: 280px;
+  --sidebar-width-collapsed: 80px;
+
+  /* Espaciado */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --indent-step: 24px;
+  --border-radius: 8px;
+}
+
+/* ==========================================================================
+   Layout General de la Aplicación
+   ========================================================================== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content-area {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.sidebar-container {
+  flex-shrink: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.main-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: var(--spacing-xl);
+  background-color: var(--bg-dark-quaternary);
+}
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-lg);
+  height: var(--navbar-height);
+  background-color: var(--bg-dark-primary);
+  color: var(--text-light-primary);
+  border-bottom: 1px solid var(--border-dark);
+  flex-shrink: 0;
+}
+
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-logo-img {
+  height: 110px; /* Ajustado para mejor alineación */
+  width: auto;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+
+/* ==========================================================================
+   Sidebar con Alineación Derecha e Indentación por Ancho
+   ========================================================================== */
+.sidebar {
+  height: 100%;
+  background-color: var(--bg-dark-primary);
+  color: var(--text-light-secondary);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg) 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+}
+
+.sidebar-list, .sidebar-submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-submenu {
+  width: 100%;
+}
+
+.sidebar-card {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.sidebar-card-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-light-secondary);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  transition: background-color 0.2s, color 0.2s, width 0.2s;
+  border: 1px solid transparent;
+  overflow: hidden;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-left: auto;
+  
+  margin-right: 10px;
+}
+
+.sidebar-label {
+  flex-grow: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-list > .sidebar-card > .sidebar-card-link {
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #0149b4;;
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.sidebar-submenu > .sidebar-card > .sidebar-card-link {
+  width: calc(100% - var(--indent-step));
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.sidebar-submenu .sidebar-submenu > .sidebar-card > .sidebar-card-link {
+  width: calc(100% - (var(--indent-step) * 2));
+  font-size: 0.8rem;
+}
+
+
+.sidebar-card-link:hover {
+  background-color: var(--bg-dark-secondary);
+  color: var(--text-light-primary);
+}
+
+.sidebar-card-active > .sidebar-card-link {
+  color: #fff;
+  font-weight: 600;
+}
+
+.sidebar-icon {
+  font-size: 1.2rem;
+  min-width: 32px;
+  text-align: center;
+  margin-right: var(--spacing-sm);
+}
+
+.sidebar-chevron {
+  margin-left: auto;
+}
+
+/* Estilos para Sidebar colapsada */
+.sidebar-collapsed { width: var(--sidebar-width-collapsed); }
+.sidebar-expanded { width: var(--sidebar-width-expanded); }
+
+.sidebar-collapsed .sidebar-card {
+  margin-right: 0;
+}
+
+.sidebar-collapsed .sidebar-card-link {
+  justify-content: center;
+  padding: var(--spacing-sm) 0;
+  width: auto;
+  margin: 0 auto;
+}
+
+.sidebar-collapsed .sidebar-label, .sidebar-collapsed .sidebar-chevron {
+  display: none;
+}

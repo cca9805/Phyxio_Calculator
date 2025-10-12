@@ -1,0 +1,22 @@
+[
+  {
+    "id": "C4_E4_Resistencia_Geometria",
+    "title": "Cálculo de Resistencia (Aluminio)",
+    "prompt": "Calcular la resistencia (en Ω) de un cilindro de aluminio que mide 10 cm de largo y tiene un área de sección transversal de 2·10⁻⁴ m². La resistividad del aluminio es ρ = 2.82 · 10⁻⁸ Ω·m (según Cuadro 4.1).",
+    "solution": [
+      "Usar R = ρ L / A.",
+      "Sustituir: R = (2.82e-8 Ω·m) * (0.1 m) / (2e-4 m²)."
+    ],
+    "answer": "1.41·10⁻⁵ Ω"
+  },
+  {
+    "id": "C4_E5_Potencia_Disipada",
+    "title": "Potencia Disipada",
+    "prompt": "Un resistor de 100 Ω es atravesado por una corriente de 0.5 A. Calcular la potencia disipada (en W) por efecto Joule.",
+    "solution": [
+      "Usar la Ley de Joule: P = I²R.",
+      "Sustituir: P = (0.5 A)² * (100 Ω)."
+    ],
+    "answer": "25 W"
+  }
+]

@@ -1,92 +1,107 @@
 [
   {
-    "id_formula": "friccion_estatica_maxima",
-    "question": "Un armario de 150 N de peso normal reposa sobre un suelo con un coeficiente de fricción estática μs = 0.6. ¿Cuál es la fuerza máxima que se puede aplicar antes de que se mueva?",
-    "solution": {"fs_max": 90},
-    "variables": {"μs": 0.6, "N": 150}
+    "id": "friccion-est-1",
+    "title": "Fricción Estática Máxima #1",
+    "prompt": "Un armario de 150 N de peso normal reposa sobre un suelo con un coeficiente de fricción estática μs = 0.6. ¿Cuál es la fuerza máxima que se puede aplicar antes de que se mueva?",
+    "solution": ["fs_max = 0.6 * 150 = 90"],
+    "answer": "fs_max = 90 N"
   },
   {
-    "id_formula": "friccion_estatica_maxima",
-    "question": "Para una caja que experimenta una fuerza normal de 490 N, y un μs de 0.35, calcula la fuerza de fricción estática máxima.",
-    "solution": {"fs_max": 171.5},
-    "variables": {"μs": 0.35, "N": 490}
+    "id": "friccion-est-2",
+    "title": "Fricción Estática Máxima #2",
+    "prompt": "Para una caja que experimenta una fuerza normal de 490 N, y un μs de 0.35, calcula la fuerza de fricción estática máxima.",
+    "solution": ["fs_max = 0.35 * 490 = 171.5"],
+    "answer": "fs_max = 171.5 N"
   },
   {
-    "id_formula": "friccion_estatica_maxima",
-    "question": "Si el coeficiente de fricción estática entre un libro y la mesa es de 0.4 y la fuerza normal es de 20 N, ¿cuál es la fricción estática máxima?",
-    "solution": {"fs_max": 8},
-    "variables": {"μs": 0.4, "N": 20}
+    "id": "friccion-est-3",
+    "title": "Fricción Estática Máxima #3",
+    "prompt": "Si el coeficiente de fricción estática entre un libro y la mesa es de 0.4 y la fuerza normal es de 20 N, ¿cuál es la fricción estática máxima?",
+    "solution": ["fs_max = 0.4 * 20 = 8"],
+    "answer": "fs_max = 8 N"
   },
   {
-    "id_formula": "friccion_estatica_maxima",
-    "question": "Un neumático soporta un peso normal de 5000 N. Si el μs con el asfalto es 0.8, ¿qué fuerza de fricción estática máxima puede generar?",
-    "solution": {"fs_max": 4000},
-    "variables": {"μs": 0.8, "N": 5000}
+    "id": "friccion-est-4",
+    "title": "Fricción Estática Máxima #4",
+    "prompt": "Un neumático soporta un peso normal de 5000 N. Si el μs con el asfalto es 0.8, ¿qué fuerza de fricción estática máxima puede generar?",
+    "solution": ["fs_max = 0.8 * 5000 = 4000"],
+    "answer": "fs_max = 4000 N"
   },
   {
-    "id_formula": "friccion_estatica_maxima",
-    "question": "Calcula la fricción estática máxima para un objeto con una fuerza normal de 98 N y un μs de 0.25.",
-    "solution": {"fs_max": 24.5},
-    "variables": {"μs": 0.25, "N": 98}
+    "id": "friccion-est-5",
+    "title": "Fricción Estática Máxima #5",
+    "prompt": "Calcula la fricción estática máxima para un objeto con una fuerza normal de 98 N y un μs de 0.25.",
+    "solution": ["fs_max = 0.25 * 98 = 24.5"],
+    "answer": "fs_max = 24.5 N"
   },
   {
-    "id_formula": "friccion_cinetica",
-    "question": "Un trineo de 250 N de peso normal es arrastrado sobre nieve con un μk de 0.1. ¿Cuál es la fuerza de fricción cinética?",
-    "solution": {"fk": 25},
-    "variables": {"μk": 0.1, "N": 250}
+    "id": "friccion-cin-1",
+    "title": "Fricción Cinética #1",
+    "prompt": "Un trineo de 250 N de peso normal es arrastrado sobre nieve con un μk de 0.1. ¿Cuál es la fuerza de fricción cinética?",
+    "solution": ["fk = 0.1 * 250 = 25"],
+    "answer": "fk = 25 N"
   },
   {
-    "id_formula": "friccion_cinetica",
-    "question": "Un disco de hockey se desliza sobre el hielo (μk=0.05). Si la fuerza normal es 1.6 N, ¿cuál es la fricción cinética?",
-    "solution": {"fk": 0.08},
-    "variables": {"μk": 0.05, "N": 1.6}
+    "id": "friccion-cin-2",
+    "title": "Fricción Cinética #2",
+    "prompt": "Un disco de hockey se desliza sobre el hielo (μk=0.05). Si la fuerza normal es 1.6 N, ¿cuál es la fricción cinética?",
+    "solution": ["fk = 0.05 * 1.6 = 0.08"],
+    "answer": "fk = 0.08 N"
   },
   {
-    "id_formula": "friccion_cinetica",
-    "question": "Calcula la fuerza de fricción cinética para un bloque de 50 N de fuerza normal sobre una superficie con μk = 0.2.",
-    "solution": {"fk": 10},
-    "variables": {"μk": 0.2, "N": 50}
+    "id": "friccion-cin-3",
+    "title": "Fricción Cinética #3",
+    "prompt": "Calcula la fuerza de fricción cinética para un bloque de 50 N de fuerza normal sobre una superficie con μk = 0.2.",
+    "solution": ["fk = 0.2 * 50 = 10"],
+    "answer": "fk = 10 N"
   },
   {
-    "id_formula": "friccion_cinetica",
-    "question": "Un esquiador de 700 N de peso normal se desliza por una pista. Si μk es 0.08, ¿qué fuerza de fricción cinética actúa sobre él?",
-    "solution": {"fk": 56},
-    "variables": {"μk": 0.08, "N": 700}
+    "id": "friccion-cin-4",
+    "title": "Fricción Cinética #4",
+    "prompt": "Un esquiador de 700 N de peso normal se desliza por una pista. Si μk es 0.08, ¿qué fuerza de fricción cinética actúa sobre él?",
+    "solution": ["fk = 0.08 * 700 = 56"],
+    "answer": "fk = 56 N"
   },
   {
-    "id_formula": "friccion_cinetica",
-    "question": "Si se arrastra una caja con una fuerza normal de 120 N y el μk es 0.3, ¿cuál es la magnitud de la fricción cinética?",
-    "solution": {"fk": 36},
-    "variables": {"μk": 0.3, "N": 120}
+    "id": "friccion-cin-5",
+    "title": "Fricción Cinética #5",
+    "prompt": "Si se arrastra una caja con una fuerza normal de 120 N y el μk es 0.3, ¿cuál es la magnitud de la fricción cinética?",
+    "solution": ["fk = 0.3 * 120 = 36"],
+    "answer": "fk = 36 N"
   },
   {
-    "id_formula": "fuerza_normal_plano_inclinado",
-    "question": "Un coche de 1200 kg está aparcado en una calle con una inclinación de 10 grados. Calcula la fuerza normal.",
-    "solution": {"N": 11581.05},
-    "variables": {"m": 1200, "theta": 10, "g": 9.81}
+    "id": "friccion-norm-1",
+    "title": "Fuerza Normal en Plano Inclinado #1",
+    "prompt": "Un coche de 1200 kg está aparcado en una calle con una inclinación de 10 grados. Calcula la fuerza normal.",
+    "solution": ["N = 1200 * 9.81 * cos(10°) = 11581.05"],
+    "answer": "N = 11581.05 N"
   },
   {
-    "id_formula": "fuerza_normal_plano_inclinado",
-    "question": "Un bloque de 10 kg descansa en una rampa de 30 grados. ¿Cuál es la fuerza normal sobre el bloque?",
-    "solution": {"N": 84.96},
-    "variables": {"m": 10, "theta": 30, "g": 9.81}
+    "id": "friccion-norm-2",
+    "title": "Fuerza Normal en Plano Inclinado #2",
+    "prompt": "Un bloque de 10 kg descansa en una rampa de 30 grados. ¿Cuál es la fuerza normal sobre el bloque?",
+    "solution": ["N = 10 * 9.81 * cos(30°) = 84.96"],
+    "answer": "N = 84.96 N"
   },
   {
-    "id_formula": "fuerza_normal_plano_inclinado",
-    "question": "Calcula la fuerza normal para un objeto de 5 kg en un plano inclinado a 45 grados.",
-    "solution": {"N": 34.68},
-    "variables": {"m": 5, "theta": 45, "g": 9.81}
+    "id": "friccion-norm-3",
+    "title": "Fuerza Normal en Plano Inclinado #3",
+    "prompt": "Calcula la fuerza normal para un objeto de 5 kg en un plano inclinado a 45 grados.",
+    "solution": ["N = 5 * 9.81 * cos(45°) = 34.68"],
+    "answer": "N = 34.68 N"
   },
   {
-    "id_formula": "fuerza_normal_plano_inclinado",
-    "question": "Un esquiador de 75 kg está en una pendiente de 20 grados. ¿Qué fuerza normal ejerce la nieve sobre los esquís?",
-    "solution": {"N": 691.01},
-    "variables": {"m": 75, "theta": 20, "g": 9.81}
+    "id": "friccion-norm-4",
+    "title": "Fuerza Normal en Plano Inclinado #4",
+    "prompt": "Un esquiador de 75 kg está en una pendiente de 20 grados. ¿Qué fuerza normal ejerce la nieve sobre los esquís?",
+    "solution": ["N = 75 * 9.81 * cos(20°) = 691.01"],
+    "answer": "N = 691.01 N"
   },
   {
-    "id_formula": "fuerza_normal_plano_inclinado",
-    "question": "Una caja de 2 kg se coloca sobre una tabla inclinada 5 grados. Encuentra la fuerza normal.",
-    "solution": {"N": 19.55},
-    "variables": {"m": 2, "theta": 5, "g": 9.81}
+    "id": "friccion-norm-5",
+    "title": "Fuerza Normal en Plano Inclinado #5",
+    "prompt": "Una caja de 2 kg se coloca sobre una tabla inclinada 5 grados. Encuentra la fuerza normal.",
+    "solution": ["N = 2 * 9.81 * cos(5°) = 19.55"],
+    "answer": "N = 19.55 N"
   }
 ]

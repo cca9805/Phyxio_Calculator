@@ -1,22 +1,70 @@
 [
   {
-    "id": "equilibrio-estructura",
-    "title": "Equilibrio de una viga",
-    "prompt": "Una viga horizontal recibe una fuerza de 100 N hacia abajo y dos reacciones de 50 N hacia arriba en los extremos. ¿Está en equilibrio?",
+    "id": "armadura-metodo-nodos",
+    "title": "Análisis de Armadura por Nodos",
+    "prompt": "Una armadura simple en forma de triángulo (truss) tiene nodos en A(0,0), B(4,0) y C(2,3). Está apoyada en A (pasador) y B (rodillo). Una fuerza vertical de 600 N actúa hacia abajo en el nodo C. Calcula la fuerza en cada miembro (AB, BC, AC), indicando si es tensión (T) o compresión (C).",
     "solution": [
-      "ΣF = 50 N (arriba) + 50 N (arriba) + (-100 N) (abajo) = 0 N",
-      "La suma de fuerzas es cero, por lo tanto la viga está en equilibrio."
+      "1. Calcular reacciones: Por simetría, las reacciones verticales en A y B son iguales. ΣFy = Ay + By - 600 = 0. Ay = By = 300 N. Ax = 0.",
+      "2. Analizar Nodo A: ΣFy = Ay + Fac_y = 0 => 300 + Fac * (3/sqrt(13)) = 0. Fac = -360.5 N (Compresión). ΣFx = Ax + Fab + Fac_x = 0 => 0 + Fab + (-360.5) * (2/sqrt(13)) = 0. Fab = 200 N (Tensión).",
+      "3. Analizar Nodo B: ΣFy = By + Fbc_y = 0 => 300 + Fbc * (3/sqrt(13)) = 0. Fbc = -360.5 N (Compresión).",
+      "Comprobación en Nodo C: ΣFy = -600 - Fac_y - Fbc_y = -600 - (-360.5)*(3/sqrt(13)) - (-360.5)*(3/sqrt(13)) = -600 + 300 + 300 = 0. Correcto."
     ],
-    "answer": "Sí, está en equilibrio."
+    "answer": "Fuerza AB = 200 N (T), Fuerza AC = 360.5 N (C), Fuerza BC = 360.5 N (C)."
   },
   {
-    "id": "fuerza-nodo-armadura",
-    "title": "Fuerza en un nodo de armadura",
-    "prompt": "En un nodo de armadura llegan tres barras con fuerzas de 10 N, -5 N y -5 N. ¿Está el nodo en equilibrio?",
+    "id": "armadura-metodo-secciones",
+    "title": "Análisis de Armadura por Secciones",
+    "prompt": "Una armadura Warren horizontal de 3 paneles está apoyada en sus extremos. Cada panel es un triángulo equilátero de 2m de lado. Una carga vertical de 10 kN cuelga del nodo central inferior. Realiza un corte vertical a través del panel central para encontrar la fuerza en el miembro horizontal superior de ese panel.",
     "solution": [
-      "F_{nodo} = 10 N + (-5 N) + (-5 N) = 0 N",
-      "La suma de fuerzas es cero, por lo tanto el nodo está en equilibrio."
+      "1. Reacciones: Por simetría, las reacciones en los apoyos son de 5 kN cada una.",
+      "2. Corte: Se realiza un corte vertical que atraviesa el miembro superior horizontal (FH), el diagonal (FD) y el inferior horizontal (FL).",
+      "3. Equilibrio de Momentos: Para encontrar FH, tomamos momentos respecto al nodo inferior donde se cortaron el miembro diagonal y el inferior. La altura de la armadura es h = 2 * sin(60°) = 1.732 m.",
+      "ΣM_nodo_inferior = 0 => (Reacción de apoyo * 3m) - (Carga * 1m) - (FH * altura) = 0",
+      "(5 kN * 3) - (10 kN * 1) - (FH * 1.732) = 0 => 15 - 10 = 1.732 * FH",
+      "5 = 1.732 * FH => FH = 2.887 kN. El momento de FH es negativo, por lo que FH debe ser compresión para que el momento sea positivo."
     ],
-    "answer": "Sí, está en equilibrio."
+    "answer": "La fuerza en el miembro horizontal superior es de 2.89 kN (Compresión)."
+  },
+  {
+    "id": "identificacion-miembro-fuerza-cero",
+    "title": "Miembros de Fuerza Cero (Conceptual)",
+    "prompt": "Explica las dos reglas principales para identificar miembros de fuerza cero en una armadura sin necesidad de cálculos.",
+    "solution": [
+      "Identificar estos miembros simplifica el análisis de la armadura.",
+      "Regla 1: Si dos miembros no colineales se encuentran en un nodo sin carga externa, ambos son miembros de fuerza cero. Ejemplo: un nodo en forma de 'L'.",
+      "Regla 2: Si tres miembros se encuentran en un nodo sin carga externa, y dos de ellos son colineales, entonces el tercer miembro (el que no es colineal) es un miembro de fuerza cero.",
+      "Estas reglas solo se aplican si no hay cargas externas o reacciones de apoyo en el nodo."
+    ],
+    "answer": "Regla 1: Un nodo con 2 miembros sin carga tiene fuerza cero en ambos. Regla 2: Un nodo con 3 miembros, dos de ellos colineales y sin carga, tiene fuerza cero en el tercer miembro."
+  },
+  {
+    "id": "analisis-de-bastidor-simple",
+    "title": "Análisis de un Bastidor (Frame)",
+    "prompt": "Un bastidor simple tiene forma de 'L' invertida. El miembro vertical AB está anclado a la pared en A con un pasador. El miembro horizontal BC está soldado a B. Una carga vertical de 1 kN se aplica en el extremo C. Si AB=2m y BC=1.5m, ¿qué fuerzas y momento actúan sobre el miembro AB en el punto B debido al miembro BC?",
+    "solution": [
+      "Se debe analizar el Equilibrio del miembro BC, que es un miembro de múltiples fuerzas.",
+      "1. Aislar el miembro BC y hacer su DCL.",
+      "2. Fuerza Vertical: Para equilibrar la carga de 1 kN en C, debe haber una fuerza vertical hacia arriba de 1 kN en B (F_By). ΣFy = F_By - 1kN = 0.",
+      "3. Fuerza Horizontal: No hay otras fuerzas horizontales, por lo que la fuerza horizontal en B es cero (F_Bx = 0).",
+      "4. Momento: La fuerza en C crea un momento de (1 kN * 1.5 m) = 1.5 kN·m (horario) en B. Para el equilibrio, debe haber un momento de reacción (M_B) en B de 1.5 kN·m en sentido anti-horario.",
+      "Según la tercera ley de Newton, las fuerzas y el momento ejercidos POR AB SOBRE BC son los opuestos a los calculados."
+    ],
+    "answer": "En el punto B, el miembro BC ejerce sobre AB una fuerza vertical de 1 kN hacia abajo y un momento de 1.5 kN·m en sentido horario."
+  },
+  {
+    "id": "analisis-de-maquina-pinzas",
+    "title": "Análisis de Máquina: Pinzas",
+    "prompt": "Considera un par de pinzas simples. La distancia desde el pivote hasta los mangos donde se aplica una fuerza de 10 N es de 12 cm. La distancia desde el pivote hasta la punta de agarre es de 4 cm. ¿Cuál es la fuerza de agarre que ejercen las pinzas sobre un objeto?",
+    "solution": [
+      "Este es un problema de palancas (máquinas simples), donde el pivote es el fulcro.",
+      "Analizamos una de las dos mitades de las pinzas.",
+      "La suma de momentos respecto al pivote debe ser cero para el equilibrio.",
+      "Momento de entrada = Momento de salida",
+      "F_entrada * d_entrada = F_salida * d_salida",
+      "10 N * 12 cm = F_agarre * 4 cm",
+      "F_agarre = (10 N * 12 cm) / 4 cm = 30 N",
+      "Esto demuestra la ventaja mecánica de la máquina."
+    ],
+    "answer": "La fuerza de agarre es de 30 N."
   }
 ]
